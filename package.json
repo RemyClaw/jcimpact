@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "update-data": "python3 scripts/update-data.py",
+    "update-data:custom": "python3 scripts/update-data.py"
   },
   "dependencies": {
     "date-fns": "^3.6.0",

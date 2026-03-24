@@ -1,11 +1,12 @@
 {
   "meta": {
-    "period": "YTD 2026 (Jan 1 \u2013 Mar 21)",
+    "period": "YTD 2026 (Jan '26 \u2013 Mar '26)",
     "generated": "2026-03-24",
-    "source": "JCPD CompStat / NJ Crash Reports"
+    "source": "JCPD CompStat / NJ Crash Reports",
+    "lastUpdated": "2026-03-23"
   },
   "citywide": {
-    "totalCrimes": 1374,
+    "totalCrimes": 1279,
     "shootings": 13,
     "homicides": 0,
     "mvas": 333
@@ -13,31 +14,31 @@
   "byDistrict": [
     {
       "district": "South",
-      "totalCrimes": 418,
-      "shootings": 9,
+      "totalCrimes": 366,
+      "shootings": 2,
       "homicides": 0,
-      "mvas": 99
+      "mvas": 96
     },
     {
       "district": "West",
-      "totalCrimes": 388,
-      "shootings": 2,
+      "totalCrimes": 315,
+      "shootings": 5,
       "homicides": 0,
-      "mvas": 127
+      "mvas": 130
     },
     {
       "district": "East",
-      "totalCrimes": 340,
-      "shootings": 2,
+      "totalCrimes": 316,
+      "shootings": 6,
       "homicides": 0,
-      "mvas": 58
+      "mvas": 57
     },
     {
       "district": "North",
-      "totalCrimes": 228,
+      "totalCrimes": 209,
       "shootings": 0,
       "homicides": 0,
-      "mvas": 49
+      "mvas": 50
     }
   ],
   "monthlyTrends": [
@@ -60,13 +61,93 @@
     {
       "month": "2026-03",
       "label": "Mar '26",
-      "totalCrimes": 317,
+      "totalCrimes": 222,
       "shootings": 5,
       "homicides": 0,
       "mvas": 333
     }
   ],
   "incidents": [
+    {
+      "id": "sf-1",
+      "type": "Shooting",
+      "date": "2026-01-12",
+      "district": "East",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "Cator & Ocean",
+      "description": "Shots Fired \u00b7 Arrest"
+    },
+    {
+      "id": "sf-2",
+      "type": "Shooting",
+      "date": "2026-01-16",
+      "district": "East",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "6th & Mall Dr. W",
+      "description": "Shots Fired"
+    },
+    {
+      "id": "sf-3",
+      "type": "Shooting",
+      "date": "2026-01-17",
+      "district": "West",
+      "lat": 40.730883,
+      "lng": -74.073062,
+      "address": "112 Stuyvesant",
+      "description": "Shots Fired \u00b7 Arrest"
+    },
+    {
+      "id": "sf-4",
+      "type": "Shooting",
+      "date": "2026-02-22",
+      "district": "East",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "Mallory & Williamson",
+      "description": "Shots Fired"
+    },
+    {
+      "id": "sf-5",
+      "type": "Shooting",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.70056,
+      "lng": -74.08473,
+      "address": "80 Van Nostrand",
+      "description": "Shots Fired \u00b7 Arrest"
+    },
+    {
+      "id": "sf-6",
+      "type": "Shooting",
+      "date": "2026-03-07",
+      "district": "West",
+      "lat": 40.736045,
+      "lng": -74.076853,
+      "address": "73 Dales",
+      "description": "Shots Fired"
+    },
+    {
+      "id": "sf-7",
+      "type": "Shooting",
+      "date": "2026-03-07",
+      "district": "West",
+      "lat": 40.73093,
+      "lng": -74.08342,
+      "address": "33 Gloria Robinson Ct.",
+      "description": "Shots Fired \u00b7 Arrest"
+    },
+    {
+      "id": "sf-8",
+      "type": "Shooting",
+      "date": "2026-03-20",
+      "district": "East",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "Brinkerhoff & Monticello",
+      "description": "Shots Fired \u00b7 Arrest"
+    },
     {
       "id": "sh-1",
       "type": "Shooting",
@@ -81,10 +162,10 @@
       "id": "sh-2",
       "type": "Shooting",
       "date": "2026-01-20",
-      "district": "South",
+      "district": "East",
       "lat": 40.72157,
       "lng": -74.047455,
-      "address": "Woodland Ave & Ocean Ave",
+      "address": "Woodland & Ocean",
       "description": "Shooting Hit"
     },
     {
@@ -92,19 +173,19 @@
       "type": "Shooting",
       "date": "2026-02-03",
       "district": "South",
-      "lat": 40.701779,
-      "lng": -74.090069,
-      "address": "117 Wade St",
+      "lat": 40.700694,
+      "lng": -74.088359,
+      "address": "117-121 Wade",
       "description": "Shooting Hit \u00b7 Arrest"
     },
     {
       "id": "sh-4",
       "type": "Shooting",
       "date": "2026-02-22",
-      "district": "South",
+      "district": "West",
       "lat": 40.701779,
       "lng": -74.090069,
-      "address": "117 Wade St",
+      "address": "117 Wade",
       "description": "Shooting Hit \u00b7 Arrest"
     },
     {
@@ -112,90 +193,10 @@
       "type": "Shooting",
       "date": "2026-03-20",
       "district": "East",
-      "lat": 40.71451,
-      "lng": -74.078298,
-      "address": "Oak St & Sackett St",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "Oak & Sackett",
       "description": "Shooting Hit \u00b7 Arrest"
-    },
-    {
-      "id": "sf-1",
-      "type": "Shooting",
-      "date": "2026-01-12",
-      "district": "South",
-      "lat": 40.696087,
-      "lng": -74.089823,
-      "address": "Cator Ave & Ocean Ave",
-      "description": "Shots Fired \u00b7 Arrest"
-    },
-    {
-      "id": "sf-2",
-      "type": "Shooting",
-      "date": "2026-01-16",
-      "district": "East",
-      "lat": 40.72157,
-      "lng": -74.047455,
-      "address": "6th St & Mall Dr W",
-      "description": "Shots Fired"
-    },
-    {
-      "id": "sf-3",
-      "type": "Shooting",
-      "date": "2026-01-17",
-      "district": "South",
-      "lat": 40.730883,
-      "lng": -74.073062,
-      "address": "112 Stuyvesant Ave",
-      "description": "Shots Fired \u00b7 Arrest"
-    },
-    {
-      "id": "sf-4",
-      "type": "Shooting",
-      "date": "2026-02-22",
-      "district": "South",
-      "lat": 40.72157,
-      "lng": -74.047455,
-      "address": "Mallory Ave & Williamson Ave",
-      "description": "Shots Fired"
-    },
-    {
-      "id": "sf-5",
-      "type": "Shooting",
-      "date": "2026-03-06",
-      "district": "South",
-      "lat": 40.70056,
-      "lng": -74.08473,
-      "address": "80 Van Nostrand Ave",
-      "description": "Shots Fired \u00b7 Arrest"
-    },
-    {
-      "id": "sf-6",
-      "type": "Shooting",
-      "date": "2026-03-07",
-      "district": "West",
-      "lat": 40.736045,
-      "lng": -74.076853,
-      "address": "73 Dales Ave",
-      "description": "Shots Fired"
-    },
-    {
-      "id": "sf-7",
-      "type": "Shooting",
-      "date": "2026-03-07",
-      "district": "South",
-      "lat": 40.73093,
-      "lng": -74.08342,
-      "address": "33 Gloria Robinson Ct",
-      "description": "Shots Fired \u00b7 Arrest"
-    },
-    {
-      "id": "sf-8",
-      "type": "Shooting",
-      "date": "2026-03-20",
-      "district": "South",
-      "lat": 40.72157,
-      "lng": -74.047455,
-      "address": "Brinkerhoff Ave & Monticello Ave",
-      "description": "Shots Fired \u00b7 Arrest"
     },
     {
       "id": "mva-26-040062",
@@ -3046,8 +3047,8 @@
       "type": "MVA",
       "date": "2026-03-19",
       "district": "East",
-      "lat": 40.727527,
-      "lng": -74.034593,
+      "lat": 40.72157,
+      "lng": -74.047455,
       "address": "WASHINGTON BLVD & NEWPORT PKWY"
     },
     {

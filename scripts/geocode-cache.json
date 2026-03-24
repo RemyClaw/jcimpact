@@ -1,0 +1,1572 @@
+{
+  "central ave & ferry st": {
+    "lat": 40.742181,
+    "lng": -74.052008,
+    "cached_at": "2026-03-24"
+  },
+  "west side ave & pavonia ave": {
+    "lat": 40.734411,
+    "lng": -74.071358,
+    "cached_at": "2026-03-24"
+  },
+  "chapel ave & caven point rd": {
+    "lat": 40.693385,
+    "lng": -74.081651,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & montgomery st": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "route 440 & danforth avenue": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & sip ave": {
+    "lat": 40.730839,
+    "lng": -74.064351,
+    "cached_at": "2026-03-24"
+  },
+  "west side ave & grant ave": {
+    "lat": 40.714069,
+    "lng": -74.088823,
+    "cached_at": "2026-03-24"
+  },
+  "central ave & thorne st": {
+    "lat": 40.748549,
+    "lng": -74.047615,
+    "cached_at": "2026-03-24"
+  },
+  "sip ave & us nj route 1 9": {
+    "lat": 40.730364,
+    "lng": -74.067045,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & linden ave": {
+    "lat": 40.699494,
+    "lng": -74.095184,
+    "cached_at": "2026-03-24"
+  },
+  "martin luther king dr & virginia ave": {
+    "lat": 40.712033,
+    "lng": -74.077881,
+    "cached_at": "2026-03-24"
+  },
+  "route 440 & route 440 south": {
+    "lat": 40.720149,
+    "lng": -74.094337,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave": {
+    "lat": 40.717248,
+    "lng": -74.077241,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & carlton avenue": {
+    "lat": 40.745497,
+    "lng": -74.062304,
+    "cached_at": "2026-03-24"
+  },
+  "kellogg st & route 440": {
+    "lat": 40.709871,
+    "lng": -74.099576,
+    "cached_at": "2026-03-24"
+  },
+  "charles st & summit ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & bartholdi ave": {
+    "lat": 40.697372,
+    "lng": -74.097278,
+    "cached_at": "2026-03-24"
+  },
+  "randolph ave & claremont ave": {
+    "lat": 40.706997,
+    "lng": -74.074293,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & ege ave": {
+    "lat": 40.714183,
+    "lng": -74.082898,
+    "cached_at": "2026-03-24"
+  },
+  "pine st & communipaw ave": {
+    "lat": 40.710381,
+    "lng": -74.061324,
+    "cached_at": "2026-03-24"
+  },
+  "washington blvd & thomas gangemi dr": {
+    "lat": 40.724374,
+    "lng": -74.035729,
+    "cached_at": "2026-03-24"
+  },
+  "route 440 & claremont ave": {
+    "lat": 40.711387,
+    "lng": -74.084424,
+    "cached_at": "2026-03-24"
+  },
+  "grand street & bishop street": {
+    "lat": 40.716695,
+    "lng": -74.063224,
+    "cached_at": "2026-03-24"
+  },
+  "washington blvd & newporoute pkwy": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "central ave & leonard st": {
+    "lat": 40.754723,
+    "lng": -74.04337,
+    "cached_at": "2026-03-24"
+  },
+  "crescent ave & harmon st": {
+    "lat": 40.71601,
+    "lng": -74.071359,
+    "cached_at": "2026-03-24"
+  },
+  "westside ave & fulton ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "communipaw ave & kennedy blvd": {
+    "lat": 40.71145,
+    "lng": -74.06264,
+    "cached_at": "2026-03-24"
+  },
+  "west side ave & montgomery st": {
+    "lat": 40.733757,
+    "lng": -74.09196,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & dekalb ave": {
+    "lat": 40.728796,
+    "lng": -74.06983,
+    "cached_at": "2026-03-24"
+  },
+  "ravine ave & sherman ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "communipaw ave & arlington ave": {
+    "lat": 40.715897,
+    "lng": -74.069027,
+    "cached_at": "2026-03-24"
+  },
+  "us route 1 9 & route 440": {
+    "lat": 40.735626,
+    "lng": -74.089305,
+    "cached_at": "2026-03-24"
+  },
+  "jersey ave & 15th st": {
+    "lat": 40.732658,
+    "lng": -74.044326,
+    "cached_at": "2026-03-24"
+  },
+  "ocean ave & kearney ave": {
+    "lat": 40.709513,
+    "lng": -74.07651,
+    "cached_at": "2026-03-24"
+  },
+  "leonard st & nelson ave": {
+    "lat": 40.757236,
+    "lng": -74.049747,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & bergen ave": {
+    "lat": 40.703676,
+    "lng": -74.090061,
+    "cached_at": "2026-03-24"
+  },
+  "culver ave & john f kennedy blvd": {
+    "lat": 40.713857,
+    "lng": -74.075607,
+    "cached_at": "2026-03-24"
+  },
+  "hopkins ave & collard st": {
+    "lat": 40.739409,
+    "lng": -74.060369,
+    "cached_at": "2026-03-24"
+  },
+  "montgomery st & marin blvd": {
+    "lat": 40.717332,
+    "lng": -74.042361,
+    "cached_at": "2026-03-24"
+  },
+  "jefferson ave & palisade ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & bergen ave": {
+    "lat": 40.703676,
+    "lng": -74.090061,
+    "cached_at": "2026-03-24"
+  },
+  "congress st & cambridge ave": {
+    "lat": 40.750581,
+    "lng": -74.045381,
+    "cached_at": "2026-03-24"
+  },
+  "monticello ave & emory st": {
+    "lat": 40.719087,
+    "lng": -74.071445,
+    "cached_at": "2026-03-24"
+  },
+  "newark ave & route route 1 9": {
+    "lat": 40.73529,
+    "lng": -74.081804,
+    "cached_at": "2026-03-24"
+  },
+  "route 139 & jersey avenue": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "woodlawn ave & ocean ave": {
+    "lat": 40.700992,
+    "lng": -74.082999,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & fairview ave": {
+    "lat": 40.724301,
+    "lng": -74.07412,
+    "cached_at": "2026-03-24"
+  },
+  "oak & sackett": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & tonnele ave": {
+    "lat": 40.713857,
+    "lng": -74.075607,
+    "cached_at": "2026-03-24"
+  },
+  "bayview ave & garfield ave": {
+    "lat": 40.702483,
+    "lng": -74.076591,
+    "cached_at": "2026-03-24"
+  },
+  "10th st & brunswick st": {
+    "lat": 40.729569,
+    "lng": -74.049863,
+    "cached_at": "2026-03-24"
+  },
+  "newark ave & 5th st": {
+    "lat": 40.725254,
+    "lng": -74.051613,
+    "cached_at": "2026-03-24"
+  },
+  "montgomery st & hudson st": {
+    "lat": 40.716485,
+    "lng": -74.034125,
+    "cached_at": "2026-03-24"
+  },
+  "mallory ave & communipaw ave": {
+    "lat": 40.722592,
+    "lng": -74.085617,
+    "cached_at": "2026-03-24"
+  },
+  "romaine ave & sip ave": {
+    "lat": 40.731805,
+    "lng": -74.069754,
+    "cached_at": "2026-03-24"
+  },
+  "grove st & 14th street": {
+    "lat": 40.731698,
+    "lng": -74.041099,
+    "cached_at": "2026-03-24"
+  },
+  "12th st & jersey ave": {
+    "lat": 40.730477,
+    "lng": -74.044622,
+    "cached_at": "2026-03-24"
+  },
+  "pacific ave & communipaw ave": {
+    "lat": 40.711449,
+    "lng": -74.062636,
+    "cached_at": "2026-03-24"
+  },
+  "washington st & columbus dr": {
+    "lat": 40.7177,
+    "lng": -74.037183,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & carlton ave": {
+    "lat": 40.745497,
+    "lng": -74.062304,
+    "cached_at": "2026-03-24"
+  },
+  "montgomery st & tuers ave": {
+    "lat": 40.724834,
+    "lng": -74.06721,
+    "cached_at": "2026-03-24"
+  },
+  "sip ave & john f kennedy blvd": {
+    "lat": 40.713857,
+    "lng": -74.075607,
+    "cached_at": "2026-03-24"
+  },
+  "jersey ave": {
+    "lat": 40.724198,
+    "lng": -74.045629,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & north st": {
+    "lat": 40.756278,
+    "lng": -74.054729,
+    "cached_at": "2026-03-24"
+  },
+  "communipaw ave & mallory": {
+    "lat": 40.71145,
+    "lng": -74.06264,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & manhattan ave": {
+    "lat": 40.746961,
+    "lng": -74.061773,
+    "cached_at": "2026-03-24"
+  },
+  "grand st & warren st": {
+    "lat": 40.715486,
+    "lng": -74.039382,
+    "cached_at": "2026-03-24"
+  },
+  "van reypen st & vroom st": {
+    "lat": 40.729353,
+    "lng": -74.068158,
+    "cached_at": "2026-03-24"
+  },
+  "route 1 9 south & broadway": {
+    "lat": 40.735643,
+    "lng": -74.089201,
+    "cached_at": "2026-03-24"
+  },
+  "us route 1 9 & wallis ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "duncan ave & route route 1 9": {
+    "lat": 40.73529,
+    "lng": -74.081804,
+    "cached_at": "2026-03-24"
+  },
+  "route 139 & jersey ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "garfield ave & w 55th st": {
+    "lat": 40.685779,
+    "lng": -74.099784,
+    "cached_at": "2026-03-24"
+  },
+  "us route 1 9": {
+    "lat": 40.735643,
+    "lng": -74.089201,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & john f kennedy blvd": {
+    "lat": 40.713857,
+    "lng": -74.075607,
+    "cached_at": "2026-03-24"
+  },
+  "north st & john f kennedy blvd": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & spruce street": {
+    "lat": 40.741493,
+    "lng": -74.060588,
+    "cached_at": "2026-03-24"
+  },
+  "ash street & pacific avenue": {
+    "lat": 40.714904,
+    "lng": -74.05777,
+    "cached_at": "2026-03-24"
+  },
+  "14th st & jersey ave": {
+    "lat": 40.731998,
+    "lng": -74.04441,
+    "cached_at": "2026-03-24"
+  },
+  "communipaw ave & john f kennedy blvd": {
+    "lat": 40.713857,
+    "lng": -74.075607,
+    "cached_at": "2026-03-24"
+  },
+  "morgan street & marin blvd": {
+    "lat": 40.720099,
+    "lng": -74.041192,
+    "cached_at": "2026-03-24"
+  },
+  "route 139 & e tonnelle ave": {
+    "lat": 40.753996,
+    "lng": -74.05645,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & fairmount ave": {
+    "lat": 40.724589,
+    "lng": -74.069456,
+    "cached_at": "2026-03-24"
+  },
+  "garfield ave & myrtle ave": {
+    "lat": 40.705022,
+    "lng": -74.074671,
+    "cached_at": "2026-03-24"
+  },
+  "duncan ave & route 1 & 9": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "montgomery st & baldwin ave": {
+    "lat": 40.723768,
+    "lng": -74.064193,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & route 139": {
+    "lat": 40.739234,
+    "lng": -74.065026,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & bramhall ave": {
+    "lat": 40.716859,
+    "lng": -74.077787,
+    "cached_at": "2026-03-24"
+  },
+  "thorne st & liberty ave": {
+    "lat": 40.751754,
+    "lng": -74.055664,
+    "cached_at": "2026-03-24"
+  },
+  "vroom st & bergen ave": {
+    "lat": 40.728497,
+    "lng": -74.066915,
+    "cached_at": "2026-03-24"
+  },
+  "bowers st & central ave": {
+    "lat": 40.747383,
+    "lng": -74.048406,
+    "cached_at": "2026-03-24"
+  },
+  "boyd ave & west side ave": {
+    "lat": 40.717307,
+    "lng": -74.084744,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & tonnele ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "route 139 & baldwin ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "communipaw ave & route 440": {
+    "lat": 40.723926,
+    "lng": -74.08986,
+    "cached_at": "2026-03-24"
+  },
+  "lexington ave & west side ave": {
+    "lat": 40.719584,
+    "lng": -74.08246,
+    "cached_at": "2026-03-24"
+  },
+  "jersey ave & aetna st": {
+    "lat": 40.712995,
+    "lng": -74.050832,
+    "cached_at": "2026-03-24"
+  },
+  "colony rd & poroute jersey blvd": {
+    "lat": 40.677463,
+    "lng": -74.085393,
+    "cached_at": "2026-03-24"
+  },
+  "myrtle ave & martin luther king drive": {
+    "lat": 40.709032,
+    "lng": -74.081166,
+    "cached_at": "2026-03-24"
+  },
+  "117 wade": {
+    "lat": 40.701779,
+    "lng": -74.090069,
+    "cached_at": "2026-03-24"
+  },
+  "duncan ave & mallory ave": {
+    "lat": 40.728575,
+    "lng": -74.080806,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & clendenny ave": {
+    "lat": 40.716589,
+    "lng": -74.078171,
+    "cached_at": "2026-03-24"
+  },
+  "st pauls ave & kennedy blvd": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "us route 1 9 south & halleck ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "gautier ave & west side ave": {
+    "lat": 40.725301,
+    "lng": -74.07759,
+    "cached_at": "2026-03-24"
+  },
+  "herberoute pl & newark ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "summit ave & secaucus rd": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave": {
+    "lat": 40.753996,
+    "lng": -74.05645,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & pavonia ave": {
+    "lat": 40.732996,
+    "lng": -74.062937,
+    "cached_at": "2026-03-24"
+  },
+  "sherman ave & franklin st": {
+    "lat": 40.742162,
+    "lng": -74.048518,
+    "cached_at": "2026-03-24"
+  },
+  "paterson plank rd & mountain rd": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "dwight st & martin luther king dr": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "woodlawn ave & garfield ave": {
+    "lat": 40.699263,
+    "lng": -74.081315,
+    "cached_at": "2026-03-24"
+  },
+  "fairmount ave & bergen ave": {
+    "lat": 40.724589,
+    "lng": -74.069456,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele circle & tonnele ave": {
+    "lat": 40.753996,
+    "lng": -74.05645,
+    "cached_at": "2026-03-24"
+  },
+  "erie st & 12th st": {
+    "lat": 40.730334,
+    "lng": -74.042985,
+    "cached_at": "2026-03-24"
+  },
+  "cornelison ave & fairmount ave": {
+    "lat": 40.719396,
+    "lng": -74.064994,
+    "cached_at": "2026-03-24"
+  },
+  "spruce st & liberty ave": {
+    "lat": 40.742195,
+    "lng": -74.062287,
+    "cached_at": "2026-03-24"
+  },
+  "bowers st & palisade ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "mallory & williamson": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & cottage st": {
+    "lat": 40.734586,
+    "lng": -74.063141,
+    "cached_at": "2026-03-24"
+  },
+  "lexington ave & mallory ave": {
+    "lat": 40.721375,
+    "lng": -74.086512,
+    "cached_at": "2026-03-24"
+  },
+  "columbus dr & monmouth st": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "reed st & monticello ave": {
+    "lat": 40.72271,
+    "lng": -74.069257,
+    "cached_at": "2026-03-24"
+  },
+  "woodland & ocean": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "marin blvd & columbus dr": {
+    "lat": 40.719006,
+    "lng": -74.041352,
+    "cached_at": "2026-03-24"
+  },
+  "73 dales": {
+    "lat": 40.736045,
+    "lng": -74.076853,
+    "cached_at": "2026-03-24"
+  },
+  "new york ave & bowers st": {
+    "lat": 40.745827,
+    "lng": -74.044173,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & highland ave": {
+    "lat": 40.728344,
+    "lng": -74.070122,
+    "cached_at": "2026-03-24"
+  },
+  "brinkerhoff & monticello": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "clendenny ave & miller st": {
+    "lat": 40.721186,
+    "lng": -74.087813,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & communipaw ave": {
+    "lat": 40.719432,
+    "lng": -74.077831,
+    "cached_at": "2026-03-24"
+  },
+  "16th st & cole st": {
+    "lat": 40.733526,
+    "lng": -74.045894,
+    "cached_at": "2026-03-24"
+  },
+  "martin luther king dr & forrest st": {
+    "lat": 40.712971,
+    "lng": -74.077021,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & reed st": {
+    "lat": 40.723384,
+    "lng": -74.070484,
+    "cached_at": "2026-03-24"
+  },
+  "lincoln st & milton ave": {
+    "lat": 40.7482,
+    "lng": -74.052981,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & sip": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "martin luther king dr & stevens ave": {
+    "lat": 40.702254,
+    "lng": -74.089154,
+    "cached_at": "2026-03-24"
+  },
+  "communipaw ave & mallory ave": {
+    "lat": 40.722548,
+    "lng": -74.085477,
+    "cached_at": "2026-03-24"
+  },
+  "117-121 wade": {
+    "lat": 40.700694,
+    "lng": -74.088359,
+    "cached_at": "2026-03-24"
+  },
+  "newark ave & john f kennedy blvd": {
+    "lat": 40.713857,
+    "lng": -74.075607,
+    "cached_at": "2026-03-24"
+  },
+  "martin luther king dr & bramhall": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "central ave & sherman pl": {
+    "lat": 40.743845,
+    "lng": -74.050855,
+    "cached_at": "2026-03-24"
+  },
+  "west side ave & gothic knights rd": {
+    "lat": 40.710568,
+    "lng": -74.093872,
+    "cached_at": "2026-03-24"
+  },
+  "academy st & baldwin ave": {
+    "lat": 40.726628,
+    "lng": -74.06201,
+    "cached_at": "2026-03-24"
+  },
+  "tonnelle ave & carlton ave": {
+    "lat": 40.745497,
+    "lng": -74.062304,
+    "cached_at": "2026-03-24"
+  },
+  "mercer st & varick st": {
+    "lat": 40.719789,
+    "lng": -74.048907,
+    "cached_at": "2026-03-24"
+  },
+  "garfield ave & lembeck ave": {
+    "lat": 40.692492,
+    "lng": -74.090872,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & duncan ave": {
+    "lat": 40.725274,
+    "lng": -74.073354,
+    "cached_at": "2026-03-24"
+  },
+  "route 7 & tonnele ave": {
+    "lat": 40.736625,
+    "lng": -74.083613,
+    "cached_at": "2026-03-24"
+  },
+  "nelson ave & hauge st": {
+    "lat": 40.757886,
+    "lng": -74.049295,
+    "cached_at": "2026-03-24"
+  },
+  "clifton pl & beacon pl": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "st pauls ave & oakland ave": {
+    "lat": 40.735382,
+    "lng": -74.054732,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & pavonia ave": {
+    "lat": 40.732996,
+    "lng": -74.062937,
+    "cached_at": "2026-03-24"
+  },
+  "bramhall ave & bergen ave": {
+    "lat": 40.716859,
+    "lng": -74.077787,
+    "cached_at": "2026-03-24"
+  },
+  "route 1 9 tonnele ave & carlton ave": {
+    "lat": 40.745497,
+    "lng": -74.062304,
+    "cached_at": "2026-03-24"
+  },
+  "route 440 & communipaw ave": {
+    "lat": 40.71145,
+    "lng": -74.06264,
+    "cached_at": "2026-03-24"
+  },
+  "mallory ave & clarke ave": {
+    "lat": 40.717542,
+    "lng": -74.089978,
+    "cached_at": "2026-03-24"
+  },
+  "newark ave & tonnele ave": {
+    "lat": 40.71475,
+    "lng": -74.04354,
+    "cached_at": "2026-03-24"
+  },
+  "route 440": {
+    "lat": 40.745666,
+    "lng": -74.061934,
+    "cached_at": "2026-03-24"
+  },
+  "grand st & jersey ave": {
+    "lat": 40.716569,
+    "lng": -74.048913,
+    "cached_at": "2026-03-24"
+  },
+  "belmont ave & bergen ave": {
+    "lat": 40.7209,
+    "lng": -74.072797,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & bowers st": {
+    "lat": 40.749821,
+    "lng": -74.054845,
+    "cached_at": "2026-03-24"
+  },
+  "14th st & grove st": {
+    "lat": 40.731698,
+    "lng": -74.041099,
+    "cached_at": "2026-03-24"
+  },
+  "33 gloria robinson ct.": {
+    "lat": 40.73093,
+    "lng": -74.08342,
+    "cached_at": "2026-03-24"
+  },
+  "lexington ave & john f kennedy blvd": {
+    "lat": 40.713857,
+    "lng": -74.075607,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & wilkinson ave": {
+    "lat": 40.709107,
+    "lng": -74.084699,
+    "cached_at": "2026-03-24"
+  },
+  "dey st & tonnelle ave": {
+    "lat": 40.739625,
+    "lng": -74.072472,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & south st": {
+    "lat": 40.751715,
+    "lng": -74.053543,
+    "cached_at": "2026-03-24"
+  },
+  "zabriskie st & summit ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "garfield ave": {
+    "lat": 40.698928,
+    "lng": -74.081799,
+    "cached_at": "2026-03-24"
+  },
+  "fairmount ave & grand st": {
+    "lat": 40.717237,
+    "lng": -74.061017,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & beach st": {
+    "lat": 40.74623,
+    "lng": -74.062035,
+    "cached_at": "2026-03-24"
+  },
+  "merseles st & montgomery st": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "fulton ave & john f kennedy blvd": {
+    "lat": 40.713857,
+    "lng": -74.075607,
+    "cached_at": "2026-03-24"
+  },
+  "north garage & washington blvd": {
+    "lat": 40.728276,
+    "lng": -74.034702,
+    "cached_at": "2026-03-24"
+  },
+  "west side ave & lexington ave": {
+    "lat": 40.719584,
+    "lng": -74.08246,
+    "cached_at": "2026-03-24"
+  },
+  "bergen avenue & fairview": {
+    "lat": 40.711475,
+    "lng": -74.0784,
+    "cached_at": "2026-03-24"
+  },
+  "north district lot & central ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "garfield ave & neptune ave": {
+    "lat": 40.690785,
+    "lng": -74.093737,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & kensington ave": {
+    "lat": 40.722989,
+    "lng": -74.075069,
+    "cached_at": "2026-03-24"
+  },
+  "oxford ave & west side ave": {
+    "lat": 40.720145,
+    "lng": -74.081951,
+    "cached_at": "2026-03-24"
+  },
+  "garfield ave & wilkinson": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "route 440 n & communipaw ave": {
+    "lat": 40.71145,
+    "lng": -74.06264,
+    "cached_at": "2026-03-24"
+  },
+  "14th st & washington blvd": {
+    "lat": 40.731141,
+    "lng": -74.034429,
+    "cached_at": "2026-03-24"
+  },
+  "ocean ave & neptune ave": {
+    "lat": 40.692121,
+    "lng": -74.094924,
+    "cached_at": "2026-03-24"
+  },
+  "ocean ave & carteret ave": {
+    "lat": 40.709739,
+    "lng": -74.076382,
+    "cached_at": "2026-03-24"
+  },
+  "ocean ave & wilkinson ave": {
+    "lat": 40.705278,
+    "lng": -74.078847,
+    "cached_at": "2026-03-24"
+  },
+  "jersey ave & columbus dr": {
+    "lat": 40.72069,
+    "lng": -74.046667,
+    "cached_at": "2026-03-24"
+  },
+  "poroute jersey blvd & chosin few way": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "charles st & john f kennedy blvd": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "county road & manhattan avenue": {
+    "lat": 40.744789,
+    "lng": -74.056439,
+    "cached_at": "2026-03-24"
+  },
+  "us route 1 9 north & duncan ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & custer ave": {
+    "lat": 40.694548,
+    "lng": -74.100251,
+    "cached_at": "2026-03-24"
+  },
+  "terrace ave & bleecker st": {
+    "lat": 40.753285,
+    "lng": -74.055665,
+    "cached_at": "2026-03-24"
+  },
+  "orchard st & monticello ave": {
+    "lat": 40.723967,
+    "lng": -74.066598,
+    "cached_at": "2026-03-24"
+  },
+  "summit ave & summit ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "montgomery st & bergen ave": {
+    "lat": 40.725316,
+    "lng": -74.068084,
+    "cached_at": "2026-03-24"
+  },
+  "pavonia ave & summit ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & clendenny": {
+    "lat": 40.711475,
+    "lng": -74.0784,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & kensington ave": {
+    "lat": 40.721642,
+    "lng": -74.072117,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & audubon ave": {
+    "lat": 40.707309,
+    "lng": -74.086145,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd": {
+    "lat": 40.717598,
+    "lng": -74.079988,
+    "cached_at": "2026-03-24"
+  },
+  "washington blvd": {
+    "lat": 40.727527,
+    "lng": -74.034593,
+    "cached_at": "2026-03-24"
+  },
+  "baldwin ave & newark ave": {
+    "lat": 40.73157,
+    "lng": -74.056575,
+    "cached_at": "2026-03-24"
+  },
+  "broadway & corbin ave": {
+    "lat": 40.735481,
+    "lng": -74.069618,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & academy st": {
+    "lat": 40.729386,
+    "lng": -74.065964,
+    "cached_at": "2026-03-24"
+  },
+  "center st & grand st": {
+    "lat": 40.717308,
+    "lng": -74.055606,
+    "cached_at": "2026-03-24"
+  },
+  "wilkinson ave & ocean ave": {
+    "lat": 40.705278,
+    "lng": -74.078847,
+    "cached_at": "2026-03-24"
+  },
+  "grant avenue & john f kennedy blvd": {
+    "lat": 40.713857,
+    "lng": -74.075607,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & newkirk st": {
+    "lat": 40.730268,
+    "lng": -74.064967,
+    "cached_at": "2026-03-24"
+  },
+  "route 440 & danforth ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "ege ave & west side ave": {
+    "lat": 40.716009,
+    "lng": -74.08631,
+    "cached_at": "2026-03-24"
+  },
+  "summit ave & clifton pl": {
+    "lat": 40.722198,
+    "lng": -74.065745,
+    "cached_at": "2026-03-24"
+  },
+  "theodore conrad dr & edward haroute dr": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & zabriskie st": {
+    "lat": 40.747851,
+    "lng": -74.056115,
+    "cached_at": "2026-03-24"
+  },
+  "palisade ave & washburn street": {
+    "lat": 40.731367,
+    "lng": -74.053353,
+    "cached_at": "2026-03-24"
+  },
+  "coles st & 3rd street": {
+    "lat": 40.723527,
+    "lng": -74.047448,
+    "cached_at": "2026-03-24"
+  },
+  "grove st & mercer st": {
+    "lat": 40.71818,
+    "lng": -74.043752,
+    "cached_at": "2026-03-24"
+  },
+  "pulaski skyway & route 139": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "marin blvd": {
+    "lat": 40.723996,
+    "lng": -74.040602,
+    "cached_at": "2026-03-24"
+  },
+  "summit ave & howard pl": {
+    "lat": 40.721494,
+    "lng": -74.065874,
+    "cached_at": "2026-03-24"
+  },
+  "352 west side ave": {
+    "lat": 40.7138,
+    "lng": -74.088776,
+    "cached_at": "2026-03-24"
+  },
+  "route 440 s & avenue c": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "route 139 & tonnelle ave": {
+    "lat": 40.736625,
+    "lng": -74.083613,
+    "cached_at": "2026-03-24"
+  },
+  "montgomery st & florence st": {
+    "lat": 40.722424,
+    "lng": -74.059863,
+    "cached_at": "2026-03-24"
+  },
+  "tonnelle ave & tonnelle circle": {
+    "lat": 40.753996,
+    "lng": -74.05645,
+    "cached_at": "2026-03-24"
+  },
+  "cator & ocean": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "broadway & van wagenen ave": {
+    "lat": 40.735269,
+    "lng": -74.068668,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & county rd": {
+    "lat": 40.748751,
+    "lng": -74.060927,
+    "cached_at": "2026-03-24"
+  },
+  "jersey ave & 16th st": {
+    "lat": 40.733366,
+    "lng": -74.044203,
+    "cached_at": "2026-03-24"
+  },
+  "gray st & academy st": {
+    "lat": 40.726123,
+    "lng": -74.061425,
+    "cached_at": "2026-03-24"
+  },
+  "pulaski skyway & broadway": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "6th & mall dr. w": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "danforth ave & state hwy route 440": {
+    "lat": 40.686019,
+    "lng": -74.094081,
+    "cached_at": "2026-03-24"
+  },
+  "central ave": {
+    "lat": 40.754214,
+    "lng": -74.04369,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & gifford ave": {
+    "lat": 40.721514,
+    "lng": -74.076065,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & sip ave": {
+    "lat": 40.731398,
+    "lng": -74.067842,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & pavonia ave": {
+    "lat": 40.733534,
+    "lng": -74.067266,
+    "cached_at": "2026-03-24"
+  },
+  "webster ave & hutton st": {
+    "lat": 40.743154,
+    "lng": -74.046862,
+    "cached_at": "2026-03-24"
+  },
+  "lafayette st & pacific ave": {
+    "lat": 40.712312,
+    "lng": -74.061421,
+    "cached_at": "2026-03-24"
+  },
+  "newkirk st & bergen ave": {
+    "lat": 40.730268,
+    "lng": -74.064967,
+    "cached_at": "2026-03-24"
+  },
+  "15th st & jersey ave": {
+    "lat": 40.732331,
+    "lng": -74.044377,
+    "cached_at": "2026-03-24"
+  },
+  "ravine ave & webster ave": {
+    "lat": 40.740216,
+    "lng": -74.048834,
+    "cached_at": "2026-03-24"
+  },
+  "wales ave & logan ave": {
+    "lat": 40.733633,
+    "lng": -74.074309,
+    "cached_at": "2026-03-24"
+  },
+  "summit ave & leonard st": {
+    "lat": 40.755683,
+    "lng": -74.045743,
+    "cached_at": "2026-03-24"
+  },
+  "south cove & st peters st": {
+    "lat": 40.713102,
+    "lng": -74.044974,
+    "cached_at": "2026-03-24"
+  },
+  "broadway & dales ave": {
+    "lat": 40.737145,
+    "lng": -74.075586,
+    "cached_at": "2026-03-24"
+  },
+  "west side ave & duncan ave": {
+    "lat": 40.726695,
+    "lng": -74.07661,
+    "cached_at": "2026-03-24"
+  },
+  "grand st & prior st": {
+    "lat": 40.717702,
+    "lng": -74.059008,
+    "cached_at": "2026-03-24"
+  },
+  "jersey ave & regent st": {
+    "lat": 40.715338,
+    "lng": -74.049602,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & lake st": {
+    "lat": 40.743377,
+    "lng": -74.05924,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & utica st": {
+    "lat": 40.741434,
+    "lng": -74.063694,
+    "cached_at": "2026-03-24"
+  },
+  "jersey ave & 18th st": {
+    "lat": 40.73496,
+    "lng": -74.043968,
+    "cached_at": "2026-03-24"
+  },
+  "suydam ave & communipaw ave": {
+    "lat": 40.709586,
+    "lng": -74.060349,
+    "cached_at": "2026-03-24"
+  },
+  "ocean ave & orient ave": {
+    "lat": 40.708681,
+    "lng": -74.076949,
+    "cached_at": "2026-03-24"
+  },
+  "stevens ave & rutgers ave": {
+    "lat": 40.701106,
+    "lng": -74.087406,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & stagg st": {
+    "lat": 40.74212,
+    "lng": -74.060135,
+    "cached_at": "2026-03-24"
+  },
+  "us route 1 9 & communipaw ave": {
+    "lat": 40.735626,
+    "lng": -74.089305,
+    "cached_at": "2026-03-24"
+  },
+  "union street & martin luther king drive": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "route 185 & route 440": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "john f kennedy blvd & leonard st": {
+    "lat": 40.756073,
+    "lng": -74.046749,
+    "cached_at": "2026-03-24"
+  },
+  "newark ave & 4th st": {
+    "lat": 40.724541,
+    "lng": -74.05086,
+    "cached_at": "2026-03-24"
+  },
+  "wegman pkwy & ocean ave": {
+    "lat": 40.703484,
+    "lng": -74.080597,
+    "cached_at": "2026-03-24"
+  },
+  "garfield ave & pearsall ave": {
+    "lat": 40.691978,
+    "lng": -74.091724,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & carlton ave": {
+    "lat": 40.744053,
+    "lng": -74.058757,
+    "cached_at": "2026-03-24"
+  },
+  "bergen ave & union street": {
+    "lat": 40.715809,
+    "lng": -74.079051,
+    "cached_at": "2026-03-24"
+  },
+  "reservoir ave & lienau pl": {
+    "lat": 40.739947,
+    "lng": -74.051556,
+    "cached_at": "2026-03-24"
+  },
+  "martin luther king dr & bidwell ave": {
+    "lat": 40.706716,
+    "lng": -74.083924,
+    "cached_at": "2026-03-24"
+  },
+  "sip ave & van wagenen ave": {
+    "lat": 40.732004,
+    "lng": -74.070684,
+    "cached_at": "2026-03-24"
+  },
+  "bostwick ave & ocean ave": {
+    "lat": 40.705905,
+    "lng": -74.07842,
+    "cached_at": "2026-03-24"
+  },
+  "communipaw ave & garfield ave": {
+    "lat": 40.71486,
+    "lng": -74.06709,
+    "cached_at": "2026-03-24"
+  },
+  "sip ave & garrison ave": {
+    "lat": 40.731618,
+    "lng": -74.068836,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & dey street": {
+    "lat": 40.73743,
+    "lng": -74.065933,
+    "cached_at": "2026-03-24"
+  },
+  "garfield ave & bidwell ave": {
+    "lat": 40.701936,
+    "lng": -74.07716,
+    "cached_at": "2026-03-24"
+  },
+  "10th st & monmouth st": {
+    "lat": 40.729418,
+    "lng": -74.048201,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & greenville ave": {
+    "lat": 40.698965,
+    "lng": -74.095812,
+    "cached_at": "2026-03-24"
+  },
+  "reservoir ave & palisade ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & broadway": {
+    "lat": 40.734866,
+    "lng": -74.067132,
+    "cached_at": "2026-03-24"
+  },
+  "harmon st & randolph ave": {
+    "lat": 40.714836,
+    "lng": -74.068215,
+    "cached_at": "2026-03-24"
+  },
+  "central ave & summit ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "112 stuyvesant": {
+    "lat": 40.730883,
+    "lng": -74.073062,
+    "cached_at": "2026-03-24"
+  },
+  "sherman ave & hutton st": {
+    "lat": 40.74344,
+    "lng": -74.047694,
+    "cached_at": "2026-03-24"
+  },
+  "80 van nostrand": {
+    "lat": 40.70056,
+    "lng": -74.08473,
+    "cached_at": "2026-03-24"
+  },
+  "12th st & marin blvd": {
+    "lat": 40.73003,
+    "lng": -74.039668,
+    "cached_at": "2026-03-24"
+  },
+  "tonnele ave & secaucus rd": {
+    "lat": 40.760205,
+    "lng": -74.051159,
+    "cached_at": "2026-03-24"
+  },
+  "grand st & bright st": {
+    "lat": 40.716213,
+    "lng": -74.045637,
+    "cached_at": "2026-03-24"
+  },
+  "communipaw ave & west side ave": {
+    "lat": 40.72088,
+    "lng": -74.081352,
+    "cached_at": "2026-03-24"
+  },
+  "communipaw ave & jfk": {
+    "lat": 40.71145,
+    "lng": -74.06264,
+    "cached_at": "2026-03-24"
+  },
+  "pearsall ave": {
+    "lat": 40.695781,
+    "lng": -74.094836,
+    "cached_at": "2026-03-24"
+  },
+  "route route 1 9 & halleck ave": {
+    "lat": 40.738496,
+    "lng": -74.077957,
+    "cached_at": "2026-03-24"
+  },
+  "summit ave": {
+    "lat": 40.735758,
+    "lng": -74.058969,
+    "cached_at": "2026-03-24"
+  },
+  "pavonia ave & baldwin ave": {
+    "lat": 40.730952,
+    "lng": -74.057449,
+    "cached_at": "2026-03-24"
+  },
+  "glenwood ave & west side ave": {
+    "lat": 40.729186,
+    "lng": -74.07483,
+    "cached_at": "2026-03-24"
+  },
+  "duncan ave & us route 1-9": {
+    "lat": 40.735664,
+    "lng": -74.089072,
+    "cached_at": "2026-03-24"
+  },
+  "route 7 w ramp & tonnele ave": {
+    "lat": 40.73053,
+    "lng": -74.06733,
+    "cached_at": "2026-03-24"
+  },
+  "hudson st & york st": {
+    "lat": 40.715658,
+    "lng": -74.034298,
+    "cached_at": "2026-03-24"
+  },
+  "16th st & jersey ave": {
+    "lat": 40.733366,
+    "lng": -74.044203,
+    "cached_at": "2026-03-24"
+  },
+  "irving st & john f kennedy blvd": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "linden ave & garfield ave": {
+    "lat": 40.693163,
+    "lng": -74.089795,
+    "cached_at": "2026-03-24"
+  },
+  "roosevelt ave & marcy ave": {
+    "lat": 40.721827,
+    "lng": -74.085746,
+    "cached_at": "2026-03-24"
+  },
+  "kennedy blvd & sherman pl": {
+    "lat": 40.74601,
+    "lng": -74.057384,
+    "cached_at": "2026-03-24"
+  },
+  "us route 1 9 & duncan ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "mallory ave & ege ave": {
+    "lat": 40.718106,
+    "lng": -74.089454,
+    "cached_at": "2026-03-24"
+  },
+  "duncan ave & stockton ave": {
+    "lat": 40.730788,
+    "lng": -74.085797,
+    "cached_at": "2026-03-24"
+  },
+  "route 139 & palisade ave": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "manhattan ave & terrace ave": {
+    "lat": 40.746416,
+    "lng": -74.060419,
+    "cached_at": "2026-03-24"
+  },
+  "martin luther king dr & stegman st": {
+    "lat": 40.705571,
+    "lng": -74.085323,
+    "cached_at": "2026-03-24"
+  },
+  "baldwin ave & magnolia ave": {
+    "lat": 40.730369,
+    "lng": -74.058244,
+    "cached_at": "2026-03-24"
+  },
+  "poroute jersey blvd": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  },
+  "summit ave & van reipen ave": {
+    "lat": 40.733419,
+    "lng": -74.059437,
+    "cached_at": "2026-03-24"
+  },
+  "ocean ave & linden ave": {
+    "lat": 40.695062,
+    "lng": -74.091378,
+    "cached_at": "2026-03-24"
+  },
+  "route 440 south & route 185": {
+    "lat": 40.72157,
+    "lng": -74.047455,
+    "cached_at": "2026-03-24"
+  }
+}
