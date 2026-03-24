@@ -29,7 +29,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMa
   const mapLoadedRef  = useRef(false);
 
   const [showDistricts, setShowDistricts] = useState(true);
-  const [showWards,     setShowWards]     = useState(true);
+  const [showWards,     setShowWards]     = useState(false);
 
   // ── Initialize map once ────────────────────────────────────────────────
   useEffect(() => {
@@ -108,6 +108,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMa
 
       map.addLayer({
         id: 'wards-fill', type: 'fill', source: 'wards',
+        layout: { visibility: 'none' },
         paint: {
           'fill-color': [
             'match', ['upcase', ['get', 'ward']],
@@ -121,6 +122,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMa
       });
       map.addLayer({
         id: 'wards-border', type: 'line', source: 'wards',
+        layout: { visibility: 'none' },
         paint: {
           'line-color': '#ffffff',
           'line-width': 1.5,
@@ -131,6 +133,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMa
       map.addLayer({
         id: 'ward-labels', type: 'symbol', source: 'wards',
         layout: {
+          visibility: 'none',
           'text-field': ['concat', 'Ward ', ['upcase', ['get', 'ward']]],
           'text-font': ['DIN Pro Bold', 'Arial Unicode MS Bold'],
           'text-size': 13,
@@ -144,6 +147,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMa
       });
       map.addLayer({
         id: 'ward-selected-outline', type: 'line', source: 'wards',
+        layout: { visibility: 'none' },
         filter: ['==', ['upcase', ['get', 'ward']], '__NONE__'],
         paint: {
           'line-color': '#C9A84C',

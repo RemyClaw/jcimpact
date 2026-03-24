@@ -15,28 +15,28 @@
     {
       "district": "South",
       "totalCrimes": 366,
-      "shootings": 2,
+      "shootings": 3,
       "homicides": 0,
       "mvas": 96
     },
     {
       "district": "West",
       "totalCrimes": 315,
-      "shootings": 5,
+      "shootings": 4,
       "homicides": 0,
       "mvas": 130
     },
     {
       "district": "East",
       "totalCrimes": 316,
-      "shootings": 6,
+      "shootings": 5,
       "homicides": 0,
       "mvas": 57
     },
     {
       "district": "North",
       "totalCrimes": 209,
-      "shootings": 0,
+      "shootings": 1,
       "homicides": 0,
       "mvas": 50
     }
@@ -102,7 +102,7 @@
       "id": "sf-4",
       "type": "Shooting",
       "date": "2026-02-22",
-      "district": "East",
+      "district": "West",
       "lat": 40.72157,
       "lng": -74.047455,
       "address": "Mallory & Williamson",
@@ -122,7 +122,7 @@
       "id": "sf-6",
       "type": "Shooting",
       "date": "2026-03-07",
-      "district": "West",
+      "district": "North",
       "lat": 40.736045,
       "lng": -74.076853,
       "address": "73 Dales",
@@ -182,7 +182,7 @@
       "id": "sh-4",
       "type": "Shooting",
       "date": "2026-02-22",
-      "district": "West",
+      "district": "South",
       "lat": 40.701779,
       "lng": -74.090069,
       "address": "117 Wade",
