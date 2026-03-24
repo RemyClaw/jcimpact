@@ -1,33 +1,79 @@
+@import 'mapbox-gl/dist/mapbox-gl.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* ── Base ──────────────────────────────────────────────────────────────── */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* ── DayPicker dark theme ──────────────────────────────────────────────── */
+.rdp {
+  --rdp-accent-color: #3b82f6;
+  --rdp-background-color: rgba(255,255,255,0.06);
+  color: #e2e8f0;
+  margin: 0;
+  font-size: 11px;
 }
+.rdp-months { justify-content: center; }
+.rdp-day_selected,
+.rdp-day_selected:focus-visible,
+.rdp-day_selected:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+.rdp-day_range_middle {
+  background-color: rgba(59,130,246,0.15);
+  color: #e2e8f0;
+}
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: rgba(255,255,255,0.06);
+}
+.rdp-head_cell { color: #475569; font-size: 10px; }
+.rdp-nav_button { color: #64748b; }
+.rdp-caption { margin-bottom: 4px; }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* ── Mapbox popup ──────────────────────────────────────────────────────── */
+.mapboxgl-popup-content {
+  background: #0e1420;
+  color: #e2e8f0;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 12px 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  min-width: 190px;
+  font-family: inherit;
 }
+.mapboxgl-popup-close-button {
+  color: #475569;
+  font-size: 16px;
+  padding: 4px 8px;
+  line-height: 1;
+}
+.mapboxgl-popup-close-button:hover {
+  background: rgba(255,255,255,0.06);
+  color: #e2e8f0;
+}
+.mapboxgl-popup-tip { display: none !important; }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* ── Mapbox controls ───────────────────────────────────────────────────── */
+.mapboxgl-ctrl-group {
+  background: rgba(14,20,32,0.9) !important;
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+  backdrop-filter: blur(8px);
 }
+.mapboxgl-ctrl-group button { background-color: transparent !important; }
+.mapboxgl-ctrl-group button .mapboxgl-ctrl-icon { filter: invert(0.7); }
+.mapboxgl-ctrl-group button:hover { background: rgba(255,255,255,0.05) !important; }
+.mapboxgl-ctrl-group button + button { border-top: 1px solid rgba(255,255,255,0.06) !important; }
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 3px; height: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.14); }

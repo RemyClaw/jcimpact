@@ -1,0 +1,3198 @@
+{
+  "meta": {
+    "period": "YTD 2026 (Jan 1 \u2013 Mar 21)",
+    "generated": "2026-03-24",
+    "source": "JCPD CompStat / NJ Crash Reports"
+  },
+  "citywide": {
+    "totalCrimes": 1374,
+    "shootings": 13,
+    "homicides": 0,
+    "mvas": 333
+  },
+  "byDistrict": [
+    {
+      "district": "South",
+      "totalCrimes": 418,
+      "shootings": 9,
+      "homicides": 0,
+      "mvas": 99
+    },
+    {
+      "district": "West",
+      "totalCrimes": 388,
+      "shootings": 2,
+      "homicides": 0,
+      "mvas": 127
+    },
+    {
+      "district": "East",
+      "totalCrimes": 340,
+      "shootings": 2,
+      "homicides": 0,
+      "mvas": 58
+    },
+    {
+      "district": "North",
+      "totalCrimes": 228,
+      "shootings": 0,
+      "homicides": 0,
+      "mvas": 49
+    }
+  ],
+  "monthlyTrends": [
+    {
+      "month": "2026-01",
+      "label": "Jan '26",
+      "totalCrimes": 543,
+      "shootings": 5,
+      "homicides": 0,
+      "mvas": 0
+    },
+    {
+      "month": "2026-02",
+      "label": "Feb '26",
+      "totalCrimes": 514,
+      "shootings": 3,
+      "homicides": 0,
+      "mvas": 0
+    },
+    {
+      "month": "2026-03",
+      "label": "Mar '26",
+      "totalCrimes": 317,
+      "shootings": 5,
+      "homicides": 0,
+      "mvas": 333
+    }
+  ],
+  "incidents": [
+    {
+      "id": "sh-1",
+      "type": "Shooting",
+      "date": "2026-01-01",
+      "district": "West",
+      "lat": 40.7138,
+      "lng": -74.088776,
+      "address": "352 West Side Ave",
+      "description": "Shooting Hit"
+    },
+    {
+      "id": "sh-2",
+      "type": "Shooting",
+      "date": "2026-01-20",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "Woodland Ave & Ocean Ave",
+      "description": "Shooting Hit"
+    },
+    {
+      "id": "sh-3",
+      "type": "Shooting",
+      "date": "2026-02-03",
+      "district": "South",
+      "lat": 40.701779,
+      "lng": -74.090069,
+      "address": "117 Wade St",
+      "description": "Shooting Hit \u00b7 Arrest"
+    },
+    {
+      "id": "sh-4",
+      "type": "Shooting",
+      "date": "2026-02-22",
+      "district": "South",
+      "lat": 40.701779,
+      "lng": -74.090069,
+      "address": "117 Wade St",
+      "description": "Shooting Hit \u00b7 Arrest"
+    },
+    {
+      "id": "sh-5",
+      "type": "Shooting",
+      "date": "2026-03-20",
+      "district": "East",
+      "lat": 40.71451,
+      "lng": -74.078298,
+      "address": "Oak St & Sackett St",
+      "description": "Shooting Hit \u00b7 Arrest"
+    },
+    {
+      "id": "sf-1",
+      "type": "Shooting",
+      "date": "2026-01-12",
+      "district": "South",
+      "lat": 40.696087,
+      "lng": -74.089823,
+      "address": "Cator Ave & Ocean Ave",
+      "description": "Shots Fired \u00b7 Arrest"
+    },
+    {
+      "id": "sf-2",
+      "type": "Shooting",
+      "date": "2026-01-16",
+      "district": "East",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "6th St & Mall Dr W",
+      "description": "Shots Fired"
+    },
+    {
+      "id": "sf-3",
+      "type": "Shooting",
+      "date": "2026-01-17",
+      "district": "South",
+      "lat": 40.730883,
+      "lng": -74.073062,
+      "address": "112 Stuyvesant Ave",
+      "description": "Shots Fired \u00b7 Arrest"
+    },
+    {
+      "id": "sf-4",
+      "type": "Shooting",
+      "date": "2026-02-22",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "Mallory Ave & Williamson Ave",
+      "description": "Shots Fired"
+    },
+    {
+      "id": "sf-5",
+      "type": "Shooting",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.70056,
+      "lng": -74.08473,
+      "address": "80 Van Nostrand Ave",
+      "description": "Shots Fired \u00b7 Arrest"
+    },
+    {
+      "id": "sf-6",
+      "type": "Shooting",
+      "date": "2026-03-07",
+      "district": "West",
+      "lat": 40.736045,
+      "lng": -74.076853,
+      "address": "73 Dales Ave",
+      "description": "Shots Fired"
+    },
+    {
+      "id": "sf-7",
+      "type": "Shooting",
+      "date": "2026-03-07",
+      "district": "South",
+      "lat": 40.73093,
+      "lng": -74.08342,
+      "address": "33 Gloria Robinson Ct",
+      "description": "Shots Fired \u00b7 Arrest"
+    },
+    {
+      "id": "sf-8",
+      "type": "Shooting",
+      "date": "2026-03-20",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "Brinkerhoff Ave & Monticello Ave",
+      "description": "Shots Fired \u00b7 Arrest"
+    },
+    {
+      "id": "mva-26-040062",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "ST PAULS AVE & KENNEDY BLVD"
+    },
+    {
+      "id": "mva-26-039125",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "South",
+      "lat": 40.712033,
+      "lng": -74.077881,
+      "address": "MLK DR & VIRGINIA AVE"
+    },
+    {
+      "id": "mva-26-038335",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.726695,
+      "lng": -74.07661,
+      "address": "WEST SIDE AVE & DUNCAN AVE"
+    },
+    {
+      "id": "mva-26-040674",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "South",
+      "lat": 40.701936,
+      "lng": -74.07716,
+      "address": "GARFIELD AVE & BIDWELL AVE"
+    },
+    {
+      "id": "mva-26-039196",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "East",
+      "lat": 40.729569,
+      "lng": -74.049863,
+      "address": "10TH ST & BRUNSWICK ST"
+    },
+    {
+      "id": "mva-26-038709",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "WESTSIDE AVE & FULTON AVE"
+    },
+    {
+      "id": "mva-26-037158",
+      "type": "MVA",
+      "date": "2026-03-01",
+      "district": "South",
+      "lat": 40.728575,
+      "lng": -74.080806,
+      "address": "DUNCAN AVE & MALLORY AVE"
+    },
+    {
+      "id": "mva-26-040322",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "North",
+      "lat": 40.74601,
+      "lng": -74.057384,
+      "address": "KENNEDY BLVD & SHERMAN PL"
+    },
+    {
+      "id": "mva-26-038114",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.731618,
+      "lng": -74.068836,
+      "address": "SIP AVE & GARRISON AVE"
+    },
+    {
+      "id": "mva-26-038194",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "East",
+      "lat": 40.730334,
+      "lng": -74.042985,
+      "address": "ERIE ST & 12TH ST"
+    },
+    {
+      "id": "mva-26-037582",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "West",
+      "lat": 40.745666,
+      "lng": -74.061934,
+      "address": "ST HWY 440"
+    },
+    {
+      "id": "mva-26-037277",
+      "type": "MVA",
+      "date": "2026-03-01",
+      "district": "South",
+      "lat": 40.692492,
+      "lng": -74.090872,
+      "address": "GARFIELD AVE & LEMBECK AVE"
+    },
+    {
+      "id": "mva-26-037677",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "East",
+      "lat": 40.732658,
+      "lng": -74.044326,
+      "address": "JERSEY AVE & 15TH ST"
+    },
+    {
+      "id": "mva-26-039968",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.730268,
+      "lng": -74.064967,
+      "address": "BERGEN AVE & NEWKIRK ST"
+    },
+    {
+      "id": "mva-26-040989",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "East",
+      "lat": 40.723527,
+      "lng": -74.047448,
+      "address": "COLES ST & 3RD STREET"
+    },
+    {
+      "id": "mva-26-039448",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "South",
+      "lat": 40.71145,
+      "lng": -74.06264,
+      "address": "COMMUNIPAW AVE & KENNEDY BLVD"
+    },
+    {
+      "id": "mva-26-040149",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.722548,
+      "lng": -74.085477,
+      "address": "COMMUNIPAW AVE & MALLORY AVE"
+    },
+    {
+      "id": "mva-26-037439",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "West",
+      "lat": 40.735626,
+      "lng": -74.089305,
+      "address": "US 1&9 & ROUTE 440"
+    },
+    {
+      "id": "mva-26-039469",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "West",
+      "lat": 40.744053,
+      "lng": -74.058757,
+      "address": "KENNEDY BLVD & CARLTON AVE"
+    },
+    {
+      "id": "mva-26-039482",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "West",
+      "lat": 40.716859,
+      "lng": -74.077787,
+      "address": "BERGEN AVE & BRAMHALL AVE"
+    },
+    {
+      "id": "mva-26-038987",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "MLK DR & BRAMHALL"
+    },
+    {
+      "id": "mva-26-037462",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "East",
+      "lat": 40.726628,
+      "lng": -74.06201,
+      "address": "ACADEMY ST & BALDWIN AVE"
+    },
+    {
+      "id": "mva-26-037932",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.741434,
+      "lng": -74.063694,
+      "address": "TONNELE AVE & UTICA ST"
+    },
+    {
+      "id": "mva-26-037982",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "East",
+      "lat": 40.724834,
+      "lng": -74.06721,
+      "address": "MONTGOMERY ST & TUERS AVE"
+    },
+    {
+      "id": "mva-26-038018",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.73743,
+      "lng": -74.065933,
+      "address": "TONNELE AVE & DEY STREET"
+    },
+    {
+      "id": "mva-26-038970",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "West",
+      "lat": 40.739625,
+      "lng": -74.072472,
+      "address": "DEY ST & TONNELLE AVE"
+    },
+    {
+      "id": "mva-26-038414",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "South",
+      "lat": 40.705571,
+      "lng": -74.085323,
+      "address": "MLK DR & STEGMAN ST"
+    },
+    {
+      "id": "mva-26-040778",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "UNION STREET & MLK DRIVE"
+    },
+    {
+      "id": "mva-26-037540",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "South",
+      "lat": 40.72271,
+      "lng": -74.069257,
+      "address": "REED ST & MONTICELLO AVE"
+    },
+    {
+      "id": "mva-26-040188",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.700992,
+      "lng": -74.082999,
+      "address": "WOODLAWN AVE & OCEAN AVE"
+    },
+    {
+      "id": "mva-26-039344",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "East",
+      "lat": 40.728497,
+      "lng": -74.066915,
+      "address": "VROOM ST & BERGEN AVE"
+    },
+    {
+      "id": "mva-26-040552",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "South",
+      "lat": 40.707309,
+      "lng": -74.086145,
+      "address": "BERGEN AVE & AUDUBON AVE"
+    },
+    {
+      "id": "mva-26-039873",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "West",
+      "lat": 40.71145,
+      "lng": -74.06264,
+      "address": "ST HWY 440 & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-038299",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.734411,
+      "lng": -74.071358,
+      "address": "WEST SIDE AVE & PAVONIA AVE"
+    },
+    {
+      "id": "mva-26-040015",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "West",
+      "lat": 40.745497,
+      "lng": -74.062304,
+      "address": "TONNELE AVE & CARLTON AVE"
+    },
+    {
+      "id": "mva-26-038964",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "West",
+      "lat": 40.741434,
+      "lng": -74.063694,
+      "address": "TONNELE AVE & UTICA ST"
+    },
+    {
+      "id": "mva-26-039294",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "South",
+      "lat": 40.699263,
+      "lng": -74.081315,
+      "address": "WOODLAWN AVE & GARFIELD AVE"
+    },
+    {
+      "id": "mva-26-040435",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "DUNCAN AVE & RT 1 & 9"
+    },
+    {
+      "id": "mva-26-037406",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "West",
+      "lat": 40.735664,
+      "lng": -74.089072,
+      "address": "DUNCAN AVE & US RT 1-9"
+    },
+    {
+      "id": "mva-26-037611",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "West",
+      "lat": 40.711387,
+      "lng": -74.084424,
+      "address": "ST HWY 440 & CLAREMONT AVE"
+    },
+    {
+      "id": "mva-26-039814",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "THEODORE CONRAD DR & EDWARD HART DR"
+    },
+    {
+      "id": "mva-26-040000",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.705278,
+      "lng": -74.078847,
+      "address": "OCEAN AVE & WILKINSON AVE"
+    },
+    {
+      "id": "mva-26-039546",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "SUMMIT AVE & SECAUCUS RD"
+    },
+    {
+      "id": "mva-26-037569",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "East",
+      "lat": 40.731698,
+      "lng": -74.041099,
+      "address": "GROVE ST & 14TH STREET"
+    },
+    {
+      "id": "mva-26-038207",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.745497,
+      "lng": -74.062304,
+      "address": "TONNELE AVE & CARLTON AVENUE"
+    },
+    {
+      "id": "mva-26-037186",
+      "type": "MVA",
+      "date": "2026-03-01",
+      "district": "South",
+      "lat": 40.722548,
+      "lng": -74.085477,
+      "address": "COMMUNIPAW AVE & MALLORY AVE"
+    },
+    {
+      "id": "mva-26-039419",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "West",
+      "lat": 40.751715,
+      "lng": -74.053543,
+      "address": "KENNEDY BLVD & SOUTH ST"
+    },
+    {
+      "id": "mva-26-037095",
+      "type": "MVA",
+      "date": "2026-03-01",
+      "district": "East",
+      "lat": 40.722424,
+      "lng": -74.059863,
+      "address": "MONTGOMERY ST & FLORENCE ST"
+    },
+    {
+      "id": "mva-26-038584",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "LOWER 139 & JERSEY AVENUE"
+    },
+    {
+      "id": "mva-26-037996",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "South",
+      "lat": 40.721186,
+      "lng": -74.087813,
+      "address": "CLENDENNY AVE & MILLER ST"
+    },
+    {
+      "id": "mva-26-039821",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.715809,
+      "lng": -74.079051,
+      "address": "BERGEN AVE & UNION STREET"
+    },
+    {
+      "id": "mva-26-039015",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "North",
+      "lat": 40.746961,
+      "lng": -74.061773,
+      "address": "TONNELE AVE & MANHATTAN AVE"
+    },
+    {
+      "id": "mva-26-040651",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "South",
+      "lat": 40.721375,
+      "lng": -74.086512,
+      "address": "LEXINGTON AVE & MALLORY AVE"
+    },
+    {
+      "id": "mva-26-038363",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "South",
+      "lat": 40.741493,
+      "lng": -74.060588,
+      "address": "JFK BLVD & SPRUCE STREET"
+    },
+    {
+      "id": "mva-26-038277",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "KENNEDY BLVD & SIP"
+    },
+    {
+      "id": "mva-26-038717",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "West",
+      "lat": 40.732996,
+      "lng": -74.062937,
+      "address": "KENNEDY BLVD & PAVONIA AVE"
+    },
+    {
+      "id": "mva-26-038586",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "South",
+      "lat": 40.714904,
+      "lng": -74.05777,
+      "address": "ASH STREET & PACIFIC AVENUE"
+    },
+    {
+      "id": "mva-26-038311",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "South",
+      "lat": 40.719432,
+      "lng": -74.077831,
+      "address": "JFK BLVD & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-039231",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "West",
+      "lat": 40.686019,
+      "lng": -74.094081,
+      "address": "DANFORTH AVE & STATE HWY RT 440"
+    },
+    {
+      "id": "mva-26-037972",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.735643,
+      "lng": -74.089201,
+      "address": "1&9 SOUTH & BROADWAY"
+    },
+    {
+      "id": "mva-26-038674",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "North",
+      "lat": 40.744789,
+      "lng": -74.056439,
+      "address": "COUNTY ROAD & MANHATTAN AVENUE"
+    },
+    {
+      "id": "mva-26-037842",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "West",
+      "lat": 40.711475,
+      "lng": -74.0784,
+      "address": "BERGEN AVENUE & FAIRVIEW"
+    },
+    {
+      "id": "mva-26-038218",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "South",
+      "lat": 40.695781,
+      "lng": -74.094836,
+      "address": "PEARSALL AVE"
+    },
+    {
+      "id": "mva-26-038685",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "South",
+      "lat": 40.709032,
+      "lng": -74.081166,
+      "address": "MYRTLE AVE & MLK DRIVE"
+    },
+    {
+      "id": "mva-26-039696",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "West",
+      "lat": 40.724589,
+      "lng": -74.069456,
+      "address": "BERGEN AVE & FAIRMOUNT AVE"
+    },
+    {
+      "id": "mva-26-040152",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "PAVONIA AVE & SUMMIT AVE"
+    },
+    {
+      "id": "mva-26-039036",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "West",
+      "lat": 40.745497,
+      "lng": -74.062304,
+      "address": "TONNELLE AVE & CARLTON AVE"
+    },
+    {
+      "id": "mva-26-037764",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "East",
+      "lat": 40.724374,
+      "lng": -74.035729,
+      "address": "WASHINGTON BLVD & THOMAS GANGEMI DR"
+    },
+    {
+      "id": "mva-26-037973",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.713857,
+      "lng": -74.075607,
+      "address": "GRANT AVENUE & JFK BLVD"
+    },
+    {
+      "id": "mva-26-037718",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "South",
+      "lat": 40.730369,
+      "lng": -74.058244,
+      "address": "BALDWIN AVE & MAGNOLIA AVE"
+    },
+    {
+      "id": "mva-26-038336",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.724301,
+      "lng": -74.07412,
+      "address": "KENNEDY BLVD & FAIRVIEW AVE"
+    },
+    {
+      "id": "mva-26-039834",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "South",
+      "lat": 40.747383,
+      "lng": -74.048406,
+      "address": "BOWERS ST & CENTRAL AVE"
+    },
+    {
+      "id": "mva-26-040391",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "South",
+      "lat": 40.725301,
+      "lng": -74.07759,
+      "address": "GAUTIER AVE & WEST SIDE AVE"
+    },
+    {
+      "id": "mva-26-039980",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "North",
+      "lat": 40.760205,
+      "lng": -74.051159,
+      "address": "TONNELE AVE & SECAUCUS RD"
+    },
+    {
+      "id": "mva-26-040148",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "PULASKI SKYWAY & NJ 139"
+    },
+    {
+      "id": "mva-26-039441",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "West",
+      "lat": 40.745666,
+      "lng": -74.061934,
+      "address": "ST HWY 440 & PARKING LOT"
+    },
+    {
+      "id": "mva-26-038055",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "South",
+      "lat": 40.701936,
+      "lng": -74.07716,
+      "address": "GARFIELD AVE & BIDWELL AVE"
+    },
+    {
+      "id": "mva-26-039372",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "North",
+      "lat": 40.722198,
+      "lng": -74.065745,
+      "address": "SUMMIT AVE & CLIFTON PL"
+    },
+    {
+      "id": "mva-26-038188",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "South",
+      "lat": 40.723384,
+      "lng": -74.070484,
+      "address": "BERGEN AVE & REED ST"
+    },
+    {
+      "id": "mva-26-037954",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "South",
+      "lat": 40.721827,
+      "lng": -74.085746,
+      "address": "ROOSEVELT AVE & MARCY AVE"
+    },
+    {
+      "id": "mva-26-037246",
+      "type": "MVA",
+      "date": "2026-03-01",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "CENTRAL AVE & SUMMIT AVE"
+    },
+    {
+      "id": "mva-26-038278",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "East",
+      "lat": 40.716485,
+      "lng": -74.034125,
+      "address": "MONTGOMERY ST & HUDSON ST"
+    },
+    {
+      "id": "mva-26-038926",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "South",
+      "lat": 40.719396,
+      "lng": -74.064994,
+      "address": "CORNELISON AVE & FAIRMOUNT AVE"
+    },
+    {
+      "id": "mva-26-040680",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "West",
+      "lat": 40.709871,
+      "lng": -74.099576,
+      "address": "KELLOGG ST & ST HWY 440"
+    },
+    {
+      "id": "mva-26-039325",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "West",
+      "lat": 40.745497,
+      "lng": -74.062304,
+      "address": "TONNELE AVE & CARLTON AVE"
+    },
+    {
+      "id": "mva-26-039554",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "West",
+      "lat": 40.739234,
+      "lng": -74.065026,
+      "address": "TONNELE AVE & RT 139"
+    },
+    {
+      "id": "mva-26-040367",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "West",
+      "lat": 40.73053,
+      "lng": -74.06733,
+      "address": "RT 7 W RAMP & TONNELE AVE"
+    },
+    {
+      "id": "mva-26-039781",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "East",
+      "lat": 40.719789,
+      "lng": -74.048907,
+      "address": "MERCER ST & VARICK ST"
+    },
+    {
+      "id": "mva-26-039820",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "ST HWY 440 & DANFORTH AVENUE"
+    },
+    {
+      "id": "mva-26-040111",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.711475,
+      "lng": -74.0784,
+      "address": "BERGEN AVE & CLENDENNY"
+    },
+    {
+      "id": "mva-26-038263",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.735643,
+      "lng": -74.089201,
+      "address": "US 1&9"
+    },
+    {
+      "id": "mva-26-039224",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "North",
+      "lat": 40.747851,
+      "lng": -74.056115,
+      "address": "JFK BLVD & ZABRISKIE ST"
+    },
+    {
+      "id": "mva-26-039070",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "North",
+      "lat": 40.753996,
+      "lng": -74.05645,
+      "address": "TONNELE AVE & SECAUCUS ROAD RAMP"
+    },
+    {
+      "id": "mva-26-037651",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "North",
+      "lat": 40.739947,
+      "lng": -74.051556,
+      "address": "RESERVOIR AVE & LIENAU PL"
+    },
+    {
+      "id": "mva-26-039563",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "South",
+      "lat": 40.706716,
+      "lng": -74.083924,
+      "address": "MLK DR & BIDWELL AVE"
+    },
+    {
+      "id": "mva-26-038428",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "East",
+      "lat": 40.716695,
+      "lng": -74.063224,
+      "address": "GRAND STREET & BISHOP STREET"
+    },
+    {
+      "id": "mva-26-037780",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "East",
+      "lat": 40.716569,
+      "lng": -74.048913,
+      "address": "GRAND ST & JERSEY AVE"
+    },
+    {
+      "id": "mva-26-038583",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "South",
+      "lat": 40.701106,
+      "lng": -74.087406,
+      "address": "STEVENS AVE & RUTGERS AVE"
+    },
+    {
+      "id": "mva-26-036983",
+      "type": "MVA",
+      "date": "2026-03-01",
+      "district": "South",
+      "lat": 40.751754,
+      "lng": -74.055664,
+      "address": "THORNE ST & LIBERTY AVE"
+    },
+    {
+      "id": "mva-26-039952",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "South",
+      "lat": 40.72088,
+      "lng": -74.081352,
+      "address": "COMMUNIPAW AVE & WEST SIDE AVE"
+    },
+    {
+      "id": "mva-26-040237",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "West",
+      "lat": 40.736625,
+      "lng": -74.083613,
+      "address": "LOWER 139 & TONNELLE AVE"
+    },
+    {
+      "id": "mva-26-038305",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "North",
+      "lat": 40.756278,
+      "lng": -74.054729,
+      "address": "TONNELE AVE & NORTH ST"
+    },
+    {
+      "id": "mva-26-040596",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "South",
+      "lat": 40.713857,
+      "lng": -74.075607,
+      "address": "COMMUNIPAW AVE & JFK BLVD"
+    },
+    {
+      "id": "mva-26-037524",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "East",
+      "lat": 40.717332,
+      "lng": -74.042361,
+      "address": "MONTGOMERY ST & MARIN BLVD"
+    },
+    {
+      "id": "mva-26-038622",
+      "type": "MVA",
+      "date": "2026-03-04",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "PORT JERSEY BLVD & CHOSIN FEW WAY"
+    },
+    {
+      "id": "mva-26-038382",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "South",
+      "lat": 40.718106,
+      "lng": -74.089454,
+      "address": "MALLORY AVE & EGE AVE"
+    },
+    {
+      "id": "mva-26-039309",
+      "type": "MVA",
+      "date": "2026-03-05",
+      "district": "North",
+      "lat": 40.731367,
+      "lng": -74.053353,
+      "address": "PALISADE AVE & WASHBURN STREET"
+    },
+    {
+      "id": "mva-26-039950",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "West",
+      "lat": 40.736625,
+      "lng": -74.083613,
+      "address": "LOWER 139 & TONNELLE AVE"
+    },
+    {
+      "id": "mva-26-037398",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "East",
+      "lat": 40.731998,
+      "lng": -74.04441,
+      "address": "14TH ST & JERSEY AVE"
+    },
+    {
+      "id": "mva-26-037235",
+      "type": "MVA",
+      "date": "2026-03-01",
+      "district": "South",
+      "lat": 40.71145,
+      "lng": -74.06264,
+      "address": "COMMUNIPAW AVE & MALLORY"
+    },
+    {
+      "id": "mva-26-038017",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.739234,
+      "lng": -74.065026,
+      "address": "TONNELE AVE & LOWER RT 139"
+    },
+    {
+      "id": "mva-26-038366",
+      "type": "MVA",
+      "date": "2026-03-03",
+      "district": "East",
+      "lat": 40.720099,
+      "lng": -74.041192,
+      "address": "MORGAN STREET & MARIN BLVD"
+    },
+    {
+      "id": "mva-26-040280",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "East",
+      "lat": 40.717332,
+      "lng": -74.042361,
+      "address": "MONTGOMERY ST & MARIN BLVD"
+    },
+    {
+      "id": "mva-26-040717",
+      "type": "MVA",
+      "date": "2026-03-07",
+      "district": "West",
+      "lat": 40.71145,
+      "lng": -74.06264,
+      "address": "ST HWY 440 & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-037720",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "West",
+      "lat": 40.703676,
+      "lng": -74.090061,
+      "address": "JFK BLVD & BERGEN AVE"
+    },
+    {
+      "id": "mva-26-037446",
+      "type": "MVA",
+      "date": "2026-03-02",
+      "district": "West",
+      "lat": 40.74623,
+      "lng": -74.062035,
+      "address": "TONNELE AVE & BEACH ST"
+    },
+    {
+      "id": "mva-26-039985",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "East",
+      "lat": 40.729386,
+      "lng": -74.065964,
+      "address": "BERGEN AVE & ACADEMY ST"
+    },
+    {
+      "id": "mva-26-039840",
+      "type": "MVA",
+      "date": "2026-03-06",
+      "district": "East",
+      "lat": 40.715658,
+      "lng": -74.034298,
+      "address": "HUDSON ST & YORK ST"
+    },
+    {
+      "id": "mva-26-042272",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "South",
+      "lat": 40.742195,
+      "lng": -74.062287,
+      "address": "SPRUCE ST & LIBERTY AVE"
+    },
+    {
+      "id": "mva-26-042334",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.730268,
+      "lng": -74.064967,
+      "address": "NEWKIRK ST & BERGEN AVE"
+    },
+    {
+      "id": "mva-26-045033",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "South",
+      "lat": 40.708681,
+      "lng": -74.076949,
+      "address": "OCEAN AVE & ORIENT AVE"
+    },
+    {
+      "id": "mva-26-042211",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "South",
+      "lat": 40.691978,
+      "lng": -74.091724,
+      "address": "GARFIELD AVE & PEARSALL AVE"
+    },
+    {
+      "id": "mva-26-043142",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "North",
+      "lat": 40.735758,
+      "lng": -74.058969,
+      "address": "SUMMIT AVE"
+    },
+    {
+      "id": "mva-26-045181",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "East",
+      "lat": 40.733366,
+      "lng": -74.044203,
+      "address": "16TH ST & JERSEY AVE"
+    },
+    {
+      "id": "mva-26-042290",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "South",
+      "lat": 40.699494,
+      "lng": -74.095184,
+      "address": "KENNEDY BLVD & LINDEN AVE"
+    },
+    {
+      "id": "mva-26-041838",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "North",
+      "lat": 40.723967,
+      "lng": -74.066598,
+      "address": "ORCHARD ST & MONTICELLO AVE"
+    },
+    {
+      "id": "mva-26-042201",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "South",
+      "lat": 40.702483,
+      "lng": -74.076591,
+      "address": "BAYVIEW AVE & GARFIELD AVE"
+    },
+    {
+      "id": "mva-26-044919",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "South",
+      "lat": 40.710381,
+      "lng": -74.061324,
+      "address": "PINE ST & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-043186",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "RESERVOIR AVE & PALISADE AVE"
+    },
+    {
+      "id": "mva-26-041414",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "West",
+      "lat": 40.745497,
+      "lng": -74.062304,
+      "address": "TONNELE AVE & CARLTON AVE"
+    },
+    {
+      "id": "mva-26-040877",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "West",
+      "lat": 40.732004,
+      "lng": -74.070684,
+      "address": "SIP AVE & VAN WAGENEN AVE"
+    },
+    {
+      "id": "mva-26-041116",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "West",
+      "lat": 40.741434,
+      "lng": -74.063694,
+      "address": "TONNELE AVE & UTICA ST"
+    },
+    {
+      "id": "mva-26-041612",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "North",
+      "lat": 40.742181,
+      "lng": -74.052008,
+      "address": "CENTRAL AVE & FERRY ST"
+    },
+    {
+      "id": "mva-26-041253",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "UPPER 139 & JERSEY AVE"
+    },
+    {
+      "id": "mva-26-043370",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.713857,
+      "lng": -74.075607,
+      "address": "LEXINGTON AVE & JFK BLVD"
+    },
+    {
+      "id": "mva-26-041025",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "South",
+      "lat": 40.709586,
+      "lng": -74.060349,
+      "address": "SUYDAM AVE & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-042217",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "South",
+      "lat": 40.7482,
+      "lng": -74.052981,
+      "address": "LINCOLN ST & MILTON AVE"
+    },
+    {
+      "id": "mva-26-042963",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "NORTH ST & JFK BLVD"
+    },
+    {
+      "id": "mva-26-040988",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "South",
+      "lat": 40.705022,
+      "lng": -74.074671,
+      "address": "GARFIELD AVE & MYRTLE AVE"
+    },
+    {
+      "id": "mva-26-044729",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "South",
+      "lat": 40.729186,
+      "lng": -74.07483,
+      "address": "GLENWOOD AVE & WEST SIDE AVE"
+    },
+    {
+      "id": "mva-26-044260",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "South",
+      "lat": 40.695062,
+      "lng": -74.091378,
+      "address": "OCEAN AVE & LINDEN AVE"
+    },
+    {
+      "id": "mva-26-042465",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "IRVING ST & JFK BLVD"
+    },
+    {
+      "id": "mva-26-041650",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.73529,
+      "lng": -74.081804,
+      "address": "DUNCAN AVE & ROUTE 1&9"
+    },
+    {
+      "id": "mva-26-041603",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.713857,
+      "lng": -74.075607,
+      "address": "SIP AVE & JFK BLVD"
+    },
+    {
+      "id": "mva-26-042014",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.716009,
+      "lng": -74.08631,
+      "address": "EGE AVE & WEST SIDE AVE"
+    },
+    {
+      "id": "mva-26-041744",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.720149,
+      "lng": -74.094337,
+      "address": "ST HWY 440 & ST HWY 440 SOUTH"
+    },
+    {
+      "id": "mva-26-041722",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "East",
+      "lat": 40.723996,
+      "lng": -74.040602,
+      "address": "MARIN BLVD"
+    },
+    {
+      "id": "mva-26-044970",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "North",
+      "lat": 40.731805,
+      "lng": -74.069754,
+      "address": "ROMAINE AVE & SIP AVE"
+    },
+    {
+      "id": "mva-26-041161",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "West",
+      "lat": 40.753996,
+      "lng": -74.05645,
+      "address": "TONNELE AVE & RT 139 RAMP"
+    },
+    {
+      "id": "mva-26-043178",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "South",
+      "lat": 40.71601,
+      "lng": -74.071359,
+      "address": "CRESCENT AVE & HARMON ST"
+    },
+    {
+      "id": "mva-26-044607",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "South",
+      "lat": 40.702254,
+      "lng": -74.089154,
+      "address": "MLK DR & STEVENS AVE"
+    },
+    {
+      "id": "mva-26-042586",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "US 1&9 NORTH & DUNCAN AVE"
+    },
+    {
+      "id": "mva-26-043837",
+      "type": "MVA",
+      "date": "2026-03-12",
+      "district": "South",
+      "lat": 40.742162,
+      "lng": -74.048518,
+      "address": "SHERMAN AVE & FRANKLIN ST"
+    },
+    {
+      "id": "mva-26-041563",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "North",
+      "lat": 40.746416,
+      "lng": -74.060419,
+      "address": "MANHATTAN AVE & TERRACE AVE"
+    },
+    {
+      "id": "mva-26-043586",
+      "type": "MVA",
+      "date": "2026-03-12",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "NORTH DISTRICT LOT & CENTRAL AVE"
+    },
+    {
+      "id": "mva-26-041631",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.733534,
+      "lng": -74.067266,
+      "address": "TONNELE AVE & PAVONIA AVE"
+    },
+    {
+      "id": "mva-26-043481",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "East",
+      "lat": 40.733419,
+      "lng": -74.059437,
+      "address": "SUMMIT AVE & VAN REIPEN AVE"
+    },
+    {
+      "id": "mva-26-041205",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "East",
+      "lat": 40.725316,
+      "lng": -74.068084,
+      "address": "MONTGOMERY ST & BERGEN AVE"
+    },
+    {
+      "id": "mva-26-042233",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "US 1&9 NORTH & DUNCAN AVE"
+    },
+    {
+      "id": "mva-26-043861",
+      "type": "MVA",
+      "date": "2026-03-12",
+      "district": "West",
+      "lat": 40.71145,
+      "lng": -74.06264,
+      "address": "HWY 440 & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-041228",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "ST HWY 440 & DANFORTH AVE"
+    },
+    {
+      "id": "mva-26-044951",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "North",
+      "lat": 40.721494,
+      "lng": -74.065874,
+      "address": "SUMMIT AVE & HOWARD PL"
+    },
+    {
+      "id": "mva-26-045284",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "LOWER RT 139 & PALISADE AVE"
+    },
+    {
+      "id": "mva-26-044646",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "South",
+      "lat": 40.705278,
+      "lng": -74.078847,
+      "address": "WILKINSON AVE & OCEAN AVE"
+    },
+    {
+      "id": "mva-26-041105",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "South",
+      "lat": 40.698965,
+      "lng": -74.095812,
+      "address": "KENNEDY BLVD & GREENVILLE AVE"
+    },
+    {
+      "id": "mva-26-042899",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.73157,
+      "lng": -74.056575,
+      "address": "BALDWIN AVE & NEWARK AVE"
+    },
+    {
+      "id": "mva-26-042788",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.713857,
+      "lng": -74.075607,
+      "address": "BERGEN AVE & JFK BLVD"
+    },
+    {
+      "id": "mva-26-044372",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "West",
+      "lat": 40.703676,
+      "lng": -74.090061,
+      "address": "KENNEDY BLVD & BERGEN AVE"
+    },
+    {
+      "id": "mva-26-042091",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.738496,
+      "lng": -74.077957,
+      "address": "ROUTE 1&9 & HALLECK AVE"
+    },
+    {
+      "id": "mva-26-044316",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "West",
+      "lat": 40.71475,
+      "lng": -74.04354,
+      "address": "NEWARK AVE & TONNELE AVE"
+    },
+    {
+      "id": "mva-26-042537",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.728796,
+      "lng": -74.06983,
+      "address": "JFK BLVD & DEKALB AVE"
+    },
+    {
+      "id": "mva-26-041585",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "East",
+      "lat": 40.723768,
+      "lng": -74.064193,
+      "address": "MONTGOMERY ST & BALDWIN AVE"
+    },
+    {
+      "id": "mva-26-045111",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "ST PAULS AVE & KENNEDY BLVD"
+    },
+    {
+      "id": "mva-26-043751",
+      "type": "MVA",
+      "date": "2026-03-12",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "US 1&9 SOUTH & HALLECK AVE"
+    },
+    {
+      "id": "mva-26-042331",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "ST HWY 440 S & AVENUE C"
+    },
+    {
+      "id": "mva-26-042915",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.721514,
+      "lng": -74.076065,
+      "address": "KENNEDY BLVD & GIFFORD AVE"
+    },
+    {
+      "id": "mva-26-043298",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.694548,
+      "lng": -74.100251,
+      "address": "KENNEDY BLVD & CUSTER AVE"
+    },
+    {
+      "id": "mva-26-043611",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.697372,
+      "lng": -74.097278,
+      "address": "KENNEDY BLVD & BARTHOLDI AVE"
+    },
+    {
+      "id": "mva-26-043194",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "RAVINE AVE & SHERMAN AVE"
+    },
+    {
+      "id": "mva-26-044959",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "East",
+      "lat": 40.725254,
+      "lng": -74.051613,
+      "address": "NEWARK AVE & 5TH ST"
+    },
+    {
+      "id": "mva-26-042970",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.724834,
+      "lng": -74.06721,
+      "address": "MONTGOMERY ST & TUERS AVE"
+    },
+    {
+      "id": "mva-26-041950",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "UPPER 139 & JERSEY AVE"
+    },
+    {
+      "id": "mva-26-041815",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "DWIGHT ST & MLK DR"
+    },
+    {
+      "id": "mva-26-045126",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "North",
+      "lat": 40.743845,
+      "lng": -74.050855,
+      "address": "CENTRAL AVE & SHERMAN PL"
+    },
+    {
+      "id": "mva-26-040967",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "West",
+      "lat": 40.753996,
+      "lng": -74.05645,
+      "address": "TONNELLE AVE & TONNELLE CIRCLE"
+    },
+    {
+      "id": "mva-26-045064",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "East",
+      "lat": 40.717308,
+      "lng": -74.055606,
+      "address": "CENTER ST & GRAND ST"
+    },
+    {
+      "id": "mva-26-043125",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "KENNEDY BLVD & MONTGOMERY ST"
+    },
+    {
+      "id": "mva-26-042155",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.722989,
+      "lng": -74.075069,
+      "address": "KENNEDY BLVD & KENSINGTON AVE"
+    },
+    {
+      "id": "mva-26-042215",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "North",
+      "lat": 40.756073,
+      "lng": -74.046749,
+      "address": "JFK BLVD & LEONARD ST"
+    },
+    {
+      "id": "mva-26-044575",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "West",
+      "lat": 40.743377,
+      "lng": -74.05924,
+      "address": "JFK BLVD & LAKE ST"
+    },
+    {
+      "id": "mva-26-041656",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "East",
+      "lat": 40.71818,
+      "lng": -74.043752,
+      "address": "GROVE ST & MERCER ST"
+    },
+    {
+      "id": "mva-26-044485",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "PULASKI SKYWAY & BROADWAY"
+    },
+    {
+      "id": "mva-26-042927",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.71145,
+      "lng": -74.06264,
+      "address": "ST HWY 440 & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-042904",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "South",
+      "lat": 40.690785,
+      "lng": -74.093737,
+      "address": "GARFIELD AVE & NEPTUNE AVE"
+    },
+    {
+      "id": "mva-26-042612",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "RT 185 & ST HWY 440"
+    },
+    {
+      "id": "mva-26-043124",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.730364,
+      "lng": -74.067045,
+      "address": "SIP AVE & US NJ 1&9"
+    },
+    {
+      "id": "mva-26-041415",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "South",
+      "lat": 40.749821,
+      "lng": -74.054845,
+      "address": "JFK BLVD & BOWERS ST"
+    },
+    {
+      "id": "mva-26-044535",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "East",
+      "lat": 40.713102,
+      "lng": -74.044974,
+      "address": "SOUTH COVE & ST PETERS ST"
+    },
+    {
+      "id": "mva-26-045227",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "UPPER 139 & BALDWIN AVE"
+    },
+    {
+      "id": "mva-26-042498",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "East",
+      "lat": 40.73003,
+      "lng": -74.039668,
+      "address": "12TH ST & MARIN BLVD"
+    },
+    {
+      "id": "mva-26-041318",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "South",
+      "lat": 40.717542,
+      "lng": -74.089978,
+      "address": "MALLORY AVE & CLARKE AVE"
+    },
+    {
+      "id": "mva-26-043747",
+      "type": "MVA",
+      "date": "2026-03-12",
+      "district": "South",
+      "lat": 40.703484,
+      "lng": -74.080597,
+      "address": "WEGMAN PKWY & OCEAN AVE"
+    },
+    {
+      "id": "mva-26-044436",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "West",
+      "lat": 40.737145,
+      "lng": -74.075586,
+      "address": "BROADWAY & DALES AVE"
+    },
+    {
+      "id": "mva-26-041804",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.739409,
+      "lng": -74.060369,
+      "address": "HOPKINS AVE & COLLARD ST"
+    },
+    {
+      "id": "mva-26-041917",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "South",
+      "lat": 40.71145,
+      "lng": -74.06264,
+      "address": "COMMUNIPAW AVE & JFK"
+    },
+    {
+      "id": "mva-26-044231",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "East",
+      "lat": 40.72069,
+      "lng": -74.046667,
+      "address": "JERSEY AVE & COLUMBUS DR"
+    },
+    {
+      "id": "mva-26-042112",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "East",
+      "lat": 40.724198,
+      "lng": -74.045629,
+      "address": "JERSEY AVE"
+    },
+    {
+      "id": "mva-26-043413",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "South",
+      "lat": 40.705905,
+      "lng": -74.07842,
+      "address": "BOSTWICK AVE & OCEAN AVE"
+    },
+    {
+      "id": "mva-26-041578",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "South",
+      "lat": 40.709107,
+      "lng": -74.084699,
+      "address": "BERGEN AVE & WILKINSON AVE"
+    },
+    {
+      "id": "mva-26-042676",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.713857,
+      "lng": -74.075607,
+      "address": "JFK BLVD & TONNELE AVE"
+    },
+    {
+      "id": "mva-26-040827",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "East",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "MERSELES ST & MONTGOMERY ST"
+    },
+    {
+      "id": "mva-26-043258",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.71145,
+      "lng": -74.06264,
+      "address": "ST HWY 440 N & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-043618",
+      "type": "MVA",
+      "date": "2026-03-12",
+      "district": "East",
+      "lat": 40.733366,
+      "lng": -74.044203,
+      "address": "JERSEY AVE & 16TH ST"
+    },
+    {
+      "id": "mva-26-042539",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.721642,
+      "lng": -74.072117,
+      "address": "BERGEN AVE & KENSINGTON AVE"
+    },
+    {
+      "id": "mva-26-041450",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "SUMMIT AVE & SUMMIT AVE"
+    },
+    {
+      "id": "mva-26-044240",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "BOWERS ST & PALISADE AVE"
+    },
+    {
+      "id": "mva-26-042059",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.735626,
+      "lng": -74.089305,
+      "address": "US 1&9 & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-043966",
+      "type": "MVA",
+      "date": "2026-03-12",
+      "district": "West",
+      "lat": 40.730788,
+      "lng": -74.085797,
+      "address": "DUNCAN AVE & STOCKTON AVE"
+    },
+    {
+      "id": "mva-26-045270",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "West",
+      "lat": 40.714183,
+      "lng": -74.082898,
+      "address": "JFK BLVD & EGE AVE"
+    },
+    {
+      "id": "mva-26-044749",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "South",
+      "lat": 40.714836,
+      "lng": -74.068215,
+      "address": "HARMON ST & RANDOLPH AVE"
+    },
+    {
+      "id": "mva-26-042043",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "PAVONIA AVE & SUMMIT AVE"
+    },
+    {
+      "id": "mva-26-044375",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "West",
+      "lat": 40.723926,
+      "lng": -74.08986,
+      "address": "COMMUNIPAW AVE & ST HWY 440"
+    },
+    {
+      "id": "mva-26-043764",
+      "type": "MVA",
+      "date": "2026-03-12",
+      "district": "East",
+      "lat": 40.732331,
+      "lng": -74.044377,
+      "address": "15TH ST & JERSEY AVE"
+    },
+    {
+      "id": "mva-26-042237",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.735481,
+      "lng": -74.069618,
+      "address": "BROADWAY & CORBIN AVE"
+    },
+    {
+      "id": "mva-26-042742",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "North",
+      "lat": 40.74344,
+      "lng": -74.047694,
+      "address": "SHERMAN AVE & HUTTON ST"
+    },
+    {
+      "id": "mva-26-043006",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.717598,
+      "lng": -74.079988,
+      "address": "KENNEDY BLVD"
+    },
+    {
+      "id": "mva-26-040882",
+      "type": "MVA",
+      "date": "2026-03-08",
+      "district": "West",
+      "lat": 40.748751,
+      "lng": -74.060927,
+      "address": "TONNELE AVE & COUNTY RD"
+    },
+    {
+      "id": "mva-26-043610",
+      "type": "MVA",
+      "date": "2026-03-12",
+      "district": "South",
+      "lat": 40.722592,
+      "lng": -74.085617,
+      "address": "MALLORY AVE & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-044565",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "ZABRISKIE ST & SUMMIT AVE"
+    },
+    {
+      "id": "mva-26-041972",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.717237,
+      "lng": -74.061017,
+      "address": "FAIRMOUNT AVE & GRAND ST"
+    },
+    {
+      "id": "mva-26-044456",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "East",
+      "lat": 40.730477,
+      "lng": -74.044622,
+      "address": "12TH ST & JERSEY AVE"
+    },
+    {
+      "id": "mva-26-043102",
+      "type": "MVA",
+      "date": "2026-03-11",
+      "district": "North",
+      "lat": 40.754214,
+      "lng": -74.04369,
+      "address": "CENTRAL AVE"
+    },
+    {
+      "id": "mva-26-044976",
+      "type": "MVA",
+      "date": "2026-03-14",
+      "district": "South",
+      "lat": 40.7209,
+      "lng": -74.072797,
+      "address": "BELMONT AVE & BERGEN AVE"
+    },
+    {
+      "id": "mva-26-041673",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "South",
+      "lat": 40.709739,
+      "lng": -74.076382,
+      "address": "OCEAN AVE & CARTERET AVE"
+    },
+    {
+      "id": "mva-26-043642",
+      "type": "MVA",
+      "date": "2026-03-12",
+      "district": "West",
+      "lat": 40.725274,
+      "lng": -74.073354,
+      "address": "JFK BLVD & DUNCAN AVE"
+    },
+    {
+      "id": "mva-26-042613",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.73529,
+      "lng": -74.081804,
+      "address": "NEWARK AVE & ROUTE 1&9"
+    },
+    {
+      "id": "mva-26-041963",
+      "type": "MVA",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.733757,
+      "lng": -74.09196,
+      "address": "WEST SIDE AVE & MONTGOMERY ST"
+    },
+    {
+      "id": "mva-26-042572",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.745497,
+      "lng": -74.062304,
+      "address": "TONNELE AVE & CARLTON AVE"
+    },
+    {
+      "id": "mva-26-042362",
+      "type": "MVA",
+      "date": "2026-03-10",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "US 1&9 & WALLIS AVE"
+    },
+    {
+      "id": "mva-26-044122",
+      "type": "MVA",
+      "date": "2026-03-13",
+      "district": "West",
+      "lat": 40.736625,
+      "lng": -74.083613,
+      "address": "ROUTE 7 & TONNELE AVE"
+    },
+    {
+      "id": "mva-26-046524",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "West",
+      "lat": 40.724589,
+      "lng": -74.069456,
+      "address": "FAIRMOUNT AVE & BERGEN AVE"
+    },
+    {
+      "id": "mva-26-048490",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "US 1&9 & DUNCAN AVE"
+    },
+    {
+      "id": "mva-26-048360",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.677463,
+      "lng": -74.085393,
+      "address": "COLONY RD & PORT JERSEY BLVD"
+    },
+    {
+      "id": "mva-26-049697",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "East",
+      "lat": 40.723768,
+      "lng": -74.064193,
+      "address": "MONTGOMERY ST & BALDWIN AVE"
+    },
+    {
+      "id": "mva-26-048575",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "ROUTE 440 SOUTH & RT 185"
+    },
+    {
+      "id": "mva-26-048836",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.745497,
+      "lng": -74.062304,
+      "address": "1&9 TONNELE AVE & CARLTON AVE"
+    },
+    {
+      "id": "mva-26-046850",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "West",
+      "lat": 40.732996,
+      "lng": -74.062937,
+      "address": "JFK BLVD & PAVONIA AVE"
+    },
+    {
+      "id": "mva-26-046061",
+      "type": "MVA",
+      "date": "2026-03-16",
+      "district": "West",
+      "lat": 40.719584,
+      "lng": -74.08246,
+      "address": "LEXINGTON AVE & WEST SIDE AVE"
+    },
+    {
+      "id": "mva-26-047095",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "West",
+      "lat": 40.753996,
+      "lng": -74.05645,
+      "address": "TONNELE CIRCLE & TONNELE AVE"
+    },
+    {
+      "id": "mva-26-045476",
+      "type": "MVA",
+      "date": "2026-03-15",
+      "district": "West",
+      "lat": 40.753996,
+      "lng": -74.05645,
+      "address": "LOWER 139 & E TONNELLE AVE"
+    },
+    {
+      "id": "mva-26-047986",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "North",
+      "lat": 40.750581,
+      "lng": -74.045381,
+      "address": "CONGRESS ST & CAMBRIDGE AVE"
+    },
+    {
+      "id": "mva-26-045664",
+      "type": "MVA",
+      "date": "2026-03-15",
+      "district": "South",
+      "lat": 40.685779,
+      "lng": -74.099784,
+      "address": "GARFIELD AVE & W 55TH ST"
+    },
+    {
+      "id": "mva-26-047103",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "South",
+      "lat": 40.698928,
+      "lng": -74.081799,
+      "address": "GARFIELD AVE"
+    },
+    {
+      "id": "mva-26-048002",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "East",
+      "lat": 40.715486,
+      "lng": -74.039382,
+      "address": "GRAND ST & WARREN ST"
+    },
+    {
+      "id": "mva-26-045543",
+      "type": "MVA",
+      "date": "2026-03-15",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "PORT JERSEY BLVD & PULASKI LN W"
+    },
+    {
+      "id": "mva-26-047577",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "HERBERT PL & NEWARK AVE"
+    },
+    {
+      "id": "mva-26-048662",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "East",
+      "lat": 40.716213,
+      "lng": -74.045637,
+      "address": "GRAND ST & BRIGHT ST"
+    },
+    {
+      "id": "mva-26-048337",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.735269,
+      "lng": -74.068668,
+      "address": "BROADWAY & VAN WAGENEN AVE"
+    },
+    {
+      "id": "mva-26-045565",
+      "type": "MVA",
+      "date": "2026-03-15",
+      "district": "South",
+      "lat": 40.692121,
+      "lng": -74.094924,
+      "address": "OCEAN AVE & NEPTUNE AVE"
+    },
+    {
+      "id": "mva-26-046116",
+      "type": "MVA",
+      "date": "2026-03-16",
+      "district": "North",
+      "lat": 40.743154,
+      "lng": -74.046862,
+      "address": "WEBSTER AVE & HUTTON ST"
+    },
+    {
+      "id": "mva-26-045515",
+      "type": "MVA",
+      "date": "2026-03-15",
+      "district": "West",
+      "lat": 40.734866,
+      "lng": -74.067132,
+      "address": "TONNELE AVE & BROADWAY"
+    },
+    {
+      "id": "mva-26-048047",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "North",
+      "lat": 40.755683,
+      "lng": -74.045743,
+      "address": "SUMMIT AVE & LEONARD ST"
+    },
+    {
+      "id": "mva-26-046699",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "West",
+      "lat": 40.730952,
+      "lng": -74.057449,
+      "address": "PAVONIA AVE & BALDWIN AVE"
+    },
+    {
+      "id": "mva-26-046292",
+      "type": "MVA",
+      "date": "2026-03-16",
+      "district": "South",
+      "lat": 40.740216,
+      "lng": -74.048834,
+      "address": "RAVINE AVE & WEBSTER AVE"
+    },
+    {
+      "id": "mva-26-047885",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "West",
+      "lat": 40.716859,
+      "lng": -74.077787,
+      "address": "BRAMHALL AVE & BERGEN AVE"
+    },
+    {
+      "id": "mva-26-047473",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "South",
+      "lat": 40.693385,
+      "lng": -74.081651,
+      "address": "CHAPEL AVE & CAVEN POINT RD"
+    },
+    {
+      "id": "mva-26-049420",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "CHARLES ST & SUMMIT AVE"
+    },
+    {
+      "id": "mva-26-047796",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "East",
+      "lat": 40.717702,
+      "lng": -74.059008,
+      "address": "GRAND ST & PRIOR ST"
+    },
+    {
+      "id": "mva-26-046567",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "West",
+      "lat": 40.724589,
+      "lng": -74.069456,
+      "address": "BERGEN AVE & FAIRMOUNT AVE"
+    },
+    {
+      "id": "mva-26-046039",
+      "type": "MVA",
+      "date": "2026-03-16",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "KENNEDY BLVD & TONNELE AVE"
+    },
+    {
+      "id": "mva-26-047191",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "East",
+      "lat": 40.727527,
+      "lng": -74.034593,
+      "address": "WASHINGTON BLVD"
+    },
+    {
+      "id": "mva-26-049752",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "South",
+      "lat": 40.698928,
+      "lng": -74.081799,
+      "address": "GARFIELD AVE"
+    },
+    {
+      "id": "mva-26-049526",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "South",
+      "lat": 40.720145,
+      "lng": -74.081951,
+      "address": "OXFORD AVE & WEST SIDE AVE"
+    },
+    {
+      "id": "mva-26-048508",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "South",
+      "lat": 40.733633,
+      "lng": -74.074309,
+      "address": "WALES AVE & LOGAN AVE"
+    },
+    {
+      "id": "mva-26-046182",
+      "type": "MVA",
+      "date": "2026-03-16",
+      "district": "West",
+      "lat": 40.714069,
+      "lng": -74.088823,
+      "address": "WEST SIDE AVE & GRANT AVE"
+    },
+    {
+      "id": "mva-26-046540",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "North",
+      "lat": 40.719087,
+      "lng": -74.071445,
+      "address": "MONTICELLO AVE & EMORY ST"
+    },
+    {
+      "id": "mva-26-049148",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "East",
+      "lat": 40.724541,
+      "lng": -74.05086,
+      "address": "NEWARK AVE & 4TH ST"
+    },
+    {
+      "id": "mva-26-049356",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "East",
+      "lat": 40.712995,
+      "lng": -74.050832,
+      "address": "JERSEY AVE & AETNA ST"
+    },
+    {
+      "id": "mva-26-049042",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.713857,
+      "lng": -74.075607,
+      "address": "NEWARK AVE & JFK BLVD"
+    },
+    {
+      "id": "mva-26-049404",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "South",
+      "lat": 40.709513,
+      "lng": -74.07651,
+      "address": "OCEAN AVE & KEARNEY AVE"
+    },
+    {
+      "id": "mva-26-046260",
+      "type": "MVA",
+      "date": "2026-03-16",
+      "district": "East",
+      "lat": 40.732331,
+      "lng": -74.044377,
+      "address": "15TH ST & JERSEY AVE"
+    },
+    {
+      "id": "mva-26-047178",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "North",
+      "lat": 40.734586,
+      "lng": -74.063141,
+      "address": "JFK BLVD & COTTAGE ST"
+    },
+    {
+      "id": "mva-26-047754",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "North",
+      "lat": 40.713857,
+      "lng": -74.075607,
+      "address": "FULTON AVE & JFK BLVD"
+    },
+    {
+      "id": "mva-26-047712",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "East",
+      "lat": 40.731141,
+      "lng": -74.034429,
+      "address": "14TH ST & WASHINGTON BLVD"
+    },
+    {
+      "id": "mva-26-046844",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "CLIFTON PL & BEACON PL"
+    },
+    {
+      "id": "mva-26-047910",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "East",
+      "lat": 40.715338,
+      "lng": -74.049602,
+      "address": "JERSEY AVE & REGENT ST"
+    },
+    {
+      "id": "mva-26-046642",
+      "type": "MVA",
+      "date": "2026-03-16",
+      "district": "South",
+      "lat": 40.706997,
+      "lng": -74.074293,
+      "address": "RANDOLPH AVE & CLAREMONT AVE"
+    },
+    {
+      "id": "mva-26-047498",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "East",
+      "lat": 40.733526,
+      "lng": -74.045894,
+      "address": "16TH ST & COLE ST"
+    },
+    {
+      "id": "mva-26-046457",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "PATERSON PLANK RD & MOUNTAIN RD"
+    },
+    {
+      "id": "mva-26-045963",
+      "type": "MVA",
+      "date": "2026-03-16",
+      "district": "South",
+      "lat": 40.715897,
+      "lng": -74.069027,
+      "address": "COMMUNIPAW AVE & ARLINGTON AVE"
+    },
+    {
+      "id": "mva-26-046858",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "South",
+      "lat": 40.71486,
+      "lng": -74.06709,
+      "address": "COMMUNIPAW AVE & GARFIELD AVE"
+    },
+    {
+      "id": "mva-26-049256",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "South",
+      "lat": 40.708681,
+      "lng": -74.076949,
+      "address": "OCEAN AVE & ORIENT AVE"
+    },
+    {
+      "id": "mva-26-047532",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "East",
+      "lat": 40.728276,
+      "lng": -74.034702,
+      "address": "NORTH GARAGE & WASHINGTON BLVD"
+    },
+    {
+      "id": "mva-26-049348",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "South",
+      "lat": 40.710568,
+      "lng": -74.093872,
+      "address": "WEST SIDE AVE & GOTHIC KNIGHTS RD"
+    },
+    {
+      "id": "mva-26-048590",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "South",
+      "lat": 40.757886,
+      "lng": -74.049295,
+      "address": "NELSON AVE & HAUGE ST"
+    },
+    {
+      "id": "mva-26-048415",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "East",
+      "lat": 40.729418,
+      "lng": -74.048201,
+      "address": "10TH ST & MONMOUTH ST"
+    },
+    {
+      "id": "mva-26-046484",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "South",
+      "lat": 40.693163,
+      "lng": -74.089795,
+      "address": "LINDEN AVE & GARFIELD AVE"
+    },
+    {
+      "id": "mva-26-048086",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "West",
+      "lat": 40.753996,
+      "lng": -74.05645,
+      "address": "TONNELE AVE"
+    },
+    {
+      "id": "mva-26-049544",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "East",
+      "lat": 40.719006,
+      "lng": -74.041352,
+      "address": "MARIN BLVD & COLUMBUS DR"
+    },
+    {
+      "id": "mva-26-049296",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "East",
+      "lat": 40.726123,
+      "lng": -74.061425,
+      "address": "GRAY ST & ACADEMY ST"
+    },
+    {
+      "id": "mva-26-047427",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "South",
+      "lat": 40.745827,
+      "lng": -74.044173,
+      "address": "NEW YORK AVE & BOWERS ST"
+    },
+    {
+      "id": "mva-26-048507",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "North",
+      "lat": 40.754214,
+      "lng": -74.04369,
+      "address": "CENTRAL AVE & LOTT ST"
+    },
+    {
+      "id": "mva-26-048920",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "South",
+      "lat": 40.712971,
+      "lng": -74.077021,
+      "address": "MLK DR & FORREST ST"
+    },
+    {
+      "id": "mva-26-048153",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "West",
+      "lat": 40.731398,
+      "lng": -74.067842,
+      "address": "JFK BLVD & SIP AVE"
+    },
+    {
+      "id": "mva-26-047647",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "South",
+      "lat": 40.712312,
+      "lng": -74.061421,
+      "address": "LAFAYETTE ST & PACIFIC AVE"
+    },
+    {
+      "id": "mva-26-047369",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "CHARLES ST & JFK BLVD"
+    },
+    {
+      "id": "mva-26-048737",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "North",
+      "lat": 40.748549,
+      "lng": -74.047615,
+      "address": "CENTRAL AVE & THORNE ST"
+    },
+    {
+      "id": "mva-26-046807",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "US 1&9 & DUNCAN AVE"
+    },
+    {
+      "id": "mva-26-048540",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "ROUTE 139 & JERSEY AVE"
+    },
+    {
+      "id": "mva-26-045975",
+      "type": "MVA",
+      "date": "2026-03-16",
+      "district": "South",
+      "lat": 40.715897,
+      "lng": -74.069027,
+      "address": "COMMUNIPAW AVE & ARLINGTON AVE"
+    },
+    {
+      "id": "mva-26-048474",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "North",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "JEFFERSON AVE & PALISADE AVE"
+    },
+    {
+      "id": "mva-26-047795",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "East",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "COLUMBUS DR & MONMOUTH ST"
+    },
+    {
+      "id": "mva-26-048369",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.719584,
+      "lng": -74.08246,
+      "address": "WEST SIDE AVE & LEXINGTON AVE"
+    },
+    {
+      "id": "mva-26-047456",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "North",
+      "lat": 40.713857,
+      "lng": -74.075607,
+      "address": "CULVER AVE & JFK BLVD"
+    },
+    {
+      "id": "mva-26-046586",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "East",
+      "lat": 40.731698,
+      "lng": -74.041099,
+      "address": "14TH ST & GROVE ST"
+    },
+    {
+      "id": "mva-26-046608",
+      "type": "MVA",
+      "date": "2026-03-17",
+      "district": "North",
+      "lat": 40.754723,
+      "lng": -74.04337,
+      "address": "CENTRAL AVE & LEONARD ST"
+    },
+    {
+      "id": "mva-26-048099",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "East",
+      "lat": 40.727527,
+      "lng": -74.034593,
+      "address": "WASHINGTON BLVD & NEWPORT PKWY"
+    },
+    {
+      "id": "mva-26-045479",
+      "type": "MVA",
+      "date": "2026-03-15",
+      "district": "North",
+      "lat": 40.757236,
+      "lng": -74.049747,
+      "address": "LEONARD ST & NELSON AVE"
+    },
+    {
+      "id": "mva-26-048121",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "North",
+      "lat": 40.753285,
+      "lng": -74.055665,
+      "address": "TERRACE AVE & BLEECKER ST"
+    },
+    {
+      "id": "mva-26-048700",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "South",
+      "lat": 40.717307,
+      "lng": -74.084744,
+      "address": "BOYD AVE & WEST SIDE AVE"
+    },
+    {
+      "id": "mva-26-049540",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "East",
+      "lat": 40.7177,
+      "lng": -74.037183,
+      "address": "WASHINGTON ST & COLUMBUS DR"
+    },
+    {
+      "id": "mva-26-048355",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "South",
+      "lat": 40.716589,
+      "lng": -74.078171,
+      "address": "BERGEN AVE & CLENDENNY AVE"
+    },
+    {
+      "id": "mva-26-048628",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "South",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "GARFIELD AVE & WILKINSON"
+    },
+    {
+      "id": "mva-26-046113",
+      "type": "MVA",
+      "date": "2026-03-16",
+      "district": "North",
+      "lat": 40.74212,
+      "lng": -74.060135,
+      "address": "JFK BLVD & STAGG ST"
+    },
+    {
+      "id": "mva-26-048768",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.730839,
+      "lng": -74.064351,
+      "address": "BERGEN AVE & SIP AVE"
+    },
+    {
+      "id": "mva-26-045681",
+      "type": "MVA",
+      "date": "2026-03-15",
+      "district": "West",
+      "lat": 40.717248,
+      "lng": -74.077241,
+      "address": "BERGEN AVE"
+    },
+    {
+      "id": "mva-26-047471",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "South",
+      "lat": 40.711449,
+      "lng": -74.062636,
+      "address": "PACIFIC AVE & COMMUNIPAW AVE"
+    },
+    {
+      "id": "mva-26-048362",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.72157,
+      "lng": -74.047455,
+      "address": "RT 185 & RT 440"
+    },
+    {
+      "id": "mva-26-047834",
+      "type": "MVA",
+      "date": "2026-03-19",
+      "district": "West",
+      "lat": 40.737145,
+      "lng": -74.075586,
+      "address": "BROADWAY & DALES AVE"
+    },
+    {
+      "id": "mva-26-047186",
+      "type": "MVA",
+      "date": "2026-03-18",
+      "district": "North",
+      "lat": 40.728344,
+      "lng": -74.070122,
+      "address": "JFK BLVD & HIGHLAND AVE"
+    },
+    {
+      "id": "mva-26-049464",
+      "type": "MVA",
+      "date": "2026-03-21",
+      "district": "East",
+      "lat": 40.73496,
+      "lng": -74.043968,
+      "address": "JERSEY AVE & 18TH ST"
+    },
+    {
+      "id": "mva-26-048449",
+      "type": "MVA",
+      "date": "2026-03-20",
+      "district": "South",
+      "lat": 40.735382,
+      "lng": -74.054732,
+      "address": "ST PAULS AVE & OAKLAND AVE"
+    },
+    {
+      "id": "mva-26-045645",
+      "type": "MVA",
+      "date": "2026-03-15",
+      "district": "East",
+      "lat": 40.729353,
+      "lng": -74.068158,
+      "address": "VAN REYPEN ST & VROOM ST"
+    }
+  ]
+}

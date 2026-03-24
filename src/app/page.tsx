@@ -1,113 +1,208 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useMemo, useState } from 'react';
+import { FilterState, DistrictStats, MonthlyStat } from '@/types';
+import rawData from '@/data/data.json';
+import { useFilteredIncidents } from '@/hooks/useFilteredIncidents';
+import FilterPanel from '@/components/filters/FilterPanel';
+import StatCardsRow from '@/components/stats/StatCardsRow';
+import MapWrapper from '@/components/map/MapWrapper';
+import DistrictTable from '@/components/analytics/DistrictTable';
+import DistrictRankings from '@/components/analytics/DistrictRankings';
+import MonthlyTrendChart from '@/components/analytics/MonthlyTrendChart';
+import type { Incident } from '@/types';
+
+// Cast the JSON once — data.json is the single source of truth
+const allIncidents = rawData.incidents as Incident[];
+const baseStats    = rawData.citywide;
+const allDistricts = rawData.byDistrict as DistrictStats[];
+const allMonths    = rawData.monthlyTrends as MonthlyStat[];
+
+// Derive a clean "Updated MMM D, YYYY" string from meta.generated ("2026-03-24")
+const [_y, _m, _d] = rawData.meta.generated.split('-').map(Number);
+const META_UPDATED = new Date(_y, _m - 1, _d).toLocaleDateString('en-US', {
+  month: 'short', day: 'numeric', year: 'numeric',
+});
+
+const DEFAULT_FILTER: FilterState = {
+  dateRange: { from: undefined, to: undefined },
+  incidentTypes: ['MVA', 'Shooting'],
+  district: 'All',
+};
+
+export default function DashboardPage() {
+  const [filterState, setFilterState]       = useState<FilterState>(DEFAULT_FILTER);
+  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+
+  const filteredIncidents = useFilteredIncidents(allIncidents, filterState);
+
+  // ── Derived stat cards — react to district + type filters ─────────────
+  const derivedStats = useMemo(() => {
+    const { district, incidentTypes, dateRange } = filterState;
+    const showMVA      = incidentTypes.includes('MVA');
+    const showShooting = incidentTypes.includes('Shooting');
+
+    // Date-range: sum monthly trends within the window
+    const { from, to } = dateRange;
+    if (from || to) {
+      const inRange = allMonths.filter((m) => {
+        const d = new Date(m.month + '-01');
+        if (from && d < new Date(from.getFullYear(), from.getMonth(), 1)) return false;
+        if (to   && d > new Date(to.getFullYear(),   to.getMonth(),   1)) return false;
+        return true;
+      });
+      return {
+        totalCrimes: inRange.reduce((s, m) => s + m.totalCrimes, 0),
+        shootings:   showShooting ? inRange.reduce((s, m) => s + m.shootings, 0) : 0,
+        homicides:   inRange.reduce((s, m) => s + m.homicides, 0),
+        mvas:        showMVA      ? inRange.reduce((s, m) => s + m.mvas, 0) : 0,
+      };
+    }
+
+    // District filter: show that district's numbers
+    if (district !== 'All') {
+      const d = allDistricts.find((x) => x.district === district);
+      return {
+        totalCrimes: d?.totalCrimes ?? 0,
+        shootings:   showShooting ? (d?.shootings ?? 0) : 0,
+        homicides:   d?.homicides ?? 0,
+        mvas:        showMVA      ? (d?.mvas ?? 0) : 0,
+      };
+    }
+
+    // No filter: citywide totals, zero out hidden types
+    return {
+      totalCrimes: baseStats.totalCrimes,
+      shootings:   showShooting ? baseStats.shootings : 0,
+      homicides:   baseStats.homicides,
+      mvas:        showMVA      ? baseStats.mvas : 0,
+    };
+  }, [filterState]);
+
+  // ── Derived district table — filter to selected district ──────────────
+  const derivedDistricts = useMemo<DistrictStats[]>(() => {
+    if (filterState.district === 'All') return allDistricts;
+    return allDistricts.filter((d) => d.district === filterState.district);
+  }, [filterState.district]);
+
+  // ── Derived monthly trends — filter by date range ─────────────────────
+  const derivedMonths = useMemo<MonthlyStat[]>(() => {
+    const { from, to } = filterState.dateRange;
+    if (!from && !to) return allMonths;
+    return allMonths.filter((m) => {
+      const d = new Date(m.month + '-01');
+      if (from && d < new Date(from.getFullYear(), from.getMonth(), 1)) return false;
+      if (to   && d > new Date(to.getFullYear(),   to.getMonth(),   1)) return false;
+      return true;
+    });
+  }, [filterState.dateRange]);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div className="flex h-screen overflow-hidden bg-[#0b0f18] text-slate-200">
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      {/* ── Mobile overlay ─────────────────────────────────────────────── */}
+      {mobileFilterOpen && (
+        <div
+          className="fixed inset-0 bg-black/70 z-40 lg:hidden backdrop-blur-sm"
+          onClick={() => setMobileFilterOpen(false)}
         />
+      )}
+
+      {/* ── Sidebar ────────────────────────────────────────────────────── */}
+      <aside
+        className={`
+          fixed inset-y-0 left-0 z-50 w-64 flex flex-col bg-[#0e1420] border-r border-white/[0.06]
+          transition-transform duration-300 ease-in-out
+          lg:relative lg:translate-x-0 lg:z-auto lg:w-[200px] lg:flex-shrink-0
+          ${mobileFilterOpen ? 'translate-x-0' : '-translate-x-full'}
+        `}
+      >
+        {/* Brand */}
+        <div className="flex-shrink-0 px-4 pt-4 pb-3 border-b border-white/[0.06]">
+          <div className="flex items-center gap-2 mb-0.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-red" />
+            <span className="text-sm font-semibold tracking-tight text-white">JCImpact</span>
+          </div>
+          <p className="text-[11px] text-slate-500 pl-3.5">Jersey City, NJ · Crime Intelligence</p>
+        </div>
+
+        {/* Filters */}
+        <div className="flex-1 min-h-0 overflow-y-auto">
+          <FilterPanel
+            filterState={filterState}
+            onChange={setFilterState}
+            incidentCount={filteredIncidents.length}
+          />
+        </div>
+
+        {/* Data attribution */}
+        <div className="flex-shrink-0 px-4 py-3 border-t border-white/[0.06]">
+          <p className="text-[10px] font-medium text-slate-600 uppercase tracking-widest mb-1.5">Data Sources</p>
+          <p className="text-[10px] text-slate-600 leading-relaxed">{rawData.meta.source}</p>
+          <p className="text-[10px] text-slate-600 leading-relaxed">{rawData.meta.period}</p>
+          <p className="text-[10px] text-slate-700 mt-1">Updated {META_UPDATED}</p>
+        </div>
+      </aside>
+
+      {/* ── Main content ───────────────────────────────────────────────── */}
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+
+        {/* Top bar */}
+        <div className="flex-shrink-0 flex items-center justify-between px-4 py-2 border-b border-white/[0.06] bg-[#0e1420]">
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              className="p-1.5 rounded-md text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-colors"
+              onClick={() => setMobileFilterOpen(true)}
+              aria-label="Open filters"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 4h18M6 8h12M9 12h6" />
+              </svg>
+            </button>
+            <span className="text-sm font-semibold text-white">JCImpact</span>
+          </div>
+
+          <div className="hidden lg:flex items-center gap-1.5 text-[11px] text-slate-500">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse" />
+            Live data · {rawData.meta.period}
+          </div>
+
+          <span className="lg:hidden text-[11px] text-slate-500 bg-white/5 border border-white/[0.06] px-2.5 py-1 rounded-full">
+            YTD 2026
+          </span>
+        </div>
+
+        {/* Stat cards */}
+        <div className="flex-shrink-0 px-3 pt-2 pb-2 border-b border-white/[0.06]">
+          <StatCardsRow citywide={derivedStats} />
+        </div>
+
+        {/* Map */}
+        <div className="flex-1 min-h-0 p-3">
+          <MapWrapper
+            incidents={filteredIncidents}
+            showMVA={filterState.incidentTypes.includes('MVA')}
+            showShooting={filterState.incidentTypes.includes('Shooting')}
+          />
+        </div>
+
+        {/* Analytics strip */}
+        <div
+          className="flex-shrink-0 border-t border-white/[0.06] grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/[0.06]"
+          style={{ height: '236px' }}
+        >
+          <div className="p-3 min-h-0 overflow-auto">
+            <DistrictTable data={derivedDistricts} />
+          </div>
+          <div className="p-3 min-h-0 overflow-auto">
+            <DistrictRankings data={derivedDistricts} />
+          </div>
+          <div className="p-3 min-h-0 overflow-auto">
+            <MonthlyTrendChart data={derivedMonths} />
+          </div>
+        </div>
+
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
