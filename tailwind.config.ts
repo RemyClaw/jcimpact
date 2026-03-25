@@ -10,17 +10,22 @@ const config: Config = {
     extend: {
       colors: {
         surface: {
-          DEFAULT: '#0f1117',
-          card: '#161b27',
-          border: '#1e2535',
-          muted: '#252d3d',
+          DEFAULT: '#080c14',
+          card: '#0e1420',
+          elevated: '#131929',
+          border: '#1a2234',
+          muted: '#1e2840',
         },
         accent: {
-          red: '#ef4444',
+          red: '#f43f5e',
           amber: '#f59e0b',
           blue: '#3b82f6',
-          green: '#22c55e',
+          green: '#10b981',
+          purple: '#8b5cf6',
         },
+      },
+      fontFamily: {
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
     },
   },
