@@ -15,7 +15,7 @@ export default function FilterPanel({ filterState, onChange, incidentCount }: Fi
   function reset() {
     onChange({
       dateRange: { from: undefined, to: undefined },
-      incidentTypes: ['MVA', 'Shooting'],
+      incidentTypes: ['MVA', 'Shooting', 'Theft', 'Stolen Vehicle'],
       district: 'All',
     });
   }
@@ -24,7 +24,7 @@ export default function FilterPanel({ filterState, onChange, incidentCount }: Fi
     filterState.dateRange.from ||
     filterState.dateRange.to ||
     filterState.district !== 'All' ||
-    filterState.incidentTypes.length < 2;
+    filterState.incidentTypes.length < 4;
 
   return (
     <div className="flex flex-col h-full">

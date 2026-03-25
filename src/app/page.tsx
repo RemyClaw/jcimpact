@@ -26,7 +26,7 @@ const META_UPDATED = new Date(_y, _m - 1, _d).toLocaleDateString('en-US', {
 
 const DEFAULT_FILTER: FilterState = {
   dateRange: { from: undefined, to: undefined },
-  incidentTypes: ['MVA', 'Shooting'],
+  incidentTypes: ['MVA', 'Shooting', 'Theft', 'Stolen Vehicle'],
   district: 'All',
 };
 
@@ -41,6 +41,8 @@ export default function DashboardPage() {
     const { district, incidentTypes, dateRange } = filterState;
     const showMVA      = incidentTypes.includes('MVA');
     const showShooting = incidentTypes.includes('Shooting');
+    const showTheft    = incidentTypes.includes('Theft');
+    const showStolen   = incidentTypes.includes('Stolen Vehicle');
 
     // Date-range: sum monthly trends within the window
     const { from, to } = dateRange;
@@ -52,10 +54,12 @@ export default function DashboardPage() {
         return true;
       });
       return {
-        totalCrimes: inRange.reduce((s, m) => s + m.totalCrimes, 0),
-        shootings:   showShooting ? inRange.reduce((s, m) => s + m.shootings, 0) : 0,
-        homicides:   inRange.reduce((s, m) => s + m.homicides, 0),
-        mvas:        showMVA      ? inRange.reduce((s, m) => s + m.mvas, 0) : 0,
+        totalCrimes:   inRange.reduce((s, m) => s + m.totalCrimes, 0),
+        shootings:     showShooting ? inRange.reduce((s, m) => s + m.shootings, 0) : 0,
+        homicides:     inRange.reduce((s, m) => s + m.homicides, 0),
+        mvas:          showMVA    ? inRange.reduce((s, m) => s + m.mvas, 0) : 0,
+        thefts:        showTheft  ? inRange.reduce((s, m) => s + (m.thefts ?? 0), 0) : 0,
+        stolenVehicles:showStolen ? inRange.reduce((s, m) => s + (m.stolenVehicles ?? 0), 0) : 0,
       };
     }
 
@@ -63,19 +67,23 @@ export default function DashboardPage() {
     if (district !== 'All') {
       const d = allDistricts.find((x) => x.district === district);
       return {
-        totalCrimes: d?.totalCrimes ?? 0,
-        shootings:   showShooting ? (d?.shootings ?? 0) : 0,
-        homicides:   d?.homicides ?? 0,
-        mvas:        showMVA      ? (d?.mvas ?? 0) : 0,
+        totalCrimes:   d?.totalCrimes ?? 0,
+        shootings:     showShooting ? (d?.shootings ?? 0) : 0,
+        homicides:     d?.homicides ?? 0,
+        mvas:          showMVA    ? (d?.mvas ?? 0) : 0,
+        thefts:        showTheft  ? (d?.thefts ?? 0) : 0,
+        stolenVehicles:showStolen ? (d?.stolenVehicles ?? 0) : 0,
       };
     }
 
     // No filter: citywide totals, zero out hidden types
     return {
-      totalCrimes: baseStats.totalCrimes,
-      shootings:   showShooting ? baseStats.shootings : 0,
-      homicides:   baseStats.homicides,
-      mvas:        showMVA      ? baseStats.mvas : 0,
+      totalCrimes:   baseStats.totalCrimes,
+      shootings:     showShooting ? baseStats.shootings : 0,
+      homicides:     baseStats.homicides,
+      mvas:          showMVA    ? baseStats.mvas : 0,
+      thefts:        showTheft  ? (baseStats.thefts ?? 0) : 0,
+      stolenVehicles:showStolen ? (baseStats.stolenVehicles ?? 0) : 0,
     };
   }, [filterState]);
 
@@ -183,6 +191,8 @@ export default function DashboardPage() {
             incidents={filteredIncidents}
             showMVA={filterState.incidentTypes.includes('MVA')}
             showShooting={filterState.incidentTypes.includes('Shooting')}
+            showTheft={filterState.incidentTypes.includes('Theft')}
+            showStolenVehicle={filterState.incidentTypes.includes('Stolen Vehicle')}
           />
         </div>
 

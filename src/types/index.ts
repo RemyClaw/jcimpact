@@ -1,4 +1,4 @@
-export type IncidentType = 'MVA' | 'Shooting';
+export type IncidentType = 'MVA' | 'Shooting' | 'Theft' | 'Stolen Vehicle';
 
 export type District =
   | 'North'
@@ -11,8 +11,11 @@ export const ALL_DISTRICTS: District[] = ['North', 'East', 'South', 'West'];
 export interface Incident {
   id: string;
   type: IncidentType;
+  category?: string;
   date: string; // ISO 8601: "2026-01-01"
   district: District;
+  ward?: string;
+  arrest?: string;
   lat: number;
   lng: number;
   address: string;
@@ -25,6 +28,8 @@ export interface DistrictStats {
   shootings: number;
   homicides: number;
   mvas: number;
+  thefts: number;
+  stolenVehicles: number;
 }
 
 export interface MonthlyStat {
@@ -34,6 +39,8 @@ export interface MonthlyStat {
   shootings: number;
   homicides: number;
   mvas: number;
+  thefts: number;
+  stolenVehicles: number;
 }
 
 export interface SummaryStats {
@@ -42,6 +49,8 @@ export interface SummaryStats {
     shootings: number;
     homicides: number;
     mvas: number;
+    thefts: number;
+    stolenVehicles: number;
   };
   byDistrict: DistrictStats[];
   monthlyTrends: MonthlyStat[];

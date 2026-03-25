@@ -7,7 +7,7 @@ interface StatCardsRowProps {
 
 export default function StatCardsRow({ citywide }: StatCardsRowProps) {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
+    <div className="grid grid-cols-3 lg:grid-cols-6 gap-2.5">
       <StatCard
         label="Total Crimes YTD"
         value={citywide.totalCrimes}
@@ -31,6 +31,18 @@ export default function StatCardsRow({ citywide }: StatCardsRowProps) {
         value={citywide.mvas}
         accentColor="amber"
         sublabel="NJ Crash Reports"
+      />
+      <StatCard
+        label="Thefts"
+        value={(citywide as any).thefts ?? 0}
+        accentColor="blue"
+        sublabel="Property crime"
+      />
+      <StatCard
+        label="Stolen Vehicles"
+        value={(citywide as any).stolenVehicles ?? 0}
+        accentColor="green"
+        sublabel="Property crime"
       />
     </div>
   );

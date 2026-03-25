@@ -20,6 +20,8 @@ interface MapWrapperProps {
   incidents: Incident[];
   showMVA: boolean;
   showShooting: boolean;
+  showTheft: boolean;
+  showStolenVehicle: boolean;
 }
 
 export default function MapWrapper(props: MapWrapperProps) {

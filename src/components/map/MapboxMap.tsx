@@ -10,6 +10,8 @@ interface MapboxMapProps {
   incidents: Incident[];
   showMVA: boolean;
   showShooting: boolean;
+  showTheft: boolean;
+  showStolenVehicle: boolean;
 }
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
@@ -21,7 +23,7 @@ const SOURCE_ID = 'incidents';
 const DISTRICT_LAYERS = ['districts-fill', 'districts-border', 'district-labels', 'district-selected-outline'] as const;
 const WARD_LAYERS    = ['wards-fill', 'wards-border', 'ward-labels', 'ward-selected-outline'] as const;
 
-export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMapProps) {
+export default function MapboxMap({ incidents, showMVA, showShooting, showTheft, showStolenVehicle }: MapboxMapProps) {
   const containerRef  = useRef<HTMLDivElement>(null);
   const mapRef        = useRef<mapboxgl.Map | null>(null);
   const popupRef      = useRef<mapboxgl.Popup | null>(null);
@@ -188,7 +190,12 @@ export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMa
         id: 'unclustered-point', type: 'circle', source: SOURCE_ID,
         filter: ['!', ['has', 'point_count']],
         paint: {
-          'circle-color': ['match', ['get', 'type'], 'Shooting', '#ef4444', 'MVA', '#f59e0b', '#6b7280'],
+          'circle-color': ['match', ['get', 'type'],
+            'Shooting',       '#ef4444',
+            'MVA',            '#f59e0b',
+            'Theft',          '#3b82f6',
+            'Stolen Vehicle', '#22c55e',
+            '#6b7280'],
           'circle-radius': 7,
           'circle-stroke-width': 2,
           'circle-stroke-color': '#0f1117',
@@ -223,7 +230,20 @@ export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMa
         const props = feature.properties as Record<string, string>;
         const geom  = feature.geometry as GeoJSON.Point;
         if (popupRef.current) popupRef.current.remove();
-        const typeColor = props.type === 'Shooting' ? '#ef4444' : '#f59e0b';
+        const TYPE_COLORS: Record<string, string> = {
+          'Shooting':       '#ef4444',
+          'MVA':            '#f59e0b',
+          'Theft':          '#3b82f6',
+          'Stolen Vehicle': '#22c55e',
+        };
+        const TYPE_LABELS: Record<string, string> = {
+          'Shooting':       'Shooting',
+          'MVA':            'Motor Vehicle Accident',
+          'Theft':          'Theft',
+          'Stolen Vehicle': 'Stolen Vehicle',
+        };
+        const typeColor = TYPE_COLORS[props.type] ?? '#6b7280';
+        const typeLabel = TYPE_LABELS[props.type] ?? props.type;
         const dateStr   = new Date(props.date + 'T00:00:00').toLocaleDateString('en-US', {
           year: 'numeric', month: 'long', day: 'numeric',
         });
@@ -233,7 +253,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMa
             <div style="line-height:1.5">
               <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
                 <span style="width:8px;height:8px;border-radius:50%;background:${typeColor};flex-shrink:0"></span>
-                <span style="font-weight:600;font-size:13px;color:${typeColor}">${props.type === 'MVA' ? 'Motor Vehicle Accident' : 'Shooting'}</span>
+                <span style="font-weight:600;font-size:13px;color:${typeColor}">${typeLabel}</span>
               </div>
               <div style="font-size:12px;color:#94a3b8;margin-bottom:2px">${dateStr}</div>
               <div style="font-size:13px;color:#e2e8f0;margin-bottom:${props.description ? '6px' : '0'}">${props.address}</div>
@@ -287,9 +307,9 @@ export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMa
     const source = map.getSource(SOURCE_ID) as mapboxgl.GeoJSONSource | undefined;
     if (source) source.setData(incidentsToGeoJSON(incidents));
     if (map.getLayer('unclustered-point')) {
-      map.setFilter('unclustered-point', buildTypeFilter(showMVA, showShooting) as mapboxgl.FilterSpecification);
+      map.setFilter('unclustered-point', buildTypeFilter(showMVA, showShooting, showTheft, showStolenVehicle) as mapboxgl.FilterSpecification);
     }
-  }, [incidents, showMVA, showShooting]);
+  }, [incidents, showMVA, showShooting, showTheft, showStolenVehicle]);
 
   // ── Toggle district layer visibility ──────────────────────────────────
   useEffect(() => {
@@ -371,8 +391,14 @@ export default function MapboxMap({ incidents, showMVA, showShooting }: MapboxMa
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 pointer-events-none z-10">
         <div className="bg-surface-card/90 backdrop-blur-sm border border-surface-border text-xs text-slate-400 px-3 py-1.5 rounded-full whitespace-nowrap">
           Only{' '}
-          <span className="text-accent-amber font-medium">MVAs</span> and{' '}
-          <span className="text-accent-red font-medium">shootings</span> are mapped — other crimes in aggregate stats only
+          <span className="text-accent-red font-medium">Shootings</span>
+          {' · '}
+          <span className="text-accent-amber font-medium">MVAs</span>
+          {' · '}
+          <span className="text-accent-blue font-medium">Thefts</span>
+          {' · '}
+          <span className="text-accent-green font-medium">Stolen Vehicles</span>
+          {' are mapped'}
         </div>
       </div>
     </div>

@@ -8,8 +8,10 @@ interface IncidentTypeFilterProps {
 }
 
 const TYPES: { value: IncidentType; label: string; color: string; dot: string }[] = [
-  { value: 'Shooting', label: 'Shootings',   color: 'text-accent-red',   dot: 'bg-accent-red'   },
-  { value: 'MVA',      label: 'MVAs',         color: 'text-accent-amber', dot: 'bg-accent-amber' },
+  { value: 'Shooting',       label: 'Shootings',       color: 'text-accent-red',   dot: 'bg-accent-red'   },
+  { value: 'MVA',            label: 'MVAs',             color: 'text-accent-amber', dot: 'bg-accent-amber' },
+  { value: 'Theft',          label: 'Thefts',           color: 'text-accent-blue',  dot: 'bg-accent-blue'  },
+  { value: 'Stolen Vehicle', label: 'Stolen Vehicles',  color: 'text-accent-green', dot: 'bg-accent-green' },
 ];
 
 export default function IncidentTypeFilter({ selected, onChange }: IncidentTypeFilterProps) {

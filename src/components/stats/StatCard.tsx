@@ -1,7 +1,7 @@
 interface StatCardProps {
   label: string;
   value: number;
-  accentColor: 'red' | 'amber' | 'blue' | 'slate';
+  accentColor: 'red' | 'amber' | 'blue' | 'slate' | 'green';
   sublabel?: string;
 }
 
@@ -10,6 +10,7 @@ const accent = {
   amber: { bar: 'bg-accent-amber', num: 'text-white' },
   blue:  { bar: 'bg-accent-blue',  num: 'text-white' },
   slate: { bar: 'bg-slate-500',    num: 'text-white' },
+  green: { bar: 'bg-accent-green', num: 'text-white' },
 };
 
 export default function StatCard({ label, value, accentColor, sublabel }: StatCardProps) {

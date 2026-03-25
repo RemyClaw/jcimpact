@@ -13,10 +13,12 @@ const cols: { key: SortKey; label: string }[] = [
 ];
 
 const colColor: Record<SortKey, string> = {
-  totalCrimes: 'text-accent-blue',
-  shootings:   'text-accent-red',
-  homicides:   'text-slate-400',
-  mvas:        'text-accent-amber',
+  totalCrimes:   'text-accent-blue',
+  shootings:     'text-accent-red',
+  homicides:     'text-slate-400',
+  mvas:          'text-accent-amber',
+  thefts:        'text-accent-blue',
+  stolenVehicles:'text-accent-green',
 };
 
 export default function DistrictTable({ data }: { data: DistrictStats[] }) {
