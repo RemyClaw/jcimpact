@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { FilterState, DistrictStats, MonthlyStat } from '@/types';
 import rawData from '@/data/data.json';
 import { useFilteredIncidents } from '@/hooks/useFilteredIncidents';
@@ -10,6 +11,8 @@ import MapWrapper from '@/components/map/MapWrapper';
 import DistrictTable from '@/components/analytics/DistrictTable';
 import DistrictRankings from '@/components/analytics/DistrictRankings';
 import MonthlyTrendChart from '@/components/analytics/MonthlyTrendChart';
+import YoYComparison from '@/components/analytics/YoYComparison';
+import TimelineStrip, { filterByPeriod, type TimePeriod } from '@/components/filters/TimelineStrip';
 import type { Incident } from '@/types';
 
 const allIncidents = rawData.incidents as Incident[];
@@ -23,241 +26,228 @@ const META_UPDATED = new Date(_y, _m - 1, _d).toLocaleDateString('en-US', {
 });
 
 const DEFAULT_FILTER: FilterState = {
-  dateRange: { from: undefined, to: undefined },
-  incidentTypes: ['MVA', 'Shooting', 'Theft', 'Stolen Vehicle'],
+  incidentTypes: [], // empty = all types shown (no filter)
   district: 'All',
 };
 
-type AnalyticsTab = 'districts' | 'rankings' | 'trends';
+type AnalyticsTab = 'districts' | 'rankings' | 'trends' | 'yoy';
 
 export default function DashboardPage() {
   const [filterState, setFilterState]       = useState<FilterState>(DEFAULT_FILTER);
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
   const [analyticsTab, setAnalyticsTab]     = useState<AnalyticsTab>('districts');
+  const [activePeriod, setActivePeriod]     = useState<TimePeriod>({ month: null, half: null });
 
-  const filteredIncidents = useFilteredIncidents(allIncidents, filterState);
+  const typeFiltered = useFilteredIncidents(allIncidents, filterState);
+  const filteredIncidents = useMemo(() => filterByPeriod(typeFiltered, activePeriod), [typeFiltered, activePeriod]);
 
   const derivedStats = useMemo(() => {
-    const { district, incidentTypes, dateRange } = filterState;
-    const showMVA      = incidentTypes.includes('MVA');
-    const showShooting = incidentTypes.includes('Shooting');
-    const showTheft    = incidentTypes.includes('Theft');
-    const showStolen   = incidentTypes.includes('Stolen Vehicle');
-
-    const { from, to } = dateRange;
-    if (from || to) {
-      const inRange = allMonths.filter((m) => {
-        const d = new Date(m.month + '-01');
-        if (from && d < new Date(from.getFullYear(), from.getMonth(), 1)) return false;
-        if (to   && d > new Date(to.getFullYear(),   to.getMonth(),   1)) return false;
-        return true;
-      });
-      return {
-        totalCrimes:    inRange.reduce((s, m) => s + m.totalCrimes, 0),
-        shootings:      showShooting ? inRange.reduce((s, m) => s + m.shootings, 0) : 0,
-        homicides:      inRange.reduce((s, m) => s + m.homicides, 0),
-        mvas:           showMVA    ? inRange.reduce((s, m) => s + m.mvas, 0) : 0,
-        thefts:         showTheft  ? inRange.reduce((s, m) => s + (m.thefts ?? 0), 0) : 0,
-        stolenVehicles: showStolen ? inRange.reduce((s, m) => s + (m.stolenVehicles ?? 0), 0) : 0,
-      };
-    }
+    const { district } = filterState;
 
     if (district !== 'All') {
       const d = allDistricts.find((x) => x.district === district);
       return {
-        totalCrimes:    d?.totalCrimes ?? 0,
-        shootings:      showShooting ? (d?.shootings ?? 0) : 0,
-        homicides:      d?.homicides ?? 0,
-        mvas:           showMVA    ? (d?.mvas ?? 0) : 0,
-        thefts:         showTheft  ? (d?.thefts ?? 0) : 0,
-        stolenVehicles: showStolen ? (d?.stolenVehicles ?? 0) : 0,
+        totalCrimes:    d?.totalCrimes    ?? 0,
+        shootings:      d?.shootings      ?? 0,
+        homicides:      d?.homicides      ?? 0,
+        mvas:           d?.mvas           ?? 0,
+        thefts:         d?.thefts         ?? 0,
+        stolenVehicles: d?.stolenVehicles ?? 0,
       };
     }
 
     return {
       totalCrimes:    baseStats.totalCrimes,
-      shootings:      showShooting ? baseStats.shootings : 0,
+      shootings:      baseStats.shootings,
       homicides:      baseStats.homicides,
-      mvas:           showMVA    ? baseStats.mvas : 0,
-      thefts:         showTheft  ? (baseStats.thefts ?? 0) : 0,
-      stolenVehicles: showStolen ? (baseStats.stolenVehicles ?? 0) : 0,
+      mvas:           baseStats.mvas,
+      thefts:         baseStats.thefts,
+      stolenVehicles: baseStats.stolenVehicles,
     };
-  }, [filterState]);
+  }, [filterState.district]);
 
   const derivedDistricts = useMemo<DistrictStats[]>(() => {
     if (filterState.district === 'All') return allDistricts;
     return allDistricts.filter((d) => d.district === filterState.district);
   }, [filterState.district]);
 
-  const derivedMonths = useMemo<MonthlyStat[]>(() => {
-    const { from, to } = filterState.dateRange;
-    if (!from && !to) return allMonths;
-    return allMonths.filter((m) => {
-      const d = new Date(m.month + '-01');
-      if (from && d < new Date(from.getFullYear(), from.getMonth(), 1)) return false;
-      if (to   && d > new Date(to.getFullYear(),   to.getMonth(),   1)) return false;
-      return true;
-    });
-  }, [filterState.dateRange]);
-
   return (
-    <div className="flex h-screen overflow-hidden bg-surface text-slate-200">
+    <div className="flex flex-col h-screen overflow-hidden text-white" style={{ backgroundColor: '#3A3F47' }}>
 
-      {/* ── Mobile overlay ─────────────────────────────────────────────── */}
-      {mobileFilterOpen && (
-        <div
-          className="fixed inset-0 bg-black/80 z-40 lg:hidden backdrop-blur-sm"
-          onClick={() => setMobileFilterOpen(false)}
-        />
-      )}
-
-      {/* ── Sidebar ────────────────────────────────────────────────────── */}
-      <aside
-        className={`
-          fixed inset-y-0 left-0 z-50 w-64 flex flex-col bg-surface-card
-          border-r border-surface-border
-          transition-transform duration-300 ease-in-out
-          lg:relative lg:translate-x-0 lg:z-auto lg:w-[210px] lg:flex-shrink-0
-          ${mobileFilterOpen ? 'translate-x-0' : '-translate-x-full'}
-        `}
+      {/* ── Full-width command header with stat cards ──────────────────── */}
+      <header
+        style={{
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          padding: '8px 16px',
+          borderTop: '3px solid #3B82F6',
+          borderBottom: 'none',
+          backgroundColor: '#3A3F47',
+          flexShrink: 0,
+          gap: '16px',
+        }}
       >
-        {/* Brand */}
-        <div className="flex-shrink-0 px-4 pt-5 pb-4 border-b border-surface-border">
-          <div className="flex items-center gap-2.5 mb-1">
-            {/* Shield icon */}
-            <div className="flex-shrink-0 w-7 h-7 rounded-md bg-accent-red/10 border border-accent-red/20 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-accent-red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 1L3 5v6c0 5.25 3.75 10.15 9 11.25C17.25 21.15 21 16.25 21 11V5l-9-4z"/>
-              </svg>
-            </div>
-            <div>
-              <p className="text-sm font-bold tracking-tight text-white leading-none">JC IMPACT</p>
-              <p className="text-[10px] text-slate-500 leading-none mt-0.5">Crime Intelligence</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-1.5 mt-2.5 pl-0.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse flex-shrink-0" />
-            <span className="text-[10px] text-slate-500">{rawData.meta.period}</span>
-          </div>
+        {/* Left — title + subtitle */}
+        <div style={{ display: 'flex', flexDirection: 'column', flexShrink: 0 }}>
+          <h1 style={{ color: '#FFFFFF', fontSize: '22px', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', lineHeight: 1, margin: 0 }}>
+            JC IMPACT
+          </h1>
+          <p style={{ color: '#FFFFFF', fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, margin: '5px 0 0 0' }}>
+            Integrated Metrics for Public Accountability &amp; Community Trust
+          </p>
         </div>
 
-        {/* Filters */}
-        <div className="flex-1 min-h-0 overflow-y-auto">
-          <FilterPanel
-            filterState={filterState}
-            onChange={setFilterState}
-            incidentCount={filteredIncidents.length}
-          />
+        {/* JCPD badge — between title and stat cards */}
+        <div style={{ flexShrink: 0 }}>
+          <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
+            <path d="M16 2L4 7v9c0 7 5.4 13.5 12 15 6.6-1.5 12-8 12-15V7L16 2z" fill="#3A3F47" stroke="#c4a832" strokeWidth="1.5"/>
+            <path d="M16 6L7 10v7c0 5 3.8 9.5 9 10.8 5.2-1.3 9-5.8 9-10.8v-7L16 6z" fill="#1e2229"/>
+            <text x="16" y="21" textAnchor="middle" fill="#c4a832" fontSize="9" fontWeight="bold" fontFamily="monospace">JCPD</text>
+          </svg>
         </div>
 
-        {/* Data attribution */}
-        <div className="flex-shrink-0 px-4 py-3 border-t border-surface-border">
-          <p className="text-[9px] font-semibold text-slate-600 uppercase tracking-widest mb-1.5">Data Sources</p>
-          <p className="text-[10px] text-slate-600 leading-relaxed">{rawData.meta.source}</p>
-          <p className="text-[10px] text-slate-700 mt-1">Updated {META_UPDATED}</p>
-        </div>
-      </aside>
-
-      {/* ── Main content ───────────────────────────────────────────────── */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-
-        {/* ── Top header bar ─────────────────────────────────────────── */}
-        <header className="flex-shrink-0 flex items-center justify-between px-4 py-0 h-11 border-b border-surface-border bg-surface-card">
-          {/* Mobile: hamburger + title */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <button
-              className="p-1.5 rounded text-slate-400 hover:text-white hover:bg-white/5 transition-colors"
-              onClick={() => setMobileFilterOpen(true)}
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M3 12h18M3 18h18" />
-              </svg>
-            </button>
-            <div className="flex items-center gap-1.5">
-              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-accent-red flex-shrink-0">
-                <path d="M12 1L3 5v6c0 5.25 3.75 10.15 9 11.25C17.25 21.15 21 16.25 21 11V5l-9-4z"/>
-              </svg>
-              <span className="text-sm font-bold text-white">JC IMPACT</span>
-            </div>
-          </div>
-
-          {/* Desktop: title */}
-          <div className="hidden lg:flex items-center gap-3">
-            <h1 className="text-sm font-semibold text-white tracking-tight">
-              Jersey City Crime Intelligence Dashboard
-            </h1>
-            <span className="text-surface-border">|</span>
-            <span className="text-[11px] text-slate-500">Jersey City, NJ</span>
-          </div>
-
-          {/* Right: live badge + updated */}
-          <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-slate-500">
-              <span className="text-slate-600">Updated {META_UPDATED}</span>
-            </div>
-            <div className="flex items-center gap-1.5 bg-accent-green/10 border border-accent-green/20 px-2.5 py-1 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse flex-shrink-0" />
-              <span className="text-[10px] font-semibold text-accent-green tracking-wide">LIVE</span>
-            </div>
-          </div>
-        </header>
-
-        {/* ── Stat cards ─────────────────────────────────────────────── */}
-        <div className="flex-shrink-0 px-3 pt-2.5 pb-2 border-b border-surface-border">
+        {/* Stat cards filling remaining space */}
+        <div style={{ flex: 1, minWidth: 0 }}>
           <StatCardsRow citywide={derivedStats} />
         </div>
+      </header>
 
-        {/* ── Map ────────────────────────────────────────────────────── */}
-        <div className="flex-1 min-h-0 px-3 pt-2 pb-2">
-          <MapWrapper
-            incidents={filteredIncidents}
-            showMVA={filterState.incidentTypes.includes('MVA')}
-            showShooting={filterState.incidentTypes.includes('Shooting')}
-            showTheft={filterState.incidentTypes.includes('Theft')}
-            showStolenVehicle={filterState.incidentTypes.includes('Stolen Vehicle')}
+      {/* ── Bi-weekly timeline strip ─────────────────────────────────── */}
+      <div style={{ padding: '0 16px', flexShrink: 0, borderBottom: '1px solid rgba(200,169,107,0.2)' }}>
+        <TimelineStrip
+          incidents={typeFiltered}
+          activePeriod={activePeriod}
+          onSelect={setActivePeriod}
+        />
+      </div>
+
+      {/* ── Body: filter + map side by side, analytics below ──────────── */}
+      <div className="flex flex-1 flex-col overflow-hidden" style={{ padding: '10px 16px 14px' }}>
+
+        {/* ── Mobile overlay ─────────────────────────────────────────── */}
+        {mobileFilterOpen && (
+          <div
+            className="fixed inset-0 bg-black/85 z-40 lg:hidden"
+            onClick={() => setMobileFilterOpen(false)}
           />
+        )}
+
+        {/* ── Mobile top bar (hamburger only, hidden on desktop) ────── */}
+        <div className="flex items-center px-3 h-10 border-b border-surface-border bg-surface-nav lg:hidden">
+          <button
+            className="p-1.5 text-[#9CA3AF] hover:text-white hover:bg-white/5 transition-colors"
+            onClick={() => setMobileFilterOpen(true)}
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M3 12h18M3 18h18" />
+            </svg>
+          </button>
         </div>
 
-        {/* ── Analytics panel with tabs ──────────────────────────────── */}
-        <div className="flex-shrink-0 border-t border-surface-border" style={{ height: '240px' }}>
-          {/* Tab bar */}
-          <div className="flex items-center gap-0 px-3 border-b border-surface-border bg-surface-card">
-            {([
-              { id: 'districts', label: 'District Breakdown' },
-              { id: 'rankings',  label: 'Rankings' },
-              { id: 'trends',    label: 'Monthly Trends' },
-            ] as { id: AnalyticsTab; label: string }[]).map(({ id, label }) => (
-              <button
-                key={id}
-                onClick={() => setAnalyticsTab(id)}
-                className={`px-4 py-2 text-[11px] font-medium border-b-2 transition-colors ${
-                  analyticsTab === id
-                    ? 'border-accent-blue text-white'
-                    : 'border-transparent text-slate-500 hover:text-slate-300'
-                }`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
+        {/* ── Top row: Filter panel + Map side by side ────────────────── */}
+        <div className="flex flex-1 min-h-0 gap-4">
 
-          {/* Tab content */}
-          <div className="h-[calc(100%-33px)] overflow-auto">
-            {analyticsTab === 'districts' && (
-              <div className="p-3 h-full">
-                <DistrictTable data={derivedDistricts} />
-              </div>
-            )}
-            {analyticsTab === 'rankings' && (
-              <div className="p-3 h-full">
-                <DistrictRankings data={derivedDistricts} />
-              </div>
-            )}
-            {analyticsTab === 'trends' && (
-              <div className="p-3 h-full">
-                <MonthlyTrendChart data={derivedMonths} />
-              </div>
-            )}
+          {/* ── Filter sidebar ─────────────────────────────────────── */}
+          <aside
+            className={`
+              fixed inset-y-0 left-0 z-50 w-64 flex flex-col
+              transition-transform duration-300 ease-in-out
+              lg:relative lg:translate-x-0 lg:z-auto lg:w-[220px] lg:flex-shrink-0
+              ${mobileFilterOpen ? 'translate-x-0' : '-translate-x-full'}
+            `}
+            style={{ background: 'transparent', padding: 0 }}
+          >
+            <div className="flex-1 min-h-0 overflow-y-auto">
+              <FilterPanel
+                filterState={filterState}
+                onChange={setFilterState}
+                incidentCount={filteredIncidents.length}
+              />
+            </div>
+            <button
+              className="absolute top-3 right-3 p-1.5 text-[#9CA3AF] hover:text-white transition-colors lg:hidden"
+              onClick={() => setMobileFilterOpen(false)}
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </aside>
+
+          {/* ── Map ────────────────────────────────────────────────── */}
+          <div style={{ flex: 1, minWidth: 0, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+            <div style={{
+              border: '2px solid #c8a96b',
+              borderRadius: '24px',
+              overflow: 'hidden',
+              background: '#1b2740',
+              flex: 1,
+              minHeight: 0,
+              position: 'relative',
+            }}>
+              <MapWrapper
+                incidents={filteredIncidents}
+                showMVA={filterState.incidentTypes.includes('MVA')}
+                showShooting={filterState.incidentTypes.includes('Shooting')}
+                showTheft={filterState.incidentTypes.includes('Theft')}
+                showStolenVehicle={filterState.incidentTypes.includes('Stolen Vehicle')}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* ── Analytics panel with tabs (below filter+map) ────────── */}
+        <div className="flex-shrink-0" style={{ height: '260px', marginTop: '12px' }}>
+          <div style={{
+            border: '2px solid #c8a96b',
+            borderRadius: '24px',
+            overflow: 'hidden',
+            background: '#1b2740',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column' as const,
+          }}>
+            {/* Tab bar */}
+            <div className="flex items-center gap-0 px-3" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)', flexShrink: 0 }}>
+              {([
+                { id: 'districts', label: 'District Breakdown' },
+                { id: 'rankings',  label: 'Rankings' },
+                { id: 'trends',    label: 'Monthly Trends' },
+                { id: 'yoy',       label: 'vs Last Year' },
+              ] as { id: AnalyticsTab; label: string }[]).map(({ id, label }) => (
+                <button
+                  key={id}
+                  onClick={() => setAnalyticsTab(id)}
+                  className={`px-4 py-2.5 text-[14px] font-semibold border-b-2 transition-colors ${
+                    analyticsTab === id
+                      ? 'border-accent-amber text-white'
+                      : 'border-transparent text-[#9CA3AF] hover:text-[#E5E7EB]'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            {/* Tab content */}
+            <div className="flex-1 min-h-0 overflow-auto">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={analyticsTab}
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.15, ease: 'easeOut' }}
+                  className="p-3 h-full"
+                >
+                  {analyticsTab === 'districts' && <DistrictTable data={derivedDistricts} />}
+                  {analyticsTab === 'rankings'  && <DistrictRankings data={derivedDistricts} />}
+                  {analyticsTab === 'trends'    && <MonthlyTrendChart data={allMonths} />}
+                  {analyticsTab === 'yoy'       && <YoYComparison data={allMonths} />}
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </div>
 

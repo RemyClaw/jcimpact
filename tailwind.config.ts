@@ -10,18 +10,21 @@ const config: Config = {
     extend: {
       colors: {
         surface: {
-          DEFAULT: '#080c14',
-          card: '#0e1420',
-          elevated: '#131929',
-          border: '#1a2234',
-          muted: '#1e2840',
+          DEFAULT: '#0A0F1C',   // page background
+          card:    '#111827',   // card background
+          elevated:'#111827',  // same as card
+          border:  '#1F2937',  // row dividers, borders
+          muted:   '#1F2937',  // muted fill
+          nav:     '#0F172A',  // header, sidebar, nav
         },
         accent: {
-          red: '#f43f5e',
-          amber: '#f59e0b',
-          blue: '#3b82f6',
-          green: '#10b981',
-          purple: '#8b5cf6',
+          red:    '#EF4444',
+          amber:  '#F59E0B',
+          blue:   '#3B82F6',
+          green:  '#22C55E',
+          orange: '#F97316',
+          gray:   '#9CA3AF',
+          gold:   '#c4a832',
         },
       },
       fontFamily: {

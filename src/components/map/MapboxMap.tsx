@@ -63,34 +63,36 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
 
       map.addLayer({
         id: 'districts-fill', type: 'fill', source: 'districts',
+        slot: 'middle',
         paint: {
-          'fill-color': ['coalesce', ['get', 'color'], '#ffffff'],
-          'fill-opacity': 0.25,
-          'fill-emissive-strength': 1,
+          'fill-color': ['get', 'color'],
+          'fill-opacity': 0.35,
+          'fill-emissive-strength': 0.65,
         },
       });
       map.addLayer({
         id: 'districts-border', type: 'line', source: 'districts',
+        slot: 'middle',
         paint: {
-          'line-color': ['coalesce', ['get', 'color'], '#ffffff'],
-          'line-width': 3,
+          'line-color': ['get', 'color'],
+          'line-width': 2.5,
           'line-opacity': 1,
-          'line-dasharray': [5, 3],
           'line-emissive-strength': 1,
         },
       });
       map.addLayer({
         id: 'district-selected-outline', type: 'line', source: 'districts',
+        slot: 'middle',
         filter: ['==', ['get', 'id'], '__NONE__'],
         paint: {
-          'line-color': ['coalesce', ['get', 'color'], '#ffffff'],
-          'line-width': 5,
+          'line-color': ['get', 'color'],
+          'line-width': 4,
           'line-opacity': 1,
-          'line-emissive-strength': 1,
         },
       });
       map.addLayer({
         id: 'district-labels', type: 'symbol', source: 'districts',
+        slot: 'top',
         layout: {
           'text-field': ['get', 'name'],
           'text-font': ['DIN Pro Italic', 'Arial Unicode MS Regular'],
@@ -110,6 +112,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
 
       map.addLayer({
         id: 'wards-fill', type: 'fill', source: 'wards',
+        slot: 'middle',
         layout: { visibility: 'none' },
         paint: {
           'fill-color': [
@@ -124,6 +127,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
       });
       map.addLayer({
         id: 'wards-border', type: 'line', source: 'wards',
+        slot: 'middle',
         layout: { visibility: 'none' },
         paint: {
           'line-color': '#ffffff',
@@ -134,6 +138,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
       });
       map.addLayer({
         id: 'ward-labels', type: 'symbol', source: 'wards',
+        slot: 'top',
         layout: {
           visibility: 'none',
           'text-field': ['concat', 'Ward ', ['upcase', ['get', 'ward']]],
@@ -149,6 +154,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
       });
       map.addLayer({
         id: 'ward-selected-outline', type: 'line', source: 'wards',
+        slot: 'middle',
         layout: { visibility: 'none' },
         filter: ['==', ['upcase', ['get', 'ward']], '__NONE__'],
         paint: {
@@ -163,32 +169,10 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
       map.addSource(SOURCE_ID, {
         type: 'geojson',
         data: incidentsToGeoJSON([]),
-        cluster: true,
-        clusterMaxZoom: 14,
-        clusterRadius: 50,
-      });
-      map.addLayer({
-        id: 'clusters', type: 'circle', source: SOURCE_ID,
-        filter: ['has', 'point_count'],
-        paint: {
-          'circle-color': ['step', ['get', 'point_count'], '#3b82f6', 5, '#f59e0b', 10, '#ef4444'],
-          'circle-radius': ['step', ['get', 'point_count'], 16, 5, 22, 10, 28],
-          'circle-opacity': 0.85,
-        },
-      });
-      map.addLayer({
-        id: 'cluster-count', type: 'symbol', source: SOURCE_ID,
-        filter: ['has', 'point_count'],
-        layout: {
-          'text-field': '{point_count_abbreviated}',
-          'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-          'text-size': 13,
-        },
-        paint: { 'text-color': '#ffffff' },
       });
       map.addLayer({
         id: 'unclustered-point', type: 'circle', source: SOURCE_ID,
-        filter: ['!', ['has', 'point_count']],
+        slot: 'top',
         paint: {
           'circle-color': ['match', ['get', 'type'],
             'Shooting',       '#ef4444',
@@ -196,31 +180,19 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
             'Theft',          '#3b82f6',
             'Stolen Vehicle', '#22c55e',
             '#6b7280'],
-          'circle-radius': 7,
-          'circle-stroke-width': 2,
-          'circle-stroke-color': '#0f1117',
-          'circle-opacity': 0.9,
+          'circle-radius': 9,
+          'circle-stroke-width': 2.5,
+          'circle-stroke-color': '#ffffff',
+          'circle-stroke-opacity': 0.6,
+          'circle-opacity': 1,
+          'circle-emissive-strength': 1,
         },
       });
 
       // ── Cursors ──────────────────────────────────────────────────────
-      (['clusters', 'unclustered-point', 'wards-fill', 'districts-fill'] as const).forEach(id => {
+      (['unclustered-point', 'wards-fill', 'districts-fill'] as const).forEach(id => {
         map.on('mouseenter', id, () => { map.getCanvas().style.cursor = 'pointer'; });
         map.on('mouseleave', id, () => { map.getCanvas().style.cursor = ''; });
-      });
-
-      // ── Cluster click → zoom ─────────────────────────────────────────
-      map.on('click', 'clusters', (e) => {
-        const features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
-        if (!features.length) return;
-        const clusterId = features[0].properties?.cluster_id as number;
-        const geom = features[0].geometry as GeoJSON.Point;
-        (map.getSource(SOURCE_ID) as mapboxgl.GeoJSONSource).getClusterExpansionZoom(
-          clusterId, (err, zoom) => {
-            if (err || zoom == null) return;
-            map.easeTo({ center: geom.coordinates as [number, number], zoom });
-          }
-        );
       });
 
       // ── Incident point popup ─────────────────────────────────────────
@@ -289,9 +261,17 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
       map.on('mouseleave', 'districts-fill', () => districtPopup.remove());
 
       mapLoadedRef.current = true;
+
+      // Ensure map fills its new container properly
+      setTimeout(() => map.resize(), 100);
     });
 
+    // Resize map when container dimensions change (e.g. new wrapper)
+    const ro = new ResizeObserver(() => { map.resize(); });
+    ro.observe(containerRef.current!);
+
     return () => {
+      ro.disconnect();
       mapLoadedRef.current = false;
       if (popupRef.current) popupRef.current.remove();
       map.remove();
@@ -332,15 +312,15 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
   }, [showWards]);
 
   return (
-    <div className="relative w-full h-full rounded-xl overflow-hidden border border-surface-border">
+    <div className="relative w-full h-full overflow-hidden">
       <div ref={containerRef} className="w-full h-full" />
 
-      {/* ── Layer toggles — top-left ──────────────────────────────────── */}
-      <div className="absolute top-3 left-3 z-10 flex flex-col gap-1.5">
+      {/* ── Layer toggles — top-right (matching stitch) ─────────────── */}
+      <div className="absolute top-3 right-3 z-10 flex gap-1.5">
         <LayerToggle
           label="Districts"
           active={showDistricts}
-          color="#4CC9F0"
+          color="#F59E0B"
           onClick={() => setShowDistricts(v => !v)}
         />
         <LayerToggle
@@ -353,15 +333,15 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
 
       {/* ── District legend (only when visible) ──────────────────────── */}
       {showDistricts && (
-        <div className="absolute top-[88px] left-3 z-10 flex flex-col gap-1 pointer-events-none">
+        <div className="absolute top-[44px] right-3 z-10 flex flex-col gap-1 pointer-events-none">
           {([
             { label: 'North', color: '#4CC9F0' },
             { label: 'East',  color: '#7B61FF' },
             { label: 'West',  color: '#FF9F1C' },
             { label: 'South', color: '#F72585' },
           ] as const).map(({ label, color }) => (
-            <div key={label} className="flex items-center gap-1.5 bg-black/55 backdrop-blur-sm px-2 py-0.5 rounded text-xs">
-              <span className="w-2 h-2 rounded-sm flex-shrink-0" style={{ background: color }} />
+            <div key={label} className="flex items-center gap-1.5 bg-[#0F172A]/90 px-2 py-0.5 text-xs">
+              <span className="w-2 h-2 flex-shrink-0" style={{ background: color }} />
               <span className="text-white/75">{label}</span>
             </div>
           ))}
@@ -370,7 +350,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
 
       {/* ── Ward legend (only when visible) ──────────────────────────── */}
       {showWards && (
-        <div className="absolute top-[88px] left-[90px] z-10 flex flex-col gap-1 pointer-events-none">
+        <div className="absolute top-[44px] right-[90px] z-10 flex flex-col gap-1 pointer-events-none">
           {([
             { label: 'A', color: '#1B9E77' },
             { label: 'B', color: '#D95F02' },
@@ -379,26 +359,28 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
             { label: 'E', color: '#66A61E' },
             { label: 'F', color: '#E6AB02' },
           ] as const).map(({ label, color }) => (
-            <div key={label} className="flex items-center gap-1.5 bg-black/55 backdrop-blur-sm px-2 py-0.5 rounded text-xs">
-              <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: color }} />
+            <div key={label} className="flex items-center gap-1.5 bg-[#0F172A]/90 px-2 py-0.5 text-xs">
+              <span className="w-2 h-2 flex-shrink-0" style={{ background: color }} />
               <span className="text-white/75">Ward {label}</span>
             </div>
           ))}
         </div>
       )}
 
-      {/* ── Bottom disclaimer ─────────────────────────────────────────── */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 pointer-events-none z-10">
-        <div className="bg-surface-card/90 backdrop-blur-sm border border-surface-border text-xs text-slate-400 px-3 py-1.5 rounded-full whitespace-nowrap">
-          Only{' '}
-          <span className="text-accent-red font-medium">Shootings</span>
-          {' · '}
-          <span className="text-accent-amber font-medium">MVAs</span>
-          {' · '}
-          <span className="text-accent-blue font-medium">Thefts</span>
-          {' · '}
-          <span className="text-accent-green font-medium">Stolen Vehicles</span>
-          {' are mapped'}
+      {/* ── Incident type legend — bottom left ───────────────────────── */}
+      <div className="absolute bottom-3 left-3 z-10 pointer-events-none">
+        <div className="flex items-center gap-3 bg-[#0F172A]/90 px-3 py-1.5 rounded-lg">
+          {([
+            { label: 'Shooting', color: '#ef4444' },
+            { label: 'MVA',      color: '#f59e0b' },
+            { label: 'Theft',    color: '#3b82f6' },
+            { label: 'Stolen Vehicle', color: '#22c55e' },
+          ] as const).map(({ label, color }) => (
+            <div key={label} className="flex items-center gap-1.5 text-xs">
+              <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: color, boxShadow: `0 0 6px ${color}` }} />
+              <span className="text-white/80 font-medium">{label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -418,22 +400,22 @@ function LayerToggle({
     <button
       onClick={onClick}
       className={`
-        flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium
-        border backdrop-blur-sm transition-all duration-150 cursor-pointer select-none
+        flex items-center gap-2 px-3 py-1.5 text-xs font-medium
+        border transition-all duration-150 cursor-pointer select-none
         ${active
-          ? 'bg-black/65 border-white/20 text-white'
-          : 'bg-black/40 border-white/10 text-white/40'}
+          ? 'bg-[#0F172A] border-[#1F2937] text-white'
+          : 'bg-[#0F172A]/60 border-[#1F2937]/50 text-white/40'}
       `}
     >
       {/* Swatch / indicator */}
       <span
-        className="w-2.5 h-2.5 rounded-sm flex-shrink-0 transition-opacity duration-150"
+        className="w-2.5 h-2.5 flex-shrink-0 transition-opacity duration-150"
         style={{ background: color, opacity: active ? 1 : 0.3 }}
       />
       {label}
       {/* On/off pill */}
       <span
-        className={`ml-1 text-[10px] font-mono px-1 py-0.5 rounded transition-colors duration-150 ${
+        className={`ml-1 text-[10px] font-mono px-1 py-0.5 transition-colors duration-150 ${
           active ? 'bg-white/15 text-white/80' : 'bg-white/5 text-white/25'
         }`}
       >

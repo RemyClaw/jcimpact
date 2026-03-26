@@ -7,17 +7,25 @@ interface IncidentTypeFilterProps {
   onChange: (next: IncidentType[]) => void;
 }
 
-const TYPES: { value: IncidentType; label: string; color: string; dot: string }[] = [
-  { value: 'Shooting',       label: 'Shootings',       color: 'text-accent-red',   dot: 'bg-accent-red'   },
-  { value: 'MVA',            label: 'MVAs',             color: 'text-accent-amber', dot: 'bg-accent-amber' },
-  { value: 'Theft',          label: 'Thefts',           color: 'text-accent-blue',  dot: 'bg-accent-blue'  },
-  { value: 'Stolen Vehicle', label: 'Stolen Vehicles',  color: 'text-accent-green', dot: 'bg-accent-green' },
+/* Dot colors per spec — with glow */
+const DOT_COLORS: Record<IncidentType, string> = {
+  'Shooting':       '#3B82F6',  // blue glow
+  'MVA':            '#22C55E',  // green glow
+  'Theft':          '#A855F7',  // purple glow
+  'Stolen Vehicle': '#F59E0B',  // yellow/orange glow
+};
+
+const TYPES: { value: IncidentType; label: string }[] = [
+  { value: 'Shooting',       label: 'Shootings'     },
+  { value: 'MVA',            label: 'Car Accidents' },
+  { value: 'Theft',          label: 'Thefts'        },
+  { value: 'Stolen Vehicle', label: 'Stolen Cars'   },
 ];
 
+// Empty selected = all types shown (no filter)
 export default function IncidentTypeFilter({ selected, onChange }: IncidentTypeFilterProps) {
   function toggle(type: IncidentType) {
     if (selected.includes(type)) {
-      if (selected.length === 1) return;
       onChange(selected.filter((t) => t !== type));
     } else {
       onChange([...selected, type]);
@@ -25,21 +33,81 @@ export default function IncidentTypeFilter({ selected, onChange }: IncidentTypeF
   }
 
   return (
-    <div className="flex flex-col gap-1.5">
-      {TYPES.map(({ value, label, color, dot }) => {
-        const checked = selected.includes(value);
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+      {TYPES.map(({ value, label }) => {
+        const active = selected.includes(value);
+        const dotColor = DOT_COLORS[value];
+
         return (
           <button
             key={value}
             onClick={() => toggle(value)}
-            className={`flex items-center gap-2.5 w-full text-left px-3 py-2 rounded-md border text-xs transition-all ${
-              checked
-                ? 'border-white/10 bg-white/5 ' + color
-                : 'border-transparent text-slate-500 hover:text-slate-400 hover:bg-white/[0.03]'
-            }`}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              width: '100%',
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '2px 0',
+            }}
           >
-            <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-opacity ${dot} ${checked ? 'opacity-100' : 'opacity-30'}`} />
-            {label}
+            {/* Glowing dot + white label */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span
+                style={{
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '50%',
+                  backgroundColor: dotColor,
+                  opacity: active ? 1 : 0.3,
+                  boxShadow: active ? `0 0 6px 2px ${dotColor}80` : 'none',
+                  flexShrink: 0,
+                  transition: 'opacity 0.2s, box-shadow 0.2s',
+                }}
+              />
+              <span
+                style={{
+                  color: '#ffffff',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  letterSpacing: '0.02em',
+                  opacity: active ? 1 : 0.4,
+                  transition: 'opacity 0.2s',
+                }}
+              >
+                {label}
+              </span>
+            </div>
+
+            {/* Gold/brass physical toggle */}
+            <div
+              style={{
+                position: 'relative',
+                width: '34px',
+                height: '18px',
+                borderRadius: '9px',
+                backgroundColor: active ? '#8B6914' : '#2a3650',
+                border: `1.5px solid ${active ? '#c8a96b' : '#3a4a65'}`,
+                flexShrink: 0,
+                transition: 'background-color 0.2s, border-color 0.2s',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '2px',
+                  width: '12px',
+                  height: '12px',
+                  borderRadius: '50%',
+                  backgroundColor: active ? '#F5E6C8' : '#5a6a80',
+                  left: active ? '17px' : '3px',
+                  transition: 'left 0.2s, background-color 0.2s',
+                  boxShadow: active ? '0 1px 3px rgba(0,0,0,0.3)' : 'none',
+                }}
+              />
+            </div>
           </button>
         );
       })}

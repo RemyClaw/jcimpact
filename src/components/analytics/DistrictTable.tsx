@@ -2,28 +2,23 @@
 
 import { useState } from 'react';
 import { DistrictStats } from '@/types';
+import { DISTRICT_COLORS } from '@/lib/colors';
 
 type SortKey = keyof Omit<DistrictStats, 'district'>;
 
-const cols: { key: SortKey; label: string; color: string }[] = [
-  { key: 'totalCrimes',    label: 'Total',    color: 'text-accent-blue'   },
-  { key: 'shootings',      label: 'Shots',    color: 'text-accent-red'    },
-  { key: 'homicides',      label: 'Hom',      color: 'text-slate-500'     },
-  { key: 'mvas',           label: 'MVAs',     color: 'text-accent-amber'  },
-  { key: 'thefts',         label: 'Thefts',   color: 'text-accent-purple' },
-  { key: 'stolenVehicles', label: 'Stolen V', color: 'text-accent-green'  },
+const cols: { key: SortKey; label: string }[] = [
+  { key: 'totalCrimes',    label: 'Total'    },
+  { key: 'shootings',      label: 'Shots'    },
+  { key: 'homicides',      label: 'Hom'      },
+  { key: 'mvas',           label: 'Accidents'},
+  { key: 'thefts',         label: 'Thefts'   },
+  { key: 'stolenVehicles', label: 'Stolen'   },
 ];
-
-const DISTRICT_COLORS: Record<string, string> = {
-  North: 'bg-[#4CC9F0]',
-  East:  'bg-[#7B61FF]',
-  West:  'bg-[#FF9F1C]',
-  South: 'bg-[#F72585]',
-};
 
 export default function DistrictTable({ data }: { data: DistrictStats[] }) {
   const [sortKey, setSortKey] = useState<SortKey>('totalCrimes');
   const [sortAsc, setSortAsc] = useState(false);
+  const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
 
   function handleSort(key: SortKey) {
     if (sortKey === key) setSortAsc((v) => !v);
@@ -35,29 +30,30 @@ export default function DistrictTable({ data }: { data: DistrictStats[] }) {
     return sortAsc ? d : -d;
   });
 
-  const colColor: Record<SortKey, string> = Object.fromEntries(
-    cols.map(c => [c.key, c.color])
-  ) as Record<SortKey, string>;
-
   return (
     <div className="flex flex-col h-full">
-      <table className="w-full text-xs">
+      <table className="w-full">
         <thead>
-          <tr className="border-b border-surface-border">
-            <th className="text-left pb-2 pr-4 text-[10px] text-slate-600 font-semibold uppercase tracking-wider">
+          <tr style={{ borderBottom: '1.5px solid #c8a96b' }}>
+            <th className="text-left pb-2 pr-4" style={{ color: '#FFFFFF', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               District
             </th>
-            {cols.map(({ key, label, color }) => (
+            {cols.map(({ key, label }) => (
               <th key={key} className="pb-2 px-2 text-right">
                 <button
                   onClick={() => handleSort(key)}
-                  className={`text-[10px] font-semibold uppercase tracking-wider flex items-center gap-0.5 ml-auto transition-colors ${
-                    sortKey === key ? color : 'text-slate-600 hover:text-slate-400'
-                  }`}
+                  className="flex items-center gap-0.5 ml-auto transition-opacity hover:opacity-80"
+                  style={{
+                    color: '#FFFFFF',
+                    fontSize: '13px',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                  }}
                 >
                   {label}
                   {sortKey === key && (
-                    <svg className="w-2.5 h-2.5 flex-shrink-0" fill="currentColor" viewBox="0 0 12 12">
+                    <svg className="w-3 h-3 flex-shrink-0" fill="currentColor" viewBox="0 0 12 12">
                       {sortAsc ? <path d="M6 2l4 6H2z" /> : <path d="M6 10L2 4h8z" />}
                     </svg>
                   )}
@@ -67,29 +63,50 @@ export default function DistrictTable({ data }: { data: DistrictStats[] }) {
           </tr>
         </thead>
         <tbody>
-          {sorted.map((row, i) => (
-            <tr
-              key={row.district}
-              className="border-b border-surface-border/50 hover:bg-surface-elevated/50 transition-colors"
-            >
-              <td className="py-2 pr-4 whitespace-nowrap">
-                <div className="flex items-center gap-2">
-                  <span className={`w-2 h-2 rounded-sm flex-shrink-0 ${DISTRICT_COLORS[row.district] ?? 'bg-slate-500'}`} />
-                  <span className={`text-[12px] font-medium ${i === 0 && !sortAsc ? 'text-white' : 'text-slate-400'}`}>
-                    {row.district}
-                  </span>
-                </div>
-              </td>
-              <td className={`py-2 px-2 text-right tabular-nums font-bold text-[12px] ${i === 0 && !sortAsc ? colColor[sortKey] : 'text-slate-400'}`}>
-                {row.totalCrimes}
-              </td>
-              <td className="py-2 px-2 text-right tabular-nums text-[12px] text-accent-red/80">{row.shootings}</td>
-              <td className="py-2 px-2 text-right tabular-nums text-[12px] text-slate-600">{row.homicides}</td>
-              <td className="py-2 px-2 text-right tabular-nums text-[12px] text-accent-amber/80">{row.mvas}</td>
-              <td className="py-2 px-2 text-right tabular-nums text-[12px] text-accent-purple/80">{row.thefts ?? 0}</td>
-              <td className="py-2 px-2 text-right tabular-nums text-[12px] text-accent-green/80">{row.stolenVehicles ?? 0}</td>
-            </tr>
-          ))}
+          {sorted.map((row) => {
+            const isSelected = selectedDistrict === row.district;
+            return (
+              <tr
+                key={row.district}
+                onClick={() => setSelectedDistrict(isSelected ? null : row.district)}
+                style={{
+                  borderBottom: '1px solid rgba(200, 169, 107, 0.3)',
+                  cursor: 'pointer',
+                  backgroundColor: isSelected ? 'rgba(200, 169, 107, 0.12)' : 'transparent',
+                  transition: 'background-color 0.15s ease',
+                }}
+                onMouseEnter={(e) => { if (!isSelected) e.currentTarget.style.backgroundColor = 'rgba(200, 169, 107, 0.08)'; }}
+                onMouseLeave={(e) => { if (!isSelected) e.currentTarget.style.backgroundColor = 'transparent'; }}
+              >
+                <td className="py-2.5 pr-4 whitespace-nowrap">
+                  <div className="flex items-center">
+                    <span style={{
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      color: isSelected ? '#c8a96b' : '#FFFFFF',
+                      transition: 'color 0.15s ease',
+                    }}>
+                      {row.district}
+                    </span>
+                  </div>
+                </td>
+                {cols.map(({ key }) => (
+                  <td
+                    key={key}
+                    className="py-2.5 px-2 text-right tabular-nums"
+                    style={{
+                      fontSize: '14px',
+                      color: isSelected ? '#c8a96b' : '#FFFFFF',
+                      fontWeight: key === 'totalCrimes' ? 700 : 500,
+                      transition: 'color 0.15s ease',
+                    }}
+                  >
+                    {row[key] ?? 0}
+                  </td>
+                ))}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

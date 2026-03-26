@@ -10,11 +10,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background: #2B2F36;
+}
+
 /* ── DayPicker dark theme ──────────────────────────────────────────────── */
 .rdp {
-  --rdp-accent-color: #3b82f6;
+  --rdp-accent-color: #3B82F6;
   --rdp-background-color: rgba(255,255,255,0.06);
-  color: #e2e8f0;
+  color: #E5E7EB;
   margin: 0;
   font-size: 11px;
 }
@@ -22,55 +26,54 @@
 .rdp-day_selected,
 .rdp-day_selected:focus-visible,
 .rdp-day_selected:hover {
-  background-color: #3b82f6;
+  background-color: #3B82F6;
   color: white;
 }
 .rdp-day_range_middle {
   background-color: rgba(59,130,246,0.15);
-  color: #e2e8f0;
+  color: #E5E7EB;
 }
 .rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
   background-color: rgba(255,255,255,0.06);
 }
-.rdp-head_cell { color: #475569; font-size: 10px; }
-.rdp-nav_button { color: #64748b; }
+.rdp-head_cell { color: #6B7280; font-size: 10px; }
+.rdp-nav_button { color: #6B7280; }
 .rdp-caption { margin-bottom: 4px; }
 
 /* ── Mapbox popup ──────────────────────────────────────────────────────── */
 .mapboxgl-popup-content {
-  background: #0e1420;
-  color: #e2e8f0;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 8px;
+  background: #111827;
+  color: #E5E7EB;
+  border: 1px solid #1F2937;
+  border-radius: 0;
   padding: 12px 14px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   min-width: 190px;
   font-family: inherit;
 }
 .mapboxgl-popup-close-button {
-  color: #475569;
+  color: #6B7280;
   font-size: 16px;
   padding: 4px 8px;
   line-height: 1;
 }
 .mapboxgl-popup-close-button:hover {
   background: rgba(255,255,255,0.06);
-  color: #e2e8f0;
+  color: #E5E7EB;
 }
 .mapboxgl-popup-tip { display: none !important; }
 
 /* ── Mapbox controls ───────────────────────────────────────────────────── */
 .mapboxgl-ctrl-group {
-  background: rgba(14,20,32,0.9) !important;
-  border: 1px solid rgba(255,255,255,0.07) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
-  backdrop-filter: blur(8px);
+  background: #0F172A !important;
+  border: 1px solid #1F2937 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 .mapboxgl-ctrl-group button { background-color: transparent !important; }
 .mapboxgl-ctrl-group button .mapboxgl-ctrl-icon { filter: invert(0.7); }
 .mapboxgl-ctrl-group button:hover { background: rgba(255,255,255,0.05) !important; }
-.mapboxgl-ctrl-group button + button { border-top: 1px solid rgba(255,255,255,0.06) !important; }
+.mapboxgl-ctrl-group button + button { border-top: 1px solid #1F2937 !important; }
 
 /* ── Scrollbar ─────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 3px; height: 3px; }

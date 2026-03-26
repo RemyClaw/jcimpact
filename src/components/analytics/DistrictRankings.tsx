@@ -1,31 +1,26 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { DistrictStats } from '@/types';
+import { METRIC_COLORS } from '@/lib/colors';
 
 type RankMetric = 'totalCrimes' | 'shootings' | 'mvas' | 'thefts' | 'stolenVehicles';
 
-const METRICS: { key: RankMetric; label: string; bar: string; text: string }[] = [
-  { key: 'totalCrimes',    label: 'Total',   bar: 'bg-accent-blue',   text: 'text-accent-blue'   },
-  { key: 'shootings',      label: 'Shots',   bar: 'bg-accent-red',    text: 'text-accent-red'    },
-  { key: 'mvas',           label: 'MVAs',    bar: 'bg-accent-amber',  text: 'text-accent-amber'  },
-  { key: 'thefts',         label: 'Thefts',  bar: 'bg-accent-purple', text: 'text-accent-purple' },
-  { key: 'stolenVehicles', label: 'Stolen',  bar: 'bg-accent-green',  text: 'text-accent-green'  },
+const METRICS: { key: RankMetric; label: string; color: string }[] = [
+  { key: 'totalCrimes',    label: 'Total',       color: METRIC_COLORS.totalCrimes    },
+  { key: 'shootings',      label: 'Shootings',   color: METRIC_COLORS.shootings      },
+  { key: 'mvas',           label: 'Accidents',   color: METRIC_COLORS.mvas           },
+  { key: 'thefts',         label: 'Thefts',      color: METRIC_COLORS.thefts         },
+  { key: 'stolenVehicles', label: 'Stolen Cars', color: METRIC_COLORS.stolenVehicles },
 ];
-
-const DISTRICT_COLORS: Record<string, string> = {
-  North: '#4CC9F0',
-  East:  '#7B61FF',
-  West:  '#FF9F1C',
-  South: '#F72585',
-};
 
 export default function DistrictRankings({ data }: { data: DistrictStats[] }) {
   const [metric, setMetric] = useState<RankMetric>('totalCrimes');
 
-  const sorted = [...data].sort((a, b) => (b[metric] ?? 0) - (a[metric] ?? 0));
-  const max = (sorted[0]?.[metric] ?? 1) || 1;
-  const m = METRICS.find((x) => x.key === metric)!;
+  const sorted = [...data].sort((a, b) => (a[metric] ?? 0) - (b[metric] ?? 0));
+  const max    = (sorted[sorted.length - 1]?.[metric] ?? 1) || 1;
+  const m      = METRICS.find((x) => x.key === metric)!;
 
   return (
     <div className="flex flex-col h-full">
@@ -35,11 +30,14 @@ export default function DistrictRankings({ data }: { data: DistrictStats[] }) {
           <button
             key={key}
             onClick={() => setMetric(key)}
-            className={`text-[10px] px-2.5 py-1 rounded-md font-medium transition-colors ${
-              metric === key
-                ? 'bg-white/10 text-slate-200'
-                : 'text-slate-600 hover:text-slate-400 hover:bg-white/[0.03]'
-            }`}
+            className="px-2.5 py-1 font-semibold transition-colors"
+            style={{
+              fontSize: '13px',
+              border: metric === key ? '1px solid #c8a96b' : '1px solid transparent',
+              background: metric === key ? '#15203a' : 'transparent',
+              color: metric === key ? '#ffffff' : '#9CA3AF',
+              borderRadius: '8px',
+            }}
           >
             {label}
           </button>
@@ -49,25 +47,27 @@ export default function DistrictRankings({ data }: { data: DistrictStats[] }) {
       <div className="flex flex-col gap-2.5 flex-1">
         {sorted.map((row, i) => {
           const val = row[metric] ?? 0;
-          const pct = (val / max) * 100;
-          const distColor = DISTRICT_COLORS[row.district] ?? '#6b7280';
+          const pct = Math.max((val / max) * 100, 2);
           return (
             <div key={row.district} className="flex items-center gap-3">
-              <span className="text-[11px] text-slate-700 font-mono w-3 text-right flex-shrink-0">{i + 1}</span>
+              <span className="font-mono w-4 text-right flex-shrink-0" style={{ fontSize: '13px', color: '#9CA3AF' }}>{i + 1}</span>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-sm flex-shrink-0" style={{ background: distColor }} />
-                    <span className="text-[12px] text-slate-300 font-medium">{row.district}</span>
-                  </div>
-                  <span className={`text-[12px] font-bold tabular-nums flex-shrink-0 ml-2 ${m.text}`}>
+                  <span style={{ fontSize: '14px', fontWeight: 600, color: '#FFFFFF' }}>{row.district}</span>
+                  <span className="font-bold tabular-nums flex-shrink-0 ml-2" style={{ fontSize: '14px', color: '#FFFFFF' }}>
                     {val.toLocaleString()}
                   </span>
                 </div>
-                <div className="h-1.5 bg-surface-muted rounded-full overflow-hidden">
-                  <div
-                    className={`h-full ${m.bar} rounded-full transition-all duration-500`}
-                    style={{ width: `${pct}%`, opacity: 0.9 - i * 0.1 }}
+                <div className="h-1.5 bg-surface-muted overflow-hidden">
+                  <motion.div
+                    className="h-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${pct}%` }}
+                    transition={{ duration: 0.6, delay: i * 0.08, ease: 'easeOut' }}
+                    style={{
+                      backgroundColor: m.color,
+                      opacity: 0.35 + (i / Math.max(sorted.length - 1, 1)) * 0.65,
+                    }}
                   />
                 </div>
               </div>

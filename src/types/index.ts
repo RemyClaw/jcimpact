@@ -57,10 +57,6 @@ export interface SummaryStats {
 }
 
 export interface FilterState {
-  dateRange: {
-    from: Date | undefined;
-    to: Date | undefined;
-  };
   incidentTypes: IncidentType[];
   district: District | 'All';
 }

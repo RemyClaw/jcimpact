@@ -1,36 +1,57 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import NumberFlow from '@number-flow/react';
+
 interface StatCardProps {
   label: string;
   value: number;
-  accentColor: 'red' | 'amber' | 'blue' | 'slate' | 'green' | 'purple';
-  sublabel?: string;
-  icon: React.ReactNode;
+  color: string;
+  critical?: boolean;
+  trend?: 'up' | 'down' | null;
+  index?: number;
 }
 
-const accent: Record<StatCardProps['accentColor'], { border: string; icon: string; num: string; bg: string }> = {
-  red:    { border: 'border-accent-red/25',    icon: 'text-accent-red',    num: 'text-white', bg: 'bg-accent-red/8'    },
-  amber:  { border: 'border-accent-amber/25',  icon: 'text-accent-amber',  num: 'text-white', bg: 'bg-accent-amber/8'  },
-  blue:   { border: 'border-accent-blue/25',   icon: 'text-accent-blue',   num: 'text-white', bg: 'bg-accent-blue/8'   },
-  green:  { border: 'border-accent-green/25',  icon: 'text-accent-green',  num: 'text-white', bg: 'bg-accent-green/8'  },
-  purple: { border: 'border-accent-purple/25', icon: 'text-accent-purple', num: 'text-white', bg: 'bg-accent-purple/8' },
-  slate:  { border: 'border-white/10',         icon: 'text-slate-400',     num: 'text-white', bg: 'bg-white/4'         },
-};
-
-export default function StatCard({ label, value, accentColor, sublabel, icon }: StatCardProps) {
-  const cls = accent[accentColor];
+export default function StatCard({ label, value, color, critical, trend, index = 0 }: StatCardProps) {
   return (
-    <div className={`flex items-center gap-3 bg-surface-card rounded-xl border ${cls.border} px-3.5 py-2.5 hover:bg-surface-elevated transition-colors`}>
-      <div className={`flex-shrink-0 w-8 h-8 rounded-lg ${cls.bg} flex items-center justify-center ${cls.icon}`}>
-        {icon}
+    <motion.div
+      className="flex-1 flex flex-col justify-center py-1.5 px-3 min-w-0 relative"
+      style={{
+        border: '2px solid #c8a96b',
+        background: '#1b2740',
+        borderRadius: '12px',
+      }}
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, delay: index * 0.06, ease: 'easeOut' }}
+    >
+      {/* Label — gray, not colored */}
+      <div className="text-[9px] font-semibold uppercase tracking-[0.1em] mb-1" style={{ color: '#9CA3AF' }}>
+        {label}
       </div>
-      <div className="min-w-0">
-        <div className={`text-xl font-bold tabular-nums leading-none ${cls.num}`}>
-          {value.toLocaleString()}
+
+      {/* Value — always white */}
+      <div className="text-base font-bold tabular-nums font-mono leading-none text-white">
+        <NumberFlow value={value} />
+      </div>
+
+      {/* Trend badge — green for increase, red for decrease */}
+      {trend && (
+        <div
+          className="flex items-center gap-0.5 mt-1.5"
+          style={{ color: trend === 'up' ? '#22C55E' : '#EF4444' }}
+        >
+          <svg className="w-2.5 h-2.5 flex-shrink-0" viewBox="0 0 10 10" fill="currentColor">
+            {trend === 'down'
+              ? <path d="M5 8L1 3h8z"/>
+              : <path d="M5 2l4 5H1z"/>
+            }
+          </svg>
+          <span className="text-[8px] font-bold tracking-widest uppercase">
+            {trend === 'down' ? 'Decrease' : 'Increase'}
+          </span>
         </div>
-        <div className="text-[11px] text-slate-400 mt-0.5 leading-none truncate">{label}</div>
-        {sublabel && (
-          <div className="text-[9px] text-slate-600 mt-0.5 leading-none truncate">{sublabel}</div>
-        )}
-      </div>
-    </div>
+      )}
+    </motion.div>
   );
 }

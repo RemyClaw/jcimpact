@@ -4012,5 +4012,61 @@
   "144 CLAREMONT AVE, JERSEY CITY, NJ 07305": {
     "lat": 40.709633,
     "lng": -74.079546
+  },
+  "Cator Avenue and Ocean Avenue": {
+    "lat": 40.696087,
+    "lng": -74.089823
+  },
+  "Oak Street and Sackett Street": {
+    "lat": 40.71451,
+    "lng": -74.078298
+  },
+  "Duncan Avenue and RT 1 and 9": {
+    "lat": 40.73529,
+    "lng": -74.081804
+  },
+  "Theodore Conrad Drive and Edward Hart Drive": {
+    "lat": 40.699479,
+    "lng": -74.061757
+  },
+  "Kennedy Boulevard and Sip Avenue": {
+    "lat": 40.731398,
+    "lng": -74.067842
+  },
+  "Pulaski Skyway and NJ 139": {
+    "lat": 40.73887,
+    "lng": -74.061861
+  },
+  "Port Jersey Boulevard and Chosin Few Way": {
+    "lat": 40.678397,
+    "lng": -74.096364
+  },
+  "Route 440 S and AVENUE C": {
+    "lat": 40.720149,
+    "lng": -74.094337
+  },
+  "Pulaski Skyway and Broadway": {
+    "lat": 40.736625,
+    "lng": -74.083613
+  },
+  "Route 440 SOUTH and Route 185": {
+    "lat": 40.720149,
+    "lng": -74.094337
+  },
+  "Port Jersey Boulevard and Pulaski Lane West": {
+    "lat": 40.677634,
+    "lng": -74.094372
+  },
+  "Herbert Place and Newark Avenue": {
+    "lat": 40.73557,
+    "lng": -74.064736
+  },
+  "Washington Boulevard and Newport Parkway": {
+    "lat": 40.729393,
+    "lng": -74.034573
+  },
+  "Garfield Avenue and Wilkinson Avenue": {
+    "lat": 40.703763,
+    "lng": -74.075616
   }
 }

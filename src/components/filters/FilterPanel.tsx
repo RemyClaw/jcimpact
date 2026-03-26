@@ -3,7 +3,6 @@
 import { FilterState } from '@/types';
 import IncidentTypeFilter from './IncidentTypeFilter';
 import DistrictFilter from './DistrictFilter';
-import DateRangePicker from './DateRangePicker';
 
 interface FilterPanelProps {
   filterState: FilterState;
@@ -14,32 +13,50 @@ interface FilterPanelProps {
 export default function FilterPanel({ filterState, onChange, incidentCount }: FilterPanelProps) {
   function reset() {
     onChange({
-      dateRange: { from: undefined, to: undefined },
-      incidentTypes: ['MVA', 'Shooting', 'Theft', 'Stolen Vehicle'],
+      incidentTypes: [],
       district: 'All',
     });
   }
 
   const isFiltered =
-    filterState.dateRange.from ||
-    filterState.dateRange.to ||
     filterState.district !== 'All' ||
-    filterState.incidentTypes.length < 4;
+    filterState.incidentTypes.length > 0;
 
   return (
-    <div className="flex flex-col h-full">
-
-      {/* Section header */}
-      <div className="flex items-center justify-between px-4 pt-4 pb-2.5">
-        <span className="text-[11px] font-medium text-slate-500 uppercase tracking-widest">Filters</span>
-        <span className="text-[11px] text-slate-500 tabular-nums">
-          {incidentCount} shown
-        </span>
+    <div
+      className="flex flex-col"
+      style={{
+        background: '#1b2740',
+        border: '2px solid #c8a96b',
+        borderRadius: '24px',
+        overflow: 'hidden',
+        height: '100%',
+      }}
+    >
+      {/* ── Header ──────────────────────────────────────────────────────── */}
+      <div style={{ padding: '14px 16px 10px' }}>
+        <div className="flex items-center justify-between">
+          <span
+            style={{
+              color: '#ffffff',
+              fontWeight: 700,
+              fontSize: '13px',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase' as const,
+            }}
+          >
+            Filters
+          </span>
+          <span style={{ color: '#c8a96b', fontSize: '11px', fontWeight: 500 }}>
+            {incidentCount} shown
+          </span>
+        </div>
+        {/* Gold divider */}
+        <div style={{ height: '1px', background: '#c8a96b', marginTop: '10px', opacity: 0.5 }} />
       </div>
 
-      {/* Filter groups */}
-      <div className="flex-1 overflow-y-auto px-4 space-y-4 pb-4">
-
+      {/* ── Filter groups ───────────────────────────────────────────────── */}
+      <div className="flex-1 overflow-y-auto" style={{ padding: '4px 16px 16px' }}>
         <FilterGroup label="Incident Type">
           <IncidentTypeFilter
             selected={filterState.incidentTypes}
@@ -53,23 +70,25 @@ export default function FilterPanel({ filterState, onChange, incidentCount }: Fi
             onChange={(district) => onChange({ ...filterState, district })}
           />
         </FilterGroup>
-
-        <FilterGroup label="Date Range">
-          <DateRangePicker
-            from={filterState.dateRange.from}
-            to={filterState.dateRange.to}
-            onChange={(from, to) => onChange({ ...filterState, dateRange: { from, to } })}
-          />
-        </FilterGroup>
-
       </div>
 
-      {/* Reset */}
+      {/* ── Reset ───────────────────────────────────────────────────────── */}
       {isFiltered && (
-        <div className="px-4 py-2.5 border-t border-white/[0.06]">
+        <div style={{ padding: '8px 16px 12px', borderTop: '1px solid rgba(200,169,107,0.25)' }}>
           <button
             onClick={reset}
-            className="w-full text-[11px] text-slate-500 hover:text-slate-300 py-1.5 rounded-md hover:bg-white/5 transition-colors tracking-wide"
+            style={{
+              width: '100%',
+              fontSize: '11px',
+              color: '#c8a96b',
+              padding: '6px 0',
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase' as const,
+              fontWeight: 600,
+            }}
           >
             Clear all filters
           </button>
@@ -81,8 +100,17 @@ export default function FilterPanel({ filterState, onChange, incidentCount }: Fi
 
 function FilterGroup({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div>
-      <p className="text-[10px] font-medium text-slate-600 uppercase tracking-widest mb-2.5">
+    <div style={{ marginBottom: '16px' }}>
+      <p
+        style={{
+          color: '#ffffff',
+          fontWeight: 700,
+          fontSize: '10px',
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase' as const,
+          marginBottom: '10px',
+        }}
+      >
         {label}
       </p>
       {children}

@@ -30,7 +30,7 @@ export default function DateRangePicker({ from, to, onChange }: DateRangePickerP
     <div className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className={`w-full flex items-center justify-between gap-2 bg-white/5 border border-white/[0.08] text-xs rounded-md px-3 py-2 text-left transition-colors hover:border-white/15 focus:outline-none ${hasRange ? 'text-slate-200' : 'text-slate-500'}`}
+        className={`w-full flex items-center justify-between gap-2 bg-[#111827] border border-[#1F2937] text-xs px-3 py-2 text-left transition-colors hover:border-[#374151] focus:outline-none ${hasRange ? 'text-[#E5E7EB]' : 'text-[#9CA3AF]'}`}
       >
         {label}
         <svg className={`w-3.5 h-3.5 text-slate-500 flex-shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -41,19 +41,22 @@ export default function DateRangePicker({ from, to, onChange }: DateRangePickerP
       {open && (
         <>
           <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
-          <div className="absolute top-full left-0 right-0 mt-1 bg-[#131929] border border-white/[0.08] rounded-xl shadow-2xl z-50 p-2">
+          <div className="absolute top-full left-0 right-0 mt-1 bg-[#111827] border border-[#1F2937] z-50 p-2">
             <DayPicker
               mode="range"
               selected={range}
               onSelect={handleSelect}
               numberOfMonths={1}
               showOutsideDays={false}
+              defaultMonth={new Date(2026, 0)}
+              fromDate={new Date(2026, 0, 1)}
+              toDate={new Date(2026, 2, 21)}
               className="!p-0 text-xs"
             />
             {hasRange && (
               <button
                 onClick={() => { onChange(undefined, undefined); setOpen(false); }}
-                className="w-full mt-1 text-[11px] text-slate-500 hover:text-slate-300 py-1.5 rounded-md hover:bg-white/5 transition-colors"
+                className="w-full mt-1 text-[11px] text-[#9CA3AF] hover:text-[#E5E7EB] py-1.5 hover:bg-white/5 transition-colors"
               >
                 Clear dates
               </button>
