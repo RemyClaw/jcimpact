@@ -34,7 +34,7 @@ export default function DistrictRankings({ data }: { data: DistrictStats[] }) {
             style={{
               fontSize: '13px',
               border: metric === key ? '1px solid #c8a96b' : '1px solid transparent',
-              background: metric === key ? '#15203a' : 'transparent',
+              background: metric === key ? '#0a1628' : 'transparent',
               color: metric === key ? '#ffffff' : '#9CA3AF',
               borderRadius: '8px',
             }}

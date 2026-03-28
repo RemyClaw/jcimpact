@@ -15,7 +15,7 @@ export default function DistrictFilter({ selected, onChange }: DistrictFilterPro
         onChange={(e) => onChange(e.target.value as District | 'All')}
         style={{
           width: '100%',
-          backgroundColor: '#15203a',
+          backgroundColor: '#0a1628',
           color: '#ffffff',
           fontSize: '12px',
           fontWeight: 500,

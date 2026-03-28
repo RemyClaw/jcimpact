@@ -3,8 +3,9 @@
 import { MonthlyStat } from '@/types';
 import { METRIC_COLORS } from '@/lib/colors';
 
-// 2025 figures from JCPD CompStat reports (Jan & Feb 2026 editions)
-// MVAs excluded — from NJ Crash Reports, no 2025 data available
+// 2025 figures — verified from JCPD CompStat PDFs (Jan & Feb 2026 editions)
+// Jan 2025 from Jan PDF YTD, Feb 2025 = Feb YTD minus Jan
+// MVAs excluded — from NJ Crash Reports, no 2025 monthly breakdown available
 const PREV: Record<string, { shootings: number; thefts: number; stolenVehicles: number }> = {
   '2026-01': { shootings: 2,  thefts: 223, stolenVehicles: 57 },
   '2026-02': { shootings: 3,  thefts: 197, stolenVehicles: 62 },
@@ -57,7 +58,7 @@ export default function YoYComparison({ data }: { data: MonthlyStat[] }) {
           return (
             <div key={key} className="flex-1 px-4 py-2 flex flex-col" style={{
               border: '2px solid #c8a96b',
-              background: '#15203a',
+              background: '#0a1628',
               borderRadius: '14px',
             }}>
               {/* Header */}

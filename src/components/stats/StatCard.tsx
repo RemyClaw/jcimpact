@@ -18,15 +18,15 @@ export default function StatCard({ label, value, color, critical, trend, index =
       className="flex-1 flex flex-col justify-center py-1.5 px-3 min-w-0 relative"
       style={{
         border: '2px solid #c8a96b',
-        background: '#1b2740',
+        background: '#0a1628',
         borderRadius: '12px',
       }}
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, delay: index * 0.06, ease: 'easeOut' }}
     >
-      {/* Label — gray, not colored */}
-      <div className="text-[9px] font-semibold uppercase tracking-[0.1em] mb-1" style={{ color: '#9CA3AF' }}>
+      {/* Label */}
+      <div className="text-[9px] font-semibold uppercase tracking-[0.1em] mb-1" style={{ color: '#FFFFFF' }}>
         {label}
       </div>
 
@@ -36,7 +36,7 @@ export default function StatCard({ label, value, color, critical, trend, index =
       </div>
 
       {/* Trend badge — green for increase, red for decrease */}
-      {trend && (
+      {trend && !(critical && value === 0) && (
         <div
           className="flex items-center gap-0.5 mt-1.5"
           style={{ color: trend === 'up' ? '#22C55E' : '#EF4444' }}

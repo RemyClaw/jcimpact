@@ -1,7 +1,9 @@
 /** Metric colors — exact CompStat command dashboard palette */
 export const METRIC_COLORS = {
   totalCrimes:    '#3B82F6',  // blue
-  shootings:      '#EF4444',  // red
+  shootings:      '#EF4444',  // red (aggregate)
+  shotsFired:     '#F87171',  // lighter red
+  shootingHit:    '#DC2626',  // darker red
   homicides:      '#9CA3AF',  // gray
   mvas:           '#F59E0B',  // amber
   thefts:         '#F97316',  // orange

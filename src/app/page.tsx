@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FilterState, DistrictStats, MonthlyStat } from '@/types';
+import { FilterState, DistrictStats, MonthlyStat, IncidentType } from '@/types';
 import rawData from '@/data/data.json';
 import { useFilteredIncidents } from '@/hooks/useFilteredIncidents';
 import FilterPanel from '@/components/filters/FilterPanel';
@@ -26,7 +26,7 @@ const META_UPDATED = new Date(_y, _m - 1, _d).toLocaleDateString('en-US', {
 });
 
 const DEFAULT_FILTER: FilterState = {
-  incidentTypes: [], // empty = all types shown (no filter)
+  incidentTypes: [], // empty = nothing shown (toggles start off)
   district: 'All',
 };
 
@@ -38,13 +38,48 @@ export default function DashboardPage() {
   const [analyticsTab, setAnalyticsTab]     = useState<AnalyticsTab>('districts');
   const [activePeriod, setActivePeriod]     = useState<TimePeriod>({ month: null, half: null });
 
+  // When user clicks a month, auto-enable all types with data in that month
+  // When clicking YTD, reset toggles to empty (clean slate)
+  const handlePeriodSelect = (period: TimePeriod) => {
+    setActivePeriod(period);
+
+    if (period.month === null) {
+      // YTD → clear toggles
+      setFilterState(prev => ({ ...prev, incidentTypes: [] }));
+      return;
+    }
+
+    // Auto-enable types that have data in the selected period
+    const periodIncidents = filterByPeriod(allIncidents, period);
+    const typesWithData = [...new Set(periodIncidents.map(i => i.type))] as IncidentType[];
+    setFilterState(prev => ({ ...prev, incidentTypes: typesWithData }));
+  };
+
   const typeFiltered = useFilteredIncidents(allIncidents, filterState);
   const filteredIncidents = useMemo(() => filterByPeriod(typeFiltered, activePeriod), [typeFiltered, activePeriod]);
 
+  // When a time period is selected, compute stats from filtered incidents
+  // When YTD + All districts, use the authoritative CompStat summary stats
+  const periodFiltered = useMemo(() => filterByPeriod(allIncidents, activePeriod), [activePeriod]);
+
   const derivedStats = useMemo(() => {
     const { district } = filterState;
+    const isYTD = activePeriod.month === null;
 
-    if (district !== 'All') {
+    // YTD + All districts → use CompStat authoritative totals
+    if (isYTD && district === 'All') {
+      return {
+        totalCrimes:    baseStats.totalCrimes,
+        shootings:      baseStats.shootings,
+        homicides:      baseStats.homicides,
+        mvas:           baseStats.mvas,
+        thefts:         baseStats.thefts,
+        stolenVehicles: baseStats.stolenVehicles,
+      };
+    }
+
+    // YTD + specific district → use stored district stats
+    if (isYTD && district !== 'All') {
       const d = allDistricts.find((x) => x.district === district);
       return {
         totalCrimes:    d?.totalCrimes    ?? 0,
@@ -56,15 +91,20 @@ export default function DashboardPage() {
       };
     }
 
+    // Specific period selected → count from actual incident records
+    const pool = district !== 'All'
+      ? periodFiltered.filter(i => i.district === district)
+      : periodFiltered;
+
     return {
-      totalCrimes:    baseStats.totalCrimes,
-      shootings:      baseStats.shootings,
-      homicides:      baseStats.homicides,
-      mvas:           baseStats.mvas,
-      thefts:         baseStats.thefts,
-      stolenVehicles: baseStats.stolenVehicles,
+      totalCrimes:    pool.length, // count of mapped incidents in this period
+      shootings:      pool.filter(i => i.type === 'Shots Fired' || i.type === 'Shooting Hit').length,
+      homicides:      0, // no homicide incidents in data
+      mvas:           pool.filter(i => i.type === 'MVA').length,
+      thefts:         pool.filter(i => i.type === 'Theft').length,
+      stolenVehicles: pool.filter(i => i.type === 'Stolen Vehicle').length,
     };
-  }, [filterState.district]);
+  }, [filterState.district, activePeriod, periodFiltered]);
 
   const derivedDistricts = useMemo<DistrictStats[]>(() => {
     if (filterState.district === 'All') return allDistricts;
@@ -72,7 +112,7 @@ export default function DashboardPage() {
   }, [filterState.district]);
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden text-white" style={{ backgroundColor: '#3A3F47' }}>
+    <div className="flex flex-col h-screen overflow-hidden text-white" style={{ backgroundColor: '#000000' }}>
 
       {/* ── Full-width command header with stat cards ──────────────────── */}
       <header
@@ -81,30 +121,61 @@ export default function DashboardPage() {
           display: 'flex',
           alignItems: 'center',
           padding: '8px 16px',
-          borderTop: '3px solid #3B82F6',
+          borderTop: 'none',
           borderBottom: 'none',
-          backgroundColor: '#3A3F47',
+          backgroundColor: '#000000',
           flexShrink: 0,
           gap: '16px',
         }}
       >
         {/* Left — title + subtitle */}
-        <div style={{ display: 'flex', flexDirection: 'column', flexShrink: 0 }}>
-          <h1 style={{ color: '#FFFFFF', fontSize: '22px', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', lineHeight: 1, margin: 0 }}>
-            JC IMPACT
+        <a href="/" style={{ display: 'flex', flexDirection: 'column', flexShrink: 0, textDecoration: 'none', cursor: 'pointer' }}>
+          <h1 style={{ fontFamily: 'var(--font-orbitron)', fontSize: '24px', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, margin: 0 }}>
+            <span style={{ color: '#c8a96b' }}>Jersey City</span>{' '}
+            <span style={{ color: '#FFFFFF' }}>IMPACT</span>
           </h1>
-          <p style={{ color: '#FFFFFF', fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, margin: '5px 0 0 0' }}>
+          <p style={{ color: '#9CA3AF', fontSize: '10px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', lineHeight: 1, margin: '6px 0 0 0' }}>
             Integrated Metrics for Public Accountability &amp; Community Trust
           </p>
-        </div>
+        </a>
 
-        {/* JCPD badge — between title and stat cards */}
-        <div style={{ flexShrink: 0 }}>
-          <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
-            <path d="M16 2L4 7v9c0 7 5.4 13.5 12 15 6.6-1.5 12-8 12-15V7L16 2z" fill="#3A3F47" stroke="#c4a832" strokeWidth="1.5"/>
-            <path d="M16 6L7 10v7c0 5 3.8 9.5 9 10.8 5.2-1.3 9-5.8 9-10.8v-7L16 6z" fill="#1e2229"/>
-            <text x="16" y="21" textAnchor="middle" fill="#c4a832" fontSize="9" fontWeight="bold" fontFamily="monospace">JCPD</text>
-          </svg>
+        {/* JCPD badge — 3D spinning coin */}
+        <div className="coin-container" style={{ flexShrink: 0, width: 72, height: 72, perspective: '600px' }}>
+          <div className="coin-spinner" style={{
+            width: '100%',
+            height: '100%',
+            transformStyle: 'preserve-3d',
+            animation: 'coinSpin 8s linear infinite',
+          }}>
+            {/* Front face */}
+            <div style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              backfaceVisibility: 'hidden',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              border: '2px solid #c8a96b',
+              boxShadow: '0 0 12px rgba(200,169,107,0.4)',
+            }}>
+              <img src="/jcimpact-logo.png" alt="JC IMPACT" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            {/* Back face — JCPD badge */}
+            <div style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              backfaceVisibility: 'hidden',
+              transform: 'rotateY(180deg)',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              border: '2px solid #c8a96b',
+              boxShadow: '0 0 12px rgba(200,169,107,0.4)',
+              background: '#000',
+            }}>
+              <img src="/jcpd-badge.webp" alt="JCPD Badge" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            </div>
+          </div>
         </div>
 
         {/* Stat cards filling remaining space */}
@@ -116,9 +187,10 @@ export default function DashboardPage() {
       {/* ── Bi-weekly timeline strip ─────────────────────────────────── */}
       <div style={{ padding: '0 16px', flexShrink: 0, borderBottom: '1px solid rgba(200,169,107,0.2)' }}>
         <TimelineStrip
-          incidents={typeFiltered}
+          incidents={filterState.incidentTypes.length > 0 ? typeFiltered : allIncidents}
           activePeriod={activePeriod}
-          onSelect={setActivePeriod}
+          onSelect={handlePeriodSelect}
+          hasActiveFilters={filterState.incidentTypes.length > 0}
         />
       </div>
 
@@ -181,7 +253,7 @@ export default function DashboardPage() {
               border: '2px solid #c8a96b',
               borderRadius: '24px',
               overflow: 'hidden',
-              background: '#1b2740',
+              background: '#0a1628',
               flex: 1,
               minHeight: 0,
               position: 'relative',
@@ -189,7 +261,8 @@ export default function DashboardPage() {
               <MapWrapper
                 incidents={filteredIncidents}
                 showMVA={filterState.incidentTypes.includes('MVA')}
-                showShooting={filterState.incidentTypes.includes('Shooting')}
+                showShotsFired={filterState.incidentTypes.includes('Shots Fired')}
+                showShootingHit={filterState.incidentTypes.includes('Shooting Hit')}
                 showTheft={filterState.incidentTypes.includes('Theft')}
                 showStolenVehicle={filterState.incidentTypes.includes('Stolen Vehicle')}
               />
@@ -203,7 +276,7 @@ export default function DashboardPage() {
             border: '2px solid #c8a96b',
             borderRadius: '24px',
             overflow: 'hidden',
-            background: '#1b2740',
+            background: '#0a1628',
             height: '100%',
             display: 'flex',
             flexDirection: 'column' as const,

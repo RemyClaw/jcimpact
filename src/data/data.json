@@ -1,6 +1,6 @@
 {
   "meta": {
-    "period": "YTD 2026 (Jan '26 – Mar '26)",
+    "period": "YTD 2026 (Jan '26 \u2013 Mar '26)",
     "generated": "2026-03-24",
     "source": "JCPD CompStat / NJ Crash Reports",
     "lastUpdated": "2026-03-23"
@@ -10,45 +10,45 @@
     "shootings": 13,
     "homicides": 0,
     "mvas": 333,
-    "thefts": 522,
-    "stolenVehicles": 149
+    "thefts": 533,
+    "stolenVehicles": 146
   },
   "byDistrict": [
     {
-      "district": "South",
-      "totalCrimes": 326,
-      "shootings": 6,
+      "district": "North",
+      "totalCrimes": 182,
+      "shootings": 0,
       "homicides": 0,
-      "mvas": 58,
-      "thefts": 150,
-      "stolenVehicles": 45
-    },
-    {
-      "district": "West",
-      "totalCrimes": 484,
-      "shootings": 6,
-      "homicides": 0,
-      "mvas": 148,
-      "thefts": 191,
-      "stolenVehicles": 40
+      "mvas": 49,
+      "thefts": 54,
+      "stolenVehicles": 18
     },
     {
       "district": "East",
       "totalCrimes": 287,
       "shootings": 1,
       "homicides": 0,
-      "mvas": 67,
-      "thefts": 122,
-      "stolenVehicles": 38
+      "mvas": 58,
+      "thefts": 121,
+      "stolenVehicles": 27
     },
     {
-      "district": "North",
-      "totalCrimes": 182,
-      "shootings": 0,
+      "district": "South",
+      "totalCrimes": 326,
+      "shootings": 7,
       "homicides": 0,
-      "mvas": 60,
-      "thefts": 59,
-      "stolenVehicles": 26
+      "mvas": 99,
+      "thefts": 113,
+      "stolenVehicles": 34
+    },
+    {
+      "district": "West",
+      "totalCrimes": 484,
+      "shootings": 5,
+      "homicides": 0,
+      "mvas": 127,
+      "thefts": 119,
+      "stolenVehicles": 25
     }
   ],
   "monthlyTrends": [
@@ -59,8 +59,8 @@
       "shootings": 5,
       "homicides": 0,
       "mvas": 146,
-      "thefts": 216,
-      "stolenVehicles": 50
+      "thefts": 218,
+      "stolenVehicles": 51
     },
     {
       "month": "2026-02",
@@ -69,8 +69,8 @@
       "shootings": 3,
       "homicides": 0,
       "mvas": 145,
-      "thefts": 178,
-      "stolenVehicles": 52
+      "thefts": 189,
+      "stolenVehicles": 53
     },
     {
       "month": "2026-03",
@@ -79,24 +79,24 @@
       "shootings": 5,
       "homicides": 0,
       "mvas": 42,
-      "thefts": 128,
-      "stolenVehicles": 47
+      "thefts": 126,
+      "stolenVehicles": 42
     }
   ],
   "incidents": [
     {
       "id": "sf-1",
-      "type": "Shooting",
+      "type": "Shots Fired",
       "date": "2026-01-12",
       "district": "South",
       "lat": 40.696087,
       "lng": -74.089823,
       "address": "Cator & Ocean",
-      "description": "Shots Fired · Arrest"
+      "description": "Shots Fired \u00b7 Arrest"
     },
     {
       "id": "sf-2",
-      "type": "Shooting",
+      "type": "Shots Fired",
       "date": "2026-01-16",
       "district": "East",
       "lat": 40.72761,
@@ -106,17 +106,17 @@
     },
     {
       "id": "sf-3",
-      "type": "Shooting",
+      "type": "Shots Fired",
       "date": "2026-01-17",
       "district": "West",
       "lat": 40.730883,
       "lng": -74.073062,
       "address": "112 Stuyvesant",
-      "description": "Shots Fired · Arrest"
+      "description": "Shots Fired \u00b7 Arrest"
     },
     {
       "id": "sf-4",
-      "type": "Shooting",
+      "type": "Shots Fired",
       "date": "2026-02-22",
       "district": "West",
       "lat": 40.719835,
@@ -126,17 +126,17 @@
     },
     {
       "id": "sf-5",
-      "type": "Shooting",
+      "type": "Shots Fired",
       "date": "2026-03-06",
       "district": "South",
       "lat": 40.70056,
       "lng": -74.08473,
       "address": "80 Van Nostrand",
-      "description": "Shots Fired · Arrest"
+      "description": "Shots Fired \u00b7 Arrest"
     },
     {
       "id": "sf-6",
-      "type": "Shooting",
+      "type": "Shots Fired",
       "date": "2026-03-07",
       "district": "West",
       "lat": 40.736045,
@@ -146,27 +146,27 @@
     },
     {
       "id": "sf-7",
-      "type": "Shooting",
+      "type": "Shots Fired",
       "date": "2026-03-07",
       "district": "West",
       "lat": 40.73093,
       "lng": -74.08342,
       "address": "33 Gloria Robinson Ct.",
-      "description": "Shots Fired · Arrest"
+      "description": "Shots Fired \u00b7 Arrest"
     },
     {
       "id": "sf-8",
-      "type": "Shooting",
+      "type": "Shots Fired",
       "date": "2026-03-20",
       "district": "West",
       "lat": 40.718115,
       "lng": -74.072095,
       "address": "Brinkerhoff & Monticello",
-      "description": "Shots Fired · Arrest"
+      "description": "Shots Fired \u00b7 Arrest"
     },
     {
       "id": "sh-1",
-      "type": "Shooting",
+      "type": "Shooting Hit",
       "date": "2026-01-01",
       "district": "South",
       "lat": 40.7138,
@@ -176,7 +176,7 @@
     },
     {
       "id": "sh-2",
-      "type": "Shooting",
+      "type": "Shooting Hit",
       "date": "2026-01-20",
       "district": "South",
       "lat": 40.700992,
@@ -186,33 +186,33 @@
     },
     {
       "id": "sh-3",
-      "type": "Shooting",
+      "type": "Shooting Hit",
       "date": "2026-02-03",
       "district": "South",
       "lat": 40.70213,
       "lng": -74.090284,
       "address": "117-121 Wade",
-      "description": "Shooting Hit · Arrest"
+      "description": "Shooting Hit \u00b7 Arrest"
     },
     {
       "id": "sh-4",
-      "type": "Shooting",
+      "type": "Shooting Hit",
       "date": "2026-02-22",
       "district": "South",
       "lat": 40.701779,
       "lng": -74.090069,
       "address": "117 Wade",
-      "description": "Shooting Hit · Arrest"
+      "description": "Shooting Hit \u00b7 Arrest"
     },
     {
       "id": "sh-5",
-      "type": "Shooting",
+      "type": "Shooting Hit",
       "date": "2026-03-20",
       "district": "West",
       "lat": 40.71451,
       "lng": -74.078298,
       "address": "Oak & Sackett",
-      "description": "Shooting Hit · Arrest"
+      "description": "Shooting Hit \u00b7 Arrest"
     },
     {
       "id": "mva-26-040062",

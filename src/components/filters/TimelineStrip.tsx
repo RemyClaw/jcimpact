@@ -37,9 +37,10 @@ interface TimelineStripProps {
   activePeriod: TimePeriod;
   onSelect: (period: TimePeriod) => void;
   year?: number;
+  hasActiveFilters?: boolean;
 }
 
-export default function TimelineStrip({ incidents, activePeriod, onSelect, year = 2026 }: TimelineStripProps) {
+export default function TimelineStrip({ incidents, activePeriod, onSelect, year = 2026, hasActiveFilters = false }: TimelineStripProps) {
   const monthlyCounts = useMemo(() => {
     const counts = new Array(12).fill(0);
     incidents.forEach((inc) => {
@@ -95,16 +96,20 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
         {MONTHS.map((label, i) => {
           const isActive = activePeriod.month === i;
           const hasData = monthlyCounts[i] > 0;
+          // When filters are active, disable months with no matching data
+          const disabled = hasActiveFilters && !hasData && !isActive;
 
           return (
             <button
               key={label}
-              onClick={() => onSelect({ month: i, half: null })}
+              onClick={() => !disabled && onSelect({ month: i, half: null })}
               className="flex items-center gap-1.5 px-3 py-2 transition-all flex-shrink-0"
               style={{
                 borderRadius: '8px',
                 fontSize: '13px',
                 fontWeight: isActive ? 800 : 600,
+                cursor: disabled ? 'not-allowed' : 'pointer',
+                opacity: disabled ? 0.3 : 1,
                 border: isActive
                   ? '2px solid #c8a96b'
                   : hasData
@@ -134,19 +139,11 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
         })}
       </div>
 
-      {/* Row 2: Bi-weekly sub-periods (always visible) */}
-      {(() => {
-        // Use selected month, or default to most recent month with data
-        const displayMonth = activePeriod.month ?? (() => {
-          for (let i = 11; i >= 0; i--) { if (monthlyCounts[i] > 0) return i; }
-          return 0;
-        })();
+      {/* Row 2: Bi-weekly sub-periods (only visible when a month is selected) */}
+      {activePeriod.month !== null && (() => {
+        const displayMonth = activePeriod.month;
         const displayLastDay = new Date(year, displayMonth + 1, 0).getDate();
-        const displayHalfCounts = activePeriod.month !== null ? halfCounts : (() => {
-          const fr = getDateRange({ month: displayMonth, half: 'first' }, year)!;
-          const sr = getDateRange({ month: displayMonth, half: 'second' }, year)!;
-          return { first: countInRange(incidents, fr[0], fr[1]), second: countInRange(incidents, sr[0], sr[1]) };
-        })();
+        const displayHalfCounts = halfCounts;
         const displayFullCount = monthlyCounts[displayMonth];
         const monthLabel = MONTHS[displayMonth];
 

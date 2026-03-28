@@ -24,20 +24,22 @@ export function incidentsToGeoJSON(incidents: Incident[]): GeoJSON.FeatureCollec
 
 export function buildTypeFilter(
   showMVA: boolean,
-  showShooting: boolean,
+  showShotsFired: boolean,
+  showShootingHit: boolean,
   showTheft: boolean,
   showStolenVehicle: boolean,
 ): mapboxgl.Expression {
   const types: string[] = [];
-  if (showShooting)     types.push('Shooting');
-  if (showMVA)          types.push('MVA');
-  if (showTheft)        types.push('Theft');
+  if (showShotsFired)    types.push('Shots Fired');
+  if (showShootingHit)   types.push('Shooting Hit');
+  if (showMVA)           types.push('MVA');
+  if (showTheft)         types.push('Theft');
   if (showStolenVehicle) types.push('Stolen Vehicle');
 
   if (types.length === 0) {
     return ['==', ['get', 'type'], '__none__'] as unknown as mapboxgl.Expression;
   }
-  if (types.length === 4) {
+  if (types.length === 5) {
     return ['!', ['has', 'point_count']] as unknown as mapboxgl.Expression;
   }
   return [

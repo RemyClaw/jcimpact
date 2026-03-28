@@ -4,7 +4,7 @@ import { Incident } from '@/types';
 const MapboxMap = dynamic(() => import('./MapboxMap'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full bg-[#1b2740] flex items-center justify-center">
+    <div className="w-full h-full bg-[#0a1628] flex items-center justify-center">
       <div className="flex flex-col items-center gap-3 text-slate-500">
         <svg className="w-8 h-8 animate-spin" fill="none" viewBox="0 0 24 24">
           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
@@ -19,7 +19,8 @@ const MapboxMap = dynamic(() => import('./MapboxMap'), {
 interface MapWrapperProps {
   incidents: Incident[];
   showMVA: boolean;
-  showShooting: boolean;
+  showShotsFired: boolean;
+  showShootingHit: boolean;
   showTheft: boolean;
   showStolenVehicle: boolean;
 }

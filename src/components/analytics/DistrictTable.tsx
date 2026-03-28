@@ -9,7 +9,7 @@ type SortKey = keyof Omit<DistrictStats, 'district'>;
 const cols: { key: SortKey; label: string }[] = [
   { key: 'totalCrimes',    label: 'Total'    },
   { key: 'shootings',      label: 'Shots'    },
-  { key: 'homicides',      label: 'Hom'      },
+  { key: 'homicides',      label: 'Homicide' },
   { key: 'mvas',           label: 'Accidents'},
   { key: 'thefts',         label: 'Thefts'   },
   { key: 'stolenVehicles', label: 'Stolen'   },

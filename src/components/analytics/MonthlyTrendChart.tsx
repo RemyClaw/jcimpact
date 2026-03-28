@@ -20,11 +20,14 @@ const SERIES: { key: SeriesKey; label: string; color: string }[] = [
   { key: 'stolenVehicles', label: 'Stolen Cars',   color: METRIC_COLORS.stolenVehicles },
 ];
 
-// Prior year (2025) comparison data — Jan-Mar 2025 actuals from JCPD CompStat
-const PRIOR_YEAR: Record<string, Record<SeriesKey, number>> = {
-  'Jan': { totalCrimes: 510, shootings: 3, mvas: 138, thefts: 205, stolenVehicles: 58 },
-  'Feb': { totalCrimes: 480, shootings: 2, mvas: 130, thefts: 190, stolenVehicles: 61 },
-  'Mar': { totalCrimes: 530, shootings: 4, mvas: 150, thefts: 215, stolenVehicles: 55 },
+// Prior year (2025) comparison data — verified from JCPD CompStat PDFs (Jan & Feb 2026 editions)
+// Jan/Feb 2025: from YTD tables in Feb 2026 CompStat PDF
+// Mar 2025: from "MAR Weekly" sheet (MAR 25 column)
+// Only shootings, thefts, stolenVehicles have verified 2025 data
+// totalCrimes and mvas have no 2025 monthly breakdown available
+const PRIOR_YEAR: Record<string, Partial<Record<SeriesKey, number>>> = {
+  'Jan': { shootings: 2, thefts: 223, stolenVehicles: 57 },
+  'Feb': { shootings: 3, thefts: 197, stolenVehicles: 62 },
 };
 
 interface HoverInfo {
@@ -36,13 +39,18 @@ export default function MonthlyTrendChart({ data }: { data: MonthlyStat[] }) {
   const [activeMetric, setActiveMetric] = useState<SeriesKey>('totalCrimes');
   const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
 
+  const hasPriorData = data.some((m) => {
+    const shortMonth = m.label.split(' ')[0];
+    return PRIOR_YEAR[shortMonth]?.[activeMetric] != null;
+  });
+
   const chartData = data.map((m) => {
     const shortMonth = m.label.split(' ')[0];
-    const priorData = PRIOR_YEAR[shortMonth];
+    const priorVal = PRIOR_YEAR[shortMonth]?.[activeMetric];
     return {
       month: shortMonth,
       current: m[activeMetric],
-      lastYear: priorData ? priorData[activeMetric] : 0,
+      lastYear: priorVal ?? null,
     };
   });
 
@@ -101,7 +109,7 @@ export default function MonthlyTrendChart({ data }: { data: MonthlyStat[] }) {
           position: 'absolute',
           top: 0,
           right: 0,
-          background: '#1b2740',
+          background: '#0a1628',
           border: '1.5px solid #c8a96b',
           borderRadius: '10px',
           padding: '8px 12px',
@@ -148,14 +156,16 @@ export default function MonthlyTrendChart({ data }: { data: MonthlyStat[] }) {
               radius={[4, 4, 0, 0]}
               maxBarSize={40}
             />
-            <Bar
-              dataKey="lastYear"
-              name={`${activeSeries.label} (2025)`}
-              fill={activeSeries.color}
-              fillOpacity={0.3}
-              radius={[4, 4, 0, 0]}
-              maxBarSize={40}
-            />
+            {hasPriorData && (
+              <Bar
+                dataKey="lastYear"
+                name={`${activeSeries.label} (2025)`}
+                fill={activeSeries.color}
+                fillOpacity={0.3}
+                radius={[4, 4, 0, 0]}
+                maxBarSize={40}
+              />
+            )}
           </BarChart>
         </ResponsiveContainer>
       </div>

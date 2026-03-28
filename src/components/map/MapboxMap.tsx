@@ -9,7 +9,8 @@ import { districtGeoJSON, wardsGeoJSON } from '@/data/boundaryData';
 interface MapboxMapProps {
   incidents: Incident[];
   showMVA: boolean;
-  showShooting: boolean;
+  showShotsFired: boolean;
+  showShootingHit: boolean;
   showTheft: boolean;
   showStolenVehicle: boolean;
 }
@@ -23,7 +24,7 @@ const SOURCE_ID = 'incidents';
 const DISTRICT_LAYERS = ['districts-fill', 'districts-border', 'district-labels', 'district-selected-outline'] as const;
 const WARD_LAYERS    = ['wards-fill', 'wards-border', 'ward-labels', 'ward-selected-outline'] as const;
 
-export default function MapboxMap({ incidents, showMVA, showShooting, showTheft, showStolenVehicle }: MapboxMapProps) {
+export default function MapboxMap({ incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle }: MapboxMapProps) {
   const containerRef  = useRef<HTMLDivElement>(null);
   const mapRef        = useRef<mapboxgl.Map | null>(null);
   const popupRef      = useRef<mapboxgl.Popup | null>(null);
@@ -32,6 +33,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
 
   const [showDistricts, setShowDistricts] = useState(true);
   const [showWards,     setShowWards]     = useState(false);
+  const [mapReady,      setMapReady]      = useState(false);
 
   // ── Initialize map once ────────────────────────────────────────────────
   useEffect(() => {
@@ -175,7 +177,8 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
         slot: 'top',
         paint: {
           'circle-color': ['match', ['get', 'type'],
-            'Shooting',       '#ef4444',
+            'Shots Fired',    '#F87171',
+            'Shooting Hit',   '#DC2626',
             'MVA',            '#f59e0b',
             'Theft',          '#3b82f6',
             'Stolen Vehicle', '#22c55e',
@@ -188,6 +191,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
           'circle-emissive-strength': 1,
         },
       });
+
 
       // ── Cursors ──────────────────────────────────────────────────────
       (['unclustered-point', 'wards-fill', 'districts-fill'] as const).forEach(id => {
@@ -203,13 +207,15 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
         const geom  = feature.geometry as GeoJSON.Point;
         if (popupRef.current) popupRef.current.remove();
         const TYPE_COLORS: Record<string, string> = {
-          'Shooting':       '#ef4444',
+          'Shots Fired':    '#F87171',
+          'Shooting Hit':   '#DC2626',
           'MVA':            '#f59e0b',
           'Theft':          '#3b82f6',
           'Stolen Vehicle': '#22c55e',
         };
         const TYPE_LABELS: Record<string, string> = {
-          'Shooting':       'Shooting',
+          'Shots Fired':    'Shots Fired',
+          'Shooting Hit':   'Shooting Hit',
           'MVA':            'Motor Vehicle Accident',
           'Theft':          'Theft',
           'Stolen Vehicle': 'Stolen Vehicle',
@@ -261,6 +267,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
       map.on('mouseleave', 'districts-fill', () => districtPopup.remove());
 
       mapLoadedRef.current = true;
+      setMapReady(true);
 
       // Ensure map fills its new container properly
       setTimeout(() => map.resize(), 100);
@@ -273,6 +280,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
     return () => {
       ro.disconnect();
       mapLoadedRef.current = false;
+      setMapReady(false);
       if (popupRef.current) popupRef.current.remove();
       map.remove();
       mapRef.current = null;
@@ -283,13 +291,13 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
   // ── Sync incident data + type filter ──────────────────────────────────
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !map.isStyleLoaded()) return;
+    if (!map || !mapReady) return;
     const source = map.getSource(SOURCE_ID) as mapboxgl.GeoJSONSource | undefined;
     if (source) source.setData(incidentsToGeoJSON(incidents));
     if (map.getLayer('unclustered-point')) {
-      map.setFilter('unclustered-point', buildTypeFilter(showMVA, showShooting, showTheft, showStolenVehicle) as mapboxgl.FilterSpecification);
+      map.setFilter('unclustered-point', buildTypeFilter(showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle) as mapboxgl.FilterSpecification);
     }
-  }, [incidents, showMVA, showShooting, showTheft, showStolenVehicle]);
+  }, [incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, mapReady]);
 
   // ── Toggle district layer visibility ──────────────────────────────────
   useEffect(() => {
@@ -310,6 +318,7 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
       if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', vis);
     });
   }, [showWards]);
+
 
   return (
     <div className="relative w-full h-full overflow-hidden">
@@ -371,9 +380,10 @@ export default function MapboxMap({ incidents, showMVA, showShooting, showTheft,
       <div className="absolute bottom-3 left-3 z-10 pointer-events-none">
         <div className="flex items-center gap-3 bg-[#0F172A]/90 px-3 py-1.5 rounded-lg">
           {([
-            { label: 'Shooting', color: '#ef4444' },
-            { label: 'MVA',      color: '#f59e0b' },
-            { label: 'Theft',    color: '#3b82f6' },
+            { label: 'Shots Fired',    color: '#F87171' },
+            { label: 'Shooting Hit',   color: '#DC2626' },
+            { label: 'MVA',            color: '#f59e0b' },
+            { label: 'Theft',          color: '#3b82f6' },
             { label: 'Stolen Vehicle', color: '#22c55e' },
           ] as const).map(({ label, color }) => (
             <div key={label} className="flex items-center gap-1.5 text-xs">

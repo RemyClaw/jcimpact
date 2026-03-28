@@ -9,14 +9,16 @@ interface IncidentTypeFilterProps {
 
 /* Dot colors per spec — with glow */
 const DOT_COLORS: Record<IncidentType, string> = {
-  'Shooting':       '#3B82F6',  // blue glow
+  'Shots Fired':    '#F87171',  // lighter red
+  'Shooting Hit':   '#DC2626',  // darker red
   'MVA':            '#22C55E',  // green glow
   'Theft':          '#A855F7',  // purple glow
   'Stolen Vehicle': '#F59E0B',  // yellow/orange glow
 };
 
 const TYPES: { value: IncidentType; label: string }[] = [
-  { value: 'Shooting',       label: 'Shootings'     },
+  { value: 'Shots Fired',    label: 'Shots Fired'   },
+  { value: 'Shooting Hit',   label: 'Shooting Hit'  },
   { value: 'MVA',            label: 'Car Accidents' },
   { value: 'Theft',          label: 'Thefts'        },
   { value: 'Stolen Vehicle', label: 'Stolen Cars'   },

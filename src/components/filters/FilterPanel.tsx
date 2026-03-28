@@ -26,7 +26,7 @@ export default function FilterPanel({ filterState, onChange, incidentCount }: Fi
     <div
       className="flex flex-col"
       style={{
-        background: '#1b2740',
+        background: '#0a1628',
         border: '2px solid #c8a96b',
         borderRadius: '24px',
         overflow: 'hidden',
