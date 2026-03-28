@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer,
@@ -56,29 +56,35 @@ export default function MonthlyTrendChart({ data }: { data: MonthlyStat[] }) {
 
   const activeSeries = SERIES.find(s => s.key === activeMetric)!;
 
-  // Invisible tooltip that just captures data and pushes to state
+  // Capture tooltip data via ref (safe during render), then sync to state via useEffect
+  const pendingHover = useRef<HoverInfo | null>(null);
+  const [hoverTick, setHoverTick] = useState(0);
+
   const DataCapture = useCallback(({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
-    const entries = active && payload?.length
-      ? payload.map(e => ({
+    if (active && payload?.length) {
+      pendingHover.current = {
+        label: String(label),
+        entries: payload.map(e => ({
           name: String(e.name),
           value: Number(e.value),
           color: String(e.color),
           opacity: (e.dataKey === 'lastYear') ? 0.3 : 1,
-        }))
-      : null;
-
-    // Use setTimeout to avoid setState during render
-    setTimeout(() => {
-      if (entries) {
-        setHoverInfo({ label: String(label), entries });
-      } else {
-        setHoverInfo(null);
-      }
-    }, 0);
+        })),
+      };
+    } else {
+      pendingHover.current = null;
+    }
+    // Schedule a state update outside of render
+    setHoverTick(t => t + 1);
 
     // Return nothing — we render our own tooltip in the corner
     return null;
   }, []);
+
+  // Sync pending hover data to state (runs after render, not during)
+  useEffect(() => {
+    setHoverInfo(pendingHover.current);
+  }, [hoverTick]);
 
   return (
     <div className="flex flex-col h-full relative">

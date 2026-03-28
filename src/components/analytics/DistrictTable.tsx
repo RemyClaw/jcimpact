@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { DistrictStats } from '@/types';
 import { DISTRICT_COLORS } from '@/lib/colors';
 
@@ -25,10 +25,10 @@ export default function DistrictTable({ data }: { data: DistrictStats[] }) {
     else { setSortKey(key); setSortAsc(false); }
   }
 
-  const sorted = [...data].sort((a, b) => {
+  const sorted = useMemo(() => [...data].sort((a, b) => {
     const d = (a[sortKey] ?? 0) - (b[sortKey] ?? 0);
     return sortAsc ? d : -d;
-  });
+  }), [data, sortKey, sortAsc]);
 
   return (
     <div className="flex flex-col h-full">

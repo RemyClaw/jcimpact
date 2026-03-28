@@ -1,20 +1,12 @@
 'use client';
 
 import { IncidentType } from '@/types';
+import { TYPE_COLORS } from '@/lib/colors';
 
 interface IncidentTypeFilterProps {
   selected: IncidentType[];
   onChange: (next: IncidentType[]) => void;
 }
-
-/* Dot colors per spec — with glow */
-const DOT_COLORS: Record<IncidentType, string> = {
-  'Shots Fired':    '#F87171',  // lighter red
-  'Shooting Hit':   '#DC2626',  // darker red
-  'MVA':            '#22C55E',  // green glow
-  'Theft':          '#A855F7',  // purple glow
-  'Stolen Vehicle': '#F59E0B',  // yellow/orange glow
-};
 
 const TYPES: { value: IncidentType; label: string }[] = [
   { value: 'Shots Fired',    label: 'Shots Fired'   },
@@ -38,7 +30,7 @@ export default function IncidentTypeFilter({ selected, onChange }: IncidentTypeF
     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
       {TYPES.map(({ value, label }) => {
         const active = selected.includes(value);
-        const dotColor = DOT_COLORS[value];
+        const dotColor = TYPE_COLORS[value];
 
         return (
           <button

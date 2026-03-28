@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { DistrictStats } from '@/types';
 import { METRIC_COLORS } from '@/lib/colors';
@@ -18,7 +18,7 @@ const METRICS: { key: RankMetric; label: string; color: string }[] = [
 export default function DistrictRankings({ data }: { data: DistrictStats[] }) {
   const [metric, setMetric] = useState<RankMetric>('totalCrimes');
 
-  const sorted = [...data].sort((a, b) => (a[metric] ?? 0) - (b[metric] ?? 0));
+  const sorted = useMemo(() => [...data].sort((a, b) => (a[metric] ?? 0) - (b[metric] ?? 0)), [data, metric]);
   const max    = (sorted[sorted.length - 1]?.[metric] ?? 1) || 1;
   const m      = METRICS.find((x) => x.key === metric)!;
 

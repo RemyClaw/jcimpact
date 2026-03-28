@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { Incident } from '@/types';
 import { incidentsToGeoJSON, buildTypeFilter } from '@/lib/mapUtils';
+import { TYPE_COLORS } from '@/lib/colors';
 import { districtGeoJSON, wardsGeoJSON } from '@/data/boundaryData';
 
 interface MapboxMapProps {
@@ -34,11 +35,17 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
   const [showDistricts, setShowDistricts] = useState(true);
   const [showWards,     setShowWards]     = useState(false);
   const [mapReady,      setMapReady]      = useState(false);
+  const [mapError,      setMapError]      = useState<string | null>(null);
 
   // ── Initialize map once ────────────────────────────────────────────────
   useEffect(() => {
     if (initializedRef.current || !containerRef.current) return;
     initializedRef.current = true;
+
+    if (!MAPBOX_TOKEN) {
+      setMapError('Mapbox token missing — add NEXT_PUBLIC_MAPBOX_TOKEN to .env.local');
+      return;
+    }
 
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
@@ -48,6 +55,13 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       center: JC_CENTER,
       zoom: JC_ZOOM,
       attributionControl: false,
+    });
+
+    map.on('error', (e) => {
+      console.error('Mapbox error:', e.error?.message || e);
+      if (e.error?.message?.includes('access token')) {
+        setMapError('Invalid Mapbox token — check NEXT_PUBLIC_MAPBOX_TOKEN');
+      }
     });
 
     map.addControl(new mapboxgl.NavigationControl(), 'top-right');
@@ -177,11 +191,11 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
         slot: 'top',
         paint: {
           'circle-color': ['match', ['get', 'type'],
-            'Shots Fired',    '#F87171',
-            'Shooting Hit',   '#DC2626',
-            'MVA',            '#f59e0b',
-            'Theft',          '#3b82f6',
-            'Stolen Vehicle', '#22c55e',
+            'Shots Fired',    TYPE_COLORS['Shots Fired'],
+            'Shooting Hit',   TYPE_COLORS['Shooting Hit'],
+            'MVA',            TYPE_COLORS['MVA'],
+            'Theft',          TYPE_COLORS['Theft'],
+            'Stolen Vehicle', TYPE_COLORS['Stolen Vehicle'],
             '#6b7280'],
           'circle-radius': 9,
           'circle-stroke-width': 2.5,
@@ -206,13 +220,7 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
         const props = feature.properties as Record<string, string>;
         const geom  = feature.geometry as GeoJSON.Point;
         if (popupRef.current) popupRef.current.remove();
-        const TYPE_COLORS: Record<string, string> = {
-          'Shots Fired':    '#F87171',
-          'Shooting Hit':   '#DC2626',
-          'MVA':            '#f59e0b',
-          'Theft':          '#3b82f6',
-          'Stolen Vehicle': '#22c55e',
-        };
+        const POPUP_COLORS: Record<string, string> = TYPE_COLORS as Record<string, string>;
         const TYPE_LABELS: Record<string, string> = {
           'Shots Fired':    'Shots Fired',
           'Shooting Hit':   'Shooting Hit',
@@ -220,7 +228,7 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
           'Theft':          'Theft',
           'Stolen Vehicle': 'Stolen Vehicle',
         };
-        const typeColor = TYPE_COLORS[props.type] ?? '#6b7280';
+        const typeColor = POPUP_COLORS[props.type] ?? '#6b7280';
         const typeLabel = TYPE_LABELS[props.type] ?? props.type;
         const dateStr   = new Date(props.date + 'T00:00:00').toLocaleDateString('en-US', {
           year: 'numeric', month: 'long', day: 'numeric',
@@ -320,6 +328,17 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
   }, [showWards]);
 
 
+  if (mapError) {
+    return (
+      <div className="w-full h-full bg-[#0a1628] flex items-center justify-center">
+        <div className="text-center px-6">
+          <div className="text-red-400 text-sm font-semibold mb-1">Map Error</div>
+          <div className="text-slate-400 text-xs">{mapError}</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative w-full h-full overflow-hidden">
       <div ref={containerRef} className="w-full h-full" />
@@ -380,12 +399,12 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       <div className="absolute bottom-3 left-3 z-10 pointer-events-none">
         <div className="flex items-center gap-3 bg-[#0F172A]/90 px-3 py-1.5 rounded-lg">
           {([
-            { label: 'Shots Fired',    color: '#F87171' },
-            { label: 'Shooting Hit',   color: '#DC2626' },
-            { label: 'MVA',            color: '#f59e0b' },
-            { label: 'Theft',          color: '#3b82f6' },
-            { label: 'Stolen Vehicle', color: '#22c55e' },
-          ] as const).map(({ label, color }) => (
+            { label: 'Shots Fired',    color: TYPE_COLORS['Shots Fired'] },
+            { label: 'Shooting Hit',   color: TYPE_COLORS['Shooting Hit'] },
+            { label: 'MVA',            color: TYPE_COLORS['MVA'] },
+            { label: 'Theft',          color: TYPE_COLORS['Theft'] },
+            { label: 'Stolen Vehicle', color: TYPE_COLORS['Stolen Vehicle'] },
+          ]).map(({ label, color }) => (
             <div key={label} className="flex items-center gap-1.5 text-xs">
               <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: color, boxShadow: `0 0 6px ${color}` }} />
               <span className="text-white/80 font-medium">{label}</span>
