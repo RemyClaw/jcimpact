@@ -60,7 +60,7 @@ export default function DashboardPage() {
 
     // Auto-enable types that have data in the selected period
     const periodIncidents = filterByPeriod(allIncidents, period);
-    const typesWithData = [...new Set(periodIncidents.map(i => i.type))] as IncidentType[];
+    const typesWithData = Array.from(new Set(periodIncidents.map(i => i.type))) as IncidentType[];
     setFilterState(prev => ({ ...prev, incidentTypes: typesWithData }));
   };
 
