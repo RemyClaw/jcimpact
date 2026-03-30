@@ -70,7 +70,7 @@ export default function YoYComparison({ data }: { data: MonthlyStat[] }) {
                   <span className="font-bold tabular-nums" style={{ fontSize: '22px', color: '#FFFFFF', lineHeight: 1 }}>{ytd26}</span>
                   <Badge val={ytdPct} />
                 </div>
-                <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '2px' }}>vs {ytd25} in Jan–Feb '25</div>
+                <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '2px' }}>vs {ytd25} in Jan–Feb &apos;25</div>
               </div>
 
               {/* Monthly breakdown */}
@@ -100,7 +100,7 @@ export default function YoYComparison({ data }: { data: MonthlyStat[] }) {
 
       {/* Footnote */}
       <p style={{ fontSize: '10px', color: '#6b7280', lineHeight: 1.3 }} className="flex-shrink-0">
-        Source: JCPD Crime Reports (Jan–Feb 2026) · Car accident data from NJ Crash Reports · Mar '25 comparison unavailable
+        Source: JCPD Crime Reports (Jan–Feb 2026) · Car accident data from NJ Crash Reports · Mar &apos;25 comparison unavailable
       </p>
     </div>
   );
