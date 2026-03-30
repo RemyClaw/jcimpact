@@ -3,6 +3,12 @@
 import { useMemo } from 'react';
 import type { Incident } from '@/types';
 
+/** Parse ISO date string without timezone shift (avoids UTC midnight → previous day in local tz) */
+function parseLocalDate(dateStr: string): Date {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  return new Date(y, m - 1, d);
+}
+
 const MONTHS = [
   'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
@@ -27,7 +33,7 @@ function getDateRange(period: TimePeriod, year: number): [Date, Date] | null {
 
 function countInRange(incidents: Incident[], start: Date, end: Date): number {
   return incidents.filter((inc) => {
-    const d = new Date(inc.date);
+    const d = parseLocalDate(inc.date);
     return d >= start && d <= end;
   }).length;
 }
@@ -44,7 +50,7 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
   const monthlyCounts = useMemo(() => {
     const counts = new Array(12).fill(0);
     incidents.forEach((inc) => {
-      const d = new Date(inc.date);
+      const d = parseLocalDate(inc.date);
       if (d.getFullYear() === year) {
         counts[d.getMonth()]++;
       }
@@ -238,7 +244,7 @@ export function filterByPeriod(incidents: Incident[], period: TimePeriod, year: 
 
   const [start, end] = range;
   return incidents.filter((inc) => {
-    const d = new Date(inc.date);
+    const d = parseLocalDate(inc.date);
     return d >= start && d <= end;
   });
 }

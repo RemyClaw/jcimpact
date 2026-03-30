@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer,
@@ -20,24 +20,39 @@ const SERIES: { key: SeriesKey; label: string; color: string }[] = [
   { key: 'stolenVehicles', label: 'Stolen Cars',   color: METRIC_COLORS.stolenVehicles },
 ];
 
-// Prior year (2025) comparison data — verified from JCPD CompStat PDFs (Jan & Feb 2026 editions)
-// Jan/Feb 2025: from YTD tables in Feb 2026 CompStat PDF
-// Mar 2025: from "MAR Weekly" sheet (MAR 25 column)
 // Only shootings, thefts, stolenVehicles have verified 2025 data
-// totalCrimes and mvas have no 2025 monthly breakdown available
 const PRIOR_YEAR: Record<string, Partial<Record<SeriesKey, number>>> = {
   'Jan': { shootings: 2, thefts: 223, stolenVehicles: 57 },
   'Feb': { shootings: 3, thefts: 197, stolenVehicles: 62 },
 };
 
-interface HoverInfo {
-  label: string;
-  entries: { name: string; value: number; color: string; opacity: number }[];
+function CustomTooltip({ active, payload, label }: TooltipProps<ValueType, NameType>) {
+  if (!active || !payload?.length) return null;
+  return (
+    <div style={{
+      background: '#0a1628',
+      border: '1.5px solid #c8a96b',
+      borderRadius: '10px',
+      padding: '8px 12px',
+      whiteSpace: 'nowrap',
+    }}>
+      <p className="text-white font-semibold mb-1" style={{ fontSize: '12px' }}>{label}</p>
+      {payload.map((entry) => (
+        <div key={String(entry.dataKey)} className="flex items-center gap-2 mb-0.5 last:mb-0">
+          <span
+            className="w-2 h-2 rounded-sm flex-shrink-0"
+            style={{ background: String(entry.color), opacity: entry.dataKey === 'lastYear' ? 0.3 : 1 }}
+          />
+          <span style={{ color: '#FFFFFF', fontSize: '11px' }}>{entry.name}</span>
+          <span className="font-bold tabular-nums ml-auto pl-3" style={{ color: '#FFFFFF', fontSize: '11px' }}>{entry.value}</span>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default function MonthlyTrendChart({ data }: { data: MonthlyStat[] }) {
   const [activeMetric, setActiveMetric] = useState<SeriesKey>('totalCrimes');
-  const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
 
   const hasPriorData = data.some((m) => {
     const shortMonth = m.label.split(' ')[0];
@@ -56,38 +71,8 @@ export default function MonthlyTrendChart({ data }: { data: MonthlyStat[] }) {
 
   const activeSeries = SERIES.find(s => s.key === activeMetric)!;
 
-  // Capture tooltip data via ref (safe during render), then sync to state via useEffect
-  const pendingHover = useRef<HoverInfo | null>(null);
-  const [hoverTick, setHoverTick] = useState(0);
-
-  const DataCapture = useCallback(({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
-    if (active && payload?.length) {
-      pendingHover.current = {
-        label: String(label),
-        entries: payload.map(e => ({
-          name: String(e.name),
-          value: Number(e.value),
-          color: String(e.color),
-          opacity: (e.dataKey === 'lastYear') ? 0.3 : 1,
-        })),
-      };
-    } else {
-      pendingHover.current = null;
-    }
-    // Schedule a state update outside of render
-    setHoverTick(t => t + 1);
-
-    // Return nothing — we render our own tooltip in the corner
-    return null;
-  }, []);
-
-  // Sync pending hover data to state (runs after render, not during)
-  useEffect(() => {
-    setHoverInfo(pendingHover.current);
-  }, [hoverTick]);
-
   return (
-    <div className="flex flex-col h-full relative">
+    <div className="flex flex-col h-full">
       {/* Metric selector */}
       <div className="flex items-center gap-3 mb-2 flex-wrap">
         {SERIES.map(({ key, label, color }) => (
@@ -109,31 +94,6 @@ export default function MonthlyTrendChart({ data }: { data: MonthlyStat[] }) {
         ))}
       </div>
 
-      {/* Fixed tooltip in top-right corner */}
-      {hoverInfo && (
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          background: '#0a1628',
-          border: '1.5px solid #c8a96b',
-          borderRadius: '10px',
-          padding: '8px 12px',
-          pointerEvents: 'none',
-          zIndex: 10,
-          whiteSpace: 'nowrap',
-        }}>
-          <p className="text-white font-semibold mb-1" style={{ fontSize: '12px' }}>{hoverInfo.label}</p>
-          {hoverInfo.entries.map((entry) => (
-            <div key={entry.name} className="flex items-center gap-2 mb-0.5 last:mb-0">
-              <span className="w-2 h-2 rounded-sm flex-shrink-0" style={{ background: entry.color, opacity: entry.opacity }} />
-              <span style={{ color: '#FFFFFF', fontSize: '11px' }}>{entry.name}</span>
-              <span className="font-bold tabular-nums ml-auto pl-3" style={{ color: '#FFFFFF', fontSize: '11px' }}>{entry.value}</span>
-            </div>
-          ))}
-        </div>
-      )}
-
       <div className="flex-1 min-h-0">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={chartData} margin={{ top: 4, right: 4, left: -10, bottom: 0 }} barGap={4} barCategoryGap="25%">
@@ -151,9 +111,8 @@ export default function MonthlyTrendChart({ data }: { data: MonthlyStat[] }) {
               width={40}
             />
             <Tooltip
-              content={<DataCapture />}
+              content={<CustomTooltip />}
               cursor={{ fill: 'rgba(255,255,255,0.04)' }}
-              wrapperStyle={{ display: 'none' }}
             />
             <Bar
               dataKey="current"

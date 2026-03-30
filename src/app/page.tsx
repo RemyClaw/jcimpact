@@ -30,7 +30,11 @@ const DEFAULT_FILTER: FilterState = {
   district: 'All',
 };
 
-type AnalyticsTab = 'districts' | 'rankings' | 'trends' | 'yoy';
+type AnalyticsTab = 'districts' | 'rankings' | 'trends' | 'yoy' | 'reports';
+
+const REPORTS = [
+  { name: 'January 2026 Report', file: '/January 2026 Report.docx', month: 'January 2026' },
+];
 
 export default function DashboardPage() {
   const [filterState, setFilterState]       = useState<FilterState>(DEFAULT_FILTER);
@@ -38,8 +42,10 @@ export default function DashboardPage() {
   const [analyticsTab, setAnalyticsTab]     = useState<AnalyticsTab>('districts');
   const [activePeriod, setActivePeriod]     = useState<TimePeriod>({ month: null, half: null });
 
-  // When user clicks a month, auto-enable all types with data in that month
-  // When clicking YTD, reset toggles to empty (clean slate)
+  // When user clicks a month:
+  //   - If types are already toggled on → keep them (user is drilling into that month)
+  //   - If nothing is toggled → auto-enable types with data in that month
+  // When clicking YTD → clear toggles (clean slate)
   const handlePeriodSelect = (period: TimePeriod) => {
     setActivePeriod(period);
 
@@ -48,6 +54,9 @@ export default function DashboardPage() {
       setFilterState(prev => ({ ...prev, incidentTypes: [] }));
       return;
     }
+
+    // Only auto-toggle if nothing is currently selected
+    if (filterState.incidentTypes.length > 0) return;
 
     // Auto-enable types that have data in the selected period
     const periodIncidents = filterByPeriod(allIncidents, period);
@@ -290,6 +299,7 @@ export default function DashboardPage() {
                 { id: 'rankings',  label: 'Rankings' },
                 { id: 'trends',    label: 'Monthly Trends' },
                 { id: 'yoy',       label: 'vs Last Year' },
+                { id: 'reports',   label: 'Reports' },
               ] as { id: AnalyticsTab; label: string }[]).map(({ id, label }) => (
                 <button
                   key={id}
@@ -320,6 +330,49 @@ export default function DashboardPage() {
                   {analyticsTab === 'rankings'  && <DistrictRankings data={derivedDistricts} />}
                   {analyticsTab === 'trends'    && <MonthlyTrendChart data={allMonths} />}
                   {analyticsTab === 'yoy'       && <YoYComparison data={allMonths} />}
+                  {analyticsTab === 'reports'   && (
+                    <div className="flex flex-col gap-2">
+                      {REPORTS.map((report) => (
+                        <a
+                          key={report.file}
+                          href={`https://docs.google.com/gview?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin + report.file : report.file)}&embedded=true`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 px-4 py-3 transition-colors"
+                          style={{
+                            border: '1.5px solid rgba(200,169,107,0.3)',
+                            borderRadius: '12px',
+                            background: 'rgba(200,169,107,0.05)',
+                            textDecoration: 'none',
+                          }}
+                          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(200,169,107,0.12)'; e.currentTarget.style.borderColor = '#c8a96b'; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(200,169,107,0.05)'; e.currentTarget.style.borderColor = 'rgba(200,169,107,0.3)'; }}
+                        >
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
+                          </svg>
+                          <div>
+                            <div style={{ color: '#FFFFFF', fontSize: '14px', fontWeight: 600 }}>{report.name}</div>
+                            <div style={{ color: '#9CA3AF', fontSize: '11px', marginTop: '2px' }}>Click to open • {report.month}</div>
+                          </div>
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 'auto' }}>
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                          </svg>
+                        </a>
+                      ))}
+                      {REPORTS.length === 0 && (
+                        <div style={{ color: '#6b7280', fontSize: '14px', textAlign: 'center', padding: '20px' }}>
+                          No reports available yet.
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </motion.div>
               </AnimatePresence>
             </div>

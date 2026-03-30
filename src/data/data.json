@@ -35,7 +35,7 @@
     {
       "district": "South",
       "totalCrimes": 326,
-      "shootings": 7,
+      "shootings": 6,
       "homicides": 0,
       "mvas": 99,
       "thefts": 113,
@@ -44,7 +44,7 @@
     {
       "district": "West",
       "totalCrimes": 484,
-      "shootings": 5,
+      "shootings": 6,
       "homicides": 0,
       "mvas": 127,
       "thefts": 119,
@@ -12183,16 +12183,6 @@
       "lng": -74.05135,
       "address": "COLUMBUS DR & BRUNSWICK ST, JERSEY CITY, NJ 07302-0000",
       "description": "12:57"
-    },
-    {
-      "id": "ts-0046",
-      "type": "Traffic Stop",
-      "date": "2026-03-24",
-      "district": "South",
-      "lat": 40.764999,
-      "lng": -74.069379,
-      "address": "FOREST, NJ",
-      "description": "13:00"
     },
     {
       "id": "mva-ms-0043",
