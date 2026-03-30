@@ -1,4 +1,4 @@
-export type IncidentType = 'MVA' | 'Shots Fired' | 'Shooting Hit' | 'Theft' | 'Stolen Vehicle';
+export type IncidentType = 'MVA' | 'Shots Fired' | 'Shooting Hit' | 'Theft' | 'Stolen Vehicle' | 'Traffic Stop' | 'Pedestrian Struck';
 
 export type District =
   | 'North'

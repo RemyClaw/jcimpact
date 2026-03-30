@@ -28,18 +28,22 @@ export function buildTypeFilter(
   showShootingHit: boolean,
   showTheft: boolean,
   showStolenVehicle: boolean,
+  showTrafficStop: boolean,
+  showPedestrianStruck: boolean,
 ): mapboxgl.Expression {
   const types: string[] = [];
-  if (showShotsFired)    types.push('Shots Fired');
-  if (showShootingHit)   types.push('Shooting Hit');
-  if (showMVA)           types.push('MVA');
-  if (showTheft)         types.push('Theft');
-  if (showStolenVehicle) types.push('Stolen Vehicle');
+  if (showShotsFired)       types.push('Shots Fired');
+  if (showShootingHit)      types.push('Shooting Hit');
+  if (showMVA)              types.push('MVA');
+  if (showTheft)            types.push('Theft');
+  if (showStolenVehicle)    types.push('Stolen Vehicle');
+  if (showTrafficStop)      types.push('Traffic Stop');
+  if (showPedestrianStruck) types.push('Pedestrian Struck');
 
   if (types.length === 0) {
     return ['==', ['get', 'type'], '__none__'] as unknown as mapboxgl.Expression;
   }
-  if (types.length === 5) {
+  if (types.length === 7) {
     return ['!', ['has', 'point_count']] as unknown as mapboxgl.Expression;
   }
   return [

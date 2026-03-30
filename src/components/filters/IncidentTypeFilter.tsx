@@ -9,11 +9,13 @@ interface IncidentTypeFilterProps {
 }
 
 const TYPES: { value: IncidentType; label: string }[] = [
-  { value: 'Shots Fired',    label: 'Shots Fired'   },
-  { value: 'Shooting Hit',   label: 'Shooting Hit'  },
-  { value: 'MVA',            label: 'Car Accidents' },
-  { value: 'Theft',          label: 'Thefts'        },
-  { value: 'Stolen Vehicle', label: 'Stolen Cars'   },
+  { value: 'Shots Fired',      label: 'Shots Fired'      },
+  { value: 'Shooting Hit',     label: 'Shooting Hit'     },
+  { value: 'MVA',              label: 'Car Accidents'    },
+  { value: 'Pedestrian Struck',label: 'Pedestrian Struck'},
+  { value: 'Traffic Stop',     label: 'Traffic Stops'    },
+  { value: 'Theft',            label: 'Thefts'           },
+  { value: 'Stolen Vehicle',   label: 'Stolen Cars'      },
 ];
 
 // Empty selected = all types shown (no filter)

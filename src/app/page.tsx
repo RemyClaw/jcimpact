@@ -265,6 +265,8 @@ export default function DashboardPage() {
                 showShootingHit={filterState.incidentTypes.includes('Shooting Hit')}
                 showTheft={filterState.incidentTypes.includes('Theft')}
                 showStolenVehicle={filterState.incidentTypes.includes('Stolen Vehicle')}
+                showTrafficStop={filterState.incidentTypes.includes('Traffic Stop')}
+                showPedestrianStruck={filterState.incidentTypes.includes('Pedestrian Struck')}
               />
             </div>
           </div>

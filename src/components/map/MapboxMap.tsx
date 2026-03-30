@@ -14,6 +14,8 @@ interface MapboxMapProps {
   showShootingHit: boolean;
   showTheft: boolean;
   showStolenVehicle: boolean;
+  showTrafficStop: boolean;
+  showPedestrianStruck: boolean;
 }
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
@@ -25,7 +27,7 @@ const SOURCE_ID = 'incidents';
 const DISTRICT_LAYERS = ['districts-fill', 'districts-border', 'district-labels', 'district-selected-outline'] as const;
 const WARD_LAYERS    = ['wards-fill', 'wards-border', 'ward-labels', 'ward-selected-outline'] as const;
 
-export default function MapboxMap({ incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle }: MapboxMapProps) {
+export default function MapboxMap({ incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck }: MapboxMapProps) {
   const containerRef  = useRef<HTMLDivElement>(null);
   const mapRef        = useRef<mapboxgl.Map | null>(null);
   const popupRef      = useRef<mapboxgl.Popup | null>(null);
@@ -191,11 +193,13 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
         slot: 'top',
         paint: {
           'circle-color': ['match', ['get', 'type'],
-            'Shots Fired',    TYPE_COLORS['Shots Fired'],
-            'Shooting Hit',   TYPE_COLORS['Shooting Hit'],
-            'MVA',            TYPE_COLORS['MVA'],
-            'Theft',          TYPE_COLORS['Theft'],
-            'Stolen Vehicle', TYPE_COLORS['Stolen Vehicle'],
+            'Shots Fired',      TYPE_COLORS['Shots Fired'],
+            'Shooting Hit',     TYPE_COLORS['Shooting Hit'],
+            'MVA',              TYPE_COLORS['MVA'],
+            'Theft',            TYPE_COLORS['Theft'],
+            'Stolen Vehicle',   TYPE_COLORS['Stolen Vehicle'],
+            'Traffic Stop',     TYPE_COLORS['Traffic Stop'],
+            'Pedestrian Struck',TYPE_COLORS['Pedestrian Struck'],
             '#6b7280'],
           'circle-radius': 9,
           'circle-stroke-width': 2.5,
@@ -222,11 +226,13 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
         if (popupRef.current) popupRef.current.remove();
         const POPUP_COLORS: Record<string, string> = TYPE_COLORS as Record<string, string>;
         const TYPE_LABELS: Record<string, string> = {
-          'Shots Fired':    'Shots Fired',
-          'Shooting Hit':   'Shooting Hit',
-          'MVA':            'Motor Vehicle Accident',
-          'Theft':          'Theft',
-          'Stolen Vehicle': 'Stolen Vehicle',
+          'Shots Fired':      'Shots Fired',
+          'Shooting Hit':     'Shooting Hit',
+          'MVA':              'Motor Vehicle Accident',
+          'Theft':            'Theft',
+          'Stolen Vehicle':   'Stolen Vehicle',
+          'Traffic Stop':     'Traffic Stop',
+          'Pedestrian Struck':'Pedestrian Struck',
         };
         const typeColor = POPUP_COLORS[props.type] ?? '#6b7280';
         const typeLabel = TYPE_LABELS[props.type] ?? props.type;
@@ -303,9 +309,9 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
     const source = map.getSource(SOURCE_ID) as mapboxgl.GeoJSONSource | undefined;
     if (source) source.setData(incidentsToGeoJSON(incidents));
     if (map.getLayer('unclustered-point')) {
-      map.setFilter('unclustered-point', buildTypeFilter(showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle) as mapboxgl.FilterSpecification);
+      map.setFilter('unclustered-point', buildTypeFilter(showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck) as mapboxgl.FilterSpecification);
     }
-  }, [incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, mapReady]);
+  }, [incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, mapReady]);
 
   // ── Toggle district layer visibility ──────────────────────────────────
   useEffect(() => {

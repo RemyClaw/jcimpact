@@ -23,6 +23,8 @@ interface MapWrapperProps {
   showShootingHit: boolean;
   showTheft: boolean;
   showStolenVehicle: boolean;
+  showTrafficStop: boolean;
+  showPedestrianStruck: boolean;
 }
 
 export default function MapWrapper(props: MapWrapperProps) {

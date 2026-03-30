@@ -14,11 +14,13 @@ export const METRIC_COLORS = {
 
 /** Dot/map colors by incident type — single source of truth */
 export const TYPE_COLORS: Record<IncidentType, string> = {
-  'Shots Fired':    '#F87171',
-  'Shooting Hit':   '#DC2626',
-  'MVA':            '#F59E0B',
-  'Theft':          '#3b82f6',
-  'Stolen Vehicle': '#22C55E',
+  'Shots Fired':      '#F87171',
+  'Shooting Hit':     '#DC2626',
+  'MVA':              '#F59E0B',
+  'Theft':            '#3b82f6',
+  'Stolen Vehicle':   '#22C55E',
+  'Traffic Stop':     '#A78BFA',  // purple
+  'Pedestrian Struck':'#FB923C',  // orange
 };
 
 /** District colors */
