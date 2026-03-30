@@ -99,8 +99,8 @@
       "type": "Shots Fired",
       "date": "2026-01-16",
       "district": "East",
-      "lat": 40.72761,
-      "lng": -74.038669,
+      "lat": 40.724777,
+      "lng": -74.039082,
       "address": "6th & Mall Dr. W",
       "description": "Shots Fired"
     },
@@ -179,8 +179,8 @@
       "type": "Shooting Hit",
       "date": "2026-01-20",
       "district": "South",
-      "lat": 40.700992,
-      "lng": -74.082999,
+      "lat": 40.699836,
+      "lng": -74.09601,
       "address": "Woodland & Ocean",
       "description": "Shooting Hit"
     },
@@ -264,8 +264,8 @@
       "type": "MVA",
       "date": "2026-03-04",
       "district": "South",
-      "lat": 40.70978302076,
-      "lng": -74.094695958353,
+      "lat": 40.72769,
+      "lng": -74.07593,
       "address": "WESTSIDE AVE & FULTON AVE"
     },
     {
@@ -372,8 +372,8 @@
       "type": "MVA",
       "date": "2026-03-02",
       "district": "West",
-      "lat": 40.724078985268,
-      "lng": -74.089910981287,
+      "lat": 40.69978,
+      "lng": -74.104161,
       "address": "US 1&9 & ROUTE 440"
     },
     {
@@ -1029,8 +1029,8 @@
       "type": "MVA",
       "date": "2026-03-03",
       "district": "West",
-      "lat": 40.739938047078,
-      "lng": -74.067096731998,
+      "lat": 40.734248,
+      "lng": -74.081579,
       "address": "US 1&9"
     },
     {
@@ -1119,8 +1119,8 @@
       "type": "MVA",
       "date": "2026-03-07",
       "district": "West",
-      "lat": 40.739201992163,
-      "lng": -74.065727178969,
+      "lat": 40.735625,
+      "lng": -74.066906,
       "address": "LOWER 139 & TONNELLE AVE"
     },
     {
@@ -1182,8 +1182,8 @@
       "type": "MVA",
       "date": "2026-03-06",
       "district": "West",
-      "lat": 40.739201992163,
-      "lng": -74.065727178969,
+      "lat": 40.735625,
+      "lng": -74.066906,
       "address": "LOWER 139 & TONNELLE AVE"
     },
     {
@@ -1578,8 +1578,8 @@
       "type": "MVA",
       "date": "2026-03-10",
       "district": "West",
-      "lat": 40.730508994651,
-      "lng": -74.085193981456,
+      "lat": 40.727386,
+      "lng": -74.078174,
       "address": "US 1&9 NORTH & DUNCAN AVE"
     },
     {
@@ -1641,8 +1641,8 @@
       "type": "MVA",
       "date": "2026-03-10",
       "district": "West",
-      "lat": 40.730508994651,
-      "lng": -74.085193981456,
+      "lat": 40.727386,
+      "lng": -74.078174,
       "address": "US 1&9 NORTH & DUNCAN AVE"
     },
     {
@@ -2163,8 +2163,8 @@
       "type": "MVA",
       "date": "2026-03-09",
       "district": "West",
-      "lat": 40.724518993275,
-      "lng": -74.089371019085,
+      "lat": 40.70868,
+      "lng": -74.059378,
       "address": "US 1&9 & COMMUNIPAW AVE"
     },
     {
@@ -2361,8 +2361,8 @@
       "type": "MVA",
       "date": "2026-03-10",
       "district": "West",
-      "lat": 40.738460612827,
-      "lng": -74.074004811269,
+      "lat": 40.734334,
+      "lng": -74.07605,
       "address": "US 1&9 & WALLIS AVE"
     },
     {
@@ -2388,8 +2388,8 @@
       "type": "MVA",
       "date": "2026-03-20",
       "district": "West",
-      "lat": 40.730508994651,
-      "lng": -74.085193981456,
+      "lat": 40.72523,
+      "lng": -74.073433,
       "address": "US 1&9 & DUNCAN AVE"
     },
     {
@@ -2982,8 +2982,8 @@
       "type": "MVA",
       "date": "2026-03-17",
       "district": "West",
-      "lat": 40.730508994651,
-      "lng": -74.085193981456,
+      "lat": 40.72523,
+      "lng": -74.073433,
       "address": "US 1&9 & DUNCAN AVE"
     },
     {
@@ -2991,8 +2991,8 @@
       "type": "MVA",
       "date": "2026-03-20",
       "district": "East",
-      "lat": 40.712265671856,
-      "lng": -74.051300709012,
+      "lat": 40.730491,
+      "lng": -74.04463,
       "address": "ROUTE 139 & JERSEY AVE"
     },
     {
@@ -11598,8 +11598,8 @@
       "type": "Pedestrian Struck",
       "date": "2026-03-23",
       "district": "East",
-      "lat": 40.725055,
-      "lng": -74.042112,
+      "lat": 40.726621,
+      "lng": -74.041853,
       "address": "8TH ST / GROVE ST, JERSEY CITY, NJ",
       "description": "09:24"
     },
@@ -12005,16 +12005,6 @@
       "description": "08:23"
     },
     {
-      "id": "ts-0036",
-      "type": "Traffic Stop",
-      "date": "2026-03-24",
-      "district": "South",
-      "lat": 40.693231,
-      "lng": -74.101631,
-      "address": "KENNEDY BLVD & W 63RD ST, JERSEY CITY, NJ 07305",
-      "description": "08:26"
-    },
-    {
       "id": "ts-0037",
       "type": "Traffic Stop",
       "date": "2026-03-24",
@@ -12059,8 +12049,8 @@
       "type": "Pedestrian Struck",
       "date": "2026-03-24",
       "district": "West",
-      "lat": 40.712355,
-      "lng": -74.096828,
+      "lat": 40.697927,
+      "lng": -74.092629,
       "address": "DANFORTH AVE / OLD BERGEN RD, JERSEY CITY, NJ",
       "description": "09:13"
     },
@@ -12260,8 +12250,8 @@
       "type": "MVA",
       "date": "2026-03-24",
       "district": "East",
-      "lat": 40.736637,
-      "lng": -74.04049,
+      "lat": 40.719991,
+      "lng": -74.042902,
       "address": "700 GROVE ST & NEWARK STREET, JERSEY CITY, NJ",
       "description": "15:11"
     },
@@ -12270,8 +12260,8 @@
       "type": "MVA",
       "date": "2026-03-24",
       "district": "North",
-      "lat": 40.72816,
-      "lng": -74.07764,
+      "lat": 40.730399,
+      "lng": -74.067062,
       "address": "TONNELE AVE RAMP & TONNELE AVE, JERSEY CITY, NJ",
       "description": "15:22"
     },
@@ -12350,8 +12340,8 @@
       "type": "Traffic Stop",
       "date": "2026-03-24",
       "district": "West",
-      "lat": 40.68983,
-      "lng": -74.101303,
+      "lat": 40.730452,
+      "lng": -74.085238,
       "address": "ST HIGHWAY 440 & BAYONNE CITY LINE, JERSEY CITY, NJ 07306-0000",
       "description": "23:51"
     },
@@ -12370,8 +12360,8 @@
       "type": "Traffic Stop",
       "date": "2026-03-25",
       "district": "West",
-      "lat": 40.68983,
-      "lng": -74.101303,
+      "lat": 40.730452,
+      "lng": -74.085238,
       "address": "ST HIGHWAY 440 & BAYONNE CITY LINE, JERSEY CITY, NJ 07306-0000",
       "description": "00:01"
     },
@@ -12730,8 +12720,8 @@
       "type": "MVA",
       "date": "2026-03-25",
       "district": "East",
-      "lat": 40.712266,
-      "lng": -74.051301,
+      "lat": 40.730491,
+      "lng": -74.04463,
       "address": "ROUTE 139 & JERSEY AVE, JERSEY CITY, NJ",
       "description": "18:27"
     },
@@ -12880,8 +12870,8 @@
       "type": "Pedestrian Struck",
       "date": "2026-03-26",
       "district": "West",
-      "lat": 40.721332,
-      "lng": -74.082423,
+      "lat": 40.715495,
+      "lng": -74.068199,
       "address": "COMMUNIPAW AVE / GRAND ST, JERSEY CITY, NJ",
       "description": "06:55"
     },
@@ -12890,8 +12880,8 @@
       "type": "Pedestrian Struck",
       "date": "2026-03-26",
       "district": "West",
-      "lat": 40.724005,
-      "lng": -74.070045,
+      "lat": 40.729393,
+      "lng": -74.065945,
       "address": "BERGEN AVE / ACADEMY ST, JERSEY CITY, NJ",
       "description": "07:32"
     },
@@ -14091,8 +14081,8 @@
       "type": "Traffic Stop",
       "date": "2026-03-28",
       "district": "West",
-      "lat": 40.725284,
-      "lng": -74.073293,
+      "lat": 40.789543,
+      "lng": -74.023458,
       "address": "KENNEDY BLVD & 57TH ST, NJ",
       "description": "18:44"
     },
