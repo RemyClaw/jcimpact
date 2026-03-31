@@ -69,10 +69,6 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
     };
   }, [incidents, activePeriod.month, year]);
 
-  const lastDay = activePeriod.month !== null
-    ? new Date(year, activePeriod.month + 1, 0).getDate()
-    : 0;
-
   return (
     <div style={{ flexShrink: 0 }}>
       {/* Row 1: YTD + Month pills */}

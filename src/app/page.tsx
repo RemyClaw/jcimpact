@@ -116,9 +116,33 @@ export default function DashboardPage() {
   }, [filterState.district, activePeriod, periodFiltered]);
 
   const derivedDistricts = useMemo<DistrictStats[]>(() => {
-    if (filterState.district === 'All') return allDistricts;
-    return allDistricts.filter((d) => d.district === filterState.district);
-  }, [filterState.district]);
+    const isYTD = activePeriod.month === null;
+
+    // YTD → use authoritative CompStat district stats
+    if (isYTD) {
+      if (filterState.district === 'All') return allDistricts;
+      return allDistricts.filter((d) => d.district === filterState.district);
+    }
+
+    // Specific period → compute district stats from actual incidents
+    const pool = periodFiltered;
+    const districts = filterState.district === 'All'
+      ? ['North', 'East', 'South', 'West']
+      : [filterState.district];
+
+    return districts.map(dist => {
+      const distPool = pool.filter(i => i.district === dist);
+      return {
+        district: dist as DistrictStats['district'],
+        totalCrimes: distPool.length,
+        shootings: distPool.filter(i => i.type === 'Shots Fired' || i.type === 'Shooting Hit').length,
+        homicides: 0,
+        mvas: distPool.filter(i => i.type === 'MVA').length,
+        thefts: distPool.filter(i => i.type === 'Theft').length,
+        stolenVehicles: distPool.filter(i => i.type === 'Stolen Vehicle').length,
+      };
+    });
+  }, [filterState.district, activePeriod, periodFiltered]);
 
   return (
     <div className="flex flex-col h-screen overflow-hidden text-white" style={{ backgroundColor: '#000000' }}>

@@ -410,6 +410,8 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
             { label: 'MVA',            color: TYPE_COLORS['MVA'] },
             { label: 'Theft',          color: TYPE_COLORS['Theft'] },
             { label: 'Stolen Vehicle', color: TYPE_COLORS['Stolen Vehicle'] },
+            { label: 'Traffic Stop',  color: TYPE_COLORS['Traffic Stop'] },
+            { label: 'Ped. Struck',   color: TYPE_COLORS['Pedestrian Struck'] },
           ]).map(({ label, color }) => (
             <div key={label} className="flex items-center gap-1.5 text-xs">
               <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: color, boxShadow: `0 0 6px ${color}` }} />

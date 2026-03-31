@@ -18,8 +18,8 @@ const METRICS: { key: RankMetric; label: string; color: string }[] = [
 export default function DistrictRankings({ data }: { data: DistrictStats[] }) {
   const [metric, setMetric] = useState<RankMetric>('totalCrimes');
 
-  const sorted = useMemo(() => [...data].sort((a, b) => (a[metric] ?? 0) - (b[metric] ?? 0)), [data, metric]);
-  const max    = (sorted[sorted.length - 1]?.[metric] ?? 1) || 1;
+  const sorted = useMemo(() => [...data].sort((a, b) => (b[metric] ?? 0) - (a[metric] ?? 0)), [data, metric]);
+  const max    = (sorted[0]?.[metric] ?? 1) || 1;
   const m      = METRICS.find((x) => x.key === metric)!;
 
   return (
