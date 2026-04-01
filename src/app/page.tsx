@@ -149,8 +149,8 @@ export default function DashboardPage() {
 
       {/* ── Header — stacks on mobile, row on desktop ──────────────────── */}
       <header className="w-full flex-shrink-0" style={{ backgroundColor: '#000000' }}>
-        {/* Top row: logo + coin */}
-        <div className="flex items-center justify-between px-3 py-2 lg:px-4">
+        {/* Top row: logo + coin side by side */}
+        <div className="flex items-center gap-3 px-3 py-2 lg:px-4">
           <a href="/" style={{ display: 'flex', flexDirection: 'column', flexShrink: 0, textDecoration: 'none', cursor: 'pointer' }}>
             <h1 className="text-[16px] lg:text-[24px]" style={{ fontFamily: 'var(--font-orbitron)', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, margin: 0 }}>
               <span style={{ color: '#c8a96b' }}>Jersey City</span>{' '}
@@ -161,7 +161,7 @@ export default function DashboardPage() {
             </p>
           </a>
 
-          {/* JCPD badge — 3D spinning coin */}
+          {/* JCPD badge — 3D spinning coin, right next to title */}
           <div className="coin-container w-[40px] h-[40px] lg:w-[72px] lg:h-[72px]" style={{ flexShrink: 0, perspective: '600px' }}>
             <div className="coin-spinner" style={{
               width: '100%',
