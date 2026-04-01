@@ -226,7 +226,7 @@ export default function DashboardPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M3 12h18M3 18h18" />
             </svg>
           </button>
-          <span className="ml-2 text-xs text-[#9CA3AF] font-medium">Filters</span>
+          <span className="ml-2 text-xs text-white font-medium">Filters</span>
         </div>
 
         {/* ── Top row: Filter panel + Map side by side ────────────────── */}
