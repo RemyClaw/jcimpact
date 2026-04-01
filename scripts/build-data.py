@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """
 One-time script: reads JCIMPACT_Redesigned.xlsx, geocodes all incidents via
@@ -8,7 +9,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import pandas as pd
 import urllib.request, urllib.parse
 
-TOKEN  = 'pk.eyJ1IjoiY2xhd3JlbXkiLCJhIjoiY21sdzFlMTU0MGRxaDNlb252N3U1aWp5MyJ9.gJ3BZ2twJBzvlIDlW_sA7Q'
+TOKEN  = os.environ.get('MAPBOX_TOKEN', '')  # Set via: export MAPBOX_TOKEN=your_token
 BBOX   = '-74.1197,40.6627,-74.0156,40.7681'
 PROX   = '-74.0706,40.7178'
 OUTPUT = '/Users/geremy/JCIMPACT/src/data/data.json'

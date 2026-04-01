@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """
 update-data.py — repeatable JCImpact dashboard data updater.
@@ -33,7 +34,7 @@ CACHE_FILE   = os.path.join(SCRIPT_DIR, 'geocode-cache.json')
 DEFAULT_EXCEL = os.path.expanduser('~/Desktop/JCIMPACT_Redesigned.xlsx')
 
 # ── Mapbox ─────────────────────────────────────────────────────────────────────
-MAPBOX_TOKEN = 'pk.eyJ1IjoiY2xhd3JlbXkiLCJhIjoiY21sdzFlMTU0MGRxaDNlb252N3U1aWp5MyJ9.gJ3BZ2twJBzvlIDlW_sA7Q'
+MAPBOX_TOKEN = os.environ.get('MAPBOX_TOKEN', '')  # Set via: export MAPBOX_TOKEN=your_token
 BBOX = '-74.1197,40.6627,-74.0156,40.7681'
 PROX = '-74.0706,40.7178'
 

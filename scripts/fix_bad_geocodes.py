@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """Re-geocode incidents stuck on the fallback coordinate.
 Pass 1: Mapbox with fixed address normalisation
@@ -6,7 +7,7 @@ Pass 3: Manual coords for known highway intersections"""
 
 import json, urllib.request, urllib.parse, time, re
 
-MAPBOX_TOKEN = "pk.eyJ1IjoiY2xhd3JlbXkiLCJhIjoiY21sdzFlMTU0MGRxaDNlb252N3U1aWp5MyJ9.gJ3BZ2twJBzvlIDlW_sA7Q"
+MAPBOX_TOKEN = os.environ.get('MAPBOX_TOKEN', '')  # Set via: export MAPBOX_TOKEN=your_token
 FALLBACK = (40.72157, -74.047455)
 
 DATA_PATH  = "/Users/geremy/JCIMPACT/src/data/data.json"

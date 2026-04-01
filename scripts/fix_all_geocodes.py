@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 """
 fix_all_geocodes.py
 
@@ -26,10 +27,7 @@ from collections import defaultdict
 # ---------------------------------------------------------------------------
 DATA_PATH = "/Users/geremy/JCIMPACT/src/data/data.json"
 
-MAPBOX_TOKEN = (
-    "pk.eyJ1IjoiY2xhd3JlbXkiLCJhIjoiY21sdzFlMTU0MGRxaDNlb252N3U1aWp5MyJ9"
-    ".gJ3BZ2twJBzvlIDlW_sA7Q"
-)
+MAPBOX_TOKEN = os.environ.get('MAPBOX_TOKEN', '')  # Set via: export MAPBOX_TOKEN=your_token
 JC_CENTER_LNG = -74.0776
 JC_CENTER_LAT = 40.7282
 
