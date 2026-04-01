@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["700", "800", "900"], variable: "--font-orbitron" });
 
 export const metadata: Metadata = {
-  title: "Jersey City IMPACT - CompStat Public Safety Dashboard",
-  description: "Crime incident data and analytics for Jersey City, NJ",
+  title: "Jersey City IMPACT",
+  description: "Integrated Metrics for Public Accountability & Community Trust",
 };
 
 export default function RootLayout({
