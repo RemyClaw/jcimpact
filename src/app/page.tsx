@@ -147,78 +147,55 @@ export default function DashboardPage() {
   return (
     <div className="flex flex-col h-screen overflow-hidden text-white" style={{ backgroundColor: '#000000' }}>
 
-      {/* ── Full-width command header with stat cards ──────────────────── */}
-      <header
-        style={{
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          padding: '8px 16px',
-          borderTop: 'none',
-          borderBottom: 'none',
-          backgroundColor: '#000000',
-          flexShrink: 0,
-          gap: '16px',
-        }}
-      >
-        {/* Left — title + subtitle */}
-        <a href="/" style={{ display: 'flex', flexDirection: 'column', flexShrink: 0, textDecoration: 'none', cursor: 'pointer' }}>
-          <h1 style={{ fontFamily: 'var(--font-orbitron)', fontSize: '24px', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, margin: 0 }}>
-            <span style={{ color: '#c8a96b' }}>Jersey City</span>{' '}
-            <span style={{ color: '#FFFFFF' }}>IMPACT</span>
-          </h1>
-          <p style={{ color: '#9CA3AF', fontSize: '10px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', lineHeight: 1, margin: '6px 0 0 0' }}>
-            Integrated Metrics for Public Accountability &amp; Community Trust
-          </p>
-        </a>
+      {/* ── Header — stacks on mobile, row on desktop ──────────────────── */}
+      <header className="w-full flex-shrink-0" style={{ backgroundColor: '#000000' }}>
+        {/* Top row: logo + coin */}
+        <div className="flex items-center justify-between px-3 py-2 lg:px-4">
+          <a href="/" style={{ display: 'flex', flexDirection: 'column', flexShrink: 0, textDecoration: 'none', cursor: 'pointer' }}>
+            <h1 className="text-[16px] lg:text-[24px]" style={{ fontFamily: 'var(--font-orbitron)', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, margin: 0 }}>
+              <span style={{ color: '#c8a96b' }}>Jersey City</span>{' '}
+              <span style={{ color: '#FFFFFF' }}>IMPACT</span>
+            </h1>
+            <p className="hidden lg:block" style={{ color: '#9CA3AF', fontSize: '10px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', lineHeight: 1, margin: '6px 0 0 0' }}>
+              Integrated Metrics for Public Accountability &amp; Community Trust
+            </p>
+          </a>
 
-        {/* JCPD badge — 3D spinning coin */}
-        <div className="coin-container" style={{ flexShrink: 0, width: 72, height: 72, perspective: '600px' }}>
-          <div className="coin-spinner" style={{
-            width: '100%',
-            height: '100%',
-            transformStyle: 'preserve-3d',
-            animation: 'coinSpin 8s linear infinite',
-          }}>
-            {/* Front face */}
-            <div style={{
-              position: 'absolute',
+          {/* JCPD badge — 3D spinning coin */}
+          <div className="coin-container w-[40px] h-[40px] lg:w-[72px] lg:h-[72px]" style={{ flexShrink: 0, perspective: '600px' }}>
+            <div className="coin-spinner" style={{
               width: '100%',
               height: '100%',
-              backfaceVisibility: 'hidden',
-              borderRadius: '50%',
-              overflow: 'hidden',
-              border: '2px solid #c8a96b',
-              boxShadow: '0 0 12px rgba(200,169,107,0.4)',
+              transformStyle: 'preserve-3d',
+              animation: 'coinSpin 8s linear infinite',
             }}>
-              <img src="/jcimpact-logo.png" alt="JC IMPACT" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            </div>
-            {/* Back face — JCPD badge */}
-            <div style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              backfaceVisibility: 'hidden',
-              transform: 'rotateY(180deg)',
-              borderRadius: '50%',
-              overflow: 'hidden',
-              border: '2px solid #c8a96b',
-              boxShadow: '0 0 12px rgba(200,169,107,0.4)',
-              background: '#000',
-            }}>
-              <img src="/jcpd-badge.webp" alt="JCPD Badge" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <div style={{
+                position: 'absolute', width: '100%', height: '100%',
+                backfaceVisibility: 'hidden', borderRadius: '50%', overflow: 'hidden',
+                border: '2px solid #c8a96b', boxShadow: '0 0 12px rgba(200,169,107,0.4)',
+              }}>
+                <img src="/jcimpact-logo.png" alt="JC IMPACT" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{
+                position: 'absolute', width: '100%', height: '100%',
+                backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', borderRadius: '50%',
+                overflow: 'hidden', border: '2px solid #c8a96b',
+                boxShadow: '0 0 12px rgba(200,169,107,0.4)', background: '#000',
+              }}>
+                <img src="/jcpd-badge.webp" alt="JCPD Badge" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Stat cards filling remaining space */}
-        <div style={{ flex: 1, minWidth: 0 }}>
+        {/* Stat cards — below logo on mobile, beside it on desktop */}
+        <div className="px-3 pb-2 lg:px-4">
           <StatCardsRow citywide={derivedStats} />
         </div>
       </header>
 
       {/* ── Bi-weekly timeline strip ─────────────────────────────────── */}
-      <div style={{ padding: '0 16px', flexShrink: 0, borderBottom: '1px solid rgba(200,169,107,0.2)' }}>
+      <div className="px-2 lg:px-4 flex-shrink-0" style={{ borderBottom: '1px solid rgba(200,169,107,0.2)' }}>
         <TimelineStrip
           incidents={filterState.incidentTypes.length > 0 ? typeFiltered : allIncidents}
           activePeriod={activePeriod}
@@ -228,7 +205,7 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Body: filter + map side by side, analytics below ──────────── */}
-      <div className="flex flex-1 flex-col overflow-hidden" style={{ padding: '10px 16px 14px' }}>
+      <div className="flex flex-1 flex-col overflow-hidden px-2 py-1 lg:px-4 lg:py-2.5">
 
         {/* ── Mobile overlay ─────────────────────────────────────────── */}
         {mobileFilterOpen && (
@@ -239,15 +216,17 @@ export default function DashboardPage() {
         )}
 
         {/* ── Mobile top bar (hamburger only, hidden on desktop) ────── */}
-        <div className="flex items-center px-3 h-10 border-b border-surface-border bg-surface-nav lg:hidden">
+        <div className="flex items-center px-3 h-11 border-b border-surface-border lg:hidden" style={{ backgroundColor: '#0a1628' }}>
           <button
-            className="p-1.5 text-[#9CA3AF] hover:text-white hover:bg-white/5 transition-colors"
+            className="p-2.5 -ml-1 text-[#9CA3AF] hover:text-white hover:bg-white/5 transition-colors rounded-lg"
             onClick={() => setMobileFilterOpen(true)}
+            aria-label="Open filters"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M3 12h18M3 18h18" />
             </svg>
           </button>
+          <span className="ml-2 text-xs text-[#9CA3AF] font-medium">Filters</span>
         </div>
 
         {/* ── Top row: Filter panel + Map side by side ────────────────── */}
@@ -271,10 +250,11 @@ export default function DashboardPage() {
               />
             </div>
             <button
-              className="absolute top-3 right-3 p-1.5 text-[#9CA3AF] hover:text-white transition-colors lg:hidden"
+              className="absolute top-2 right-2 p-3 text-[#9CA3AF] hover:text-white transition-colors lg:hidden rounded-lg"
               onClick={() => setMobileFilterOpen(false)}
+              aria-label="Close filters"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -306,7 +286,7 @@ export default function DashboardPage() {
         </div>
 
         {/* ── Analytics panel with tabs (below filter+map) ────────── */}
-        <div className="flex-shrink-0" style={{ height: '260px', marginTop: '12px' }}>
+        <div className="flex-shrink-0 h-[220px] lg:h-[260px]" style={{ marginTop: '8px' }}>
           <div style={{
             border: '2px solid #c8a96b',
             borderRadius: '24px',
@@ -328,7 +308,7 @@ export default function DashboardPage() {
                 <button
                   key={id}
                   onClick={() => setAnalyticsTab(id)}
-                  className={`px-4 py-2.5 text-[14px] font-semibold border-b-2 transition-colors ${
+                  className={`px-2 py-2 text-[11px] lg:px-4 lg:py-2.5 lg:text-[14px] font-semibold border-b-2 transition-colors whitespace-nowrap ${
                     analyticsTab === id
                       ? 'border-accent-amber text-white'
                       : 'border-transparent text-[#9CA3AF] hover:text-[#E5E7EB]'

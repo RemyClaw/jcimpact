@@ -8,7 +8,7 @@ interface StatCardsRowProps {
 
 export default function StatCardsRow({ citywide }: StatCardsRowProps) {
   return (
-    <div className="flex items-stretch gap-1.5 overflow-x-auto">
+    <div className="grid grid-cols-3 gap-1 lg:flex lg:items-stretch lg:gap-1.5">
       <StatCard label="Total Crimes"  value={citywide.totalCrimes}    color={METRIC_COLORS.totalCrimes}    index={0} />
       <StatCard label="Shootings"     value={citywide.shootings}      color={METRIC_COLORS.shootings}      index={1} critical />
       <StatCard label="Homicides"     value={citywide.homicides}      color={METRIC_COLORS.homicides}      index={2} critical />
