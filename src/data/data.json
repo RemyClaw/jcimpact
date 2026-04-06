@@ -6,7 +6,7 @@
     "lastUpdated": "2026-04-06"
   },
   "citywide": {
-    "totalCrimes": 1279,
+    "totalCrimes": 1423,
     "shootings": 13,
     "homicides": 0,
     "mvas": 586,
@@ -16,7 +16,7 @@
   "byDistrict": [
     {
       "district": "North",
-      "totalCrimes": 182,
+      "totalCrimes": 219,
       "shootings": 0,
       "homicides": 0,
       "mvas": 167,
@@ -25,7 +25,7 @@
     },
     {
       "district": "East",
-      "totalCrimes": 287,
+      "totalCrimes": 315,
       "shootings": 1,
       "homicides": 0,
       "mvas": 126,
@@ -34,7 +34,7 @@
     },
     {
       "district": "South",
-      "totalCrimes": 326,
+      "totalCrimes": 360,
       "shootings": 6,
       "homicides": 0,
       "mvas": 116,
@@ -43,7 +43,7 @@
     },
     {
       "district": "West",
-      "totalCrimes": 484,
+      "totalCrimes": 529,
       "shootings": 6,
       "homicides": 0,
       "mvas": 177,
