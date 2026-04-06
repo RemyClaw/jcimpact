@@ -3,7 +3,7 @@
 import { useMemo } from 'react';
 import type { Incident } from '@/types';
 
-/** Parse ISO date string without timezone shift (avoids UTC midnight → previous day in local tz) */
+/** Parse ISO date string without timezone shift */
 function parseLocalDate(dateStr: string): Date {
   const [y, m, d] = dateStr.split('-').map(Number);
   return new Date(y, m - 1, d);
@@ -16,19 +16,58 @@ const MONTHS = [
 
 export interface TimePeriod {
   month: number | null;   // 0-11, null = YTD
-  half: 'first' | 'second' | null; // null = full month
+  week: number | null;    // 1-5, null = full month
+}
+
+/** Get Sunday-Saturday weeks for a given month/year */
+function getWeeksForMonth(month: number, year: number): { start: Date; end: Date; label: string }[] {
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+  const weeks: { start: Date; end: Date; label: string }[] = [];
+
+  // Find the first Sunday on or before the 1st of the month
+  let current = new Date(firstDay);
+  // If the 1st isn't Sunday, the first week starts on the 1st (partial week)
+  // Week always starts on Sunday
+  let weekStart = new Date(current);
+
+  while (weekStart <= lastDay) {
+    // Week ends on Saturday (6 days after Sunday) or end of month
+    const saturday = new Date(weekStart);
+    saturday.setDate(saturday.getDate() + (6 - saturday.getDay()));
+    const weekEnd = saturday > lastDay ? lastDay : saturday;
+
+    // Only include if the week has days in this month
+    const effectiveStart = weekStart < firstDay ? firstDay : weekStart;
+    if (effectiveStart <= lastDay) {
+      const startDay = effectiveStart.getDate();
+      const endDay = weekEnd.getDate();
+      weeks.push({
+        start: new Date(effectiveStart),
+        end: new Date(weekEnd),
+        label: startDay === endDay ? `${startDay}` : `${startDay}–${endDay}`,
+      });
+    }
+
+    // Move to next Sunday
+    const nextSunday = new Date(weekEnd);
+    nextSunday.setDate(nextSunday.getDate() + 1);
+    weekStart = nextSunday;
+  }
+
+  return weeks;
 }
 
 function getDateRange(period: TimePeriod, year: number): [Date, Date] | null {
   if (period.month === null) return null;
   const m = period.month;
-  if (period.half === null) {
+  if (period.week === null) {
     return [new Date(year, m, 1), new Date(year, m + 1, 0)];
   }
-  if (period.half === 'first') {
-    return [new Date(year, m, 1), new Date(year, m, 14)];
-  }
-  return [new Date(year, m, 15), new Date(year, m + 1, 0)];
+  const weeks = getWeeksForMonth(m, year);
+  const w = weeks[period.week - 1];
+  if (!w) return [new Date(year, m, 1), new Date(year, m + 1, 0)];
+  return [w.start, w.end];
 }
 
 function countInRange(incidents: Incident[], start: Date, end: Date): number {
@@ -58,28 +97,17 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
     return counts;
   }, [incidents, year]);
 
-  const halfCounts = useMemo(() => {
-    if (activePeriod.month === null) return { first: 0, second: 0 };
-    const m = activePeriod.month;
-    const firstRange = getDateRange({ month: m, half: 'first' }, year)!;
-    const secondRange = getDateRange({ month: m, half: 'second' }, year)!;
-    return {
-      first: countInRange(incidents, firstRange[0], firstRange[1]),
-      second: countInRange(incidents, secondRange[0], secondRange[1]),
-    };
-  }, [incidents, activePeriod.month, year]);
-
   return (
     <div style={{ flexShrink: 0 }}>
       {/* Row 1: YTD + Month pills */}
-      <div className="flex items-center gap-2 overflow-x-auto" style={{ padding: '8px 0 6px' }}>
+      <div className="flex items-center gap-1 lg:gap-2 overflow-x-auto" style={{ padding: '8px 0 6px' }}>
         {/* YTD */}
         <button
-          onClick={() => onSelect({ month: null, half: null })}
-          className="flex items-center gap-2 px-4 py-2 transition-all flex-shrink-0"
+          onClick={() => onSelect({ month: null, week: null })}
+          className="flex items-center gap-2 px-3 py-1.5 lg:px-4 lg:py-2 transition-all flex-shrink-0"
           style={{
             borderRadius: '8px',
-            fontSize: '14px',
+            fontSize: '13px',
             fontWeight: 800,
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
@@ -98,17 +126,16 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
         {MONTHS.map((label, i) => {
           const isActive = activePeriod.month === i;
           const hasData = monthlyCounts[i] > 0;
-          // When filters are active, disable months with no matching data
           const disabled = hasActiveFilters && !hasData && !isActive;
 
           return (
             <button
               key={label}
-              onClick={() => !disabled && onSelect({ month: i, half: null })}
-              className="flex items-center gap-1.5 px-3 py-2 transition-all flex-shrink-0"
+              onClick={() => !disabled && onSelect({ month: i, week: null })}
+              className="flex items-center gap-1 lg:gap-1.5 px-2 py-1.5 lg:px-3 lg:py-2 transition-all flex-shrink-0"
               style={{
                 borderRadius: '8px',
-                fontSize: '13px',
+                fontSize: '12px',
                 fontWeight: isActive ? 800 : 600,
                 cursor: disabled ? 'not-allowed' : 'pointer',
                 opacity: disabled ? 0.3 : 1,
@@ -124,13 +151,13 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
               {label}
               {hasData && (
                 <span style={{
-                  fontSize: '11px',
+                  fontSize: '10px',
                   fontWeight: 800,
                   color: isActive ? '#1b2740' : '#c8a96b',
                   background: isActive ? '#c8a96b' : 'rgba(200,169,107,0.15)',
                   borderRadius: '4px',
-                  padding: '1px 5px',
-                  minWidth: '20px',
+                  padding: '1px 4px',
+                  minWidth: '18px',
                   textAlign: 'center',
                 }}>
                   {monthlyCounts[i]}
@@ -141,91 +168,75 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
         })}
       </div>
 
-      {/* Row 2: Bi-weekly sub-periods (only visible when a month is selected) */}
+      {/* Row 2: Weekly periods (Sun–Sat) — only when a month is selected */}
       {activePeriod.month !== null && (() => {
         const displayMonth = activePeriod.month;
-        const displayLastDay = new Date(year, displayMonth + 1, 0).getDate();
-        const displayHalfCounts = halfCounts;
+        const weeks = getWeeksForMonth(displayMonth, year);
         const displayFullCount = monthlyCounts[displayMonth];
         const monthLabel = MONTHS[displayMonth];
 
         return (
-        <div className="flex items-center gap-2" style={{ padding: '0 0 8px' }}>
-          <span style={{ fontSize: '11px', fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.06em', marginRight: '4px' }}>
-            {monthLabel} Period:
+        <div className="flex items-center gap-1 lg:gap-2 overflow-x-auto" style={{ padding: '0 0 8px' }}>
+          <span className="text-[10px] lg:text-[11px]" style={{ fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.06em', marginRight: '2px', whiteSpace: 'nowrap', flexShrink: 0 }}>
+            {monthLabel}:
           </span>
 
           {/* Full month */}
           <button
-            onClick={() => onSelect({ month: displayMonth, half: null })}
-            className="flex items-center gap-1.5 px-3 py-1.5 transition-all"
+            onClick={() => onSelect({ month: displayMonth, week: null })}
+            className="flex items-center gap-1 px-2 py-1 lg:px-3 lg:py-1.5 transition-all flex-shrink-0"
             style={{
               borderRadius: '8px',
-              fontSize: '13px',
-              fontWeight: activePeriod.month === displayMonth && activePeriod.half === null ? 800 : 600,
-              border: activePeriod.month === displayMonth && activePeriod.half === null ? '2px solid #c8a96b' : '2px solid rgba(200,169,107,0.3)',
-              background: activePeriod.month === displayMonth && activePeriod.half === null ? 'rgba(200,169,107,0.2)' : 'transparent',
-              color: activePeriod.month === displayMonth && activePeriod.half === null ? '#FFFFFF' : '#E5E7EB',
+              fontSize: '11px',
+              fontWeight: activePeriod.week === null ? 800 : 600,
+              border: activePeriod.week === null ? '2px solid #c8a96b' : '2px solid rgba(200,169,107,0.3)',
+              background: activePeriod.week === null ? 'rgba(200,169,107,0.2)' : 'transparent',
+              color: activePeriod.week === null ? '#FFFFFF' : '#E5E7EB',
             }}
           >
-            Full Month
+            All
             <span style={{
-              fontSize: '11px', fontWeight: 800,
-              color: activePeriod.month === displayMonth && activePeriod.half === null ? '#1b2740' : '#c8a96b',
-              background: activePeriod.month === displayMonth && activePeriod.half === null ? '#c8a96b' : 'rgba(200,169,107,0.15)',
-              borderRadius: '4px', padding: '1px 5px',
+              fontSize: '10px', fontWeight: 800,
+              color: activePeriod.week === null ? '#1b2740' : '#c8a96b',
+              background: activePeriod.week === null ? '#c8a96b' : 'rgba(200,169,107,0.15)',
+              borderRadius: '4px', padding: '1px 4px',
             }}>
               {displayFullCount}
             </span>
           </button>
 
-          {/* 1st half */}
-          <button
-            onClick={() => onSelect({ month: displayMonth, half: 'first' })}
-            className="flex items-center gap-1.5 px-3 py-1.5 transition-all"
-            style={{
-              borderRadius: '8px',
-              fontSize: '13px',
-              fontWeight: activePeriod.month === displayMonth && activePeriod.half === 'first' ? 800 : 600,
-              border: activePeriod.month === displayMonth && activePeriod.half === 'first' ? '2px solid #c8a96b' : '2px solid rgba(200,169,107,0.3)',
-              background: activePeriod.month === displayMonth && activePeriod.half === 'first' ? 'rgba(200,169,107,0.2)' : 'transparent',
-              color: activePeriod.month === displayMonth && activePeriod.half === 'first' ? '#FFFFFF' : '#E5E7EB',
-            }}
-          >
-            1st – 14th
-            <span style={{
-              fontSize: '11px', fontWeight: 800,
-              color: activePeriod.month === displayMonth && activePeriod.half === 'first' ? '#1b2740' : '#c8a96b',
-              background: activePeriod.month === displayMonth && activePeriod.half === 'first' ? '#c8a96b' : 'rgba(200,169,107,0.15)',
-              borderRadius: '4px', padding: '1px 5px',
-            }}>
-              {displayHalfCounts.first}
-            </span>
-          </button>
+          {/* Weekly periods */}
+          {weeks.map((w, idx) => {
+            const weekNum = idx + 1;
+            const isActiveWeek = activePeriod.week === weekNum;
+            const weekCount = countInRange(incidents, w.start, w.end);
 
-          {/* 2nd half */}
-          <button
-            onClick={() => onSelect({ month: displayMonth, half: 'second' })}
-            className="flex items-center gap-1.5 px-3 py-1.5 transition-all"
-            style={{
-              borderRadius: '8px',
-              fontSize: '13px',
-              fontWeight: activePeriod.month === displayMonth && activePeriod.half === 'second' ? 800 : 600,
-              border: activePeriod.month === displayMonth && activePeriod.half === 'second' ? '2px solid #c8a96b' : '2px solid rgba(200,169,107,0.3)',
-              background: activePeriod.month === displayMonth && activePeriod.half === 'second' ? 'rgba(200,169,107,0.2)' : 'transparent',
-              color: activePeriod.month === displayMonth && activePeriod.half === 'second' ? '#FFFFFF' : '#E5E7EB',
-            }}
-          >
-            15th – {displayLastDay}th
-            <span style={{
-              fontSize: '11px', fontWeight: 800,
-              color: activePeriod.month === displayMonth && activePeriod.half === 'second' ? '#1b2740' : '#c8a96b',
-              background: activePeriod.month === displayMonth && activePeriod.half === 'second' ? '#c8a96b' : 'rgba(200,169,107,0.15)',
-              borderRadius: '4px', padding: '1px 5px',
-            }}>
-              {displayHalfCounts.second}
-            </span>
-          </button>
+            return (
+              <button
+                key={weekNum}
+                onClick={() => onSelect({ month: displayMonth, week: weekNum })}
+                className="flex items-center gap-1 px-2 py-1 lg:px-3 lg:py-1.5 transition-all flex-shrink-0"
+                style={{
+                  borderRadius: '8px',
+                  fontSize: '11px',
+                  fontWeight: isActiveWeek ? 800 : 600,
+                  border: isActiveWeek ? '2px solid #c8a96b' : '2px solid rgba(200,169,107,0.3)',
+                  background: isActiveWeek ? 'rgba(200,169,107,0.2)' : 'transparent',
+                  color: isActiveWeek ? '#FFFFFF' : '#E5E7EB',
+                }}
+              >
+                {w.label}
+                <span style={{
+                  fontSize: '10px', fontWeight: 800,
+                  color: isActiveWeek ? '#1b2740' : '#c8a96b',
+                  background: isActiveWeek ? '#c8a96b' : 'rgba(200,169,107,0.15)',
+                  borderRadius: '4px', padding: '1px 4px',
+                }}>
+                  {weekCount}
+                </span>
+              </button>
+            );
+          })}
         </div>
         );
       })()}
