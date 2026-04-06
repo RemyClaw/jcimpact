@@ -1,17 +1,17 @@
 {
   "meta": {
-    "period": "YTD 2026 (Jan '26 \u2013 Mar '26)",
-    "generated": "2026-03-24",
+    "period": "YTD 2026 (Jan '26 - Apr '26)",
+    "generated": "2026-04-06",
     "source": "JCPD CompStat / NJ Crash Reports",
-    "lastUpdated": "2026-03-23"
+    "lastUpdated": "2026-04-06"
   },
   "citywide": {
     "totalCrimes": 1279,
     "shootings": 13,
     "homicides": 0,
-    "mvas": 333,
-    "thefts": 533,
-    "stolenVehicles": 159
+    "mvas": 586,
+    "thefts": 649,
+    "stolenVehicles": 186
   },
   "byDistrict": [
     {
@@ -19,36 +19,36 @@
       "totalCrimes": 182,
       "shootings": 0,
       "homicides": 0,
-      "mvas": 49,
-      "thefts": 83,
-      "stolenVehicles": 37
+      "mvas": 167,
+      "thefts": 106,
+      "stolenVehicles": 47
     },
     {
       "district": "East",
       "totalCrimes": 287,
       "shootings": 1,
       "homicides": 0,
-      "mvas": 58,
-      "thefts": 125,
-      "stolenVehicles": 39
+      "mvas": 126,
+      "thefts": 154,
+      "stolenVehicles": 46
     },
     {
       "district": "South",
       "totalCrimes": 326,
       "shootings": 6,
       "homicides": 0,
-      "mvas": 99,
-      "thefts": 150,
-      "stolenVehicles": 48
+      "mvas": 116,
+      "thefts": 179,
+      "stolenVehicles": 52
     },
     {
       "district": "West",
       "totalCrimes": 484,
       "shootings": 6,
       "homicides": 0,
-      "mvas": 127,
-      "thefts": 164,
-      "stolenVehicles": 35
+      "mvas": 177,
+      "thefts": 210,
+      "stolenVehicles": 41
     }
   ],
   "monthlyTrends": [
@@ -59,8 +59,8 @@
       "shootings": 5,
       "homicides": 0,
       "mvas": 146,
-      "thefts": 218,
-      "stolenVehicles": 50
+      "thefts": 260,
+      "stolenVehicles": 54
     },
     {
       "month": "2026-02",
@@ -69,8 +69,8 @@
       "shootings": 3,
       "homicides": 0,
       "mvas": 145,
-      "thefts": 189,
-      "stolenVehicles": 52
+      "thefts": 229,
+      "stolenVehicles": 57
     },
     {
       "month": "2026-03",
@@ -79,8 +79,18 @@
       "shootings": 5,
       "homicides": 0,
       "mvas": 42,
-      "thefts": 126,
-      "stolenVehicles": 57
+      "thefts": 160,
+      "stolenVehicles": 68
+    },
+    {
+      "month": "2026-04",
+      "label": "Apr '26",
+      "totalCrimes": 144,
+      "shootings": 0,
+      "homicides": 0,
+      "mvas": 77,
+      "thefts": 0,
+      "stolenVehicles": 7
     }
   ],
   "incidents": [
@@ -14145,6 +14155,3678 @@
       "lng": -74.08794,
       "address": "MARTIN LUTHER KING JR DR & ARMSTRONG AVE, JERSEY CITY, NJ",
       "description": "23:50"
+    },
+    {
+      "id": "th2-0001",
+      "type": "Theft",
+      "date": "2026-01-01",
+      "district": "North",
+      "lat": 40.744498223413,
+      "lng": -74.060507851681,
+      "address": "230 LIBERTY AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0002",
+      "type": "Theft",
+      "date": "2026-01-02",
+      "district": "West",
+      "lat": 40.732070124118,
+      "lng": -74.073536598158,
+      "address": "30 WHITMAN AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0003",
+      "type": "Theft",
+      "date": "2026-01-02",
+      "district": "East",
+      "lat": 40.720045864917,
+      "lng": -74.045391508399,
+      "address": "319 BARROW ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0004",
+      "type": "Theft",
+      "date": "2026-01-02",
+      "district": "North",
+      "lat": 40.749112,
+      "lng": -74.05883,
+      "address": "77 TERRACE AVE, 2ND FL, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0005",
+      "type": "Theft",
+      "date": "2026-01-03",
+      "district": "West",
+      "lat": 40.722456667909,
+      "lng": -74.071069636415,
+      "address": "654 BERGEN AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0006",
+      "type": "Theft",
+      "date": "2026-01-03",
+      "district": "North",
+      "lat": 40.748940925463,
+      "lng": -74.046643848553,
+      "address": "103 SOUTH ST, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0007",
+      "type": "Theft",
+      "date": "2026-01-04",
+      "district": "South",
+      "lat": 40.708866,
+      "lng": -74.076531,
+      "address": "662 OCEAN AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0008",
+      "type": "Theft",
+      "date": "2026-01-04",
+      "district": "West",
+      "lat": 40.734090665697,
+      "lng": -74.07028148606,
+      "address": "893 PAVONIA AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0009",
+      "type": "Theft",
+      "date": "2026-01-05",
+      "district": "West",
+      "lat": 40.733284871435,
+      "lng": -74.068617007727,
+      "address": "104 ROMAINE AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0010",
+      "type": "Theft",
+      "date": "2026-01-05",
+      "district": "South",
+      "lat": 40.704998504699,
+      "lng": -74.0755552119,
+      "address": "32 RANDOLPH AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0011",
+      "type": "Theft",
+      "date": "2026-01-06",
+      "district": "East",
+      "lat": 40.723169339226,
+      "lng": -74.034767613762,
+      "address": "444 WASHINGTON BLVD, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0012",
+      "type": "Theft",
+      "date": "2026-01-07",
+      "district": "North",
+      "lat": 40.744580072698,
+      "lng": -74.056518317227,
+      "address": "169 MANHATTAN AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0013",
+      "type": "Theft",
+      "date": "2026-01-07",
+      "district": "North",
+      "lat": 40.749080777517,
+      "lng": -74.058942698901,
+      "address": "75 TERRACE AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0014",
+      "type": "Theft",
+      "date": "2026-01-07",
+      "district": "East",
+      "lat": 40.722907,
+      "lng": -74.042719,
+      "address": "395 MANILA AVE, 2ND FL, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "sv2-0001",
+      "type": "Stolen Vehicle",
+      "date": "2026-01-08",
+      "district": "North",
+      "lat": 40.753710898922,
+      "lng": -74.053020046117,
+      "address": "164 COLUMBIA AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0015",
+      "type": "Theft",
+      "date": "2026-01-08",
+      "district": "North",
+      "lat": 40.752533953987,
+      "lng": -74.05428454003,
+      "address": "129 COLUMBIA AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0016",
+      "type": "Theft",
+      "date": "2026-01-08",
+      "district": "North",
+      "lat": 40.756428898664,
+      "lng": -74.046830345898,
+      "address": "3687 KENNEDY BLVD, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "sv2-0002",
+      "type": "Stolen Vehicle",
+      "date": "2026-01-09",
+      "district": "West",
+      "lat": 40.717760036102,
+      "lng": -74.081064050124,
+      "address": "75 CLENDENNY AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "sv2-0003",
+      "type": "Stolen Vehicle",
+      "date": "2026-01-09",
+      "district": "North",
+      "lat": 40.746809784671,
+      "lng": -74.053090370285,
+      "address": "76 ZABRISKIE ST, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0017",
+      "type": "Theft",
+      "date": "2026-01-09",
+      "district": "North",
+      "lat": 40.732672992504,
+      "lng": -74.061015040642,
+      "address": "615 PAVONIA AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0018",
+      "type": "Theft",
+      "date": "2026-01-09",
+      "district": "North",
+      "lat": 40.731199,
+      "lng": -74.064444,
+      "address": "36 JOURNAL SQ, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0019",
+      "type": "Theft",
+      "date": "2026-01-09",
+      "district": "East",
+      "lat": 40.720045864917,
+      "lng": -74.045391508399,
+      "address": "319 BARROW ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0020",
+      "type": "Theft",
+      "date": "2026-01-09",
+      "district": "West",
+      "lat": 40.720078,
+      "lng": -74.080782,
+      "address": "250 CLINTON AVE, 2ND FL, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0021",
+      "type": "Theft",
+      "date": "2026-01-10",
+      "district": "West",
+      "lat": 40.722661521622,
+      "lng": -74.075037042645,
+      "address": "2500 KENNEDY BLVD, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "sv2-0004",
+      "type": "Stolen Vehicle",
+      "date": "2026-01-11",
+      "district": "South",
+      "lat": 40.692784898306,
+      "lng": -74.098487847531,
+      "address": "172 CUSTER AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0022",
+      "type": "Theft",
+      "date": "2026-01-12",
+      "district": "East",
+      "lat": 40.72756837156,
+      "lng": -74.062832237251,
+      "address": "198 ACADEMY ST, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0023",
+      "type": "Theft",
+      "date": "2026-01-13",
+      "district": "East",
+      "lat": 40.712787304405,
+      "lng": -74.058903723051,
+      "address": "366 WHITON ST, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0024",
+      "type": "Theft",
+      "date": "2026-01-13",
+      "district": "West",
+      "lat": 40.71813944295,
+      "lng": -74.076281587629,
+      "address": "503 BERGEN AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0025",
+      "type": "Theft",
+      "date": "2026-01-14",
+      "district": "East",
+      "lat": 40.71833507657,
+      "lng": -74.048660283,
+      "address": "314 YORK ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0026",
+      "type": "Theft",
+      "date": "2026-01-14",
+      "district": "West",
+      "lat": 40.72546652552,
+      "lng": -74.068924372117,
+      "address": "761 MONTGOMERY ST, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0027",
+      "type": "Theft",
+      "date": "2026-01-14",
+      "district": "West",
+      "lat": 40.725417365658,
+      "lng": -74.079426645338,
+      "address": "192 KENSINGTON AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0028",
+      "type": "Theft",
+      "date": "2026-01-15",
+      "district": "South",
+      "lat": 40.714704,
+      "lng": -74.093083,
+      "address": "219 CULVER AVE, 1ST FLOOR, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0029",
+      "type": "Theft",
+      "date": "2026-01-15",
+      "district": "East",
+      "lat": 40.727308071557,
+      "lng": -74.031617023997,
+      "address": "20 RIVER CT, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0030",
+      "type": "Theft",
+      "date": "2026-01-15",
+      "district": "South",
+      "lat": 40.711526540439,
+      "lng": -74.094982116527,
+      "address": "33 UNIVERSITY PL BLVD, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0031",
+      "type": "Theft",
+      "date": "2026-01-16",
+      "district": "West",
+      "lat": 40.72141257614,
+      "lng": -74.079323967024,
+      "address": "270 HARRISON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0032",
+      "type": "Theft",
+      "date": "2026-01-17",
+      "district": "West",
+      "lat": 40.722943572664,
+      "lng": -74.074459026602,
+      "address": "62 KENSINGTON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0033",
+      "type": "Theft",
+      "date": "2026-01-20",
+      "district": "West",
+      "lat": 40.725385933521,
+      "lng": -74.069199466179,
+      "address": "769 MONTGOMERY ST, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0034",
+      "type": "Theft",
+      "date": "2026-01-20",
+      "district": "West",
+      "lat": 40.725385933521,
+      "lng": -74.069199466179,
+      "address": "769 MONTGOMERY ST, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0035",
+      "type": "Theft",
+      "date": "2026-01-21",
+      "district": "North",
+      "lat": 40.72815875091,
+      "lng": -74.055838041965,
+      "address": "1 MAGNOLIA AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0036",
+      "type": "Theft",
+      "date": "2026-01-21",
+      "district": "North",
+      "lat": 40.733468141748,
+      "lng": -74.05799747168,
+      "address": "626-628 NEWARK AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0037",
+      "type": "Theft",
+      "date": "2026-01-21",
+      "district": "West",
+      "lat": 40.725385933521,
+      "lng": -74.069199466179,
+      "address": "769 MONTGOMERY ST, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0038",
+      "type": "Theft",
+      "date": "2026-01-24",
+      "district": "East",
+      "lat": 40.711920447979,
+      "lng": -74.057094405432,
+      "address": "295 JOHNSTON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0039",
+      "type": "Theft",
+      "date": "2026-01-27",
+      "district": "West",
+      "lat": 40.719009233042,
+      "lng": -74.079287338107,
+      "address": "199 CLINTON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0040",
+      "type": "Theft",
+      "date": "2026-01-27",
+      "district": "West",
+      "lat": 40.718591939993,
+      "lng": -74.079949005544,
+      "address": "70 LEXINGTON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0041",
+      "type": "Theft",
+      "date": "2026-01-28",
+      "district": "East",
+      "lat": 40.727338304691,
+      "lng": -74.062915611059,
+      "address": "192 ACADEMY ST, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0042",
+      "type": "Theft",
+      "date": "2026-01-29",
+      "district": "South",
+      "lat": 40.710332918693,
+      "lng": -74.103762225476,
+      "address": "12 GLORIA ROBINSON CT C, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0043",
+      "type": "Theft",
+      "date": "2026-01-30",
+      "district": "South",
+      "lat": 40.706556951956,
+      "lng": -74.085671414661,
+      "address": "227 WEGMAN PKWY, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0044",
+      "type": "Theft",
+      "date": "2026-01-30",
+      "district": "West",
+      "lat": 40.723595559003,
+      "lng": -74.067903540129,
+      "address": "266 MONTICELLO AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0045",
+      "type": "Theft",
+      "date": "2026-02-01",
+      "district": "East",
+      "lat": 40.725502358156,
+      "lng": -74.062616487063,
+      "address": "104 BALDWIN AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0046",
+      "type": "Theft",
+      "date": "2026-02-01",
+      "district": "South",
+      "lat": 40.705031780854,
+      "lng": -74.088012899313,
+      "address": "52 BERGEN AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0047",
+      "type": "Theft",
+      "date": "2026-02-04",
+      "district": "North",
+      "lat": 40.748662352911,
+      "lng": -74.04055665901,
+      "address": "445 OGDEN AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "sv2-0005",
+      "type": "Stolen Vehicle",
+      "date": "2026-02-05",
+      "district": "North",
+      "lat": 40.748366,
+      "lng": -74.047427,
+      "address": "400 CENTRAL AVE | 2ND FL, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "sv2-0006",
+      "type": "Stolen Vehicle",
+      "date": "2026-02-06",
+      "district": "East",
+      "lat": 40.714932317247,
+      "lng": -74.06413336008,
+      "address": "52 CANAL CIR, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0048",
+      "type": "Theft",
+      "date": "2026-02-07",
+      "district": "North",
+      "lat": 40.743412515495,
+      "lng": -74.045974972679,
+      "address": "209 NEW YORK AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0049",
+      "type": "Theft",
+      "date": "2026-02-08",
+      "district": "East",
+      "lat": 40.726754488762,
+      "lng": -74.061684084154,
+      "address": "134 BALDWIN AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0050",
+      "type": "Theft",
+      "date": "2026-02-08",
+      "district": "East",
+      "lat": 40.711718192655,
+      "lng": -74.058763409992,
+      "address": "65 MAPLE ST, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0051",
+      "type": "Theft",
+      "date": "2026-02-09",
+      "district": "West",
+      "lat": 40.730071291667,
+      "lng": -74.061698920122,
+      "address": "425 SUMMIT AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "sv2-0007",
+      "type": "Stolen Vehicle",
+      "date": "2026-02-10",
+      "district": "East",
+      "lat": 40.723169339226,
+      "lng": -74.034767613762,
+      "address": "444 WASHINGTON BLVD, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0052",
+      "type": "Theft",
+      "date": "2026-02-10",
+      "district": "West",
+      "lat": 40.730611672965,
+      "lng": -74.081198495851,
+      "address": "240 FREEMAN AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0053",
+      "type": "Theft",
+      "date": "2026-02-11",
+      "district": "West",
+      "lat": 40.725239082577,
+      "lng": -74.079302844628,
+      "address": "186 KENSINGTON AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0054",
+      "type": "Theft",
+      "date": "2026-02-11",
+      "district": "South",
+      "lat": 40.69016241035,
+      "lng": -74.091891792646,
+      "address": "19 WINFIELD AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0055",
+      "type": "Theft",
+      "date": "2026-02-12",
+      "district": "South",
+      "lat": 40.710963989008,
+      "lng": -74.08347703241,
+      "address": "156 GRANT AVE, FL 4, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0056",
+      "type": "Theft",
+      "date": "2026-02-12",
+      "district": "West",
+      "lat": 40.72857520577,
+      "lng": -74.069660135577,
+      "address": "2700 KENNEDY BLVD, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0057",
+      "type": "Theft",
+      "date": "2026-02-12",
+      "district": "West",
+      "lat": 40.725239082577,
+      "lng": -74.079302844628,
+      "address": "186 KENSINGTON AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0058",
+      "type": "Theft",
+      "date": "2026-02-13",
+      "district": "South",
+      "lat": 40.701535144216,
+      "lng": -74.082826680542,
+      "address": "425 OCEAN AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0059",
+      "type": "Theft",
+      "date": "2026-02-13",
+      "district": "East",
+      "lat": 40.73328357224,
+      "lng": -74.045342809542,
+      "address": "273 16TH ST, JERSEY CITY, NJ 07310"
+    },
+    {
+      "id": "th2-0060",
+      "type": "Theft",
+      "date": "2026-02-13",
+      "district": "West",
+      "lat": 40.715720928607,
+      "lng": -74.088954019402,
+      "address": "400 CLAREMONT AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0061",
+      "type": "Theft",
+      "date": "2026-02-13",
+      "district": "South",
+      "lat": 40.694252276185,
+      "lng": -74.094354731075,
+      "address": "40 BARTHOLDI AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0062",
+      "type": "Theft",
+      "date": "2026-02-13",
+      "district": "North",
+      "lat": 40.750174364424,
+      "lng": -74.043861978708,
+      "address": "78 CONGRESS ST, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0063",
+      "type": "Theft",
+      "date": "2026-02-13",
+      "district": "East",
+      "lat": 40.720532434397,
+      "lng": -74.041545975041,
+      "address": "180 MORGAN ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0064",
+      "type": "Theft",
+      "date": "2026-02-14",
+      "district": "South",
+      "lat": 40.709872246119,
+      "lng": -74.076624742745,
+      "address": "687 OCEAN AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0065",
+      "type": "Theft",
+      "date": "2026-02-14",
+      "district": "West",
+      "lat": 40.734462570741,
+      "lng": -74.069478332097,
+      "address": "117 VAN WAGENEN AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0066",
+      "type": "Theft",
+      "date": "2026-02-14",
+      "district": "South",
+      "lat": 40.712640411552,
+      "lng": -74.084083966019,
+      "address": "2159 KENNEDY BLVD, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0067",
+      "type": "Theft",
+      "date": "2026-02-14",
+      "district": "West",
+      "lat": 40.733869,
+      "lng": -74.069224,
+      "address": "112 VAN WAGENEN AVE, APT - 1D, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0068",
+      "type": "Theft",
+      "date": "2026-02-15",
+      "district": "East",
+      "lat": 40.71569129858,
+      "lng": -74.048779892758,
+      "address": "88 REGENT ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0069",
+      "type": "Theft",
+      "date": "2026-02-15",
+      "district": "West",
+      "lat": 40.714066047554,
+      "lng": -74.080449572802,
+      "address": "354 BERGEN AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "sv2-0008",
+      "type": "Stolen Vehicle",
+      "date": "2026-02-16",
+      "district": "North",
+      "lat": 40.743044,
+      "lng": -74.0599,
+      "address": "3227 KENNEDY BLVD, 2ND FLOOR, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0070",
+      "type": "Theft",
+      "date": "2026-02-16",
+      "district": "South",
+      "lat": 40.697427,
+      "lng": -74.097604,
+      "address": "1635 KENNEDY BLVD, APT, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0071",
+      "type": "Theft",
+      "date": "2026-02-16",
+      "district": "East",
+      "lat": 40.722569,
+      "lng": -74.046354,
+      "address": "295 2ND ST, 2ND FLOOR, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0072",
+      "type": "Theft",
+      "date": "2026-02-17",
+      "district": "South",
+      "lat": 40.691772,
+      "lng": -74.091214,
+      "address": "44 PEARSALL AVE, 1ST FLOOR, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0073",
+      "type": "Theft",
+      "date": "2026-02-17",
+      "district": "East",
+      "lat": 40.729542208668,
+      "lng": -74.031683651953,
+      "address": "110 RIVER DR S, JERSEY CITY, NJ 07310"
+    },
+    {
+      "id": "th2-0074",
+      "type": "Theft",
+      "date": "2026-02-17",
+      "district": "East",
+      "lat": 40.724765882234,
+      "lng": -74.04776769413,
+      "address": "313 5TH ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0075",
+      "type": "Theft",
+      "date": "2026-02-18",
+      "district": "West",
+      "lat": 40.724357893096,
+      "lng": -74.067175488019,
+      "address": "55 ORCHARD ST, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0076",
+      "type": "Theft",
+      "date": "2026-02-19",
+      "district": "West",
+      "lat": 40.718443077392,
+      "lng": -74.092789494476,
+      "address": "132 YALE AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "sv2-0009",
+      "type": "Stolen Vehicle",
+      "date": "2026-02-19",
+      "district": "South",
+      "lat": 40.705798,
+      "lng": -74.0829,
+      "address": "163 BIDWELL AVE, 2ND FLOOR, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0077",
+      "type": "Theft",
+      "date": "2026-02-19",
+      "district": "South",
+      "lat": 40.711224414739,
+      "lng": -74.094583724669,
+      "address": "23 UNIVERSITY PL BLVD, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0078",
+      "type": "Theft",
+      "date": "2026-02-19",
+      "district": "South",
+      "lat": 40.711485941308,
+      "lng": -74.084270451844,
+      "address": "2130 KENNEDY BLVD, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0079",
+      "type": "Theft",
+      "date": "2026-02-19",
+      "district": "North",
+      "lat": 40.743147437807,
+      "lng": -74.045119431822,
+      "address": "421 PALISADE AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0080",
+      "type": "Theft",
+      "date": "2026-02-20",
+      "district": "East",
+      "lat": 40.719269533045,
+      "lng": -74.047743135154,
+      "address": "485 JERSEY AVE, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0081",
+      "type": "Theft",
+      "date": "2026-02-20",
+      "district": "South",
+      "lat": 40.699808891257,
+      "lng": -74.08581784651,
+      "address": "19 STEVENS AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0082",
+      "type": "Theft",
+      "date": "2026-02-21",
+      "district": "North",
+      "lat": 40.738704735757,
+      "lng": -74.05673700108,
+      "address": "159 LAIDLAW AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0083",
+      "type": "Theft",
+      "date": "2026-02-21",
+      "district": "North",
+      "lat": 40.738704735757,
+      "lng": -74.05673700108,
+      "address": "159 LAIDLAW AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0084",
+      "type": "Theft",
+      "date": "2026-02-22",
+      "district": "West",
+      "lat": 40.714211683122,
+      "lng": -74.074971915258,
+      "address": "17 SAL LAF CT, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0085",
+      "type": "Theft",
+      "date": "2026-02-22",
+      "district": "East",
+      "lat": 40.713700428937,
+      "lng": -74.040043518897,
+      "address": "187 WARREN ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0086",
+      "type": "Theft",
+      "date": "2026-02-22",
+      "district": "East",
+      "lat": 40.713700428937,
+      "lng": -74.040043518897,
+      "address": "187 WARREN ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0087",
+      "type": "Theft",
+      "date": "2026-02-24",
+      "district": "South",
+      "lat": 40.701535144216,
+      "lng": -74.082826680542,
+      "address": "425 OCEAN AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0088",
+      "type": "Theft",
+      "date": "2026-02-24",
+      "district": "West",
+      "lat": 40.721504609436,
+      "lng": -74.067616962859,
+      "address": "33 STORMS AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0089",
+      "type": "Theft",
+      "date": "2026-02-24",
+      "district": "West",
+      "lat": 40.722456667909,
+      "lng": -74.071069636415,
+      "address": "654 BERGEN AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0090",
+      "type": "Theft",
+      "date": "2026-02-24",
+      "district": "North",
+      "lat": 40.733891637406,
+      "lng": -74.053111073586,
+      "address": "40 FLEET ST, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0091",
+      "type": "Theft",
+      "date": "2026-02-26",
+      "district": "West",
+      "lat": 40.714711998922,
+      "lng": -74.072059455361,
+      "address": "814 GRAND ST, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0092",
+      "type": "Theft",
+      "date": "2026-02-26",
+      "district": "East",
+      "lat": 40.711718192655,
+      "lng": -74.058763409992,
+      "address": "65 MAPLE ST, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0093",
+      "type": "Theft",
+      "date": "2026-02-27",
+      "district": "South",
+      "lat": 40.706373472096,
+      "lng": -74.080874954388,
+      "address": "133 WILKINSON AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0094",
+      "type": "Theft",
+      "date": "2026-02-27",
+      "district": "East",
+      "lat": 40.711718192655,
+      "lng": -74.058763409992,
+      "address": "65 MAPLE ST, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0095",
+      "type": "Theft",
+      "date": "2026-02-28",
+      "district": "South",
+      "lat": 40.711485941308,
+      "lng": -74.084270451844,
+      "address": "2130 KENNEDY BLVD, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0096",
+      "type": "Theft",
+      "date": "2026-03-01",
+      "district": "West",
+      "lat": 40.729448851538,
+      "lng": -74.070389361154,
+      "address": "9 GARRISON AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0097",
+      "type": "Theft",
+      "date": "2026-03-02",
+      "district": "West",
+      "lat": 40.71519,
+      "lng": -74.072755,
+      "address": "30 MADISON AVE, 2ND FL, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0098",
+      "type": "Theft",
+      "date": "2026-03-03",
+      "district": "North",
+      "lat": 40.731812003409,
+      "lng": -74.056632981662,
+      "address": "568 NEWARK AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0099",
+      "type": "Theft",
+      "date": "2026-03-04",
+      "district": "West",
+      "lat": 40.71828746736,
+      "lng": -74.078776042014,
+      "address": "2348 KENNEDY BLVD, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0100",
+      "type": "Theft",
+      "date": "2026-03-04",
+      "district": "West",
+      "lat": 40.71828746736,
+      "lng": -74.078776042014,
+      "address": "2348 KENNEDY BLVD, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0101",
+      "type": "Theft",
+      "date": "2026-03-05",
+      "district": "East",
+      "lat": 40.713425586332,
+      "lng": -74.037764060329,
+      "address": "180 WASHINGTON ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0102",
+      "type": "Theft",
+      "date": "2026-03-07",
+      "district": "North",
+      "lat": 40.733082873517,
+      "lng": -74.065386592865,
+      "address": "36 JOURNAL SQ PLZ, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0103",
+      "type": "Theft",
+      "date": "2026-03-08",
+      "district": "West",
+      "lat": 40.71716202922,
+      "lng": -74.089635635768,
+      "address": "77 CLARKE AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0104",
+      "type": "Theft",
+      "date": "2026-03-09",
+      "district": "South",
+      "lat": 40.709872246119,
+      "lng": -74.076624742745,
+      "address": "687 OCEAN AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0105",
+      "type": "Theft",
+      "date": "2026-03-09",
+      "district": "South",
+      "lat": 40.699865,
+      "lng": -74.098498,
+      "address": "313 PEARSALL AVE, 1ST FLOOR, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0106",
+      "type": "Theft",
+      "date": "2026-03-11",
+      "district": "South",
+      "lat": 40.69450813378,
+      "lng": -74.099757705862,
+      "address": "1542 KENNEDY BLVD, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "sv2-0010",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-14",
+      "district": "West",
+      "lat": 40.726931053552,
+      "lng": -74.065105660849,
+      "address": "91 JORDAN AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "sv2-0011",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-14",
+      "district": "North",
+      "lat": 40.750413081027,
+      "lng": -74.048660953552,
+      "address": "39 BLEECKER ST, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "sv2-0012",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-14",
+      "district": "North",
+      "lat": 40.735966032714,
+      "lng": -74.049147187755,
+      "address": "212 PALISADE AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0107",
+      "type": "Theft",
+      "date": "2026-03-15",
+      "district": "West",
+      "lat": 40.722962892951,
+      "lng": -74.071475320529,
+      "address": "657 BERGEN AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0108",
+      "type": "Theft",
+      "date": "2026-03-18",
+      "district": "West",
+      "lat": 40.728685637344,
+      "lng": -74.074092653615,
+      "address": "155 GLENWOOD AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0109",
+      "type": "Theft",
+      "date": "2026-03-18",
+      "district": "North",
+      "lat": 40.74782097747,
+      "lng": -74.054665329892,
+      "address": "275 GRIFFITH ST, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "th2-0110",
+      "type": "Theft",
+      "date": "2026-03-18",
+      "district": "West",
+      "lat": 40.718256077132,
+      "lng": -74.070583988945,
+      "address": "77 CRESCENT AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0111",
+      "type": "Theft",
+      "date": "2026-03-19",
+      "district": "West",
+      "lat": 40.723822331393,
+      "lng": -74.073465100524,
+      "address": "115 FAIRVIEW AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0112",
+      "type": "Theft",
+      "date": "2026-03-20",
+      "district": "West",
+      "lat": 40.721917501987,
+      "lng": -74.075370558573,
+      "address": "2474 KENNEDY BLVD, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "mva-v2-0001",
+      "type": "MVA",
+      "date": "2026-03-23",
+      "district": "West",
+      "lat": 40.734121,
+      "lng": -74.0805,
+      "address": "433 SIP AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0113",
+      "type": "Theft",
+      "date": "2026-03-23",
+      "district": "North",
+      "lat": 40.758967567589,
+      "lng": -74.052465080308,
+      "address": "881 TONNELE AVE, ROOM 119, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "sv2-0013",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-23",
+      "district": "West",
+      "lat": 40.714989398008,
+      "lng": -74.082074991466,
+      "address": "170 VIRGINIA AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0114",
+      "type": "Theft",
+      "date": "2026-03-23",
+      "district": "East",
+      "lat": 40.719904,
+      "lng": -74.042401,
+      "address": "110 NEWARK AVE, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0001",
+      "type": "Traffic Stop",
+      "date": "2026-03-24",
+      "district": "South",
+      "lat": 40.693231,
+      "lng": -74.101631,
+      "address": "KENNEDY BLVD & W 63RD ST, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0115",
+      "type": "Theft",
+      "date": "2026-03-24",
+      "district": "South",
+      "lat": 40.715595,
+      "lng": -74.095226,
+      "address": "36 WATER ST, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0116",
+      "type": "Theft",
+      "date": "2026-03-24",
+      "district": "West",
+      "lat": 40.720532,
+      "lng": -74.071423,
+      "address": "100 BELMONT AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0002",
+      "type": "Traffic Stop",
+      "date": "2026-03-24",
+      "district": "North",
+      "lat": 40.764999,
+      "lng": -74.069379,
+      "address": "FOREST, NJ"
+    },
+    {
+      "id": "th2-0117",
+      "type": "Theft",
+      "date": "2026-03-24",
+      "district": "West",
+      "lat": 40.722463,
+      "lng": -74.074674,
+      "address": "57 KENSINGTON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0118",
+      "type": "Theft",
+      "date": "2026-03-24",
+      "district": "East",
+      "lat": 40.719638,
+      "lng": -74.035646,
+      "address": "88 MORGAN ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0119",
+      "type": "Theft",
+      "date": "2026-03-24",
+      "district": "East",
+      "lat": 40.719904,
+      "lng": -74.042401,
+      "address": "110 NEWARK AVE, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "th2-0120",
+      "type": "Theft",
+      "date": "2026-03-24",
+      "district": "West",
+      "lat": 40.713846,
+      "lng": -74.069675,
+      "address": "382 ARLINGTON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0121",
+      "type": "Theft",
+      "date": "2026-03-25",
+      "district": "West",
+      "lat": 40.728489375081,
+      "lng": -74.063282932184,
+      "address": "365 SUMMIT AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0122",
+      "type": "Theft",
+      "date": "2026-03-25",
+      "district": "South",
+      "lat": 40.695807831686,
+      "lng": -74.099805147434,
+      "address": "1561 KENNEDY BLVD, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "th2-0123",
+      "type": "Theft",
+      "date": "2026-03-26",
+      "district": "South",
+      "lat": 40.678132954369,
+      "lng": -74.086642206687,
+      "address": "202 PORT JERSEY BLVD, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0124",
+      "type": "Theft",
+      "date": "2026-03-26",
+      "district": "South",
+      "lat": 40.70521832011,
+      "lng": -74.082013384477,
+      "address": "137 BIDWELL AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0125",
+      "type": "Theft",
+      "date": "2026-03-26",
+      "district": "South",
+      "lat": 40.709436,
+      "lng": -74.080049,
+      "address": "149 CLAREMONT AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "sv2-0014",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-26",
+      "district": "South",
+      "lat": 40.71195,
+      "lng": -74.084069,
+      "address": "CLAREMONT AVE. AND JFK BLVD., JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "th2-0126",
+      "type": "Theft",
+      "date": "2026-03-27",
+      "district": "North",
+      "lat": 40.730939,
+      "lng": -74.064521,
+      "address": "104 SIP AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "th2-0127",
+      "type": "Theft",
+      "date": "2026-03-27",
+      "district": "East",
+      "lat": 40.725512,
+      "lng": -74.038398,
+      "address": "10 MALL DR W, JCPENNEY, JERSEY CITY, NJ 07310"
+    },
+    {
+      "id": "sv2-0015",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-28",
+      "district": "East",
+      "lat": 40.715857,
+      "lng": -74.046318,
+      "address": "10 REGENT ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "mva-v2-0002",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.733069,
+      "lng": -74.063162,
+      "address": "PAVONIA AVENUE & JOHN F. KENNEDY BLVD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0003",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "West",
+      "lat": 40.724519,
+      "lng": -74.089371,
+      "address": "COMMUNIPAW AVE & ST HWY 440, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "mva-v2-0003",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.70277,
+      "lng": -74.093294,
+      "address": "FOWLER AVE & MCADOO AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0004",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "East",
+      "lat": 40.728399,
+      "lng": -74.044998,
+      "address": "JERSEY AVENUE & 9TH STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0005",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.700409,
+      "lng": -74.083559,
+      "address": "ARMSTRONG AVENUE & OCEAN AVENUE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0004",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.735840429895,
+      "lng": -74.056663324152,
+      "address": "41 CENTRAL AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0005",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.730459,
+      "lng": -74.061291,
+      "address": "SIP AVE & SUMMIT AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0006",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.745814,
+      "lng": -74.044153,
+      "address": "NEW YORK AVE & BOWERS ST, JERSEY CITY, NJ 07307-0000"
+    },
+    {
+      "id": "ts2-0007",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.75192,
+      "lng": -74.048338,
+      "address": "CONGRESS ST & SUMMIT AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "ts2-0008",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.699573,
+      "lng": -74.104045,
+      "address": "ST HWY 440 & MINA DR, JERSEY CITY, NJ 07305-0000"
+    },
+    {
+      "id": "ts2-0009",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.709854,
+      "lng": -74.09958,
+      "address": "ST HWY 440 & KELLOGG ST, JERSEY CITY, NJ 07305-0000"
+    },
+    {
+      "id": "mva-v2-0006",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.732587,
+      "lng": -74.05961,
+      "address": "SUMMIT AVE & PAVONIA STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0010",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.705365,
+      "lng": -74.100847,
+      "address": "ST HWY 440 & SOCIETY HILL DR N, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "ts2-0011",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.73356,
+      "lng": -74.054108,
+      "address": "378 BALDWIN AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0007",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.739812,
+      "lng": -74.063804,
+      "address": "276 TONNELE AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0008",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "West",
+      "lat": 40.729228,
+      "lng": -74.069534,
+      "address": "KENNEDY BLVD & STUYVESANT AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0009",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.712158,
+      "lng": -74.082299,
+      "address": "BERGEN AVE & ORIENT AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0010",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.745505,
+      "lng": -74.062389,
+      "address": "TONNELE AVE & CARLTON AVENUE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0011",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "East",
+      "lat": 40.720802,
+      "lng": -74.041088,
+      "address": "MARIN BLVD & BAY STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0012",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.685121,
+      "lng": -74.092117,
+      "address": "ST HWY 440 & RT 185, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0013",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "West",
+      "lat": 40.72816,
+      "lng": -74.07764,
+      "address": "TONNELE AVE & TONNELE AVENUE ENTRANCE RAMP, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0012",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "East",
+      "lat": 40.720499,
+      "lng": -74.046245,
+      "address": "169 COLUMBUS DR, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0013",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "East",
+      "lat": 40.725938,
+      "lng": -74.041978,
+      "address": "7TH ST & MANILA AVE, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0014",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "West",
+      "lat": 40.717024,
+      "lng": -74.071631,
+      "address": "568 COMMUNIPAW AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0015",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.733069,
+      "lng": -74.063162,
+      "address": "KENNEDY BLVD & PAVONIA AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0016",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "East",
+      "lat": 40.729289,
+      "lng": -74.03231,
+      "address": "20 NEWPORT PKWY, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "sv2-0016",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.752207,
+      "lng": -74.044804,
+      "address": "520 CENTRAL AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "ts2-0017",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "East",
+      "lat": 40.719973,
+      "lng": -74.047038,
+      "address": "JERSEY AVE & WAYNE ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "mva-v2-0014",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.704211,
+      "lng": -74.097885,
+      "address": "DANFORTH AVE & SULLIVAN DRIVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0018",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "East",
+      "lat": 40.718237,
+      "lng": -74.037107,
+      "address": "WASHINGTON ST & PEARL ST, JERSEY CITY, NJ 07302-0000"
+    },
+    {
+      "id": "ts2-0019",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.748765,
+      "lng": -74.045518,
+      "address": "SOUTH ST & HANCOCK AVE, JERSEY CITY, NJ 07307-0000"
+    },
+    {
+      "id": "sv2-0017",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-29",
+      "district": "West",
+      "lat": 40.737198,
+      "lng": -74.073774,
+      "address": "35 FAYETTE PL, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0020",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.710242,
+      "lng": -74.080577,
+      "address": "168 CLAREMONT AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "mva-v2-0015",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.744524,
+      "lng": -74.046012,
+      "address": "WEBSTER AVE & GRIFFITH STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0021",
+      "type": "Traffic Stop",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.713566,
+      "lng": -74.087057,
+      "address": "335 CLAREMONT AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "mva-v2-0016",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "North",
+      "lat": 40.756268,
+      "lng": -74.054731,
+      "address": "TONNELE AVE & NORTH ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0017",
+      "type": "MVA",
+      "date": "2026-03-29",
+      "district": "South",
+      "lat": 40.707009,
+      "lng": -74.088537,
+      "address": "VAN HOUTEN AVE & JOHN F KENNEDY BLVD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0022",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.7173,
+      "lng": -74.055612,
+      "address": "CENTER ST & GRAND ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0023",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "West",
+      "lat": 40.736866,
+      "lng": -74.07469,
+      "address": "BROADWAY & WALLIS AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0018",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "West",
+      "lat": 40.723509,
+      "lng": -74.074646,
+      "address": "KENNEDY BLVD & JEWETT AVE., JERSEY CITY, NJ"
+    },
+    {
+      "id": "ps2-0001",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.71537,
+      "lng": -74.049563,
+      "address": "JERSEY AVE & REGENT ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0019",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.723776,
+      "lng": -74.064192,
+      "address": "MONTGOMERY ST & BALDWIN, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0024",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "South",
+      "lat": 40.704686,
+      "lng": -74.098286,
+      "address": "DANFORTH AVE & WEST SIDE AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "mva-v2-0020",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.727723,
+      "lng": -74.063566,
+      "address": "SUMMIT AVE & ACADEMY ST., JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0025",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "South",
+      "lat": 40.709854,
+      "lng": -74.09958,
+      "address": "KELLOGG ST & ST HWY 440, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "mva-v2-0021",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "North",
+      "lat": 40.739264,
+      "lng": -74.076772,
+      "address": "100 ST HWY 7 & DUFFIELD AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0022",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "West",
+      "lat": 40.712106,
+      "lng": -74.068898,
+      "address": "GARFIELD AVE & BRAMHALL AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0023",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.725061,
+      "lng": -74.040438,
+      "address": "6TH ST & MARIN BLVD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0024",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "South",
+      "lat": 40.70099,
+      "lng": -74.082997,
+      "address": "WOODLAWN AVE & OCEAN AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0025",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "South",
+      "lat": 40.707733,
+      "lng": -74.091666,
+      "address": "FULTON AVE & STERLING AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0026",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "North",
+      "lat": 40.739114,
+      "lng": -74.066445,
+      "address": "276 VAN WAGENEN AVE & RT. 139 EAST RAMP, JERSEY CITY, NJ"
+    },
+    {
+      "id": "sv2-0018",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.712408,
+      "lng": -74.043442,
+      "address": "37 MARIN BLVD, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "mva-v2-0027",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "North",
+      "lat": 40.745994,
+      "lng": -74.057388,
+      "address": "3312 KENNEDY BLVD & SHERMAN PL., JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0028",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "North",
+      "lat": 40.730553,
+      "lng": -74.055759,
+      "address": "NEWARK AVENUE & MCPHERSON PLACE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0029",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "South",
+      "lat": 40.707921,
+      "lng": -74.077329,
+      "address": "OCEAN AVE & CLAREMONT AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0030",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "North",
+      "lat": 40.746069,
+      "lng": -74.059581,
+      "address": "MANHATTAN AVE & LIBERTY AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0031",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "North",
+      "lat": 40.756311,
+      "lng": -74.045306,
+      "address": "SUMMIT AVE & HAGUE ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0032",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "West",
+      "lat": 40.7164,
+      "lng": -74.090999,
+      "address": "MALLORY AVE & CLAREMONT AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0033",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.71227,
+      "lng": -74.058667,
+      "address": "PINE STREET & GEORGE CANNON DRIVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0026",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.713143,
+      "lng": -74.03812,
+      "address": "WASHINGTON ST & ESSEX ST, JERSEY CITY, NJ 07302-0000"
+    },
+    {
+      "id": "mva-v2-0034",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.715614,
+      "lng": -74.056747,
+      "address": "PACIFIC AVE & BARBARA ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0035",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "West",
+      "lat": 40.730399,
+      "lng": -74.067062,
+      "address": "TONNELE AVE & TONNELE CIRCLE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "sv2-0019",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-30",
+      "district": "South",
+      "lat": 40.703821,
+      "lng": -74.083217,
+      "address": "135 STEGMAN ST, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "mva-v2-0036",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "South",
+      "lat": 40.689948,
+      "lng": -74.09558,
+      "address": "135 GARFIELD AVE & GATES AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0027",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.723776,
+      "lng": -74.064192,
+      "address": "MONTGOMERY ST & BALDWIN AVE, JERSEY CITY, NJ 07306-0000"
+    },
+    {
+      "id": "mva-v2-0037",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.730491,
+      "lng": -74.04463,
+      "address": "STATE HWY 139 & JERSEY AVE., JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0038",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "West",
+      "lat": 40.715978,
+      "lng": -74.081719,
+      "address": "JOHN F. KENNEDY BLVD & BOYD AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0028",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.727996,
+      "lng": -74.042197,
+      "address": "199 9TH ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "mva-v2-0039",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.726606,
+      "lng": -74.062,
+      "address": "BALDWIN AVE & ACADEMY STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0029",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.709954,
+      "lng": -74.052047,
+      "address": "AUDREY ZAPP DR & JOHNSTON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0030",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.71537,
+      "lng": -74.049563,
+      "address": "JERSEY AVE & REGENT ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0031",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.724406,
+      "lng": -74.035929,
+      "address": "THOMAS GANGEMI DR & WASHINGTON ST, JERSEY CITY, NJ 07310"
+    },
+    {
+      "id": "ts2-0032",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.71537,
+      "lng": -74.049563,
+      "address": "JERSEY AVE & REGENT ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0033",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.71537,
+      "lng": -74.049563,
+      "address": "JERSEY AVE & REGENT ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0034",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.709954,
+      "lng": -74.052047,
+      "address": "JOHNSTON & AUBREY ZAPP DR, NJ"
+    },
+    {
+      "id": "ts2-0035",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "North",
+      "lat": 40.749156,
+      "lng": -74.047184,
+      "address": "CENTRAL AVE & SOUTH ST, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "ts2-0036",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.713009,
+      "lng": -74.050845,
+      "address": "JERSEY AVE & AETNA ST, JERSEY CITY, NJ 07304-0000"
+    },
+    {
+      "id": "ts2-0037",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.71569129858,
+      "lng": -74.048779892758,
+      "address": "88 REGENT ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0038",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.71537,
+      "lng": -74.049563,
+      "address": "JERSEY AVE & REGENT ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0039",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "West",
+      "lat": 40.716926916836,
+      "lng": -74.074156523717,
+      "address": "1 JACKSON AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0040",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "South",
+      "lat": 40.705338,
+      "lng": -74.080021,
+      "address": "104 BAYVIEW AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "mva-v2-0040",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "South",
+      "lat": 40.689077,
+      "lng": -74.083941,
+      "address": "LINDEN AVE E & RT 185, JERSEY CITY, NJ"
+    },
+    {
+      "id": "sv2-0020",
+      "type": "Stolen Vehicle",
+      "date": "2026-03-30",
+      "district": "North",
+      "lat": 40.744394329723,
+      "lng": -74.050114124105,
+      "address": "282 CENTRAL AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "mva-v2-0041",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "North",
+      "lat": 40.745804,
+      "lng": -74.049496,
+      "address": "CENTRAL AVE & GRIFFITH ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0041",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "East",
+      "lat": 40.716686,
+      "lng": -74.063196,
+      "address": "BISHOP ST & GRAND ST, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0042",
+      "type": "Traffic Stop",
+      "date": "2026-03-30",
+      "district": "West",
+      "lat": 40.716926916836,
+      "lng": -74.074156523717,
+      "address": "1 JACKSON AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0042",
+      "type": "MVA",
+      "date": "2026-03-30",
+      "district": "West",
+      "lat": 40.714209,
+      "lng": -74.082958,
+      "address": "KENNEDY BLVD & EGE AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0043",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.716875,
+      "lng": -74.062435,
+      "address": "GRAND ST & JOHNSTON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0044",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.7216,
+      "lng": -74.046105,
+      "address": "NEWARK & JERSEY, NJ"
+    },
+    {
+      "id": "ts2-0045",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.720051,
+      "lng": -74.052365,
+      "address": "MONTGOMERY ST & BRUNSWICK ST, JERSEY CITY, NJ 07302-0000"
+    },
+    {
+      "id": "ts2-0046",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.720051,
+      "lng": -74.052365,
+      "address": "BRUNSWICK ST & MONTGOMERY ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0047",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.720051,
+      "lng": -74.052365,
+      "address": "BRUNSWICK ST & MONTGOMERY ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0048",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.71863,
+      "lng": -74.047779,
+      "address": "JERSEY AVE & MONTGOMERY ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "mva-v2-0043",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "West",
+      "lat": 40.731746,
+      "lng": -74.072707,
+      "address": "940 WEST SIDE AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0044",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.730364,
+      "lng": -74.058226,
+      "address": "BALDWIN AVE & MAGNOLIA AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0049",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "West",
+      "lat": 40.727144,
+      "lng": -74.072618,
+      "address": "MONTGOMERY ST & FAIRMOUNT TER, JERSEY CITY, NJ 07306-0000"
+    },
+    {
+      "id": "mva-v2-0045",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.748987,
+      "lng": -74.041089,
+      "address": "PALISADE AVE & CONGRESS ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0046",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.729308,
+      "lng": -74.038426,
+      "address": "MALL DR W & NEWPORT PKWY, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0047",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.715765,
+      "lng": -74.067132,
+      "address": "SUMMIT AVE & GRAND STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0048",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.745505,
+      "lng": -74.062389,
+      "address": "TONNELE AVE & CARLTON AVE., JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0050",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "West",
+      "lat": 40.717811,
+      "lng": -74.088546,
+      "address": "324 EGE AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "mva-v2-0049",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.744725,
+      "lng": -74.060525,
+      "address": "CARLTON AVE & LIBERTY AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0050",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "West",
+      "lat": 40.730266,
+      "lng": -74.064985,
+      "address": "NEWKIRK STREET & BERGEN AVENUE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0051",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.746945,
+      "lng": -74.048952,
+      "address": "347 CENTRAL AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "ts2-0052",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.72692,
+      "lng": -74.035577,
+      "address": "525 WASHINGTON BLVD, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "mva-v2-0051",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "South",
+      "lat": 40.699963,
+      "lng": -74.067124,
+      "address": "BURMA RD & MORRIS PESIN DR, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0053",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.743309,
+      "lng": -74.051217,
+      "address": "FRANKLIN ST & CENTRAL AVE, JERSEY CITY, NJ 07307-0000"
+    },
+    {
+      "id": "ts2-0054",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.733082873517,
+      "lng": -74.065386592865,
+      "address": "36 JOURNAL SQ PLZ, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0055",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.750603,
+      "lng": -74.040125,
+      "address": "1 NO LOCATION, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0056",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "West",
+      "lat": 40.712527,
+      "lng": -74.074578,
+      "address": "OAK ST & OCEAN AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0057",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.749101,
+      "lng": -74.046361,
+      "address": "CAMBRIDGE AVE & SOUTH ST, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "mva-v2-0052",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.745359,
+      "lng": -74.057812,
+      "address": "MANHATTAN AVE & KENNEDY BLVD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0058",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.734599,
+      "lng": -74.050321,
+      "address": "BEACON AVE & PALISADE AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0059",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.731947,
+      "lng": -74.065503,
+      "address": "2851 KENNEDY BLVD, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0060",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.735624,
+      "lng": -74.065054,
+      "address": "LIBERTY AVE & NEWARK AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0061",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "North",
+      "lat": 40.734387,
+      "lng": -74.053885,
+      "address": "395 BALDWIN AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0062",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.727754,
+      "lng": -74.035315,
+      "address": "545 WASHINGTON BLVD, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0063",
+      "type": "Traffic Stop",
+      "date": "2026-03-31",
+      "district": "East",
+      "lat": 40.723777,
+      "lng": -74.042313,
+      "address": "4TH ST & MANILA AVE, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "mva-v2-0053",
+      "type": "MVA",
+      "date": "2026-03-31",
+      "district": "West",
+      "lat": 40.720875,
+      "lng": -74.081317,
+      "address": "COMMUNIPAW AVE & WESTSIDE AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0064",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.725811,
+      "lng": -74.077487,
+      "address": "741 WEST SIDE AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0054",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.72816,
+      "lng": -74.07764,
+      "address": "SKYWAY & KEARNY EXIT RAMP, JERSEY CITY, NJ"
+    },
+    {
+      "id": "sv2-0021",
+      "type": "Stolen Vehicle",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.746104,
+      "lng": -74.052637,
+      "address": "937 SUMMIT AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "mva-v2-0055",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.72816,
+      "lng": -74.07764,
+      "address": "100 SKYWAY & MILE MARK 53.6, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0056",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "South",
+      "lat": 40.686937,
+      "lng": -74.080835,
+      "address": "1 LINDEN AVE E, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0057",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "South",
+      "lat": 40.711087,
+      "lng": -74.093264,
+      "address": "219 WEST SIDE AVE & STEGMAN PARKWAY, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0058",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "South",
+      "lat": 40.686321,
+      "lng": -74.072483,
+      "address": "CHAPEL AVE & HALF MOON ISLE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0059",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.739239,
+      "lng": -74.065747,
+      "address": "RT.139 WESTBOUND RAMP & TONNELE AVE., JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0060",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "East",
+      "lat": 40.71881,
+      "lng": -74.043396,
+      "address": "42 WAYNE ST & GROVE STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0065",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "South",
+      "lat": 40.710748,
+      "lng": -74.08503,
+      "address": "KENNEDY BLVD & BROADMAN PKWY, JERSEY CITY, NJ 07305-0000"
+    },
+    {
+      "id": "ts2-0066",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.736291,
+      "lng": -74.058878,
+      "address": "ST PAULS AVE & SUMMIT AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0061",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.720094,
+      "lng": -74.077222,
+      "address": "HARRISON AVE & JOHN F. KENNEDY BLVD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0067",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.719538,
+      "lng": -74.092721,
+      "address": "3 BENNETT ST, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "mva-v2-0062",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.730509,
+      "lng": -74.085194,
+      "address": "US 1&9 & DUNCAN AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0063",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.733069,
+      "lng": -74.063162,
+      "address": "JFK KENNEDY BLVD & PAVONIA AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0064",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.749029,
+      "lng": -74.060778,
+      "address": "TONNELLE AVENUE & COUNTY RD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0068",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.724658,
+      "lng": -74.069794,
+      "address": "723 BERGEN AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ps2-0002",
+      "type": "Pedestrian Struck",
+      "date": "2026-04-01",
+      "district": "East",
+      "lat": 40.715842,
+      "lng": -74.042658,
+      "address": "GRAND ST & MARIN BLVD & MARIN BLVD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0065",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.718285,
+      "lng": -74.071894,
+      "address": "MONTICELLO AVE & BRINKERHOFF ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0069",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "East",
+      "lat": 40.725219,
+      "lng": -74.042087,
+      "address": "MANILA AVE & 6TH ST, JERSEY CITY, NJ 07302-0000"
+    },
+    {
+      "id": "ts2-0070",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.726544,
+      "lng": -74.067081,
+      "address": "800 BERGEN AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0071",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "South",
+      "lat": 40.698734,
+      "lng": -74.085916,
+      "address": "WADE ST & OCEAN AVE, JERSEY CITY, NJ 07305-0000"
+    },
+    {
+      "id": "mva-v2-0066",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "South",
+      "lat": 40.704085,
+      "lng": -74.079989,
+      "address": "BIDWELL AVE & OCEAN AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0067",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.730459,
+      "lng": -74.061291,
+      "address": "SUMMIT AVE & SIP AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0068",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.720094,
+      "lng": -74.077222,
+      "address": "KENNEDY BLVD & HARRISON AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0072",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.716927,
+      "lng": -74.074157,
+      "address": "1 JACSON AVE, NJ"
+    },
+    {
+      "id": "ps2-0003",
+      "type": "Pedestrian Struck",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.722166,
+      "lng": -74.075615,
+      "address": "BELMONT AVE & JFK BLVD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0069",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.73506,
+      "lng": -74.056612,
+      "address": "UPPER 139 & HOBOKEN AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0070",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.746985,
+      "lng": -74.061856,
+      "address": "TONNELE AVE & MANHATTAN AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0071",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "East",
+      "lat": 40.734468,
+      "lng": -74.04068,
+      "address": "GROVE STREET & 18TH STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0072",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.733069,
+      "lng": -74.063162,
+      "address": "KENNEDY BLVD & PAVONIA AVENUE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0073",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.744191,
+      "lng": -74.061892,
+      "address": "390 TONNELE AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0073",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.725336,
+      "lng": -74.077542,
+      "address": "GAUTIER AVE & WEST SIDE AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0074",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "South",
+      "lat": 40.704211,
+      "lng": -74.097885,
+      "address": "DANFORTH AVE & SULLIVAN DRIVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0074",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.72668,
+      "lng": -74.076601,
+      "address": "DUNCAN AVE & WEST SIDE AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0075",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "South",
+      "lat": 40.702755,
+      "lng": -74.088519,
+      "address": "MARTIN LUTHER KING DR & VAN NOSTRAND AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0075",
+      "type": "Traffic Stop",
+      "date": "2026-04-01",
+      "district": "West",
+      "lat": 40.717161,
+      "lng": -74.068322,
+      "address": "57 PRESCOTT ST, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "mva-v2-0076",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "North",
+      "lat": 40.760109,
+      "lng": -74.051086,
+      "address": "TONNELE AVE & SECAUCUS RD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0077",
+      "type": "MVA",
+      "date": "2026-04-01",
+      "district": "South",
+      "lat": 40.705764,
+      "lng": -74.097941,
+      "address": "CATOR AVE & SPRING STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0076",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.697803,
+      "lng": -74.102326,
+      "address": "1 EXETER RD, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "ts2-0077",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.704669,
+      "lng": -74.07941,
+      "address": "BAYVIEW AVE & OCEAN AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "ts2-0078",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.720889,
+      "lng": -74.065903,
+      "address": "166 SUMMIT AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0079",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.683096,
+      "lng": -74.098906,
+      "address": "PORT JERSEY BLVD & BAYONNE CITY LINE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "ts2-0080",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.700711,
+      "lng": -74.093741,
+      "address": "CATOR AVE & KENNEDY BLVD, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "ts2-0081",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.695807831686,
+      "lng": -74.099805147434,
+      "address": "1561 KENNEDY BLVD, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "mva-v2-0078",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "North",
+      "lat": 40.744725,
+      "lng": -74.060525,
+      "address": "CARLTON AVE & LIBERTY AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0079",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.724409,
+      "lng": -74.068436,
+      "address": "STORMS AVE & NEVIN STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0082",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.710782059799,
+      "lng": -74.096678865187,
+      "address": "440 ST HWY 440, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "ts2-0083",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.710782059799,
+      "lng": -74.096678865187,
+      "address": "440 ST HWY 440, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "mva-v2-0080",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.718205,
+      "lng": -74.058917,
+      "address": "COLDEN ST & PRIOR ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0081",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.717384,
+      "lng": -74.056384,
+      "address": "GRAND ST & MERSELES ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0082",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.712487,
+      "lng": -74.063961,
+      "address": "COMMUNIPAW AVE & VAN HORNE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0083",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.709636,
+      "lng": -74.084242,
+      "address": "BERGEN AVE & BOSTWICK AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0084",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.727723,
+      "lng": -74.063566,
+      "address": "SUMMIT AVE & ACADEMY ST., JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0085",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.712296,
+      "lng": -74.061429,
+      "address": "LAFAYETTE ST & PACIFIC AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0086",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.721508,
+      "lng": -74.04099,
+      "address": "MARIN BOULEVARD & 1ST STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0084",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.71724,
+      "lng": -74.073985,
+      "address": "573 MLK DR, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0085",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "North",
+      "lat": 40.734777,
+      "lng": -74.060311,
+      "address": "689 NEWARK AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0087",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.722166,
+      "lng": -74.075615,
+      "address": "BELMONT AVE & JFK BLVD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0088",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.734735,
+      "lng": -74.043996,
+      "address": "JERSEY AVE & 18TH ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0089",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.734735,
+      "lng": -74.043996,
+      "address": "JERSEY AVE & 18TH ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0090",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.71388,
+      "lng": -74.063393,
+      "address": "133 LAFAYETTE ST & WOODWARD ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0091",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "North",
+      "lat": 40.75237,
+      "lng": -74.053006,
+      "address": "JOHN F. KENNEDY BLVD. & NELSON AVE., JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0092",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.719242,
+      "lng": -74.088404,
+      "address": "MALLORY AVE & BOYD AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0093",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.737131,
+      "lng": -74.075611,
+      "address": "US 1&9 NORTH & DALES AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0086",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.718436,
+      "lng": -74.075389,
+      "address": "BERGEN AVE & COMMUNIPAW AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "mva-v2-0094",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.711618,
+      "lng": -74.092649,
+      "address": "WEST SIDE AVE & AUDUBON AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "sv2-0022",
+      "type": "Stolen Vehicle",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.721228,
+      "lng": -74.062565,
+      "address": "160 CORNELISON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0087",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.71798,
+      "lng": -74.094145,
+      "address": "WATER ST & CLAREMONT AVE, JERSEY CITY, NJ 07304-0000"
+    },
+    {
+      "id": "ts2-0088",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.71296,
+      "lng": -74.077009,
+      "address": "MLK DR & FORREST ST, JERSEY CITY, NJ 07304-0000"
+    },
+    {
+      "id": "mva-v2-0095",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.734789,
+      "lng": -74.072765,
+      "address": "PAVONIA AVE & GILES AVENUE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0096",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "East",
+      "lat": 40.717319,
+      "lng": -74.042377,
+      "address": "MARIN BLVD & MONTGOMERY STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0089",
+      "type": "Traffic Stop",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.733075,
+      "lng": -74.075322,
+      "address": "BRYANT AVE & SIP AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0097",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.703289,
+      "lng": -74.08794,
+      "address": "ARMSTRONG AVE & MLK DR., JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0098",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "North",
+      "lat": 40.73538,
+      "lng": -74.04982,
+      "address": "PALISADE AVE & LAIDLAW AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0099",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "South",
+      "lat": 40.712457,
+      "lng": -74.082056,
+      "address": "BERGEN AVE & MORTON PL, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0100",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.716612,
+      "lng": -74.070994,
+      "address": "COMMUNIPAW AVE & CRESCENT AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0101",
+      "type": "MVA",
+      "date": "2026-04-02",
+      "district": "West",
+      "lat": 40.715299,
+      "lng": -74.074905,
+      "address": "BRAMHALL AVENUE & MLK DRIVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0102",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.739064,
+      "lng": -74.066443,
+      "address": "100 PULASKI ST & VAN WAGENEN AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0090",
+      "type": "Traffic Stop",
+      "date": "2026-04-03",
+      "district": "West",
+      "lat": 40.72005688712,
+      "lng": -74.095919464759,
+      "address": "701 ST HWY 440, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "mva-v2-0103",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.739812,
+      "lng": -74.063804,
+      "address": "276 TONNELE AVE & ST. PAUL'S AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0104",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "West",
+      "lat": 40.722829,
+      "lng": -74.091325,
+      "address": "725 ST HWY 440 & CLENDENNY AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0105",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.733069,
+      "lng": -74.063162,
+      "address": "JOHN F KENNEDY BLVD & PAVONIA AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0091",
+      "type": "Traffic Stop",
+      "date": "2026-04-03",
+      "district": "West",
+      "lat": 40.730059,
+      "lng": -74.068358,
+      "address": "2758 KENNEDY BLVD, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0106",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "West",
+      "lat": 40.730509,
+      "lng": -74.085194,
+      "address": "US 1&9 & DUNCAN AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0107",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "West",
+      "lat": 40.720915,
+      "lng": -74.07279,
+      "address": "BERGEN AVE & BELMONT AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0108",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.745814,
+      "lng": -74.044153,
+      "address": "NEW YORK AVE & BOWERS STREET, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0109",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.746922,
+      "lng": -74.051789,
+      "address": "GRIFFITH ST. & SUMMIT AVE., JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0092",
+      "type": "Traffic Stop",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.743309,
+      "lng": -74.051217,
+      "address": "CENTRAL AVE & FRANKLIN ST, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "mva-v2-0110",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "West",
+      "lat": 40.734397,
+      "lng": -74.071365,
+      "address": "PAVONIA AVE & WESTSIDE AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0111",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.760109,
+      "lng": -74.051086,
+      "address": "TONNELE AVE & SECAUCUS RD. EXIT RAMP (SOUTH), JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0112",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.745505,
+      "lng": -74.062389,
+      "address": "TONNELE AVE & CARLTON AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0113",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.745505,
+      "lng": -74.062389,
+      "address": "STATE HIGHWAY ROUTE 1-9 & CARLTON AVENUE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0093",
+      "type": "Traffic Stop",
+      "date": "2026-04-03",
+      "district": "South",
+      "lat": 40.693231,
+      "lng": -74.101631,
+      "address": "KENNEDY BLVD & W 63RD ST, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "mva-v2-0114",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.737208,
+      "lng": -74.058817,
+      "address": "SUMMIT AVE & STATE HW RT 139, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0094",
+      "type": "Traffic Stop",
+      "date": "2026-04-03",
+      "district": "West",
+      "lat": 40.717246,
+      "lng": -74.072509,
+      "address": "COMMUNIPAW AVE & MONTICELLO AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "mva-v2-0115",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "West",
+      "lat": 40.71296,
+      "lng": -74.077009,
+      "address": "450 MLK DR & FORREST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0116",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "South",
+      "lat": 40.716147,
+      "lng": -74.095519,
+      "address": "ST HWY 440 SOUTH & CULVER AVENUE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "sv2-0023",
+      "type": "Stolen Vehicle",
+      "date": "2026-04-03",
+      "district": "East",
+      "lat": 40.719006,
+      "lng": -74.041097,
+      "address": "90 COLUMBUS DR, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "mva-v2-0117",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.745519,
+      "lng": -74.043329,
+      "address": "BOWERS ST & PALISADE AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0095",
+      "type": "Traffic Stop",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.732632,
+      "lng": -74.067243,
+      "address": "MAGNOLIA AVE & TONNELE AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "sv2-0024",
+      "type": "Stolen Vehicle",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.732255,
+      "lng": -74.062475,
+      "address": "9 PATH PLZ, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0096",
+      "type": "Traffic Stop",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.73528,
+      "lng": -74.064433,
+      "address": "785 NEWARK AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "sv2-0025",
+      "type": "Stolen Vehicle",
+      "date": "2026-04-03",
+      "district": "West",
+      "lat": 40.730493,
+      "lng": -74.072909,
+      "address": "101 STUYVESANT AVE, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0118",
+      "type": "MVA",
+      "date": "2026-04-03",
+      "district": "West",
+      "lat": 40.724079,
+      "lng": -74.089911,
+      "address": "US 1&9 & STATE ROUTE 440, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0097",
+      "type": "Traffic Stop",
+      "date": "2026-04-03",
+      "district": "North",
+      "lat": 40.750603,
+      "lng": -74.040125,
+      "address": "1 NO LOCATION, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0098",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.695598,
+      "lng": -74.090674,
+      "address": "DANFORTH AVE & OCEAN AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "ts2-0099",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "West",
+      "lat": 40.73447,
+      "lng": -74.081061,
+      "address": "SIP AVE & US 1&9, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "mva-v2-0119",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.71195,
+      "lng": -74.084069,
+      "address": "277 CLAREMONT AVE & JOHN F. KENNEDY BLVD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0100",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.701254,
+      "lng": -74.09309,
+      "address": "KENNEDY BLVD & TERHUNE AVE, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "mva-v2-0120",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "North",
+      "lat": 40.738065,
+      "lng": -74.065645,
+      "address": "TONNELLE AVE. & ST. PAULS AVE., JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0121",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.716939,
+      "lng": -74.052265,
+      "address": "GRAND ST & MONMOUTH ST, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0101",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "North",
+      "lat": 40.745484,
+      "lng": -74.048026,
+      "address": "80 CAMBRIDGE AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "mva-v2-0122",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.712644,
+      "lng": -74.097678,
+      "address": "DANFORTH AVE & NJ-440, JERSEY CITY, NJ"
+    },
+    {
+      "id": "sv2-0026",
+      "type": "Stolen Vehicle",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.724374237808,
+      "lng": -74.037636823038,
+      "address": "474 WARREN ST, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "mva-v2-0123",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.703743,
+      "lng": -74.075613,
+      "address": "WILKINSON AVE & GARFIELD AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0102",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "North",
+      "lat": 40.749636,
+      "lng": -74.042831,
+      "address": "WEBSTER AVE & CONGRESS ST, JERSEY CITY, NJ 07307-0000"
+    },
+    {
+      "id": "ts2-0103",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "West",
+      "lat": 40.717857,
+      "lng": -74.072469,
+      "address": "78 HARRISON AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "mva-v2-0124",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.722386,
+      "lng": -74.047162,
+      "address": "222 NEWARK AVE & COLE ST., JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0104",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "North",
+      "lat": 40.74774,
+      "lng": -74.053566,
+      "address": "1 MILTON AVE, JERSEY CITY, NJ 07307"
+    },
+    {
+      "id": "mva-v2-0125",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.698476,
+      "lng": -74.091874,
+      "address": "ROSE AVE & CATOR AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0105",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "North",
+      "lat": 40.735624,
+      "lng": -74.065054,
+      "address": "NEWARK AVE & LIBERTY AVE, JERSEY CITY, NJ 07306-0000"
+    },
+    {
+      "id": "ps2-0004",
+      "type": "Pedestrian Struck",
+      "date": "2026-04-04",
+      "district": "North",
+      "lat": 40.731777,
+      "lng": -74.067204,
+      "address": "KENNEDY BLVD & TONNELE AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0126",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.73017,
+      "lng": -74.041323,
+      "address": "12TH ST & MANILA AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0127",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.712644,
+      "lng": -74.097678,
+      "address": "ST HWY 440 & DANFORTH AVE & DANFORTH AVENUE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0106",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.724892,
+      "lng": -74.03907,
+      "address": "MALL DR W, NJ"
+    },
+    {
+      "id": "sv2-0027",
+      "type": "Stolen Vehicle",
+      "date": "2026-04-04",
+      "district": "West",
+      "lat": 40.720535,
+      "lng": -74.07467,
+      "address": "25 GIFFORD AVE, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0107",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.729293,
+      "lng": -74.034841,
+      "address": "WASHINGTON ST & NEWPORT PKWY, JERSEY CITY, NJ 07310-0000"
+    },
+    {
+      "id": "ts2-0108",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.731069,
+      "lng": -74.034485,
+      "address": "14TH ST & WASHINGTON BLVD, JERSEY CITY, NJ 07310-0000"
+    },
+    {
+      "id": "ts2-0109",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.709587,
+      "lng": -74.080907,
+      "address": "307 MLK DR, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "ts2-0110",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.729293,
+      "lng": -74.034841,
+      "address": "WASHINGTON ST & NEWPORT PKWY, JERSEY CITY, NJ 07310-0000"
+    },
+    {
+      "id": "ts2-0111",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "West",
+      "lat": 40.720094,
+      "lng": -74.077222,
+      "address": "KENNEDY BLVD & HARRISON AVE, JERSEY CITY, NJ 07304-0000"
+    },
+    {
+      "id": "ts2-0112",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.707232,
+      "lng": -74.083238,
+      "address": "BAYVIEW AVE & MLK DR, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "ts2-0113",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.718787,
+      "lng": -74.040406,
+      "address": "56 COLUMBUS DR, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "ts2-0114",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.709212003606,
+      "lng": -74.08097000517,
+      "address": "GRANT AVE & MLK DR, JERSEY CITY, NJ 07305"
+    },
+    {
+      "id": "ts2-0115",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "West",
+      "lat": 40.72282,
+      "lng": -74.090637,
+      "address": "700 ST HWY 440, JERSEY CITY, NJ 07306"
+    },
+    {
+      "id": "ts2-0116",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.718851,
+      "lng": -74.036981,
+      "address": "WASHINGTON ST & STEUBEN ST, JERSEY CITY, NJ 07302-0000"
+    },
+    {
+      "id": "ts2-0117",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "East",
+      "lat": 40.718851,
+      "lng": -74.036981,
+      "address": "WASHINGTON & STEUBEN STREET, JERSEY CITY, NJ 07302"
+    },
+    {
+      "id": "mva-v2-0128",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "North",
+      "lat": 40.751637,
+      "lng": -74.047655,
+      "address": "PASSAIC AVE & CONGRESS AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "mva-v2-0129",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "West",
+      "lat": 40.718512,
+      "lng": -74.078911,
+      "address": "JOHN F. KENNEDY BLVD & OXFORD, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ts2-0118",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.70852,
+      "lng": -74.085144,
+      "address": "BERGEN AVE & BAYVIEW AVE, JERSEY CITY, NJ 07305-0000"
+    },
+    {
+      "id": "ts2-0119",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "West",
+      "lat": 40.720094,
+      "lng": -74.077222,
+      "address": "HARRISON AVE & KENNEDY BLVD, JERSEY CITY, NJ 07304"
+    },
+    {
+      "id": "ts2-0120",
+      "type": "Traffic Stop",
+      "date": "2026-04-04",
+      "district": "South",
+      "lat": 40.702365,
+      "lng": -74.091741,
+      "address": "WARNER AVE & KENNEDY BLVD, JERSEY CITY, NJ 07305-0000"
+    },
+    {
+      "id": "mva-v2-0130",
+      "type": "MVA",
+      "date": "2026-04-04",
+      "district": "West",
+      "lat": 40.735669,
+      "lng": -74.079347,
+      "address": "400 US 1&9 & SIP AVE, JERSEY CITY, NJ"
     }
   ]
 }
