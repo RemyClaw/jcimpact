@@ -20,7 +20,7 @@ export const TYPE_COLORS: Record<IncidentType, string> = {
   'Theft':            '#3b82f6',
   'Stolen Vehicle':   '#22C55E',
   'Traffic Stop':     '#A78BFA',  // purple
-  'Pedestrian Struck':'#FB923C',  // orange
+  'Pedestrian Struck':'#F472B6',  // pink
 };
 
 /** District colors */
