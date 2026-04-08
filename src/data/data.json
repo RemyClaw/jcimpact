@@ -6,8 +6,8 @@
     "lastUpdated": "2026-04-06"
   },
   "citywide": {
-    "totalCrimes": 1423,
-    "shootings": 13,
+    "totalCrimes": 1425,
+    "shootings": 15,
     "homicides": 0,
     "mvas": 586,
     "thefts": 649,
@@ -17,7 +17,7 @@
     {
       "district": "North",
       "totalCrimes": 219,
-      "shootings": 0,
+      "shootings": 1,
       "homicides": 0,
       "mvas": 167,
       "thefts": 106,
@@ -35,7 +35,7 @@
     {
       "district": "South",
       "totalCrimes": 360,
-      "shootings": 6,
+      "shootings": 7,
       "homicides": 0,
       "mvas": 116,
       "thefts": 179,
@@ -85,8 +85,8 @@
     {
       "month": "2026-04",
       "label": "Apr '26",
-      "totalCrimes": 144,
-      "shootings": 0,
+      "totalCrimes": 146,
+      "shootings": 2,
       "homicides": 0,
       "mvas": 77,
       "thefts": 0,
@@ -17968,6 +17968,24 @@
       "lat": 40.729393,
       "lng": -74.065945,
       "address": "BERGEN AVE & ACADEMY ST"
+    },
+    {
+      "id": "sf-9",
+      "type": "Shots Fired",
+      "date": "2026-04-05",
+      "district": "South",
+      "lat": 40.703367,
+      "lng": -74.085764,
+      "address": "189 Rose Ave"
+    },
+    {
+      "id": "sh-6",
+      "type": "Shooting Hit",
+      "date": "2026-04-05",
+      "district": "North",
+      "lat": 40.740754,
+      "lng": -74.071555,
+      "address": "90 Duffield Ave"
     }
   ]
 }
