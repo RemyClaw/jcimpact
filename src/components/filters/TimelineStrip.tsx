@@ -100,11 +100,11 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
   return (
     <div style={{ flexShrink: 0 }}>
       {/* Row 1: YTD + Month pills */}
-      <div className="flex items-center gap-1 lg:gap-2 overflow-x-auto" style={{ padding: '8px 0 6px' }}>
+      <div className="flex items-center gap-1 md:gap-2 overflow-x-auto" style={{ padding: '8px 0 6px' }}>
         {/* YTD */}
         <button
           onClick={() => onSelect({ month: null, week: null })}
-          className="flex items-center gap-2 px-3 py-1.5 lg:px-4 lg:py-2 transition-all flex-shrink-0"
+          className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 transition-all flex-shrink-0"
           style={{
             borderRadius: '8px',
             fontSize: '13px',
@@ -132,7 +132,7 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
             <button
               key={label}
               onClick={() => !disabled && onSelect({ month: i, week: null })}
-              className="flex items-center gap-1 lg:gap-1.5 px-2 py-1.5 lg:px-3 lg:py-2 transition-all flex-shrink-0"
+              className="flex items-center gap-1 md:gap-1.5 px-2 py-1.5 md:px-3 md:py-2 transition-all flex-shrink-0"
               style={{
                 borderRadius: '8px',
                 fontSize: '12px',
@@ -176,15 +176,15 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
         const monthLabel = MONTHS[displayMonth];
 
         return (
-        <div className="flex items-center gap-1 lg:gap-2 overflow-x-auto" style={{ padding: '0 0 8px' }}>
-          <span className="text-[10px] lg:text-[11px]" style={{ fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.06em', marginRight: '2px', whiteSpace: 'nowrap', flexShrink: 0 }}>
+        <div className="flex items-center gap-1 md:gap-2 overflow-x-auto" style={{ padding: '0 0 8px' }}>
+          <span className="text-[10px] md:text-[11px]" style={{ fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.06em', marginRight: '2px', whiteSpace: 'nowrap', flexShrink: 0 }}>
             {monthLabel}:
           </span>
 
           {/* Full month */}
           <button
             onClick={() => onSelect({ month: displayMonth, week: null })}
-            className="flex items-center gap-1 px-2 py-1 lg:px-3 lg:py-1.5 transition-all flex-shrink-0"
+            className="flex items-center gap-1 px-2 py-1 md:px-3 md:py-1.5 transition-all flex-shrink-0"
             style={{
               borderRadius: '8px',
               fontSize: '11px',
@@ -215,7 +215,7 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
               <button
                 key={weekNum}
                 onClick={() => onSelect({ month: displayMonth, week: weekNum })}
-                className="flex items-center gap-1 px-2 py-1 lg:px-3 lg:py-1.5 transition-all flex-shrink-0"
+                className="flex items-center gap-1 px-2 py-1 md:px-3 md:py-1.5 transition-all flex-shrink-0"
                 style={{
                   borderRadius: '8px',
                   fontSize: '11px',

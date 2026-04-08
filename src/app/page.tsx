@@ -150,19 +150,19 @@ export default function DashboardPage() {
       {/* ── Header — stacks on mobile, row on desktop ──────────────────── */}
       <header className="w-full flex-shrink-0" style={{ backgroundColor: '#000000' }}>
         {/* Top row: logo + coin side by side */}
-        <div className="flex items-center gap-3 px-3 py-2 lg:px-4">
+        <div className="flex items-center gap-3 px-3 py-2 md:px-4">
           <a href="/" style={{ display: 'flex', flexDirection: 'column', flexShrink: 0, textDecoration: 'none', cursor: 'pointer' }}>
-            <h1 className="text-[16px] lg:text-[24px]" style={{ fontFamily: 'var(--font-orbitron)', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, margin: 0 }}>
+            <h1 className="text-[16px] md:text-[24px]" style={{ fontFamily: 'var(--font-orbitron)', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: 1, margin: 0 }}>
               <span style={{ color: '#c8a96b' }}>Jersey City</span>{' '}
               <span style={{ color: '#FFFFFF' }}>IMPACT</span>
             </h1>
-            <p className="hidden lg:block" style={{ color: '#9CA3AF', fontSize: '10px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', lineHeight: 1, margin: '6px 0 0 0' }}>
+            <p className="hidden md:block" style={{ color: '#9CA3AF', fontSize: '10px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', lineHeight: 1, margin: '6px 0 0 0' }}>
               Integrated Metrics for Public Accountability &amp; Community Trust
             </p>
           </a>
 
           {/* JCPD badge — 3D spinning coin, right next to title */}
-          <div className="coin-container w-[40px] h-[40px] lg:w-[72px] lg:h-[72px]" style={{ flexShrink: 0, perspective: '600px' }}>
+          <div className="coin-container w-[40px] h-[40px] md:w-[72px] md:h-[72px]" style={{ flexShrink: 0, perspective: '600px' }}>
             <div className="coin-spinner" style={{
               width: '100%',
               height: '100%',
@@ -189,13 +189,13 @@ export default function DashboardPage() {
         </div>
 
         {/* Stat cards — below logo on mobile, beside it on desktop */}
-        <div className="px-3 pb-2 lg:px-4">
+        <div className="px-3 pb-2 md:px-4">
           <StatCardsRow citywide={derivedStats} />
         </div>
       </header>
 
       {/* ── Bi-weekly timeline strip ─────────────────────────────────── */}
-      <div className="px-2 lg:px-4 flex-shrink-0" style={{ borderBottom: '1px solid rgba(200,169,107,0.2)' }}>
+      <div className="px-2 md:px-4 flex-shrink-0" style={{ borderBottom: '1px solid rgba(200,169,107,0.2)' }}>
         <TimelineStrip
           incidents={filterState.incidentTypes.length > 0 ? typeFiltered : allIncidents}
           activePeriod={activePeriod}
@@ -205,18 +205,18 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Body: filter + map side by side, analytics below ──────────── */}
-      <div className="flex flex-1 flex-col overflow-hidden px-2 py-1 lg:px-4 lg:py-2.5">
+      <div className="flex flex-1 flex-col overflow-hidden px-2 py-1 md:px-4 md:py-2.5">
 
         {/* ── Mobile overlay ─────────────────────────────────────────── */}
         {mobileFilterOpen && (
           <div
-            className="fixed inset-0 bg-black/85 z-40 lg:hidden"
+            className="fixed inset-0 bg-black/85 z-40 md:hidden"
             onClick={() => setMobileFilterOpen(false)}
           />
         )}
 
         {/* ── Mobile top bar (hamburger only, hidden on desktop) ────── */}
-        <div className="flex items-center px-3 h-11 border-b border-surface-border lg:hidden" style={{ backgroundColor: '#0a1628' }}>
+        <div className="flex items-center px-3 h-11 border-b border-surface-border md:hidden" style={{ backgroundColor: '#0a1628' }}>
           <button
             className="p-2.5 -ml-1 text-[#9CA3AF] hover:text-white hover:bg-white/5 transition-colors rounded-lg"
             onClick={() => setMobileFilterOpen(true)}
@@ -237,7 +237,7 @@ export default function DashboardPage() {
             className={`
               fixed inset-y-0 left-0 z-50 w-64 flex flex-col
               transition-transform duration-300 ease-in-out
-              lg:relative lg:translate-x-0 lg:z-auto lg:w-[220px] lg:flex-shrink-0
+              md:relative md:translate-x-0 md:z-auto md:w-[220px] md:flex-shrink-0
               ${mobileFilterOpen ? 'translate-x-0' : '-translate-x-full'}
             `}
             style={{ background: 'transparent', padding: 0 }}
@@ -250,7 +250,7 @@ export default function DashboardPage() {
               />
             </div>
             <button
-              className="absolute top-2 right-2 p-3 text-[#9CA3AF] hover:text-white transition-colors lg:hidden rounded-lg"
+              className="absolute top-2 right-2 p-3 text-[#9CA3AF] hover:text-white transition-colors md:hidden rounded-lg"
               onClick={() => setMobileFilterOpen(false)}
               aria-label="Close filters"
             >
@@ -286,7 +286,7 @@ export default function DashboardPage() {
         </div>
 
         {/* ── Analytics panel with tabs (below filter+map) ────────── */}
-        <div className="flex-shrink-0 h-[220px] lg:h-[260px]" style={{ marginTop: '8px' }}>
+        <div className="flex-shrink-0 h-[220px] md:h-[260px]" style={{ marginTop: '8px' }}>
           <div style={{
             border: '2px solid #c8a96b',
             borderRadius: '24px',
@@ -308,7 +308,7 @@ export default function DashboardPage() {
                 <button
                   key={id}
                   onClick={() => setAnalyticsTab(id)}
-                  className={`px-2 py-2 text-[11px] lg:px-4 lg:py-2.5 lg:text-[14px] font-semibold border-b-2 transition-colors whitespace-nowrap ${
+                  className={`px-2 py-2 text-[11px] md:px-4 md:py-2.5 md:text-[14px] font-semibold border-b-2 transition-colors whitespace-nowrap ${
                     analyticsTab === id
                       ? 'border-accent-amber text-white'
                       : 'border-transparent text-[#9CA3AF] hover:text-[#E5E7EB]'

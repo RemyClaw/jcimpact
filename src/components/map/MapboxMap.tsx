@@ -402,8 +402,8 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       )}
 
       {/* ── Incident type legend — bottom left, wraps on mobile ──────── */}
-      <div className="absolute bottom-2 left-2 right-2 lg:right-auto lg:left-3 lg:bottom-3 z-10 pointer-events-none">
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 lg:gap-3 bg-[#0F172A]/90 px-2 py-1.5 lg:px-3 rounded-lg">
+      <div className="absolute bottom-2 left-2 right-2 md:right-auto md:left-3 md:bottom-3 z-10 pointer-events-none">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 md:gap-3 bg-[#0F172A]/90 px-2 py-1.5 md:px-3 rounded-lg">
           {([
             { label: 'Shots Fired',    color: TYPE_COLORS['Shots Fired'] },
             { label: 'Shooting Hit',   color: TYPE_COLORS['Shooting Hit'] },
@@ -413,8 +413,8 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
             { label: 'Traffic',        color: TYPE_COLORS['Traffic Stop'] },
             { label: 'Ped.',           color: TYPE_COLORS['Pedestrian Struck'] },
           ]).map(({ label, color }) => (
-            <div key={label} className="flex items-center gap-1 lg:gap-1.5 text-[10px] lg:text-xs">
-              <span className="w-2 h-2 lg:w-3 lg:h-3 rounded-full flex-shrink-0" style={{ background: color, boxShadow: `0 0 6px ${color}` }} />
+            <div key={label} className="flex items-center gap-1 md:gap-1.5 text-[10px] md:text-xs">
+              <span className="w-2 h-2 md:w-3 md:h-3 rounded-full flex-shrink-0" style={{ background: color, boxShadow: `0 0 6px ${color}` }} />
               <span className="text-white/80 font-medium">{label}</span>
             </div>
           ))}
