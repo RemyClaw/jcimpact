@@ -12055,16 +12055,6 @@
       "description": "09:11"
     },
     {
-      "id": "ps-0002",
-      "type": "Pedestrian Struck",
-      "date": "2026-03-24",
-      "district": "South",
-      "lat": 40.697927,
-      "lng": -74.092629,
-      "address": "DANFORTH AVE / OLD BERGEN RD, JERSEY CITY, NJ",
-      "description": "09:13"
-    },
-    {
       "id": "mva-ms-0036",
       "type": "MVA",
       "date": "2026-03-24",
@@ -12874,16 +12864,6 @@
       "lng": -74.068199,
       "address": "COMMUNIPAW AVE / GRAND ST, JERSEY CITY, NJ",
       "description": "06:55"
-    },
-    {
-      "id": "ps-0004",
-      "type": "Pedestrian Struck",
-      "date": "2026-03-26",
-      "district": "West",
-      "lat": 40.729393,
-      "lng": -74.065945,
-      "address": "BERGEN AVE / ACADEMY ST, JERSEY CITY, NJ",
-      "description": "07:32"
     },
     {
       "id": "mva-ms-0074",
@@ -17827,6 +17807,204 @@
       "lat": 40.735669,
       "lng": -74.079347,
       "address": "400 US 1&9 & SIP AVE, JERSEY CITY, NJ"
+    },
+    {
+      "id": "ps3-0100",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-01",
+      "district": "East",
+      "lat": 40.722407,
+      "lng": -74.05986,
+      "address": "FLORENCE ST & MONTGOMERY ST"
+    },
+    {
+      "id": "ps3-0101",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-01",
+      "district": "West",
+      "lat": 40.72855,
+      "lng": -74.080263,
+      "address": "256 DUNCAN AVE"
+    },
+    {
+      "id": "ps3-0102",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-03",
+      "district": "West",
+      "lat": 40.724294,
+      "lng": -74.074079,
+      "address": "FAIRVIEW AVE & KENNEDY BLVD"
+    },
+    {
+      "id": "ps3-0103",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-03",
+      "district": "East",
+      "lat": 40.719883,
+      "lng": -74.040667,
+      "address": "159 MORGAN ST"
+    },
+    {
+      "id": "ps3-0104",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-05",
+      "district": "West",
+      "lat": 40.71276,
+      "lng": -74.077575,
+      "address": "417 MLK DR"
+    },
+    {
+      "id": "ps3-0105",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-05",
+      "district": "South",
+      "lat": 40.712644,
+      "lng": -74.097678,
+      "address": "DANFORTH AVE & ST HWY 440"
+    },
+    {
+      "id": "ps3-0106",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-05",
+      "district": "North",
+      "lat": 40.73006,
+      "lng": -74.053999,
+      "address": "2 PALISADE AVE"
+    },
+    {
+      "id": "ps3-0107",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-05",
+      "district": "West",
+      "lat": 40.722383,
+      "lng": -74.06605,
+      "address": "211 SUMMIT AVE"
+    },
+    {
+      "id": "ps3-0108",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-06",
+      "district": "West",
+      "lat": 40.730266,
+      "lng": -74.064985,
+      "address": "BERGEN AVE & NEWKIRK ST"
+    },
+    {
+      "id": "ps3-0109",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-06",
+      "district": "North",
+      "lat": 40.738237,
+      "lng": -74.062145,
+      "address": "244 ST PAULS AVE"
+    },
+    {
+      "id": "ps3-0110",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-06",
+      "district": "West",
+      "lat": 40.716437,
+      "lng": -74.078767,
+      "address": "429 BERGEN AVE"
+    },
+    {
+      "id": "ps3-0111",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-07",
+      "district": "West",
+      "lat": 40.714129,
+      "lng": -74.07595,
+      "address": "UNION ST & MLK DR"
+    },
+    {
+      "id": "ps3-0112",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-08",
+      "district": "West",
+      "lat": 40.731984,
+      "lng": -74.070707,
+      "address": "VAN WAGENEN AVE & SIP AVE"
+    },
+    {
+      "id": "ps3-0113",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-09",
+      "district": "West",
+      "lat": 40.72835,
+      "lng": -74.075458,
+      "address": "WESTSIDE AVE & MONTGOMERY ST"
+    },
+    {
+      "id": "ps3-0114",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-11",
+      "district": "West",
+      "lat": 40.724792,
+      "lng": -74.067685,
+      "address": "725 MONTGOMERY ST"
+    },
+    {
+      "id": "ps3-0115",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-11",
+      "district": "North",
+      "lat": 40.731839,
+      "lng": -74.065877,
+      "address": "2845 KENNEDY BLVD"
+    },
+    {
+      "id": "ps3-0116",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-13",
+      "district": "South",
+      "lat": 40.702225,
+      "lng": -74.089137,
+      "address": "MLK DR & STEVENS AVE"
+    },
+    {
+      "id": "ps3-0117",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-14",
+      "district": "East",
+      "lat": 40.716329,
+      "lng": -74.050479,
+      "address": "355 GRAND ST"
+    },
+    {
+      "id": "ps3-0118",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-19",
+      "district": "East",
+      "lat": 40.72898,
+      "lng": -74.035505,
+      "address": "575 WASHINGTON BLVD"
+    },
+    {
+      "id": "ps3-0119",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-23",
+      "district": "East",
+      "lat": 40.734468,
+      "lng": -74.04068,
+      "address": "18TH ST & GROVE ST"
+    },
+    {
+      "id": "ps3-0120",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-24",
+      "district": "South",
+      "lat": 40.697927,
+      "lng": -74.092629,
+      "address": "DANFORTH AVE & OLD BERGEN RD"
+    },
+    {
+      "id": "ps3-0121",
+      "type": "Pedestrian Struck",
+      "date": "2026-03-26",
+      "district": "West",
+      "lat": 40.729393,
+      "lng": -74.065945,
+      "address": "BERGEN AVE & ACADEMY ST"
     }
   ]
 }
