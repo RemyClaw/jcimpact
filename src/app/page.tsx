@@ -286,7 +286,7 @@ export default function DashboardPage() {
         </div>
 
         {/* ── Analytics panel with tabs (below filter+map) ────────── */}
-        <div className="flex-shrink-0 h-[220px] md:h-[260px]" style={{ marginTop: '8px' }}>
+        <div className="flex-shrink-0 h-[180px] md:h-[200px]" style={{ marginTop: '6px' }}>
           <div style={{
             border: '2px solid #c8a96b',
             borderRadius: '24px',
