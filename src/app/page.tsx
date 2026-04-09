@@ -40,6 +40,7 @@ export default function DashboardPage() {
   const [filterState, setFilterState]       = useState<FilterState>(DEFAULT_FILTER);
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
   const [analyticsTab, setAnalyticsTab]     = useState<AnalyticsTab>('districts');
+  const [mapFullscreen, setMapFullscreen]   = useState(false);
   const [activePeriod, setActivePeriod]     = useState<TimePeriod>({ month: null, week: null });
 
   // When user clicks a month:
@@ -288,6 +289,20 @@ export default function DashboardPage() {
                   }));
                 }}
               />
+              {/* Fullscreen expand button */}
+              <button
+                onClick={() => setMapFullscreen(true)}
+                className="absolute top-2 left-2 z-10 p-2 rounded-lg transition-colors"
+                style={{ background: 'rgba(10,22,40,0.85)', border: '1.5px solid rgba(200,169,107,0.4)' }}
+                aria-label="Expand map"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 3 21 3 21 9" />
+                  <polyline points="9 21 3 21 3 15" />
+                  <line x1="21" y1="3" x2="14" y2="10" />
+                  <line x1="3" y1="21" x2="10" y2="14" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -391,6 +406,52 @@ export default function DashboardPage() {
         </div>
 
       </div>
+
+      {/* ── Fullscreen map modal ───────────────────────────────────── */}
+      {mapFullscreen && (
+        <div
+          className="fixed inset-0 z-[100] flex flex-col"
+          style={{ backgroundColor: '#000000' }}
+        >
+          {/* Header bar */}
+          <div className="flex items-center justify-between px-4 py-3 flex-shrink-0" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)' }}>
+            <span style={{ color: '#c8a96b', fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              Incident Map
+            </span>
+            <button
+              onClick={() => setMapFullscreen(false)}
+              className="p-2 rounded-lg transition-colors hover:bg-white/10"
+              style={{ border: '1.5px solid rgba(200,169,107,0.4)' }}
+              aria-label="Close fullscreen map"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c8a96b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+          {/* Full map */}
+          <div className="flex-1 min-h-0">
+            <MapWrapper
+              incidents={filteredIncidents}
+              showMVA={filterState.incidentTypes.includes('MVA')}
+              showShotsFired={filterState.incidentTypes.includes('Shots Fired')}
+              showShootingHit={filterState.incidentTypes.includes('Shooting Hit')}
+              showTheft={filterState.incidentTypes.includes('Theft')}
+              showStolenVehicle={filterState.incidentTypes.includes('Stolen Vehicle')}
+              showTrafficStop={filterState.incidentTypes.includes('Traffic Stop')}
+              showPedestrianStruck={filterState.incidentTypes.includes('Pedestrian Struck')}
+              selectedDistrict={filterState.district === 'All' ? null : filterState.district}
+              onDistrictClick={(district) => {
+                setFilterState(prev => ({
+                  ...prev,
+                  district: prev.district === district ? 'All' : (district ?? 'All') as FilterState['district'],
+                }));
+              }}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
