@@ -297,18 +297,18 @@ export default function DashboardPage() {
             flexDirection: 'column' as const,
           }}>
             {/* Tab bar */}
-            <div className="flex items-center gap-0 px-3" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)', flexShrink: 0 }}>
+            <div className="flex items-center gap-0 px-1 md:px-3" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)', flexShrink: 0 }}>
               {([
-                { id: 'districts', label: 'District Breakdown' },
+                { id: 'districts', label: 'Districts' },
                 { id: 'rankings',  label: 'Rankings' },
-                { id: 'trends',    label: 'Monthly Trends' },
-                { id: 'yoy',       label: 'vs Last Year' },
+                { id: 'trends',    label: 'Trends' },
+                { id: 'yoy',       label: 'YoY' },
                 { id: 'reports',   label: 'Reports' },
               ] as { id: AnalyticsTab; label: string }[]).map(({ id, label }) => (
                 <button
                   key={id}
                   onClick={() => setAnalyticsTab(id)}
-                  className={`px-2 py-2 text-[11px] md:px-4 md:py-2.5 md:text-[14px] font-semibold border-b-2 transition-colors whitespace-nowrap ${
+                  className={`px-2 py-1.5 text-[11px] md:px-4 md:py-2 md:text-[13px] font-semibold border-b-2 transition-colors whitespace-nowrap ${
                     analyticsTab === id
                       ? 'border-accent-amber text-white'
                       : 'border-transparent text-[#9CA3AF] hover:text-[#E5E7EB]'
