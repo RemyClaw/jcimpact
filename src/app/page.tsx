@@ -414,63 +414,18 @@ export default function DashboardPage() {
           className="fixed inset-0 z-[100] flex flex-col"
           style={{ backgroundColor: '#000000' }}
         >
-          {/* Header bar with filters */}
-          <div className="flex items-center gap-3 px-4 py-2 flex-shrink-0" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)' }}>
-            <span style={{ color: '#c8a96b', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', flexShrink: 0 }}>
-              Incident Map
-            </span>
-            {/* Inline filter toggles */}
-            <div className="flex items-center gap-1 flex-wrap">
-              {([
-                { type: 'Shots Fired' as IncidentType, label: 'Shots Fired' },
-                { type: 'Shooting Hit' as IncidentType, label: 'Shooting Hit' },
-                { type: 'MVA' as IncidentType, label: 'MVA' },
-                { type: 'Theft' as IncidentType, label: 'Theft' },
-                { type: 'Stolen Vehicle' as IncidentType, label: 'Stolen' },
-                { type: 'Traffic Stop' as IncidentType, label: 'Traffic' },
-                { type: 'Pedestrian Struck' as IncidentType, label: 'Ped.' },
-              ]).map(({ type, label }) => {
-                const active = filterState.incidentTypes.includes(type);
-                const color = TYPE_COLORS[type];
-                return (
-                  <button
-                    key={type}
-                    onClick={() => {
-                      setFilterState(prev => ({
-                        ...prev,
-                        incidentTypes: active
-                          ? prev.incidentTypes.filter(t => t !== type)
-                          : [...prev.incidentTypes, type],
-                      }));
-                    }}
-                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-all text-xs font-medium"
-                    style={{
-                      border: `1.5px solid ${active ? color : 'rgba(255,255,255,0.15)'}`,
-                      background: active ? `${color}20` : 'transparent',
-                      color: active ? '#FFFFFF' : '#6b7280',
-                      opacity: active ? 1 : 0.6,
-                    }}
-                  >
-                    <span className="w-2 h-2 rounded-full" style={{ background: color, opacity: active ? 1 : 0.3 }} />
-                    {label}
-                  </button>
-                );
-              })}
+          {/* Body: sidebar + map */}
+          <div className="flex flex-1 min-h-0">
+            {/* Filter sidebar */}
+            <div className="w-[220px] flex-shrink-0 overflow-y-auto" style={{ borderRight: '1px solid rgba(200,169,107,0.3)' }}>
+              <FilterPanel
+                filterState={filterState}
+                onChange={setFilterState}
+                incidentCount={filteredIncidents.length}
+              />
             </div>
-            <button
-              onClick={() => setMapFullscreen(false)}
-              className="p-2 rounded-lg transition-colors hover:bg-white/10 flex-shrink-0"
-              style={{ border: '1.5px solid rgba(200,169,107,0.4)' }}
-              aria-label="Close fullscreen map"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c8a96b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </button>
-          </div>
-          {/* Full map */}
-          <div className="flex-1 min-h-0">
+            {/* Map + close button */}
+            <div className="flex-1 min-h-0 relative">
             <MapWrapper
               incidents={filteredIncidents}
               showMVA={filterState.incidentTypes.includes('MVA')}
@@ -488,6 +443,19 @@ export default function DashboardPage() {
                 }));
               }}
             />
+              {/* Close button */}
+              <button
+                onClick={() => setMapFullscreen(false)}
+                className="absolute top-3 right-3 z-10 p-2 rounded-lg transition-colors hover:bg-white/10"
+                style={{ background: 'rgba(10,22,40,0.85)', border: '1.5px solid rgba(200,169,107,0.4)' }}
+                aria-label="Close fullscreen map"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c8a96b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       )}
