@@ -297,7 +297,7 @@ export default function DashboardPage() {
             flexDirection: 'column' as const,
           }}>
             {/* Tab bar */}
-            <div className="flex items-center gap-0 px-1 md:px-3" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)', flexShrink: 0 }}>
+            <div className="flex items-center gap-0 px-1 md:px-3 w-full" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)', flexShrink: 0 }}>
               {([
                 { id: 'districts', label: 'Districts' },
                 { id: 'rankings',  label: 'Rankings' },
@@ -308,7 +308,7 @@ export default function DashboardPage() {
                 <button
                   key={id}
                   onClick={() => setAnalyticsTab(id)}
-                  className={`px-2 py-1.5 text-[11px] md:px-4 md:py-2 md:text-[13px] font-semibold border-b-2 transition-colors whitespace-nowrap ${
+                  className={`flex-1 text-center py-1.5 text-[10px] md:py-2 md:text-[13px] font-semibold border-b-2 transition-colors whitespace-nowrap ${
                     analyticsTab === id
                       ? 'border-accent-amber text-white'
                       : 'border-transparent text-[#9CA3AF] hover:text-[#E5E7EB]'
