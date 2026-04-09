@@ -189,7 +189,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Stat cards — below logo on mobile, beside it on desktop */}
-        <div className="px-3 pb-2 md:px-4">
+        <div className="px-3 pb-1 md:px-4">
           <StatCardsRow citywide={derivedStats} />
         </div>
       </header>
@@ -286,7 +286,7 @@ export default function DashboardPage() {
         </div>
 
         {/* ── Analytics panel with tabs (below filter+map) ────────── */}
-        <div className="flex-shrink-0 h-[180px] md:h-[200px]" style={{ marginTop: '6px' }}>
+        <div className="min-h-0 flex-1 max-h-[180px] md:max-h-[200px]" style={{ marginTop: '6px' }}>
           <div style={{
             border: '2px solid #c8a96b',
             borderRadius: '24px',
