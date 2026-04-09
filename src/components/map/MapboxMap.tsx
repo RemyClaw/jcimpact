@@ -40,6 +40,7 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
   const [showWards,     setShowWards]     = useState(false);
   const [mapReady,      setMapReady]      = useState(false);
   const [mapError,      setMapError]      = useState<string | null>(null);
+  const [darkMode,      setDarkMode]      = useState(true);
   const onDistrictClickRef = useRef(onDistrictClick);
 
   onDistrictClickRef.current = onDistrictClick;
@@ -325,6 +326,15 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
     }
   }, [incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, mapReady]);
 
+  // ── Toggle light/dark mode ───────────────────────────────────────────
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapReady) return;
+    try {
+      (map as Record<string, any>).setConfigProperty('basemap', 'lightPreset', darkMode ? 'night' : 'day');
+    } catch {}
+  }, [darkMode, mapReady]);
+
   // ── Highlight selected district ──────────────────────────────────────
   useEffect(() => {
     const map = mapRef.current;
@@ -373,8 +383,37 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
     <div className="relative w-full h-full overflow-hidden">
       <div ref={containerRef} className="w-full h-full" />
 
-      {/* ── Layer toggles — top-right (matching stitch) ─────────────── */}
+      {/* ── Layer toggles + dark/light — top-right ─────────────────── */}
       <div className="absolute top-3 right-3 z-10 flex gap-1.5">
+        {/* Sun/Moon toggle */}
+        <button
+          onClick={() => setDarkMode(v => !v)}
+          className="flex items-center justify-center w-8 h-8 border transition-all duration-150 cursor-pointer select-none"
+          style={{
+            background: '#0F172A',
+            borderColor: '#1F2937',
+            borderRadius: '4px',
+          }}
+          aria-label={darkMode ? 'Switch to light map' : 'Switch to dark map'}
+        >
+          {darkMode ? (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          ) : (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          )}
+        </button>
         <LayerToggle
           label="Districts"
           active={showDistricts}
