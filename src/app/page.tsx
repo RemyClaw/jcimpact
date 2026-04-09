@@ -13,6 +13,7 @@ import DistrictRankings from '@/components/analytics/DistrictRankings';
 import MonthlyTrendChart from '@/components/analytics/MonthlyTrendChart';
 import YoYComparison from '@/components/analytics/YoYComparison';
 import TimelineStrip, { filterByPeriod, type TimePeriod } from '@/components/filters/TimelineStrip';
+import { TYPE_COLORS } from '@/lib/colors';
 import type { Incident } from '@/types';
 
 const allIncidents = rawData.incidents as Incident[];
@@ -413,14 +414,52 @@ export default function DashboardPage() {
           className="fixed inset-0 z-[100] flex flex-col"
           style={{ backgroundColor: '#000000' }}
         >
-          {/* Header bar */}
-          <div className="flex items-center justify-between px-4 py-3 flex-shrink-0" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)' }}>
-            <span style={{ color: '#c8a96b', fontSize: '16px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+          {/* Header bar with filters */}
+          <div className="flex items-center gap-3 px-4 py-2 flex-shrink-0" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)' }}>
+            <span style={{ color: '#c8a96b', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', flexShrink: 0 }}>
               Incident Map
             </span>
+            {/* Inline filter toggles */}
+            <div className="flex items-center gap-1 flex-wrap">
+              {([
+                { type: 'Shots Fired' as IncidentType, label: 'Shots Fired' },
+                { type: 'Shooting Hit' as IncidentType, label: 'Shooting Hit' },
+                { type: 'MVA' as IncidentType, label: 'MVA' },
+                { type: 'Theft' as IncidentType, label: 'Theft' },
+                { type: 'Stolen Vehicle' as IncidentType, label: 'Stolen' },
+                { type: 'Traffic Stop' as IncidentType, label: 'Traffic' },
+                { type: 'Pedestrian Struck' as IncidentType, label: 'Ped.' },
+              ]).map(({ type, label }) => {
+                const active = filterState.incidentTypes.includes(type);
+                const color = TYPE_COLORS[type];
+                return (
+                  <button
+                    key={type}
+                    onClick={() => {
+                      setFilterState(prev => ({
+                        ...prev,
+                        incidentTypes: active
+                          ? prev.incidentTypes.filter(t => t !== type)
+                          : [...prev.incidentTypes, type],
+                      }));
+                    }}
+                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-all text-xs font-medium"
+                    style={{
+                      border: `1.5px solid ${active ? color : 'rgba(255,255,255,0.15)'}`,
+                      background: active ? `${color}20` : 'transparent',
+                      color: active ? '#FFFFFF' : '#6b7280',
+                      opacity: active ? 1 : 0.6,
+                    }}
+                  >
+                    <span className="w-2 h-2 rounded-full" style={{ background: color, opacity: active ? 1 : 0.3 }} />
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
             <button
               onClick={() => setMapFullscreen(false)}
-              className="p-2 rounded-lg transition-colors hover:bg-white/10"
+              className="p-2 rounded-lg transition-colors hover:bg-white/10 flex-shrink-0"
               style={{ border: '1.5px solid rgba(200,169,107,0.4)' }}
               aria-label="Close fullscreen map"
             >
