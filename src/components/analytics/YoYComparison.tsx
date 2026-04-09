@@ -21,11 +21,11 @@ function pct(a: number, b: number) {
 }
 
 function Badge({ val }: { val: number | null }) {
-  if (val === null) return <span style={{ color: '#6b7280', fontSize: '11px' }}>—</span>;
+  if (val === null) return <span style={{ color: '#6b7280', fontSize: '13px' }}>—</span>;
   const color = val === 0 ? '#6b7280' : val > 0 ? '#fb7185' : '#34d399';
   const arrow = val === 0 ? '' : val > 0 ? '▲' : '▼';
   return (
-    <span className="font-bold tabular-nums" style={{ color, fontSize: '11px' }}>
+    <span className="font-bold tabular-nums" style={{ color, fontSize: '13px' }}>
       {arrow}{Math.abs(val)}%
     </span>
   );
@@ -57,13 +57,13 @@ export default function YoYComparison({ data }: { data: MonthlyStat[] }) {
           }}>
             {/* Header + YTD number on same line */}
             <div className="flex items-baseline justify-between">
-              <span style={{ fontSize: '11px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{label}</span>
+              <span style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{label}</span>
               <div className="flex items-baseline gap-1.5">
-                <span className="font-bold tabular-nums" style={{ fontSize: '18px', color: '#FFFFFF', lineHeight: 1 }}>{ytd26}</span>
+                <span className="font-bold tabular-nums" style={{ fontSize: '22px', color: '#FFFFFF', lineHeight: 1 }}>{ytd26}</span>
                 <Badge val={ytdPct} />
               </div>
             </div>
-            <div style={{ fontSize: '9px', color: '#9CA3AF', marginTop: '1px' }}>vs {ytd25} Jan–Feb &apos;25</div>
+            <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '1px' }}>vs {ytd25} Jan–Feb &apos;25</div>
 
             {/* Monthly breakdown */}
             <div className="mt-auto space-y-0.5 pt-1" style={{ borderTop: '1px solid rgba(200,169,107,0.2)' }}>
@@ -72,11 +72,11 @@ export default function YoYComparison({ data }: { data: MonthlyStat[] }) {
                 const old = PREV[row.month]?.[key] ?? 0;
                 return (
                   <div key={`${key}-${row.month}`} className="flex items-center justify-between">
-                    <span style={{ fontSize: '10px', color: '#FFFFFF' }}>{row.label}</span>
-                    <div className="flex items-center gap-1">
-                      <span className="tabular-nums font-semibold" style={{ fontSize: '10px', color: '#FFFFFF' }}>{cur}</span>
-                      <span style={{ fontSize: '9px', color: '#6b7280' }}>vs</span>
-                      <span className="tabular-nums" style={{ fontSize: '10px', color: '#9CA3AF' }}>{old}</span>
+                    <span style={{ fontSize: '12px', color: '#FFFFFF' }}>{row.label}</span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="tabular-nums font-semibold" style={{ fontSize: '12px', color: '#FFFFFF' }}>{cur}</span>
+                      <span style={{ fontSize: '10px', color: '#6b7280' }}>vs</span>
+                      <span className="tabular-nums" style={{ fontSize: '12px', color: '#9CA3AF' }}>{old}</span>
                       <Badge val={pct(cur, old)} />
                     </div>
                   </div>
