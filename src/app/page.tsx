@@ -455,7 +455,7 @@ export default function DashboardPage() {
               {/* Close button */}
               <button
                 onClick={() => setMapFullscreen(false)}
-                className="absolute top-3 right-3 z-10 p-2 rounded-lg transition-colors hover:bg-white/10"
+                className="absolute top-3 left-3 z-10 p-2 rounded-lg transition-colors hover:bg-white/10"
                 style={{ background: 'rgba(10,22,40,0.85)', border: '1.5px solid rgba(200,169,107,0.4)' }}
                 aria-label="Close fullscreen map"
               >
