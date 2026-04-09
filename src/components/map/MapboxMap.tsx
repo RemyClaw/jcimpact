@@ -16,6 +16,8 @@ interface MapboxMapProps {
   showStolenVehicle: boolean;
   showTrafficStop: boolean;
   showPedestrianStruck: boolean;
+  selectedDistrict?: string | null;
+  onDistrictClick?: (district: string | null) => void;
 }
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
@@ -27,7 +29,7 @@ const SOURCE_ID = 'incidents';
 const DISTRICT_LAYERS = ['districts-fill', 'districts-border', 'district-labels', 'district-selected-outline'] as const;
 const WARD_LAYERS    = ['wards-fill', 'wards-border', 'ward-labels', 'ward-selected-outline'] as const;
 
-export default function MapboxMap({ incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck }: MapboxMapProps) {
+export default function MapboxMap({ incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, selectedDistrict, onDistrictClick }: MapboxMapProps) {
   const containerRef  = useRef<HTMLDivElement>(null);
   const mapRef        = useRef<mapboxgl.Map | null>(null);
   const popupRef      = useRef<mapboxgl.Popup | null>(null);
@@ -38,6 +40,9 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
   const [showWards,     setShowWards]     = useState(false);
   const [mapReady,      setMapReady]      = useState(false);
   const [mapError,      setMapError]      = useState<string | null>(null);
+  const onDistrictClickRef = useRef(onDistrictClick);
+
+  onDistrictClickRef.current = onDistrictClick;
 
   // ── Initialize map once ────────────────────────────────────────────────
   useEffect(() => {
@@ -280,6 +285,13 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       });
       map.on('mouseleave', 'districts-fill', () => districtPopup.remove());
 
+      // ── District click → filter ────────────────────────────────────
+      map.on('click', 'districts-fill', (e) => {
+        const props = e.features?.[0]?.properties as Record<string, string> | undefined;
+        if (!props?.name) return;
+        onDistrictClickRef.current?.(props.name);
+      });
+
       mapLoadedRef.current = true;
       setMapReady(true);
 
@@ -312,6 +324,18 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       map.setFilter('unclustered-point', buildTypeFilter(showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck) as mapboxgl.FilterSpecification);
     }
   }, [incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, mapReady]);
+
+  // ── Highlight selected district ──────────────────────────────────────
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapReady) return;
+    if (map.getLayer('district-selected-outline')) {
+      const filter = selectedDistrict
+        ? ['==', ['get', 'name'], selectedDistrict]
+        : ['==', ['get', 'name'], '__NONE__'];
+      map.setFilter('district-selected-outline', filter as mapboxgl.FilterSpecification);
+    }
+  }, [selectedDistrict, mapReady]);
 
   // ── Toggle district layer visibility ──────────────────────────────────
   useEffect(() => {

@@ -25,6 +25,8 @@ interface MapWrapperProps {
   showStolenVehicle: boolean;
   showTrafficStop: boolean;
   showPedestrianStruck: boolean;
+  selectedDistrict?: string | null;
+  onDistrictClick?: (district: string | null) => void;
 }
 
 export default function MapWrapper(props: MapWrapperProps) {

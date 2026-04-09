@@ -280,6 +280,13 @@ export default function DashboardPage() {
                 showStolenVehicle={filterState.incidentTypes.includes('Stolen Vehicle')}
                 showTrafficStop={filterState.incidentTypes.includes('Traffic Stop')}
                 showPedestrianStruck={filterState.incidentTypes.includes('Pedestrian Struck')}
+                selectedDistrict={filterState.district === 'All' ? null : filterState.district}
+                onDistrictClick={(district) => {
+                  setFilterState(prev => ({
+                    ...prev,
+                    district: prev.district === district ? 'All' : (district ?? 'All') as FilterState['district'],
+                  }));
+                }}
               />
             </div>
           </div>
@@ -299,11 +306,11 @@ export default function DashboardPage() {
             {/* Tab bar */}
             <div className="flex items-center gap-0 px-1 md:px-3 w-full" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)', flexShrink: 0 }}>
               {([
-                { id: 'districts', label: 'Districts' },
-                { id: 'rankings',  label: 'Rankings' },
-                { id: 'trends',    label: 'Trends' },
-                { id: 'yoy',       label: 'YoY' },
-                { id: 'reports',   label: 'Reports' },
+                { id: 'districts',  label: 'Districts' },
+                { id: 'rankings',   label: 'Rankings' },
+                { id: 'trends',     label: 'Trends' },
+                { id: 'yoy',        label: 'YoY' },
+                { id: 'reports',    label: 'Reports' },
               ] as { id: AnalyticsTab; label: string }[]).map(({ id, label }) => (
                 <button
                   key={id}
