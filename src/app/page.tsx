@@ -414,6 +414,15 @@ export default function DashboardPage() {
           className="fixed inset-0 z-[100] flex flex-col"
           style={{ backgroundColor: '#000000' }}
         >
+          {/* Timeline strip at top */}
+          <div className="px-4 flex-shrink-0" style={{ borderBottom: '1px solid rgba(200,169,107,0.3)' }}>
+            <TimelineStrip
+              incidents={filterState.incidentTypes.length > 0 ? typeFiltered : allIncidents}
+              activePeriod={activePeriod}
+              onSelect={handlePeriodSelect}
+              hasActiveFilters={filterState.incidentTypes.length > 0}
+            />
+          </div>
           {/* Body: sidebar + map */}
           <div className="flex flex-1 min-h-0">
             {/* Filter sidebar */}
