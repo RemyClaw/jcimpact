@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from 'react';
 import { DistrictStats } from '@/types';
-import { DISTRICT_COLORS } from '@/lib/colors';
 
 type SortKey = keyof Omit<DistrictStats, 'district'>;
 
