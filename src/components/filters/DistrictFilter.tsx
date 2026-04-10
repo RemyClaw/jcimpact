@@ -12,7 +12,12 @@ export default function DistrictFilter({ selected, onChange }: DistrictFilterPro
     <div style={{ position: 'relative' }}>
       <select
         value={selected}
-        onChange={(e) => onChange(e.target.value as District | 'All')}
+        onChange={(e) => {
+          const val = e.target.value;
+          if (val === 'All' || (ALL_DISTRICTS as readonly string[]).includes(val)) {
+            onChange(val as District | 'All');
+          }
+        }}
         style={{
           width: '100%',
           backgroundColor: '#0a1628',

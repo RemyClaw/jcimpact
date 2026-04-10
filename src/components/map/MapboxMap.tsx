@@ -243,7 +243,8 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
           'Traffic Stop':     'Traffic Stop',
           'Pedestrian Struck':'Pedestrian Struck',
         };
-        const typeColor = POPUP_COLORS[props.type] ?? '#6b7280';
+        const rawColor = POPUP_COLORS[props.type] ?? '#6b7280';
+        const typeColor = /^#[0-9a-fA-F]{3,8}$/.test(rawColor) ? rawColor : '#6b7280';
         const typeLabel = TYPE_LABELS[props.type] ?? esc(props.type);
         const dateStr   = new Date(props.date + 'T00:00:00').toLocaleDateString('en-US', {
           year: 'numeric', month: 'long', day: 'numeric',

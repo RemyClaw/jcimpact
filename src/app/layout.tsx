@@ -8,6 +8,16 @@ const orbitron = Orbitron({ subsets: ["latin"], weight: ["700", "800", "900"], v
 export const metadata: Metadata = {
   title: "Jersey City IMPACT",
   description: "Integrated Metrics for Public Accountability & Community Trust",
+  openGraph: {
+    title: "Jersey City IMPACT",
+    description: "Integrated Metrics for Public Accountability & Community Trust",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Jersey City IMPACT",
+    description: "Integrated Metrics for Public Accountability & Community Trust",
+  },
 };
 
 export default function RootLayout({

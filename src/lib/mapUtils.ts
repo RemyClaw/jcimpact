@@ -1,4 +1,7 @@
 import { Incident, IncidentFeatureProperties } from '@/types';
+import { TYPE_COLORS } from '@/lib/colors';
+
+const TOTAL_TYPES = Object.keys(TYPE_COLORS).length;
 import type { GeoJSON } from 'geojson';
 
 export function incidentsToGeoJSON(incidents: Incident[]): GeoJSON.FeatureCollection<GeoJSON.Point, IncidentFeatureProperties> {
@@ -43,7 +46,7 @@ export function buildTypeFilter(
   if (types.length === 0) {
     return ['==', ['get', 'type'], '__none__'] as unknown as mapboxgl.Expression;
   }
-  if (types.length === 7) {
+  if (types.length === TOTAL_TYPES) {
     return ['!', ['has', 'point_count']] as unknown as mapboxgl.Expression;
   }
   return [
