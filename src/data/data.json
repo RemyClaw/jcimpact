@@ -6,8 +6,8 @@
     "lastUpdated": "2026-04-06"
   },
   "citywide": {
-    "totalCrimes": 1425,
-    "shootings": 15,
+    "totalCrimes": 1427,
+    "shootings": 17,
     "homicides": 0,
     "mvas": 586,
     "thefts": 649,
@@ -35,7 +35,7 @@
     {
       "district": "South",
       "totalCrimes": 360,
-      "shootings": 7,
+      "shootings": 8,
       "homicides": 0,
       "mvas": 116,
       "thefts": 179,
@@ -44,7 +44,7 @@
     {
       "district": "West",
       "totalCrimes": 529,
-      "shootings": 6,
+      "shootings": 7,
       "homicides": 0,
       "mvas": 177,
       "thefts": 210,
@@ -85,8 +85,8 @@
     {
       "month": "2026-04",
       "label": "Apr '26",
-      "totalCrimes": 146,
-      "shootings": 2,
+      "totalCrimes": 148,
+      "shootings": 4,
       "homicides": 0,
       "mvas": 77,
       "thefts": 0,
@@ -17986,6 +17986,26 @@
       "lat": 40.740992,
       "lng": -74.075627,
       "address": "90 Duffield Ave"
+    },
+    {
+      "id": "sh-7",
+      "type": "Shooting Hit",
+      "date": "2026-04-08",
+      "district": "West",
+      "lat": 40.717332,
+      "lng": -74.077083,
+      "address": "Bergen Ave & Oxford Ave",
+      "description": "Shooting Hit \u00b7 Arrest"
+    },
+    {
+      "id": "sf-10",
+      "type": "Shots Fired",
+      "date": "2026-04-09",
+      "district": "South",
+      "lat": 40.702678,
+      "lng": -74.085644,
+      "address": "131 Woodlawn Ave",
+      "description": "Shell Casing Recovered"
     }
   ]
 }
