@@ -228,6 +228,9 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       const esc = (s: string) => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
       map.on('click', 'unclustered-point', (e) => {
+        // Stop the click from also triggering the district click handler
+        e.originalEvent.stopPropagation();
+        (e as any)._stopped = true;
         const feature = e.features?.[0];
         if (!feature) return;
         const props = feature.properties as Record<string, string>;
@@ -294,8 +297,9 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       });
       map.on('mouseleave', 'districts-fill', () => districtPopup.remove());
 
-      // ── District click → filter ────────────────────────────────────
+      // ── District click → filter (only if not clicking a dot) ──────
       map.on('click', 'districts-fill', (e) => {
+        if ((e as any)._stopped) return;
         const props = e.features?.[0]?.properties as Record<string, string> | undefined;
         if (!props?.name) return;
         onDistrictClickRef.current?.(props.name);
