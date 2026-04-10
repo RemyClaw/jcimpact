@@ -69,7 +69,7 @@ export default function MonthlyTrendChart({ data }: { data: MonthlyStat[] }) {
     };
   });
 
-  const activeSeries = SERIES.find(s => s.key === activeMetric)!;
+  const activeSeries = SERIES.find(s => s.key === activeMetric) ?? SERIES[0];
 
   return (
     <div className="flex flex-col h-full">

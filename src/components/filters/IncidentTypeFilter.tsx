@@ -18,7 +18,7 @@ const TYPES: { value: IncidentType; label: string }[] = [
   { value: 'Stolen Vehicle',   label: 'Stolen Cars'      },
 ];
 
-// Empty selected = all types shown (no filter)
+// Empty selected = nothing shown (all toggles off). Click a month to auto-enable.
 export default function IncidentTypeFilter({ selected, onChange }: IncidentTypeFilterProps) {
   function toggle(type: IncidentType) {
     if (selected.includes(type)) {

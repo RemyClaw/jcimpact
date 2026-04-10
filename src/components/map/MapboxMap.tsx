@@ -224,6 +224,9 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       });
 
       // ── Incident point popup ─────────────────────────────────────────
+      // HTML escape to prevent XSS from data
+      const esc = (s: string) => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
       map.on('click', 'unclustered-point', (e) => {
         const feature = e.features?.[0];
         if (!feature) return;
@@ -241,10 +244,14 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
           'Pedestrian Struck':'Pedestrian Struck',
         };
         const typeColor = POPUP_COLORS[props.type] ?? '#6b7280';
-        const typeLabel = TYPE_LABELS[props.type] ?? props.type;
+        const typeLabel = TYPE_LABELS[props.type] ?? esc(props.type);
         const dateStr   = new Date(props.date + 'T00:00:00').toLocaleDateString('en-US', {
           year: 'numeric', month: 'long', day: 'numeric',
         });
+        const safeAddr = esc(props.address || '');
+        const safeDesc = props.description ? esc(props.description) : '';
+        const safeDist = esc(props.district || '');
+
         popupRef.current = new mapboxgl.Popup({ offset: 14, closeButton: true, maxWidth: '320px' })
           .setLngLat(geom.coordinates as [number, number])
           .setHTML(`
@@ -254,9 +261,9 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
                 <span style="font-weight:700;font-size:16px;color:${typeColor}">${typeLabel}</span>
               </div>
               <div style="font-size:14px;color:#94a3b8;margin-bottom:4px">${dateStr}</div>
-              <div style="font-size:15px;color:#e2e8f0;font-weight:500;margin-bottom:${props.description ? '8px' : '0'}">${props.address}</div>
-              ${props.description ? `<div style="font-size:13px;color:#94a3b8;font-style:italic">${props.description}</div>` : ''}
-              <div style="margin-top:8px;padding-top:8px;border-top:1px solid #1e2535;font-size:13px;color:#9CA3AF;font-weight:500">${props.district} District</div>
+              <div style="font-size:15px;color:#e2e8f0;font-weight:500;margin-bottom:${safeDesc ? '8px' : '0'}">${safeAddr}</div>
+              ${safeDesc ? `<div style="font-size:13px;color:#94a3b8;font-style:italic">${safeDesc}</div>` : ''}
+              <div style="margin-top:8px;padding-top:8px;border-top:1px solid #1e2535;font-size:13px;color:#9CA3AF;font-weight:500">${safeDist} District</div>
             </div>
           `)
           .addTo(map);

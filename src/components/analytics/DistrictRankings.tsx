@@ -20,7 +20,7 @@ export default function DistrictRankings({ data }: { data: DistrictStats[] }) {
 
   const sorted = useMemo(() => [...data].sort((a, b) => (b[metric] ?? 0) - (a[metric] ?? 0)), [data, metric]);
   const max    = (sorted[0]?.[metric] ?? 1) || 1;
-  const m      = METRICS.find((x) => x.key === metric)!;
+  const m      = METRICS.find((x) => x.key === metric) ?? METRICS[0];
 
   return (
     <div className="flex flex-col h-full">
