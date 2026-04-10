@@ -245,18 +245,18 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
         const dateStr   = new Date(props.date + 'T00:00:00').toLocaleDateString('en-US', {
           year: 'numeric', month: 'long', day: 'numeric',
         });
-        popupRef.current = new mapboxgl.Popup({ offset: 12, closeButton: true })
+        popupRef.current = new mapboxgl.Popup({ offset: 14, closeButton: true, maxWidth: '320px' })
           .setLngLat(geom.coordinates as [number, number])
           .setHTML(`
-            <div style="line-height:1.5">
-              <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
-                <span style="width:8px;height:8px;border-radius:50%;background:${typeColor};flex-shrink:0"></span>
-                <span style="font-weight:600;font-size:13px;color:${typeColor}">${typeLabel}</span>
+            <div style="line-height:1.6;padding:4px">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+                <span style="width:12px;height:12px;border-radius:50%;background:${typeColor};flex-shrink:0;box-shadow:0 0 6px ${typeColor}"></span>
+                <span style="font-weight:700;font-size:16px;color:${typeColor}">${typeLabel}</span>
               </div>
-              <div style="font-size:12px;color:#94a3b8;margin-bottom:2px">${dateStr}</div>
-              <div style="font-size:13px;color:#e2e8f0;margin-bottom:${props.description ? '6px' : '0'}">${props.address}</div>
-              ${props.description ? `<div style="font-size:11px;color:#64748b;font-style:italic">${props.description}</div>` : ''}
-              <div style="margin-top:6px;padding-top:6px;border-top:1px solid #1e2535;font-size:11px;color:#475569">${props.district} District</div>
+              <div style="font-size:14px;color:#94a3b8;margin-bottom:4px">${dateStr}</div>
+              <div style="font-size:15px;color:#e2e8f0;font-weight:500;margin-bottom:${props.description ? '8px' : '0'}">${props.address}</div>
+              ${props.description ? `<div style="font-size:13px;color:#94a3b8;font-style:italic">${props.description}</div>` : ''}
+              <div style="margin-top:8px;padding-top:8px;border-top:1px solid #1e2535;font-size:13px;color:#9CA3AF;font-weight:500">${props.district} District</div>
             </div>
           `)
           .addTo(map);
