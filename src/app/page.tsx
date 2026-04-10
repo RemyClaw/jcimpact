@@ -52,8 +52,9 @@ export default function DashboardPage() {
     setActivePeriod(period);
 
     if (period.month === null) {
-      // YTD → clear toggles
-      setFilterState(prev => ({ ...prev, incidentTypes: [] }));
+      // YTD → enable all types (show the full picture)
+      const allTypes = Array.from(new Set(allIncidents.map(i => i.type))) as IncidentType[];
+      setFilterState(prev => ({ ...prev, incidentTypes: allTypes }));
       return;
     }
 
