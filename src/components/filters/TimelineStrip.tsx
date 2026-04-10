@@ -16,7 +16,7 @@ const MONTHS = [
 
 export interface TimePeriod {
   month: number | null;   // 0-11, null = YTD
-  week: number | null;    // 1-5, null = full month
+  weeks: number[];        // e.g. [1], [1,2], [] = full month
 }
 
 /** Get Sunday-Saturday weeks for a given month/year */
@@ -61,13 +61,21 @@ function getWeeksForMonth(month: number, year: number): { start: Date; end: Date
 function getDateRange(period: TimePeriod, year: number): [Date, Date] | null {
   if (period.month === null) return null;
   const m = period.month;
-  if (period.week === null) {
+  if (period.weeks.length === 0) {
     return [new Date(year, m, 1), new Date(year, m + 1, 0)];
   }
-  const weeks = getWeeksForMonth(m, year);
-  const w = weeks[period.week - 1];
-  if (!w) return [new Date(year, m, 1), new Date(year, m + 1, 0)];
-  return [w.start, w.end];
+  const allWeeks = getWeeksForMonth(m, year);
+  // Find earliest start and latest end among selected weeks
+  let earliest: Date | null = null;
+  let latest: Date | null = null;
+  for (const wn of period.weeks) {
+    const w = allWeeks[wn - 1];
+    if (!w) continue;
+    if (!earliest || w.start < earliest) earliest = w.start;
+    if (!latest || w.end > latest) latest = w.end;
+  }
+  if (!earliest || !latest) return [new Date(year, m, 1), new Date(year, m + 1, 0)];
+  return [earliest, latest];
 }
 
 function countInRange(incidents: Incident[], start: Date, end: Date): number {
@@ -103,7 +111,7 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
       <div className="flex items-center gap-1 md:gap-2 overflow-x-auto" style={{ padding: '8px 0 6px' }}>
         {/* YTD */}
         <button
-          onClick={() => onSelect({ month: null, week: null })}
+          onClick={() => onSelect({ month: null, weeks: [] })}
           className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 transition-all flex-shrink-0"
           style={{
             borderRadius: '8px',
@@ -131,7 +139,7 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
           return (
             <button
               key={label}
-              onClick={() => !disabled && onSelect({ month: i, week: null })}
+              onClick={() => !disabled && onSelect({ month: i, weeks: [] })}
               className="flex items-center gap-1 md:gap-1.5 px-2 py-1.5 md:px-3 md:py-2 transition-all flex-shrink-0"
               style={{
                 borderRadius: '8px',
@@ -183,38 +191,44 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
 
           {/* Full month */}
           <button
-            onClick={() => onSelect({ month: displayMonth, week: null })}
+            onClick={() => onSelect({ month: displayMonth, weeks: [] })}
             className="flex items-center gap-1 px-2 py-1 md:px-3 md:py-1.5 transition-all flex-shrink-0"
             style={{
               borderRadius: '8px',
               fontSize: '11px',
-              fontWeight: activePeriod.week === null ? 800 : 600,
-              border: activePeriod.week === null ? '2px solid #c8a96b' : '2px solid rgba(200,169,107,0.3)',
-              background: activePeriod.week === null ? 'rgba(200,169,107,0.2)' : 'transparent',
-              color: activePeriod.week === null ? '#FFFFFF' : '#E5E7EB',
+              fontWeight: activePeriod.weeks.length === 0 ? 800 : 600,
+              border: activePeriod.weeks.length === 0 ? '2px solid #c8a96b' : '2px solid rgba(200,169,107,0.3)',
+              background: activePeriod.weeks.length === 0 ? 'rgba(200,169,107,0.2)' : 'transparent',
+              color: activePeriod.weeks.length === 0 ? '#FFFFFF' : '#E5E7EB',
             }}
           >
             All
             <span style={{
               fontSize: '10px', fontWeight: 800,
-              color: activePeriod.week === null ? '#1b2740' : '#c8a96b',
-              background: activePeriod.week === null ? '#c8a96b' : 'rgba(200,169,107,0.15)',
+              color: activePeriod.weeks.length === 0 ? '#1b2740' : '#c8a96b',
+              background: activePeriod.weeks.length === 0 ? '#c8a96b' : 'rgba(200,169,107,0.15)',
               borderRadius: '4px', padding: '1px 4px',
             }}>
               {displayFullCount}
             </span>
           </button>
 
-          {/* Weekly periods */}
+          {/* Weekly periods — click to toggle, multi-select */}
           {weeks.map((w, idx) => {
             const weekNum = idx + 1;
-            const isActiveWeek = activePeriod.week === weekNum;
+            const isActiveWeek = activePeriod.weeks.includes(weekNum);
             const weekCount = countInRange(incidents, w.start, w.end);
 
             return (
               <button
                 key={weekNum}
-                onClick={() => onSelect({ month: displayMonth, week: weekNum })}
+                onClick={() => {
+                  const current = activePeriod.weeks;
+                  const next = current.includes(weekNum)
+                    ? current.filter(n => n !== weekNum)
+                    : [...current, weekNum].sort();
+                  onSelect({ month: displayMonth, weeks: next });
+                }}
                 className="flex items-center gap-1 px-2 py-1 md:px-3 md:py-1.5 transition-all flex-shrink-0"
                 style={{
                   borderRadius: '8px',

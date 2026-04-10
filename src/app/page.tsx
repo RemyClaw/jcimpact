@@ -42,7 +42,7 @@ export default function DashboardPage() {
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
   const [analyticsTab, setAnalyticsTab]     = useState<AnalyticsTab>('districts');
   const [mapFullscreen, setMapFullscreen]   = useState(false);
-  const [activePeriod, setActivePeriod]     = useState<TimePeriod>({ month: null, week: null });
+  const [activePeriod, setActivePeriod]     = useState<TimePeriod>({ month: null, weeks: [] });
 
   // When user clicks a month:
   //   - If types are already toggled on → keep them (user is drilling into that month)
