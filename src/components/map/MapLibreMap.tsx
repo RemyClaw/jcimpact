@@ -185,39 +185,87 @@ export default function MapLibreMap({ incidents, showMVA, showShotsFired, showSh
 
       // Popup
       const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      const TYPE_LABELS: Record<string, string> = {
+        'Shots Fired': 'Shots Fired', 'Shooting Hit': 'Shooting Hit',
+        'MVA': 'Motor Vehicle Accident', 'Theft': 'Theft',
+        'Stolen Vehicle': 'Stolen Vehicle', 'Traffic Stop': 'Traffic Stop',
+        'Pedestrian Struck': 'Pedestrian Struck',
+      };
+      const colorFor = (type: string) => {
+        const raw = (TYPE_COLORS as Record<string, string>)[type] ?? '#6b7280';
+        return /^#[0-9a-fA-F]{3,8}$/.test(raw) ? raw : '#6b7280';
+      };
+      const labelFor = (type: string) => TYPE_LABELS[type] ?? esc(type);
+      const fmtDate  = (d: string) => new Date(d + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
       map.on('click', 'unclustered-point', (e) => {
-        const feature = e.features?.[0];
-        if (!feature) return;
-        const props = feature.properties as Record<string, string>;
-        const geom = feature.geometry as GeoJSON.Point;
+        if (!e.features || e.features.length === 0) return;
+        const primary = e.features[0];
+        const [px, py] = (primary.geometry as GeoJSON.Point).coordinates;
+
+        const seen = new Set<string>();
+        const stack = e.features.filter((f) => {
+          const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates;
+          if (Math.abs(lng - px) > 0.0001 || Math.abs(lat - py) > 0.0001) return false;
+          const id = (f.properties as Record<string, string>)?.id;
+          if (!id || seen.has(id)) return false;
+          seen.add(id);
+          return true;
+        });
+
         if (popupRef.current) popupRef.current.remove();
-        const rawColor = (TYPE_COLORS as Record<string, string>)[props.type] ?? '#6b7280';
-        const typeColor = /^#[0-9a-fA-F]{3,8}$/.test(rawColor) ? rawColor : '#6b7280';
-        const TYPE_LABELS: Record<string, string> = {
-          'Shots Fired': 'Shots Fired', 'Shooting Hit': 'Shooting Hit',
-          'MVA': 'Motor Vehicle Accident', 'Theft': 'Theft',
-          'Stolen Vehicle': 'Stolen Vehicle', 'Traffic Stop': 'Traffic Stop',
-          'Pedestrian Struck': 'Pedestrian Struck',
-        };
-        const typeLabel = TYPE_LABELS[props.type] ?? esc(props.type);
-        const dateStr = new Date(props.date + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-        const safeAddr = esc(props.address || '');
-        const safeDesc = props.description ? esc(props.description) : '';
-        const safeDist = esc(props.district || '');
-        popupRef.current = new maplibregl.Popup({ offset: 14, closeButton: true, maxWidth: '320px' })
-          .setLngLat(geom.coordinates as [number, number])
-          .setHTML(`
+
+        let html: string;
+        if (stack.length === 1) {
+          const props = stack[0].properties as Record<string, string>;
+          const c = colorFor(props.type);
+          const safeDesc = props.description ? esc(props.description) : '';
+          html = `
             <div style="line-height:1.6;padding:4px;background:#111827;color:#e2e8f0">
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                <span style="width:12px;height:12px;border-radius:50%;background:${typeColor};flex-shrink:0;box-shadow:0 0 6px ${typeColor}"></span>
-                <span style="font-weight:700;font-size:16px;color:${typeColor}">${typeLabel}</span>
+                <span style="width:12px;height:12px;border-radius:50%;background:${c};flex-shrink:0;box-shadow:0 0 6px ${c}"></span>
+                <span style="font-weight:700;font-size:16px;color:${c}">${labelFor(props.type)}</span>
               </div>
-              <div style="font-size:14px;color:#94a3b8;margin-bottom:4px">${dateStr}</div>
-              <div style="font-size:15px;font-weight:500;margin-bottom:${safeDesc ? '8px' : '0'}">${safeAddr}</div>
+              <div style="font-size:14px;color:#94a3b8;margin-bottom:4px">${fmtDate(props.date)}</div>
+              <div style="font-size:15px;font-weight:500;margin-bottom:${safeDesc ? '8px' : '0'}">${esc(props.address || '')}</div>
               ${safeDesc ? `<div style="font-size:13px;color:#94a3b8;font-style:italic">${safeDesc}</div>` : ''}
-              <div style="margin-top:8px;padding-top:8px;border-top:1px solid #1e2535;font-size:13px;color:#9CA3AF;font-weight:500">${safeDist} District</div>
+              <div style="margin-top:8px;padding-top:8px;border-top:1px solid #1e2535;font-size:13px;color:#9CA3AF;font-weight:500">${esc(props.district || '')} District</div>
             </div>
-          `)
+          `;
+        } else {
+          const first = stack[0].properties as Record<string, string>;
+          const rows = stack.map((f) => {
+            const p = f.properties as Record<string, string>;
+            const c = colorFor(p.type);
+            const desc = p.description ? `<div style="font-size:11px;color:#94a3b8;margin-top:2px;font-style:italic">${esc(p.description)}</div>` : '';
+            return `
+              <div style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:1px solid #1e2535">
+                <span style="width:9px;height:9px;border-radius:50%;background:${c};flex-shrink:0;margin-top:5px;box-shadow:0 0 4px ${c}"></span>
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:13px;font-weight:600;color:${c}">${labelFor(p.type)}</div>
+                  <div style="font-size:11px;color:#94a3b8;margin-top:1px">${fmtDate(p.date)}</div>
+                  ${desc}
+                </div>
+              </div>
+            `;
+          }).join('');
+          html = `
+            <div style="line-height:1.5;padding:4px;max-width:300px;background:#111827;color:#e2e8f0">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                <span style="font-weight:700;font-size:14px;color:#fff">${stack.length} incidents at this location</span>
+              </div>
+              <div style="font-size:13px;font-weight:500;margin-bottom:4px">${esc(first.address || '')}</div>
+              <div style="font-size:11px;color:#9CA3AF;margin-bottom:6px">${esc(first.district || '')} District</div>
+              <div style="max-height:240px;overflow-y:auto;border-top:1px solid #1e2535;margin-top:4px;padding-right:4px">
+                ${rows}
+              </div>
+            </div>
+          `;
+        }
+
+        popupRef.current = new maplibregl.Popup({ offset: 14, closeButton: true, maxWidth: '340px' })
+          .setLngLat([px, py])
+          .setHTML(html)
           .addTo(map);
       });
 
