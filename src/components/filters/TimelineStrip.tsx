@@ -58,24 +58,25 @@ function getWeeksForMonth(month: number, year: number): { start: Date; end: Date
   return weeks;
 }
 
-function getDateRange(period: TimePeriod, year: number): [Date, Date] | null {
+/** Returns one or more [start, end] ranges for the selected period.
+ *  Multiple weeks return multiple ranges (OR semantics) — DO NOT collapse
+ *  into a single bounding range, or non-contiguous selections would
+ *  incorrectly include dates between the selected weeks. */
+function getDateRanges(period: TimePeriod, year: number): [Date, Date][] | null {
   if (period.month === null) return null;
   const m = period.month;
   if (period.weeks.length === 0) {
-    return [new Date(year, m, 1), new Date(year, m + 1, 0)];
+    return [[new Date(year, m, 1), new Date(year, m + 1, 0)]];
   }
   const allWeeks = getWeeksForMonth(m, year);
-  // Find earliest start and latest end among selected weeks
-  let earliest: Date | null = null;
-  let latest: Date | null = null;
+  const ranges: [Date, Date][] = [];
   for (const wn of period.weeks) {
     const w = allWeeks[wn - 1];
     if (!w) continue;
-    if (!earliest || w.start < earliest) earliest = w.start;
-    if (!latest || w.end > latest) latest = w.end;
+    ranges.push([w.start, w.end]);
   }
-  if (!earliest || !latest) return [new Date(year, m, 1), new Date(year, m + 1, 0)];
-  return [earliest, latest];
+  if (ranges.length === 0) return [[new Date(year, m, 1), new Date(year, m + 1, 0)]];
+  return ranges;
 }
 
 function countInRange(incidents: Incident[], start: Date, end: Date): number {
@@ -258,14 +259,15 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
   );
 }
 
-// Filter incidents by the selected time period
+// Filter incidents by the selected time period.
+// When multiple weeks are selected, an incident qualifies if its date falls
+// in ANY of the selected week ranges (OR semantics).
 export function filterByPeriod(incidents: Incident[], period: TimePeriod, year: number = 2026): Incident[] {
-  const range = getDateRange(period, year);
-  if (!range) return incidents;
+  const ranges = getDateRanges(period, year);
+  if (!ranges) return incidents;
 
-  const [start, end] = range;
   return incidents.filter((inc) => {
     const d = parseLocalDate(inc.date);
-    return d >= start && d <= end;
+    return ranges.some(([start, end]) => d >= start && d <= end);
   });
 }
