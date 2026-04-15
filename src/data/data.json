@@ -229,7 +229,7 @@
       "district": "South",
       "lat": 40.702479,
       "lng": -74.07659,
-      "address": "BAYVIEW PARK, NJ\nBAYVIEW AVE & GARFIELD AVE, JERSEY CITY, NJ 07305"
+      "address": "BAYVIEW AVE & GARFIELD AVE, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0009",
@@ -478,7 +478,7 @@
       "district": "North",
       "lat": 40.743985,
       "lng": -74.058793,
-      "address": "CARLT, NJ\nCARLTON AVE & KENNEDY BLVD, JERSEY CITY, NJ 07307"
+      "address": "CARLTON AVE & KENNEDY BLVD, JERSEY CITY, NJ 07307"
     },
     {
       "id": "ts3-0023",
@@ -1116,7 +1116,7 @@
       "district": "West",
       "lat": 40.717906,
       "lng": -74.094445,
-      "address": "RT 440 & CL, NJ\nCLAREMONT AVE & ST HWY 440, JERSEY CITY, NJ 07306"
+      "address": "CLAREMONT AVE & ST HWY 440, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0043",
@@ -1125,7 +1125,7 @@
       "district": "West",
       "lat": 40.717906,
       "lng": -74.094445,
-      "address": "RT, NJ\nST HWY 440 & CLAREMONT AVE, JERSEY CITY, NJ 07306-0000"
+      "address": "ST HWY 440 & CLAREMONT AVE, JERSEY CITY, NJ 07306-0000"
     },
     {
       "id": "ts3-0044",
@@ -1369,7 +1369,7 @@
       "district": "West",
       "lat": 40.719605,
       "lng": -74.093324,
-      "address": "BENNET & HWY 440, NJ\n660 ST HWY 440, JERSEY CITY, NJ 07306"
+      "address": "660 ST HWY 440, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0053",
@@ -1423,7 +1423,7 @@
       "district": "West",
       "lat": 40.722158,
       "lng": -74.085123,
-      "address": "895 CO, NJ\n891 COMMUNIPAW AVE, JERSEY CITY, NJ 07304"
+      "address": "891 COMMUNIPAW AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0059",
@@ -2117,7 +2117,7 @@
       "district": "South",
       "lat": 40.692102,
       "lng": -74.094914,
-      "address": "OCEAN & NEPT, NJ\nNEPTUNE AVE & OCEAN AVE, JERSEY CITY, NJ 07305"
+      "address": "NEPTUNE AVE & OCEAN AVE, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0072",
@@ -2135,7 +2135,7 @@
       "district": "North",
       "lat": 40.736792,
       "lng": -74.062711,
-      "address": "3034 JOHN F KENNEDY BLVD, JERSEY CITY, NJ 07306\n3033 KENNEDY BLVD, JERSEY CITY, NJ 07306"
+      "address": "3034 JOHN F KENNEDY BLVD, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0074",
@@ -2162,7 +2162,7 @@
       "district": "East",
       "lat": 40.717671,
       "lng": -74.059023,
-      "address": "PRIOR ST & GRAND ST, JERSEY CITY, NJ 07304-0000\n62 FREMONT ST, JERSEY CITY, NJ 07302"
+      "address": "PRIOR ST & GRAND ST, JERSEY CITY, NJ 07304-0000"
     },
     {
       "id": "ts3-1055",
@@ -2481,7 +2481,7 @@
       "district": "South",
       "lat": 40.700108,
       "lng": -74.094457,
-      "address": "DANFORTH AVE & KENNEDY BLVD, JERSEY CITY, NJ 07305\nMCADOO AVE & KENNEDY BLVD, JERSEY CITY, NJ 07305\n155 BIDWELL AVE, JERSEY CITY, NJ 07305\n11 LEXINGTON AVE, JERSEY CITY, NJ 07304"
+      "address": "DANFORTH AVE & KENNEDY BLVD, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0087",
@@ -3276,7 +3276,7 @@
       "district": "North",
       "lat": 40.730978,
       "lng": -74.064135,
-      "address": "33 JOURNAL SQ, JERSEY CITY, NJ 07306\nSIP AVE & BERGEN AVE, JERSEY CITY, NJ 07306-0000"
+      "address": "SIP AVE & BERGEN AVE, JERSEY CITY, NJ 07306-0000"
     },
     {
       "id": "ts3-0126",
@@ -3879,7 +3879,7 @@
       "district": "West",
       "lat": 40.719432,
       "lng": -74.077824,
-      "address": "COMMUNIPAW E& KEE, NJ\nCOMMUNIPAW AVE & KENNEDY BLVD, JERSEY CITY, NJ 07304"
+      "address": "COMMUNIPAW AVE & KENNEDY BLVD, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0143",
@@ -4095,7 +4095,7 @@
       "district": "South",
       "lat": 40.702982,
       "lng": -74.08861,
-      "address": "OCEAN AVE & LINDEN AVE, JERSEY CITY, NJ 07305-0000\n190 VAN NOSTRAND AVE, JERSEY CITY, NJ 07305\n25 MLK DR, JERSEY CITY, NJ 07305\n201 OCEAN AVE, JERSEY CITY, NJ 07305"
+      "address": "OCEAN AVE & LINDEN AVE, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "inc-172",
@@ -4161,7 +4161,7 @@
       "district": "South",
       "lat": 40.705857,
       "lng": -74.084543,
-      "address": "46 MCADOO AVE, JERSEY CITY, NJ 07305\n189-191 WEGMAN PKWY, JERSEY CITY, NJ 07305\nBAYVIEW AVE & MLK DR, JERSEY CITY, NJ 07305"
+      "address": "BAYVIEW AVE & MLK DR, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0161",
@@ -4170,7 +4170,7 @@
       "district": "North",
       "lat": 40.729927,
       "lng": -74.055267,
-      "address": "PALISIDE & UPPER 139, NJ\nNEWARK AVE & PALISADE AVE, JERSEY CITY, NJ 07306"
+      "address": "NEWARK AVE & PALISADE AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0162",
@@ -4673,7 +4673,7 @@
       "district": "West",
       "lat": 40.715875,
       "lng": -74.08647,
-      "address": "CLARKE AVE & WEST SIDE AVE, JERSEY CITY, NJ 07304\nCLARKE AVE & ST HWY 440, JERSEY CITY, NJ 07304"
+      "address": "CLARKE AVE & WEST SIDE AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0183",
@@ -4736,7 +4736,7 @@
       "district": "West",
       "lat": 40.717595,
       "lng": -74.073346,
-      "address": "COMMUNI & JACK, NJ\nJACKSON AVE & COMMUNIPAW AVE, JERSEY CITY, NJ 07304-0000"
+      "address": "JACKSON AVE & COMMUNIPAW AVE, JERSEY CITY, NJ 07304-0000"
     },
     {
       "id": "ts3-0190",
@@ -4799,7 +4799,7 @@
       "district": "South",
       "lat": 40.694558,
       "lng": -74.091653,
-      "address": "186 OCEAN AVE, JERSEY CITY, NJ 07305\n182 OCEAN AVE, JERSEY CITY, NJ 07305"
+      "address": "186 OCEAN AVE, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-1060",
@@ -5127,7 +5127,7 @@
       "district": "East",
       "lat": 40.72898,
       "lng": -74.035505,
-      "address": "5, NJ\n575 WASHINGTON BLVD, JERSEY CITY, NJ 07302"
+      "address": "575 WASHINGTON BLVD, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-0213",
@@ -5341,7 +5341,7 @@
       "district": "South",
       "lat": 40.705209,
       "lng": -74.082793,
-      "address": "148 WEGMAN PKWY, JERSEY CITY, NJ 07305\n148 STEGMAN ST, JERSEY CITY, NJ 07305"
+      "address": "148 WEGMAN PKWY, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0221",
@@ -5689,7 +5689,7 @@
       "district": "West",
       "lat": 40.723897,
       "lng": -74.089862,
-      "address": "COMMUNIOAW & 440, NJ\nCOMMUNIPAW AVE & ST HWY 440, JERSEY CITY, NJ 07304"
+      "address": "COMMUNIPAW AVE & ST HWY 440, JERSEY CITY, NJ 07304"
     },
     {
       "id": "inc-237",
@@ -5987,7 +5987,7 @@
       "district": "West",
       "lat": 40.716865,
       "lng": -74.080941,
-      "address": "UNION ST & KENNEDY BLVD, JERSEY CITY, NJ 07304-0000\nMORTON PL & KENNEDY BLVD, JERSEY CITY, NJ 07305-0000"
+      "address": "UNION ST & KENNEDY BLVD, JERSEY CITY, NJ 07304-0000"
     },
     {
       "id": "ts3-0244",
@@ -6213,7 +6213,7 @@
       "district": "East",
       "lat": 40.723158,
       "lng": -74.049832,
-      "address": "370 2ND ST, JERSEY CITY, NJ 07302\n365 SUMMIT AVE, JERSEY CITY, NJ 07306"
+      "address": "370 2ND ST, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-0253",
@@ -6231,7 +6231,7 @@
       "district": "East",
       "lat": 40.718834,
       "lng": -74.050274,
-      "address": "3217 MON, NJ\n327 MONTGOMERY ST, JERSEY CITY, NJ 07302"
+      "address": "327 MONTGOMERY ST, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-0255",
@@ -6439,7 +6439,7 @@
       "district": "West",
       "lat": 40.719432,
       "lng": -74.077824,
-      "address": "COMMUNIPAW AVE & KENNEDY BLVD, JERSEY CITY, NJ 07304\nCOMMUNIPAW AVE & DELAWARE AVE, JERSEY CITY, NJ 07304"
+      "address": "COMMUNIPAW AVE & KENNEDY BLVD, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0269",
@@ -6457,7 +6457,7 @@
       "district": "South",
       "lat": 40.706313,
       "lng": -74.086084,
-      "address": "228, NJ\n242 STEGMAN ST, JERSEY CITY, NJ 07305"
+      "address": "242 STEGMAN ST, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0271",
@@ -6640,7 +6640,7 @@
       "district": "West",
       "lat": 40.733185,
       "lng": -74.071784,
-      "address": "984 WEST SIDE AVE, JERSEY CITY, NJ 07306\nJEWETT AVE & WEST SIDE AVE, JERSEY CITY, NJ 07304\n720 WEST SIDE AVE, JERSEY CITY, NJ 07306"
+      "address": "JEWETT AVE & WEST SIDE AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "inc-271",
@@ -6779,7 +6779,7 @@
       "district": "East",
       "lat": 40.717171,
       "lng": -74.05454,
-      "address": "GRAND ST & PACIFIC AVE, JERSEY CITY, NJ 07302\nGRAND ST & MONMOUTH ST, JERSEY CITY, NJ 07302"
+      "address": "GRAND ST & PACIFIC AVE, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-0285",
@@ -6788,7 +6788,7 @@
       "district": "North",
       "lat": 40.738727,
       "lng": -74.067481,
-      "address": "SAINT PAUL'S AVENUE & SEAMAN AVENUE, JERSEY CITY, NJ 07306\nST PAULS AVE & SEAMAN RD, JERSEY CITY, NJ 07306-0000"
+      "address": "SAINT PAUL'S AVENUE & SEAMAN AVENUE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0286",
@@ -6815,7 +6815,7 @@
       "district": "East",
       "lat": 40.722407,
       "lng": -74.05986,
-      "address": "MONTOGOMERY, NJ\nMONTGOMERY ST & FLORENCE ST, JERSEY CITY, NJ 07302-0000"
+      "address": "MONTGOMERY ST & FLORENCE ST, JERSEY CITY, NJ 07302-0000"
     },
     {
       "id": "ts3-0289",
@@ -6986,7 +6986,7 @@
       "district": "West",
       "lat": 40.71771,
       "lng": -74.078178,
-      "address": "22 LEXINGTON AVE, JERSEY CITY, NJ 07304\nVIRGINIA AND BERGEN AVE, JERSEY CITY, NJ 07305"
+      "address": "22 LEXINGTON AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0308",
@@ -7128,7 +7128,7 @@
       "district": "East",
       "lat": 40.709827,
       "lng": -74.064928,
-      "address": "PACIFIC AVE & FORREST ST, FORREST ST, NJ 07304-0000\nPACIFIC AVE & BRAMHALL AVE, JERSEY CITY, NJ 07304-0000"
+      "address": "PACIFIC AVE & BRAMHALL AVE, JERSEY CITY, NJ 07304-0000"
     },
     {
       "id": "ts3-0312",
@@ -7402,7 +7402,7 @@
       "district": "North",
       "lat": 40.73855,
       "lng": -74.072011,
-      "address": "49 HOWELL ST, JERSEY CITY, NJ 07306\n19 JAMES AVE, JERSEY CITY, NJ 07306"
+      "address": "49 HOWELL ST, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0326",
@@ -7411,7 +7411,7 @@
       "district": "North",
       "lat": 40.738447,
       "lng": -74.072669,
-      "address": "19 JAMES AVE, JERSEY CITY, NJ 07306\n21 JAMES AVE, JERSEY CITY, NJ 07306\n365 SUMMIT AVE, JERSEY CITY, NJ 07306"
+      "address": "19 JAMES AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0327",
@@ -7429,7 +7429,7 @@
       "district": "North",
       "lat": 40.738065,
       "lng": -74.065645,
-      "address": "SINT PAULS & TONNELE, NJ\nSAINT PAULS & TONNELE, NJ"
+      "address": "SAINT PAULS & TONNELE, NJ"
     },
     {
       "id": "ts3-0329",
@@ -7652,7 +7652,7 @@
       "district": "West",
       "lat": 40.716847,
       "lng": -74.071557,
-      "address": "MARCY PL & C, NJ\nMADISON AVE & COMMUNIPAW AVE, JERSEY CITY, NJ 07304-0000"
+      "address": "MADISON AVE & COMMUNIPAW AVE, JERSEY CITY, NJ 07304-0000"
     },
     {
       "id": "ts3-0339",
@@ -7697,7 +7697,7 @@
       "district": "North",
       "lat": 40.737954,
       "lng": -74.046851,
-      "address": "102 OGDEN AVE, JERSEY CITY, NJ 07307\nOGDEN AVE & BOWERS ST, JERSEY CITY, NJ 07307-0000"
+      "address": "OGDEN AVE & BOWERS ST, JERSEY CITY, NJ 07307-0000"
     },
     {
       "id": "ts3-0344",
@@ -8239,7 +8239,7 @@
       "district": "South",
       "lat": 40.702479,
       "lng": -74.07659,
-      "address": "BAYVIEW &, NJ\nBAYVIEW AVE & GARFIELD AVE, JERSEY CITY, NJ 07305"
+      "address": "BAYVIEW AVE & GARFIELD AVE, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0370",
@@ -8648,7 +8648,7 @@
       "district": "West",
       "lat": 40.727477,
       "lng": -74.070735,
-      "address": "GLENNWOOD & KE, NJ\nGLENWOOD AVE & KENNEDY BLVD, JERSEY CITY, NJ 07306"
+      "address": "GLENWOOD AVE & KENNEDY BLVD, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0389",
@@ -8792,7 +8792,7 @@
       "district": "South",
       "lat": 40.706557,
       "lng": -74.078066,
-      "address": "OCEAN &, NJ\nOCEAN AVE & MYRTLE AVE, JERSEY CITY, NJ 07305-0000"
+      "address": "OCEAN AVE & MYRTLE AVE, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "ts3-0405",
@@ -8801,7 +8801,7 @@
       "district": "East",
       "lat": 40.7216,
       "lng": -74.046105,
-      "address": "MAXWELL ST & JERSEY AVE, JERSEY CITY, NJ 07302\nJERSEY AVE & NEWARK AVE, JERSEY CITY, NJ 07302"
+      "address": "MAXWELL ST & JERSEY AVE, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-0406",
@@ -8810,7 +8810,7 @@
       "district": "South",
       "lat": 40.709267,
       "lng": -74.095246,
-      "address": "WEST SIDE AVE & WOODLAWN AVE, JERSEY CITY, NJ 07305\nWEST SIDE AVE & GIFFORD AVE, JERSEY CITY, NJ 07304-0000"
+      "address": "WEST SIDE AVE & WOODLAWN AVE, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0407",
@@ -9045,7 +9045,7 @@
       "district": "South",
       "lat": 40.704591,
       "lng": -74.083394,
-      "address": "150, NJ\n150 STEGMAN ST, JERSEY CITY, NJ 07305"
+      "address": "150 STEGMAN ST, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0417",
@@ -9072,7 +9072,7 @@
       "district": "South",
       "lat": 40.709882,
       "lng": -74.09976,
-      "address": "321 KELLOGG ST, JERSEY CITY, NJ 07305\n700 ST HWY 440, JERSEY CITY, NJ 07305"
+      "address": "321 KELLOGG ST, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0420",
@@ -9261,7 +9261,7 @@
       "district": "North",
       "lat": 40.753773,
       "lng": -74.047051,
-      "address": "IRVING ST & SUMMIT AVE, JERSEY CITY, NJ 07307\n365 SUMMIT AVE, JERSEY CITY, NJ 07306"
+      "address": "IRVING ST & SUMMIT AVE, JERSEY CITY, NJ 07307"
     },
     {
       "id": "ts3-0441",
@@ -9886,7 +9886,7 @@
       "district": "West",
       "lat": 40.738151,
       "lng": -74.07877,
-      "address": "248 BROADWAY, JERSEY CITY, NJ 07306\n240 BROADWAY, JERSEY CITY, NJ 07306"
+      "address": "248 BROADWAY, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0458",
@@ -9913,7 +9913,7 @@
       "district": "West",
       "lat": 40.720057,
       "lng": -74.095919,
-      "address": "LOWES, NJ\n701 ST HWY 440, JERSEY CITY, NJ 07304"
+      "address": "701 ST HWY 440, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0461",
@@ -10252,7 +10252,7 @@
       "district": "South",
       "lat": 40.706703,
       "lng": -74.088806,
-      "address": "KENNEDY &, NJ\nKENNEDY BLVD & DWIGHT ST, JERSEY CITY, NJ 07305-0000"
+      "address": "KENNEDY BLVD & DWIGHT ST, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "ts3-0484",
@@ -10261,7 +10261,7 @@
       "district": "West",
       "lat": 40.719432,
       "lng": -74.077824,
-      "address": "COMMUNIPAW AVE & KENNEDY BLVD, JERSEY CITY, NJ 07304\n2392 KENNEDY BLVD, JERSEY CITY, NJ 07304"
+      "address": "COMMUNIPAW AVE & KENNEDY BLVD, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0485",
@@ -10297,7 +10297,7 @@
       "district": "South",
       "lat": 40.68347,
       "lng": -74.094854,
-      "address": "ST HWY, NJ\nST HWY 440 & RT 185, JERSEY CITY, NJ 07305-0000"
+      "address": "ST HWY 440 & RT 185, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "ts3-0489",
@@ -10447,7 +10447,7 @@
       "district": "West",
       "lat": 40.718807,
       "lng": -74.078563,
-      "address": "CLINTON AVE & J.F.KENNEDY BLVD, JERSEY CITY, NJ 07304\nCLINTON AVE & KENNEDY BLVD, JERSEY CITY, NJ 07304"
+      "address": "CLINTON AVE & J.F.KENNEDY BLVD, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0497",
@@ -10501,7 +10501,7 @@
       "district": "North",
       "lat": 40.739709,
       "lng": -74.060268,
-      "address": "LAIDLAW AVE & COLLARD ST, JERSEY CITY, NJ 07306-0000\n241 LAIDLAW AVE, JERSEY CITY, NJ 07306"
+      "address": "LAIDLAW AVE & COLLARD ST, JERSEY CITY, NJ 07306-0000"
     },
     {
       "id": "ts3-0503",
@@ -10546,7 +10546,7 @@
       "district": "South",
       "lat": 40.70178,
       "lng": -74.092452,
-      "address": "KENN, NJ\nKENNEDY BLVD & MCADOO AVE, JERSEY CITY, NJ 07305-0000"
+      "address": "KENNEDY BLVD & MCADOO AVE, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "ts3-0508",
@@ -10609,7 +10609,7 @@
       "district": "East",
       "lat": 40.725253,
       "lng": -74.051621,
-      "address": "MANNING & NEWARK, NJ\nNEWARK AVE & 5TH ST, JERSEY CITY, NJ 07302-0000"
+      "address": "NEWARK AVE & 5TH ST, JERSEY CITY, NJ 07302-0000"
     },
     {
       "id": "ts3-0515",
@@ -10627,7 +10627,7 @@
       "district": "East",
       "lat": 40.725983,
       "lng": -74.052229,
-      "address": "HEALY, NJ\n374 NEWARK AVE, JERSEY CITY, NJ 07302"
+      "address": "374 NEWARK AVE, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-0517",
@@ -11270,7 +11270,7 @@
       "district": "North",
       "lat": 40.74214,
       "lng": -74.048495,
-      "address": "SHERMAN & FR, NJ\nSHERMAN AVE & FRANKLIN ST, JERSEY CITY, NJ 07307-0000"
+      "address": "SHERMAN AVE & FRANKLIN ST, JERSEY CITY, NJ 07307-0000"
     },
     {
       "id": "ts3-0546",
@@ -11306,7 +11306,7 @@
       "district": "North",
       "lat": 40.73506,
       "lng": -74.056612,
-      "address": "CENTRAL, NJ\nCENTRAL AVE & UPPER 139, JERSEY CITY, NJ 07306"
+      "address": "CENTRAL AVE & UPPER 139, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0550",
@@ -11324,7 +11324,7 @@
       "district": "North",
       "lat": 40.744618,
       "lng": -74.073611,
-      "address": "ST PAULS & V, NJ\nVAN KEUREN AVE & DUFFIELD AVE, JERSEY CITY, NJ 07306-0000"
+      "address": "VAN KEUREN AVE & DUFFIELD AVE, JERSEY CITY, NJ 07306-0000"
     },
     {
       "id": "ts3-0552",
@@ -11333,7 +11333,7 @@
       "district": "North",
       "lat": 40.737555,
       "lng": -74.062778,
-      "address": "ST PAULS, NJ\nST PAULS AVE & KENNEDY BLVD, JERSEY CITY, NJ 07306-0000"
+      "address": "ST PAULS AVE & KENNEDY BLVD, JERSEY CITY, NJ 07306-0000"
     },
     {
       "id": "ts3-0553",
@@ -11405,7 +11405,7 @@
       "district": "North",
       "lat": 40.759407,
       "lng": -74.051647,
-      "address": "TONNELE & PA, NJ\nTONNELE AVE & SECAUCUS RD, JERSEY CITY, NJ 07307-0000"
+      "address": "TONNELE AVE & SECAUCUS RD, JERSEY CITY, NJ 07307-0000"
     },
     {
       "id": "ts3-0561",
@@ -11414,7 +11414,7 @@
       "district": "South",
       "lat": 40.714061,
       "lng": -74.088835,
-      "address": "WEST SIDE AVE & GRANT AVE, JERSEY CITY, NJ 07305-0000\nWEST SIDE AVE & POLLOCK AVE, JERSEY CITY, NJ 07305-0000"
+      "address": "WEST SIDE AVE & GRANT AVE, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "ts3-1077",
@@ -11646,7 +11646,7 @@
       "district": "North",
       "lat": 40.742487,
       "lng": -74.065273,
-      "address": "319 TONNELE AVE, JERSEY CITY, NJ 07306\nTONNELE AVE & UTICA ST, JERSEY CITY, NJ 07306"
+      "address": "TONNELE AVE & UTICA ST, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0574",
@@ -12139,7 +12139,7 @@
       "district": "South",
       "lat": 40.699573,
       "lng": -74.104045,
-      "address": "ST HWY 440 & MINA DR, JERSEY CITY, NJ 07305-0000\n440/63RD, NJ"
+      "address": "ST HWY 440 & MINA DR, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "ts3-0590",
@@ -12592,7 +12592,7 @@
       "district": "South",
       "lat": 40.699573,
       "lng": -74.104045,
-      "address": "ST HWY 440 & MINA DR, JERSEY CITY, NJ 07305-0000\nST HIGHWAY 440 & BAYONNE CITY LINE, JERSEY CITY, NJ 07306-0000"
+      "address": "ST HWY 440 & MINA DR, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "ts3-0615",
@@ -12938,7 +12938,7 @@
       "district": "South",
       "lat": 40.699573,
       "lng": -74.104045,
-      "address": "MINA &, NJ\nMINA DR & ST HWY 440, JERSEY CITY, NJ 07305"
+      "address": "MINA DR & ST HWY 440, JERSEY CITY, NJ 07305"
     },
     {
       "id": "inc-467",
@@ -14126,7 +14126,7 @@
       "district": "North",
       "lat": 40.73091,
       "lng": -74.064161,
-      "address": "35 JSQ, NJ\n35 JOURNAL SQ, JERSEY CITY, NJ 07306"
+      "address": "35 JOURNAL SQ, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0666",
@@ -14198,7 +14198,7 @@
       "district": "East",
       "lat": 40.721947,
       "lng": -74.05135,
-      "address": "COLUMBUS & BR, NJ\nBRUNSWICK ST & COLUMBUS DR, JERSEY CITY, NJ 07302"
+      "address": "BRUNSWICK ST & COLUMBUS DR, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-0674",
@@ -14234,7 +14234,7 @@
       "district": "East",
       "lat": 40.729408,
       "lng": -74.03455,
-      "address": "WASH BLVD, NJ\nNEWPORT PKWY & WASHINGTON BLVD, JERSEY CITY, NJ 07310"
+      "address": "NEWPORT PKWY & WASHINGTON BLVD, JERSEY CITY, NJ 07310"
     },
     {
       "id": "inc-511",
@@ -14663,7 +14663,7 @@
       "district": "North",
       "lat": 40.730871,
       "lng": -74.064438,
-      "address": "SIP, NJ\nSIP AVE & BERGEN AVE, JERSEY CITY, NJ 07306-0000"
+      "address": "SIP AVE & BERGEN AVE, JERSEY CITY, NJ 07306-0000"
     },
     {
       "id": "ts3-0681",
@@ -14681,7 +14681,7 @@
       "district": "South",
       "lat": 40.707232,
       "lng": -74.083238,
-      "address": "BAYVIEW AVE & MLK DR, JERSEY CITY, NJ 07305\n217 MLK DR, JERSEY CITY, NJ 07305"
+      "address": "BAYVIEW AVE & MLK DR, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0683",
@@ -14708,7 +14708,7 @@
       "district": "South",
       "lat": 40.706557,
       "lng": -74.078066,
-      "address": "MYR, NJ\nMYRTLE AVE & OCEAN AVE, JERSEY CITY, NJ 07305"
+      "address": "MYRTLE AVE & OCEAN AVE, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0686",
@@ -14735,7 +14735,7 @@
       "district": "South",
       "lat": 40.70385,
       "lng": -74.08732,
-      "address": "WOODLAWN AVE & MLK DR, JERSEY CITY, NJ 07305-0000\n147 WOODLAWN AVE, JERSEY CITY, NJ 07305"
+      "address": "WOODLAWN AVE & MLK DR, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "ts3-0689",
@@ -14771,7 +14771,7 @@
       "district": "East",
       "lat": 40.723776,
       "lng": -74.064192,
-      "address": "MONTGOMERY & F, NJ\nMONTGOMERY ST & BALDWIN AVE, JERSEY CITY, NJ 07306-0000"
+      "address": "MONTGOMERY ST & BALDWIN AVE, JERSEY CITY, NJ 07306-0000"
     },
     {
       "id": "ts3-0693",
@@ -15125,7 +15125,7 @@
       "district": "East",
       "lat": 40.716545,
       "lng": -74.048941,
-      "address": "GRAND ST & JERSEY AVE, JERSEY CITY, NJ 07302\n71 BRIGHT ST, JERSEY CITY, NJ 07302"
+      "address": "GRAND ST & JERSEY AVE, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-0703",
@@ -15134,7 +15134,7 @@
       "district": "West",
       "lat": 40.721917,
       "lng": -74.08595,
-      "address": "MALLORY AVE &, NJ\nMALLORY AVE & ROOSEVELT AVE, JERSEY CITY, NJ 07304"
+      "address": "MALLORY AVE & ROOSEVELT AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0704",
@@ -15599,7 +15599,7 @@
       "district": "South",
       "lat": 40.689388,
       "lng": -74.094798,
-      "address": "50 GATES AVE, JERSEY CITY, NJ 07305\n49 PAMRAPO AVE, JERSEY CITY, NJ 07305"
+      "address": "50 GATES AVE, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0720",
@@ -15644,7 +15644,7 @@
       "district": "West",
       "lat": 40.73101,
       "lng": -74.068941,
-      "address": "62 ROMAINE, NJ\n62 GARRISON AVE, JERSEY CITY, NJ 07306"
+      "address": "62 GARRISON AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0725",
@@ -15680,7 +15680,7 @@
       "district": "West",
       "lat": 40.714663,
       "lng": -74.084002,
-      "address": "185 EGE AVE, JERSEY CITY, NJ 07304\n701 ST HWY 440, JERSEY CITY, NJ 07304"
+      "address": "185 EGE AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0729",
@@ -16104,7 +16104,7 @@
       "district": "North",
       "lat": 40.731777,
       "lng": -74.067204,
-      "address": "TONNELE, NJ\nTONNELE AVE & KENNEDY BLVD, JERSEY CITY, NJ 07306-0000"
+      "address": "TONNELE AVE & KENNEDY BLVD, JERSEY CITY, NJ 07306-0000"
     },
     {
       "id": "ts3-0740",
@@ -16772,7 +16772,7 @@
       "district": "West",
       "lat": 40.722633,
       "lng": -74.092646,
-      "address": "725 ST HWY 440, JERSEY CITY, NJ 07305\n700 ST HWY 440, JERSEY CITY, NJ 07305"
+      "address": "725 ST HWY 440, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0755",
@@ -17171,7 +17171,7 @@
       "district": "South",
       "lat": 40.707203,
       "lng": -74.077719,
-      "address": "OCEAN AVE & GRANT AVE, JERSEY CITY, NJ 07305-0000\n171-175 MLK DR, JERSEY CITY, NJ 07305"
+      "address": "OCEAN AVE & GRANT AVE, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "ts3-0761",
@@ -17558,7 +17558,7 @@
       "district": "East",
       "lat": 40.713544,
       "lng": -74.065286,
-      "address": "PACIFIC AVE & MA, NJ\nCOMMUNIPAW AVE & MANNING AVE, JERSEY CITY, NJ 07304"
+      "address": "COMMUNIPAW AVE & MANNING AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0771",
@@ -18068,7 +18068,7 @@
       "district": "East",
       "lat": 40.7216,
       "lng": -74.046105,
-      "address": "JERSEY AVE & NEWARK AVE, JERSEY CITY, NJ 07302\nJERSEY AVE & YORK ST, JERSEY CITY, NJ 07302"
+      "address": "JERSEY AVE & NEWARK AVE, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-0786",
@@ -18362,7 +18362,7 @@
       "district": "East",
       "lat": 40.724825,
       "lng": -74.037779,
-      "address": "MALL DR E &, NJ\n10 MALL DR E, JERSEY CITY, NJ 07302"
+      "address": "10 MALL DR E, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-0806",
@@ -18434,7 +18434,7 @@
       "district": "West",
       "lat": 40.715814,
       "lng": -74.07902,
-      "address": "UNION ST & BERGEN AVE, JERSEY CITY, NJ 07304-0000\n412 BERGEN AVE, JERSEY CITY, NJ 07304"
+      "address": "UNION ST & BERGEN AVE, JERSEY CITY, NJ 07304-0000"
     },
     {
       "id": "ts3-0814",
@@ -19175,7 +19175,7 @@
       "district": "West",
       "lat": 40.723897,
       "lng": -74.089862,
-      "address": "COMMUNIPAW AVE & US 1&9, JERSEY CITY, NJ 07304\nCOMMUNIPAW AVE & ST HWY 440, JERSEY CITY, NJ 07304"
+      "address": "COMMUNIPAW AVE & US 1&9, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0829",
@@ -19928,7 +19928,7 @@
       "district": "West",
       "lat": 40.726055,
       "lng": -74.066487,
-      "address": "MERCER ST & TUERS AVE, JERSEY CITY, NJ 07306\n790 BERGEN AVE, JERSEY CITY, NJ 07306"
+      "address": "MERCER ST & TUERS AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0861",
@@ -20363,7 +20363,7 @@
       "district": "West",
       "lat": 40.718421,
       "lng": -74.094046,
-      "address": "640 ST HWY 440, JERSEY CITY, NJ 07306\n322 ST HWY 440, JERSEY CITY, NJ 07306"
+      "address": "640 ST HWY 440, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0874",
@@ -20372,7 +20372,7 @@
       "district": "West",
       "lat": 40.719053,
       "lng": -74.092863,
-      "address": "BENNETT ST, NJ\nBENNETT ST & CLARKE AVE, JERSEY CITY, NJ 07304"
+      "address": "BENNETT ST & CLARKE AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0875",
@@ -20399,7 +20399,7 @@
       "district": "South",
       "lat": 40.716222,
       "lng": -74.095689,
-      "address": "CULVER AVE, NJ\nCULVER AVE & ST HWY 440, JERSEY CITY, NJ 07305"
+      "address": "CULVER AVE & ST HWY 440, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0878",
@@ -21868,7 +21868,7 @@
       "district": "South",
       "lat": 40.708008,
       "lng": -74.087216,
-      "address": "AUDUBON AVE & KENNEDY BLVD, JERSEY CITY, NJ 07305\n109 AUDUBON AVE, JERSEY CITY, NJ 07305"
+      "address": "AUDUBON AVE & KENNEDY BLVD, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-0925",
@@ -21877,7 +21877,7 @@
       "district": "West",
       "lat": 40.718937,
       "lng": -74.083384,
-      "address": "525 WEST SIDE AVE, JERSEY CITY, NJ 07304\nCLENDENNY AVE & WEST SIDE AVE, JERSEY CITY, NJ 07304\n365 SUMMIT AVE, JERSEY CITY, NJ 07306"
+      "address": "CLENDENNY AVE & WEST SIDE AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "mva-ms-0012",
@@ -22352,7 +22352,7 @@
       "district": "South",
       "lat": 40.711224,
       "lng": -74.094584,
-      "address": "WEST SIDE AVE & AUDUBON AVE, JERSEY CITY, NJ 07305-0000\n23 UNIVERSITY PL BLVD, JERSEY CITY, NJ 07305"
+      "address": "WEST SIDE AVE & AUDUBON AVE, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "mva-ms-0034",
@@ -22805,7 +22805,7 @@
       "district": "West",
       "lat": 40.732417,
       "lng": -74.072566,
-      "address": "SIP AVE & WEST SIDE AVE, JERSEY CITY, NJ 07306\nSIP AVE & CORBIN AVE, JERSEY CITY, NJ 07306-0000"
+      "address": "SIP AVE & WEST SIDE AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0928",
@@ -22814,7 +22814,7 @@
       "district": "West",
       "lat": 40.722538,
       "lng": -74.09085,
-      "address": "BENNETT & ST, NJ\nBENNETT ST & CLENDENNY AVE, JERSEY CITY, NJ 07304"
+      "address": "BENNETT ST & CLENDENNY AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0929",
@@ -22823,7 +22823,7 @@
       "district": "West",
       "lat": 40.711939,
       "lng": -74.0751,
-      "address": "FOREST, NJ\nFORREST ST & OCEAN AVE, JERSEY CITY, NJ 07304"
+      "address": "FORREST ST & OCEAN AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0930",
@@ -22832,7 +22832,7 @@
       "district": "West",
       "lat": 40.719192,
       "lng": -74.087066,
-      "address": "WILLIAMS AVE & WEST SIDE AVE, JERSEY CITY, NJ 07304-0000\n71 WILLIAMS AVE, JERSEY CITY, NJ 07304\nLEXINGTON AVE & WEST SIDE AVE, JERSEY CITY, NJ 07304"
+      "address": "WILLIAMS AVE & WEST SIDE AVE, JERSEY CITY, NJ 07304-0000"
     },
     {
       "id": "ts3-1090",
@@ -23278,7 +23278,7 @@
       "district": "West",
       "lat": 40.72255,
       "lng": -74.085466,
-      "address": "COMUNIPAW & MALL, NJ\nCOMMUNIPAW AVE & MALLORY AVE, JERSEY CITY, NJ 07304"
+      "address": "COMMUNIPAW AVE & MALLORY AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0932",
@@ -23287,7 +23287,7 @@
       "district": "West",
       "lat": 40.71527,
       "lng": -74.08727,
-      "address": "YALE AVE & WEST SIDE AVE, JERSEY CITY, NJ 07305-0000\nCLARKE AVE & ST HWY 440, JERSEY CITY, NJ 07304"
+      "address": "YALE AVE & WEST SIDE AVE, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "ts3-0933",
@@ -23296,7 +23296,7 @@
       "district": "West",
       "lat": 40.725923,
       "lng": -74.077348,
-      "address": "745 WEST SIDE AVE, JERSEY CITY, NJ 07306\n742 WEST SIDE AVE, JERSEY CITY, NJ 07306"
+      "address": "745 WEST SIDE AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "mva-ms-0072",
@@ -23851,7 +23851,7 @@
       "district": "North",
       "lat": 40.743125,
       "lng": -74.056649,
-      "address": "CARLTON AVE & MONTROSE AVE, JERSEY CITY, NJ 07306\nLAIDLAW AVE & SUMMIT AVE, JERSEY CITY, NJ 07307"
+      "address": "CARLTON AVE & MONTROSE AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0935",
@@ -23860,7 +23860,7 @@
       "district": "West",
       "lat": 40.718102,
       "lng": -74.077663,
-      "address": "155 CLINTON AVE, JERSEY CITY, NJ 07304\n489 BERGEN AVE, JERSEY CITY, NJ 07304"
+      "address": "155 CLINTON AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "mva-ms-0093",
@@ -24327,7 +24327,7 @@
       "district": "West",
       "lat": 40.718421,
       "lng": -74.094046,
-      "address": "BENNETT & ST 440, NJ\n640 ST HWY 440, JERSEY CITY, NJ 07306"
+      "address": "640 ST HWY 440, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0937",
@@ -24336,7 +24336,7 @@
       "district": "East",
       "lat": 40.730604,
       "lng": -74.034315,
-      "address": "WASHINGTON BLVD & PARK LN N, JERSEY CITY, NJ 07310\nNORTH BLVD & NEWPORT PKWY, JERSEY CITY, NJ 07310-0000"
+      "address": "WASHINGTON BLVD & PARK LN N, JERSEY CITY, NJ 07310"
     },
     {
       "id": "mva-ms-0108",
@@ -24793,7 +24793,7 @@
       "district": "South",
       "lat": 40.69633,
       "lng": -74.098416,
-      "address": "KENNEDY BLVD & 57TH ST, NJ\nNEPTUNE AVE & KENNEDY BLVD, JERSEY CITY, NJ 07305-0000"
+      "address": "NEPTUNE AVE & KENNEDY BLVD, JERSEY CITY, NJ 07305-0000"
     },
     {
       "id": "mva-v2-0002",
@@ -25135,7 +25135,7 @@
       "district": "North",
       "lat": 40.73584,
       "lng": -74.056663,
-      "address": "41 CEBTRAL, NJ\n41 CENTRAL AVE, JERSEY CITY, NJ 07306"
+      "address": "41 CENTRAL AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0941",
@@ -25144,7 +25144,7 @@
       "district": "North",
       "lat": 40.733069,
       "lng": -74.063162,
-      "address": "KENNEDY, NJ\nKENNEDY BLVD & PAVONIA AVE, JERSEY CITY, NJ 07306"
+      "address": "KENNEDY BLVD & PAVONIA AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "mva-v2-0018",
@@ -25603,7 +25603,7 @@
       "district": "East",
       "lat": 40.709954,
       "lng": -74.052047,
-      "address": "JOHNSON & AUDREY, NJ\nAUDREY ZAPP DR & JOHNSTON AVE, JERSEY CITY, NJ 07304"
+      "address": "AUDREY ZAPP DR & JOHNSTON AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-1091",
@@ -25900,7 +25900,7 @@
       "district": "North",
       "lat": 40.746945,
       "lng": -74.048952,
-      "address": "347 CENTRAL AVE, JERSEY CITY, NJ 07307\n349 CENTRAL AVE, JERSEY CITY, NJ 07307"
+      "address": "347 CENTRAL AVE, JERSEY CITY, NJ 07307"
     },
     {
       "id": "ts3-0944",
@@ -25909,7 +25909,7 @@
       "district": "North",
       "lat": 40.734599,
       "lng": -74.050321,
-      "address": "LINCOLN & PALISADE, NJ\nBEACON AVE & PALISADE AVE, JERSEY CITY, NJ 07306"
+      "address": "BEACON AVE & PALISADE AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "mva-v2-0054",
@@ -26269,7 +26269,7 @@
       "district": "North",
       "lat": 40.736291,
       "lng": -74.058878,
-      "address": "ST PAULS AVE & SUMMIT AVE, JERSEY CITY, NJ 07306\nST PAULS AVE & UPPER 139, JERSEY CITY, NJ 07306"
+      "address": "ST PAULS AVE & SUMMIT AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0946",
@@ -26278,7 +26278,7 @@
       "district": "West",
       "lat": 40.719538,
       "lng": -74.092721,
-      "address": "BENNETT ST & ST HW, NJ\n3 BENNETT ST, JERSEY CITY, NJ 07304"
+      "address": "3 BENNETT ST, JERSEY CITY, NJ 07304"
     },
     {
       "id": "mva-v2-0078",
@@ -26638,7 +26638,7 @@
       "district": "East",
       "lat": 40.720889,
       "lng": -74.065903,
-      "address": "166 SUMMIT AVE, JERSEY CITY, NJ 07304\n153 SUMMIT AVE, JERSEY CITY, NJ 07304"
+      "address": "166 SUMMIT AVE, JERSEY CITY, NJ 07304"
     },
     {
       "id": "ts3-0948",
@@ -26647,7 +26647,7 @@
       "district": "South",
       "lat": 40.6828,
       "lng": -74.098792,
-      "address": "KENNEDY BLVD & POR, NJ\nPORT JERSEY BLVD & BAYONNE CITY LINE, JERSEY CITY, NJ 07305"
+      "address": "PORT JERSEY BLVD & BAYONNE CITY LINE, JERSEY CITY, NJ 07305"
     },
     {
       "id": "mva-v2-0102",
@@ -27241,7 +27241,7 @@
       "district": "East",
       "lat": 40.718851,
       "lng": -74.036981,
-      "address": "WASHINGTON & STEUBEN STREET, JERSEY CITY, NJ 07302\nWASHINGTON ST & STEUBEN ST, JERSEY CITY, NJ 07302-0000"
+      "address": "WASHINGTON & STEUBEN STREET, JERSEY CITY, NJ 07302"
     },
     {
       "id": "mva-26-060591",
@@ -27440,7 +27440,7 @@
       "district": "North",
       "lat": 40.738727,
       "lng": -74.067481,
-      "address": "ST PAULS AVE & SEAMAN AVE, JERSEY CITY, NJ 07306-0000\nST PAULS AVE & SEAMAN RD, JERSEY CITY, NJ 07306-0000"
+      "address": "ST PAULS AVE & SEAMAN AVE, JERSEY CITY, NJ 07306-0000"
     },
     {
       "id": "ts3-0955",
@@ -27987,7 +27987,7 @@
       "district": "West",
       "lat": 40.720318,
       "lng": -74.081781,
-      "address": "WEST SIDE &, NJ\nWEST SIDE AVE & BELMONT AVE, JERSEY CITY, NJ 07304-0000"
+      "address": "WEST SIDE AVE & BELMONT AVE, JERSEY CITY, NJ 07304-0000"
     },
     {
       "id": "ts3-0975",
@@ -28059,7 +28059,7 @@
       "district": "North",
       "lat": 40.741339,
       "lng": -74.063747,
-      "address": "TONNELE &, NJ\nTONNELE AVE & UTICA ST, JERSEY CITY, NJ 07306"
+      "address": "TONNELE AVE & UTICA ST, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-0983",
@@ -28158,7 +28158,7 @@
       "district": "West",
       "lat": 40.728117,
       "lng": -74.069068,
-      "address": "48 HIGHLAND AVE, JERSEY CITY, NJ 07306\n22 LEXINGTON AVE, JERSEY CITY, NJ 07304"
+      "address": "48 HIGHLAND AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "mva-26-062752",
@@ -28369,7 +28369,7 @@
       "district": "West",
       "lat": 40.718807,
       "lng": -74.078563,
-      "address": "KENNEDY BLVD & CLINTON AVE, JERSEY CITY, NJ 07304-0000\nBERGEN AVE & COMMUNIPAW AVE, JERSEY CITY, NJ"
+      "address": "KENNEDY BLVD & CLINTON AVE, JERSEY CITY, NJ 07304-0000"
     },
     {
       "id": "ts3-0996",
@@ -28627,7 +28627,7 @@
       "district": "East",
       "lat": 40.726497,
       "lng": -74.048684,
-      "address": "MONMOUTH ST & 7TH ST, JERSEY CITY, NJ 07302-0000\nCOLES ST & 6TH ST, JERSEY CITY, NJ 07302-0000"
+      "address": "MONMOUTH ST & 7TH ST, JERSEY CITY, NJ 07302-0000"
     },
     {
       "id": "ts3-1005",
@@ -29221,7 +29221,7 @@
       "district": "East",
       "lat": 40.717326,
       "lng": -74.066278,
-      "address": "47 STATE ST, JERSEY CITY, NJ 07304\nSTATE ST & CORNELISON AVE, JERSEY CITY, NJ 07304-0000"
+      "address": "STATE ST & CORNELISON AVE, JERSEY CITY, NJ 07304-0000"
     },
     {
       "id": "ts3-1028",
@@ -29230,7 +29230,7 @@
       "district": "South",
       "lat": 40.716222,
       "lng": -74.095689,
-      "address": "CULVER AVE & ST HWY 440, JERSEY CITY, NJ 07305\nCULVER/RT 440, NJ"
+      "address": "CULVER AVE & ST HWY 440, JERSEY CITY, NJ 07305"
     },
     {
       "id": "ts3-1029",
@@ -29356,7 +29356,7 @@
       "district": "East",
       "lat": 40.720056,
       "lng": -74.037841,
-      "address": "110 MORGAN ST, JERSEY CITY, NJ 07302\n115 SUSSEX ST, JERSEY CITY, NJ 07302"
+      "address": "110 MORGAN ST, JERSEY CITY, NJ 07302"
     },
     {
       "id": "ts3-1042",
@@ -29419,7 +29419,7 @@
       "district": "North",
       "lat": 40.732587,
       "lng": -74.05961,
-      "address": "PAVANIA & SUMMIT, NJ\nPAVONIA AVE & SUMMIT AVE, JERSEY CITY, NJ 07306"
+      "address": "PAVONIA AVE & SUMMIT AVE, JERSEY CITY, NJ 07306"
     },
     {
       "id": "ts3-1049",
