@@ -26,8 +26,6 @@ const JC_CENTER: [number, number] = [-74.0706, 40.7178];
 const JC_ZOOM = 12.35;
 const MAP_STYLE = 'mapbox://styles/mapbox/standard';
 const SOURCE_ID = 'incidents';
-const HEAT_SOURCE_ID = 'incidents-heat';
-const HEAT_LAYER_ID = 'incidents-heatmap';
 
 const DISTRICT_LAYERS = ['districts-fill', 'districts-border', 'district-labels', 'district-selected-outline'] as const;
 const WARD_LAYERS    = ['wards-fill', 'wards-border', 'ward-labels', 'ward-selected-outline'] as const;
@@ -230,37 +228,6 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
         },
       });
 
-      // ── Severity-weighted heatmap (hidden by default) ─────────────────
-      map.addSource(HEAT_SOURCE_ID, {
-        type: 'geojson',
-        data: { type: 'FeatureCollection', features: [] },
-      });
-      map.addLayer({
-        id: HEAT_LAYER_ID,
-        type: 'heatmap',
-        source: HEAT_SOURCE_ID,
-        slot: 'middle',
-        layout: { visibility: 'none' },
-        paint: {
-          // Each point's severity (from SEVERITY_WEIGHTS) drives the density
-          'heatmap-weight': ['get', 'severity'],
-          // Intensity boosts with zoom so clusters read at street-level too
-          'heatmap-intensity': ['interpolate', ['linear'], ['zoom'], 11, 1, 16, 3],
-          // Transparent until density is meaningful; ramp yellow → red
-          'heatmap-color': [
-            'interpolate', ['linear'], ['heatmap-density'],
-            0.00, 'rgba(0,0,0,0)',
-            0.35, 'rgba(255,195,0,0.25)',
-            0.55, 'rgba(255,140,0,0.55)',
-            0.75, 'rgba(255,60,20,0.80)',
-            1.00, 'rgba(220,0,0,0.95)',
-          ],
-          'heatmap-radius': ['interpolate', ['linear'], ['zoom'], 11, 18, 14, 28, 16, 44],
-          'heatmap-opacity': 0.85,
-        },
-      });
-
-
       // ── Cursors ──────────────────────────────────────────────────────
       (['unclustered-point', 'wards-fill', 'districts-fill'] as const).forEach(id => {
         map.on('mouseenter', id, () => { map.getCanvas().style.cursor = 'pointer'; });
@@ -433,43 +400,9 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       map.setFilter('unclustered-point', buildTypeFilter(showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck) as mapboxgl.FilterSpecification);
     }
 
-    // ── Heatmap source uses only the currently-visible incident types ──
-    // This is what makes the heatmap a real tool: turn on Shots Fired only
-    // and the heatmap shows shooting concentrations, not traffic-stop density.
-    const visibleTypes = new Set<string>();
-    if (showShotsFired)       visibleTypes.add('Shots Fired');
-    if (showShootingHit)      visibleTypes.add('Shooting Hit');
-    if (showMVA)              visibleTypes.add('MVA');
-    if (showTheft)            visibleTypes.add('Theft');
-    if (showStolenVehicle)    visibleTypes.add('Stolen Vehicle');
-    if (showTrafficStop)      visibleTypes.add('Traffic Stop');
-    if (showPedestrianStruck) visibleTypes.add('Pedestrian Struck');
-
-    const heatIncidents = incidents.filter(i => visibleTypes.has(i.type));
-
-    const heatSrc = map.getSource(HEAT_SOURCE_ID) as mapboxgl.GeoJSONSource | undefined;
-    if (heatSrc) {
-      heatSrc.setData({
-        type: 'FeatureCollection',
-        features: heatIncidents.map(i => ({
-          type: 'Feature',
-          geometry: { type: 'Point', coordinates: [i.lng, i.lat] },
-          properties: { severity: SEVERITY_WEIGHTS[i.type] ?? 1 },
-        })),
-      });
-    }
   }, [incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, mapReady]);
 
-  // ── Toggle heatmap layer visibility ──────────────────────────────────
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !mapReady) return;
-    if (map.getLayer(HEAT_LAYER_ID)) {
-      map.setLayoutProperty(HEAT_LAYER_ID, 'visibility', showHeatmap ? 'visible' : 'none');
-    }
-  }, [showHeatmap, mapReady]);
-
-  // ── Render numbered hotspot markers when heatmap is on ──────────────
+  // ── Render numbered hotspot markers when toggle is on ───────────────
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !mapReady) return;
@@ -647,28 +580,16 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
           onClick={() => setShowWards(v => !v)}
         />
         <LayerToggle
-          label="Heatmap"
+          label="Hotspots"
           active={showHeatmap}
           color="#DC2626"
           onClick={() => setShowHeatmap(v => !v)}
         />
       </div>
 
-      {/* ── District/Ward/Heatmap legends — bottom-right, above attribution ─── */}
-      {(showDistricts || showWards || showHeatmap) && (
+      {/* ── District/Ward legends — bottom-right, above attribution ─── */}
+      {(showDistricts || showWards) && (
         <div className="absolute bottom-[52px] right-3 z-10 hidden md:flex flex-col items-end gap-1 pointer-events-none">
-          {showHeatmap && (
-            <div className="flex items-center gap-2 bg-[#0F172A]/90 px-2 py-1 rounded text-xs">
-              <span className="text-white/75 font-medium">Low</span>
-              <span
-                className="w-16 h-2 rounded"
-                style={{
-                  background: 'linear-gradient(90deg, rgba(255,195,0,0.5), rgba(255,140,0,0.75), rgba(255,60,20,0.9), rgba(220,0,0,1))',
-                }}
-              />
-              <span className="text-white/75 font-medium">High</span>
-            </div>
-          )}
           {showDistricts && (
             <div className="flex items-center gap-2 bg-[#0F172A]/90 px-2 py-1 rounded text-xs">
               {([
