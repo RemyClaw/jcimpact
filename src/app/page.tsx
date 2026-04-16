@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { FilterState, DistrictStats, IncidentType } from '@/types';
 import rawData from '@/data/data.json';
 import { useFilteredIncidents } from '@/hooks/useFilteredIncidents';
@@ -36,7 +36,25 @@ export default function DashboardPage() {
   const [mapFullscreen, setMapFullscreen]   = useState(false);
   const [activePeriod, setActivePeriod]     = useState<TimePeriod>({ month: null, weeks: [] });
   const [openReport, setOpenReport]         = useState<{ name: string; file: string } | null>(null);
+  const [reportLoading, setReportLoading]   = useState(false);
   const [reportsOpen, setReportsOpen]       = useState(false);
+
+  // Reset loading state whenever a new report is opened
+  useEffect(() => {
+    if (openReport) setReportLoading(true);
+  }, [openReport]);
+
+  // Escape closes whichever modal is open (report viewer > fullscreen map)
+  useEffect(() => {
+    if (!openReport && !mapFullscreen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      if (openReport) setOpenReport(null);
+      else if (mapFullscreen) setMapFullscreen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [openReport, mapFullscreen]);
 
   const handlePeriodSelect = (period: TimePeriod) => {
     setActivePeriod(period);
@@ -58,6 +76,15 @@ export default function DashboardPage() {
   const filteredIncidents = useMemo(() => filterByPeriod(typeFiltered, activePeriod, DATA_YEAR), [typeFiltered, activePeriod]);
 
   const periodFiltered = useMemo(() => filterByPeriod(allIncidents, activePeriod, DATA_YEAR), [activePeriod]);
+
+  // Show the empty-state overlay only when the user has actively narrowed down
+  // (toggled filters, picked a month, or picked a district) AND zero match.
+  // Default YTD view with no incident types toggled on shouldn't trigger it.
+  const hasActiveNarrowing =
+    filterState.incidentTypes.length > 0 ||
+    filterState.district !== 'All' ||
+    activePeriod.month !== null;
+  const showEmptyState = hasActiveNarrowing && filteredIncidents.length === 0;
 
   const derivedStats = useMemo(() => {
     const { district } = filterState;
@@ -368,6 +395,12 @@ export default function DashboardPage() {
                   <line x1="3" y1="21" x2="10" y2="14" />
                 </svg>
               </button>
+
+              {/* Empty state — shows when active filters match zero incidents */}
+              {showEmptyState && <EmptyStateBadge onClear={() => {
+                setFilterState(DEFAULT_FILTER);
+                setActivePeriod({ month: null, weeks: [] });
+              }} />}
             </div>
           </div>
         </div>
@@ -418,9 +451,10 @@ export default function DashboardPage() {
           </div>
 
           {/* Iframe — PDFs render natively, .docx uses Google Docs viewer */}
-          <div className="flex-1 min-h-0 relative">
+          <div className="flex-1 min-h-0 relative" style={{ background: '#0a1628' }}>
             <iframe
               key={openReport.file}
+              onLoad={() => setReportLoading(false)}
               src={
                 openReport.file.toLowerCase().endsWith('.pdf')
                   ? encodeURI(openReport.file)
@@ -429,9 +463,29 @@ export default function DashboardPage() {
                     )}&embedded=true`
               }
               className="w-full h-full"
-              style={{ border: 'none', background: '#fff' }}
+              style={{
+                border: 'none',
+                background: '#fff',
+                opacity: reportLoading ? 0 : 1,
+                transition: 'opacity 0.2s ease',
+              }}
               title={openReport.name}
             />
+            {/* Spinner — visible above the dark container while iframe is loading */}
+            {reportLoading && (
+              <div
+                className="absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none"
+                style={{ color: '#c8a96b' }}
+              >
+                <svg className="animate-spin" width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" opacity="0.25" />
+                  <path d="M4 12a8 8 0 018-8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                </svg>
+                <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9CA3AF' }}>
+                  Loading document&hellip;
+                </span>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -485,10 +539,63 @@ export default function DashboardPage() {
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </button>
+
+              {showEmptyState && <EmptyStateBadge onClear={() => {
+                setFilterState(DEFAULT_FILTER);
+                setActivePeriod({ month: null, weeks: [] });
+              }} />}
             </div>
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+// ── Empty-state overlay — shown when active filters match zero incidents ──
+function EmptyStateBadge({ onClear }: { onClear: () => void }) {
+  return (
+    <div
+      className="absolute z-10 flex items-center gap-3 px-4 py-3 rounded-xl pointer-events-auto"
+      style={{
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        background: 'rgba(10,22,40,0.92)',
+        border: '1.5px solid rgba(200,169,107,0.5)',
+        boxShadow: '0 8px 24px rgba(0,0,0,0.45)',
+        maxWidth: '90%',
+      }}
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+      <div style={{ flex: 1 }}>
+        <div style={{ color: '#FFFFFF', fontSize: '13px', fontWeight: 600 }}>No incidents match these filters.</div>
+        <div style={{ color: '#9CA3AF', fontSize: '11px', marginTop: '2px' }}>Try a different month, district, or incident type.</div>
+      </div>
+      <button
+        onClick={onClear}
+        className="transition-colors"
+        style={{
+          fontSize: '11px',
+          fontWeight: 700,
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+          color: '#c8a96b',
+          background: 'rgba(200,169,107,0.1)',
+          border: '1px solid rgba(200,169,107,0.4)',
+          borderRadius: '8px',
+          padding: '6px 12px',
+          cursor: 'pointer',
+          whiteSpace: 'nowrap',
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(200,169,107,0.2)'; }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(200,169,107,0.1)'; }}
+      >
+        Clear all
+      </button>
     </div>
   );
 }
