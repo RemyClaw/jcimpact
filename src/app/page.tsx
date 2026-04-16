@@ -59,12 +59,12 @@ export default function DashboardPage() {
   const handlePeriodSelect = (period: TimePeriod) => {
     setActivePeriod(period);
 
-    if (period.month === null) {
-      const allTypes = Array.from(new Set(allIncidents.map(i => i.type))) as IncidentType[];
-      setFilterState(prev => ({ ...prev, incidentTypes: allTypes }));
-      return;
-    }
+    // YTD clears the time window; keep the user's current incident-type +
+    // district filters intact (don't auto-toggle everything on).
+    if (period.month === null) return;
 
+    // Month/week selection: only auto-enable types if the user hasn't
+    // already toggled some on — otherwise respect what they've chosen.
     if (filterState.incidentTypes.length > 0) return;
 
     const periodIncidents = filterByPeriod(allIncidents, period, DATA_YEAR);
