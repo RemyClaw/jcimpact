@@ -1,10 +1,9 @@
 # JC IMPACT — Public Safety Dashboard
 # Allow search engines to find the main page
-# Block crawling of raw data files
+# Block crawling of raw data files and report documents
 
 User-agent: *
 Allow: /
-Disallow: /January 2026 Report.docx
 Disallow: /*.json$
-
-Sitemap: https://jcimpact.vercel.app/sitemap.xml
+Disallow: /*.docx$
+Disallow: /*.pdf$

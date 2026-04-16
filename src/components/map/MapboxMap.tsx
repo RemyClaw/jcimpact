@@ -66,7 +66,9 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
     });
 
     map.on('error', (e) => {
-      console.error('Mapbox error:', e.error?.message || e);
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('Mapbox error:', e.error?.message || e);
+      }
       if (e.error?.message?.includes('access token')) {
         setMapError('Invalid Mapbox token — check NEXT_PUBLIC_MAPBOX_TOKEN');
       }
@@ -76,11 +78,17 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
     map.addControl(new mapboxgl.AttributionControl({ compact: true }), 'bottom-right');
     mapRef.current = map;
 
+    // Tracks whether the most recent click hit an incident dot — prevents
+    // the district click handler from firing in the same event. Using a
+    // closure variable avoids monkey-patching the Mapbox event object.
+    let pointClickGuard = false;
+
+    // Mapbox v3 config API isn't in the public types yet
+    type MapWithConfig = mapboxgl.Map & { setConfigProperty: (g: string, k: string, v: unknown) => void };
+
     map.on('load', () => {
-      // eslint-disable-next-line
-      (map as Record<string, any>).setConfigProperty('basemap', 'lightPreset', 'night');
-      // eslint-disable-next-line
-      (map as Record<string, any>).setConfigProperty('basemap', 'showPointOfInterestLabels', false);
+      (map as MapWithConfig).setConfigProperty('basemap', 'lightPreset', 'night');
+      (map as MapWithConfig).setConfigProperty('basemap', 'showPointOfInterestLabels', false);
 
       // ── District polygons (behind wards) ────────────────────────────
       map.addSource('districts', { type: 'geojson', data: districtGeoJSON as GeoJSON.FeatureCollection });
@@ -249,7 +257,7 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       map.on('click', 'unclustered-point', (e) => {
         // Stop the click from also triggering the district click handler
         e.originalEvent.stopPropagation();
-        (e as any)._stopped = true;
+        pointClickGuard = true;
         if (!e.features || e.features.length === 0) return;
 
         // Anchor coord = clicked feature's location
@@ -330,8 +338,8 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
         const props = e.features?.[0]?.properties as Record<string, string> | undefined;
         if (!props) return;
         wardPopup.setLngLat(e.lngLat).setHTML(`
-          <div style="font-weight:600;font-size:13px;margin-bottom:4px">Ward ${(props.ward || '').toUpperCase()}</div>
-          <div style="font-size:11px;color:#94a3b8">Council: ${props.council_pe || ''}</div>
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px">Ward ${esc((props.ward || '').toUpperCase())}</div>
+          <div style="font-size:11px;color:#94a3b8">Council: ${esc(props.council_pe || '')}</div>
         `).addTo(map);
       });
       map.on('mouseleave', 'wards-fill', () => wardPopup.remove());
@@ -341,8 +349,9 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       map.on('mousemove', 'districts-fill', (e) => {
         const props = e.features?.[0]?.properties as Record<string, string> | undefined;
         if (!props) return;
+        const safeColor = /^#[0-9a-fA-F]{3,8}$/.test(props.color || '') ? props.color : '#ffffff';
         districtPopup.setLngLat(e.lngLat).setHTML(`
-          <div style="font-weight:600;font-size:13px;color:${props.color || '#fff'};margin-bottom:2px">${props.name}</div>
+          <div style="font-weight:600;font-size:13px;color:${safeColor};margin-bottom:2px">${esc(props.name || '')}</div>
           <div style="font-size:11px;color:#94a3b8">JCPD Patrol District</div>
         `).addTo(map);
       });
@@ -350,7 +359,7 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
 
       // ── District click → filter (only if not clicking a dot) ──────
       map.on('click', 'districts-fill', (e) => {
-        if ((e as any)._stopped) return;
+        if (pointClickGuard) { pointClickGuard = false; return; }
         const props = e.features?.[0]?.properties as Record<string, string> | undefined;
         if (!props?.name) return;
         onDistrictClickRef.current?.(props.name);
@@ -394,7 +403,8 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
     const map = mapRef.current;
     if (!map || !mapReady) return;
     try {
-      (map as Record<string, any>).setConfigProperty('basemap', 'lightPreset', darkMode ? 'night' : 'day');
+      type MapWithConfig = mapboxgl.Map & { setConfigProperty: (g: string, k: string, v: unknown) => void };
+      (map as MapWithConfig).setConfigProperty('basemap', 'lightPreset', darkMode ? 'night' : 'day');
     } catch {}
   }, [darkMode, mapReady]);
 

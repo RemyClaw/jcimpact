@@ -15,6 +15,7 @@ const baseStats    = rawData.citywide;
 const allDistricts = rawData.byDistrict as DistrictStats[];
 
 const [_y, _m, _d] = rawData.meta.generated.split('-').map(Number);
+const DATA_YEAR = _y;
 const META_UPDATED = new Date(_y, _m - 1, _d).toLocaleDateString('en-US', {
   month: 'short', day: 'numeric', year: 'numeric',
 });
@@ -48,15 +49,15 @@ export default function DashboardPage() {
 
     if (filterState.incidentTypes.length > 0) return;
 
-    const periodIncidents = filterByPeriod(allIncidents, period);
+    const periodIncidents = filterByPeriod(allIncidents, period, DATA_YEAR);
     const typesWithData = Array.from(new Set(periodIncidents.map(i => i.type))) as IncidentType[];
     setFilterState(prev => ({ ...prev, incidentTypes: typesWithData }));
   };
 
   const typeFiltered = useFilteredIncidents(allIncidents, filterState);
-  const filteredIncidents = useMemo(() => filterByPeriod(typeFiltered, activePeriod), [typeFiltered, activePeriod]);
+  const filteredIncidents = useMemo(() => filterByPeriod(typeFiltered, activePeriod, DATA_YEAR), [typeFiltered, activePeriod]);
 
-  const periodFiltered = useMemo(() => filterByPeriod(allIncidents, activePeriod), [activePeriod]);
+  const periodFiltered = useMemo(() => filterByPeriod(allIncidents, activePeriod, DATA_YEAR), [activePeriod]);
 
   const derivedStats = useMemo(() => {
     const { district } = filterState;
@@ -151,6 +152,7 @@ export default function DashboardPage() {
           incidents={filterState.incidentTypes.length > 0 ? typeFiltered : allIncidents}
           activePeriod={activePeriod}
           onSelect={handlePeriodSelect}
+          year={DATA_YEAR}
           hasActiveFilters={filterState.incidentTypes.length > 0}
         />
       </div>
@@ -442,6 +444,7 @@ export default function DashboardPage() {
               incidents={filterState.incidentTypes.length > 0 ? typeFiltered : allIncidents}
               activePeriod={activePeriod}
               onSelect={handlePeriodSelect}
+              year={DATA_YEAR}
               hasActiveFilters={filterState.incidentTypes.length > 0}
             />
           </div>

@@ -17,34 +17,8 @@
 }
 
 body {
-  background: #2B2F36;
+  background: #000000;
 }
-
-/* ── DayPicker dark theme ──────────────────────────────────────────────── */
-.rdp {
-  --rdp-accent-color: #3B82F6;
-  --rdp-background-color: rgba(255,255,255,0.06);
-  color: #E5E7EB;
-  margin: 0;
-  font-size: 11px;
-}
-.rdp-months { justify-content: center; }
-.rdp-day_selected,
-.rdp-day_selected:focus-visible,
-.rdp-day_selected:hover {
-  background-color: #3B82F6;
-  color: white;
-}
-.rdp-day_range_middle {
-  background-color: rgba(59,130,246,0.15);
-  color: #E5E7EB;
-}
-.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
-  background-color: rgba(255,255,255,0.06);
-}
-.rdp-head_cell { color: #6B7280; font-size: 10px; }
-.rdp-nav_button { color: #6B7280; }
-.rdp-caption { margin-bottom: 4px; }
 
 /* ── Mapbox popup ──────────────────────────────────────────────────────── */
 .mapboxgl-popup-content {

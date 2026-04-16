@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Don't leak X-Powered-By: Next.js header (minor fingerprint reduction)
+  poweredByHeader: false,
+
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -14,6 +17,8 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: [
+          // Force HTTPS for 2 years; include subdomains; allow HSTS preload submission
+          { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
           // Prevent the site from being embedded in iframes on other sites (clickjacking protection)
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
           // Tell browsers to trust the declared content type (prevents MIME sniffing attacks)

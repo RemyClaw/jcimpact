@@ -1,9 +1,6 @@
 import dynamic from 'next/dynamic';
 import { Incident } from '@/types';
 
-// ── Toggle this to switch between Mapbox (paid) and MapLibre (free) ──
-const USE_MAPLIBRE = false;
-
 const MapLoading = () => (
   <div className="w-full h-full bg-[#0a1628] flex items-center justify-center">
     <div className="flex flex-col items-center gap-3 text-slate-500">
@@ -17,7 +14,6 @@ const MapLoading = () => (
 );
 
 const MapboxMap = dynamic(() => import('./MapboxMap'), { ssr: false, loading: MapLoading });
-const MapLibreMap = dynamic(() => import('./MapLibreMap'), { ssr: false, loading: MapLoading });
 
 interface MapWrapperProps {
   incidents: Incident[];
@@ -33,5 +29,5 @@ interface MapWrapperProps {
 }
 
 export default function MapWrapper(props: MapWrapperProps) {
-  return USE_MAPLIBRE ? <MapLibreMap {...props} /> : <MapboxMap {...props} />;
+  return <MapboxMap {...props} />;
 }

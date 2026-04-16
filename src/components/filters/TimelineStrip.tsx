@@ -94,7 +94,7 @@ interface TimelineStripProps {
   hasActiveFilters?: boolean;
 }
 
-export default function TimelineStrip({ incidents, activePeriod, onSelect, year = 2026, hasActiveFilters = false }: TimelineStripProps) {
+export default function TimelineStrip({ incidents, activePeriod, onSelect, year = new Date().getFullYear(), hasActiveFilters = false }: TimelineStripProps) {
   const monthlyCounts = useMemo(() => {
     const counts = new Array(12).fill(0);
     incidents.forEach((inc) => {
@@ -177,7 +177,7 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
         })}
 
         {/* Disclaimer */}
-        <span className="flex-shrink-0 hidden md:inline" style={{ fontSize: '13px', color: '#FFFFFF', whiteSpace: 'nowrap', alignSelf: 'center', marginLeft: '4px' }}>
+        <span className="flex-shrink-0" style={{ fontSize: '11px', color: '#FFFFFF', whiteSpace: 'nowrap', alignSelf: 'center', marginLeft: '4px' }}>
           All figures are preliminary and subject to further analysis and revision.
         </span>
       </div>
@@ -267,7 +267,7 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
 // Filter incidents by the selected time period.
 // When multiple weeks are selected, an incident qualifies if its date falls
 // in ANY of the selected week ranges (OR semantics).
-export function filterByPeriod(incidents: Incident[], period: TimePeriod, year: number = 2026): Incident[] {
+export function filterByPeriod(incidents: Incident[], period: TimePeriod, year: number = new Date().getFullYear()): Incident[] {
   const ranges = getDateRanges(period, year);
   if (!ranges) return incidents;
 
