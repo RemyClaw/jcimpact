@@ -26,7 +26,7 @@ const DEFAULT_FILTER: FilterState = {
 };
 
 const REPORTS = [
-  { name: 'January 2026 Report', file: '/January 2026 Report.docx', month: 'January 2026' },
+  { name: 'CompStat — January 2026', file: '/CompStat January 2026.pdf', month: 'January 2026' },
   { name: 'CompStat — February 2026', file: '/CompStat February 2026.pdf', month: 'February 2026' },
 ];
 

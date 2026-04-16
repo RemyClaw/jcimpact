@@ -6,6 +6,7 @@
       "runtimeExecutable": "node",
       "runtimeArgs": ["node_modules/next/dist/bin/next", "dev"],
       "port": 3000,
+      "autoPort": true,
       "env": {
         "PATH": "/tmp/node-v20.18.0-darwin-arm64/bin:/usr/local/bin:/usr/bin:/bin"
       }

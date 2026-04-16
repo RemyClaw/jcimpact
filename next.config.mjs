@@ -39,7 +39,7 @@ const nextConfig = {
               "connect-src 'self' https://*.mapbox.com https://*.mapbox.cn https://api.mapbox.com https://events.mapbox.com https://geocode.arcgis.com https://docs.google.com https://*.cartocdn.com https://basemaps.cartocdn.com",
               "worker-src 'self' blob:",
               "child-src blob:",
-              "frame-src https://docs.google.com",
+              "frame-src 'self' https://docs.google.com",
             ].join('; '),
           },
         ],
