@@ -175,6 +175,11 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
             </button>
           );
         })}
+
+        {/* Disclaimer */}
+        <span className="flex-shrink-0 hidden md:inline" style={{ fontSize: '13px', color: '#FFFFFF', whiteSpace: 'nowrap', alignSelf: 'center', marginLeft: '4px' }}>
+          All figures are preliminary and subject to further analysis and revision.
+        </span>
       </div>
 
       {/* Row 2: Weekly periods (Sun–Sat) — only when a month is selected */}

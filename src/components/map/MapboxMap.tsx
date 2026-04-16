@@ -491,39 +491,41 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
         />
       </div>
 
-      {/* ── District legend (only when visible) ──────────────────────── */}
-      {showDistricts && (
-        <div className="absolute top-[44px] right-3 z-10 flex flex-col gap-1 pointer-events-none">
-          {([
-            { label: 'North', color: '#4CC9F0' },
-            { label: 'East',  color: '#7B61FF' },
-            { label: 'West',  color: '#FF9F1C' },
-            { label: 'South', color: '#F72585' },
-          ] as const).map(({ label, color }) => (
-            <div key={label} className="flex items-center gap-1.5 bg-[#0F172A]/90 px-2 py-0.5 text-xs">
-              <span className="w-2 h-2 flex-shrink-0" style={{ background: color }} />
-              <span className="text-white/75">{label}</span>
+      {/* ── District/Ward legends — bottom-right, above attribution ─── */}
+      {(showDistricts || showWards) && (
+        <div className="absolute bottom-[52px] right-3 z-10 hidden md:flex flex-col items-end gap-1 pointer-events-none">
+          {showDistricts && (
+            <div className="flex items-center gap-2 bg-[#0F172A]/90 px-2 py-1 rounded text-xs">
+              {([
+                { label: 'North', color: '#4CC9F0' },
+                { label: 'East',  color: '#7B61FF' },
+                { label: 'West',  color: '#FF9F1C' },
+                { label: 'South', color: '#F72585' },
+              ] as const).map(({ label, color }) => (
+                <div key={label} className="flex items-center gap-1">
+                  <span className="w-2 h-2 flex-shrink-0 rounded-sm" style={{ background: color }} />
+                  <span className="text-white/75 font-medium">{label}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
-
-      {/* ── Ward legend (only when visible) ──────────────────────────── */}
-      {showWards && (
-        <div className="absolute top-[44px] right-[90px] z-10 flex flex-col gap-1 pointer-events-none">
-          {([
-            { label: 'A', color: '#1B9E77' },
-            { label: 'B', color: '#D95F02' },
-            { label: 'C', color: '#7570B3' },
-            { label: 'D', color: '#E7298A' },
-            { label: 'E', color: '#66A61E' },
-            { label: 'F', color: '#E6AB02' },
-          ] as const).map(({ label, color }) => (
-            <div key={label} className="flex items-center gap-1.5 bg-[#0F172A]/90 px-2 py-0.5 text-xs">
-              <span className="w-2 h-2 flex-shrink-0" style={{ background: color }} />
-              <span className="text-white/75">Ward {label}</span>
+          )}
+          {showWards && (
+            <div className="flex items-center gap-2 bg-[#0F172A]/90 px-2 py-1 rounded text-xs">
+              {([
+                { label: 'A', color: '#1B9E77' },
+                { label: 'B', color: '#D95F02' },
+                { label: 'C', color: '#7570B3' },
+                { label: 'D', color: '#E7298A' },
+                { label: 'E', color: '#66A61E' },
+                { label: 'F', color: '#E6AB02' },
+              ] as const).map(({ label, color }) => (
+                <div key={label} className="flex items-center gap-1">
+                  <span className="w-2 h-2 flex-shrink-0 rounded-sm" style={{ background: color }} />
+                  <span className="text-white/75 font-medium">Ward {label}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
         </div>
       )}
 
