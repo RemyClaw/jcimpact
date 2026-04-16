@@ -6,6 +6,7 @@ import { Incident } from '@/types';
 import { incidentsToGeoJSON, buildTypeFilter } from '@/lib/mapUtils';
 import { TYPE_COLORS } from '@/lib/colors';
 import { districtGeoJSON, wardsGeoJSON } from '@/data/boundaryData';
+import { SEVERITY_WEIGHTS, detectHotspots, HOTSPOT_MIN_CLUSTER, type Hotspot } from '@/lib/severity';
 
 interface MapboxMapProps {
   incidents: Incident[];
@@ -25,6 +26,8 @@ const JC_CENTER: [number, number] = [-74.0706, 40.7178];
 const JC_ZOOM = 12.35;
 const MAP_STYLE = 'mapbox://styles/mapbox/standard';
 const SOURCE_ID = 'incidents';
+const HEAT_SOURCE_ID = 'incidents-heat';
+const HEAT_LAYER_ID = 'incidents-heatmap';
 
 const DISTRICT_LAYERS = ['districts-fill', 'districts-border', 'district-labels', 'district-selected-outline'] as const;
 const WARD_LAYERS    = ['wards-fill', 'wards-border', 'ward-labels', 'ward-selected-outline'] as const;
@@ -38,9 +41,11 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
 
   const [showDistricts, setShowDistricts] = useState(true);
   const [showWards,     setShowWards]     = useState(false);
+  const [showHeatmap,   setShowHeatmap]   = useState(false);
   const [mapReady,      setMapReady]      = useState(false);
   const [mapError,      setMapError]      = useState<string | null>(null);
   const [darkMode,      setDarkMode]      = useState(true);
+  const hotspotMarkersRef = useRef<mapboxgl.Marker[]>([]);
   const onDistrictClickRef = useRef(onDistrictClick);
 
   onDistrictClickRef.current = onDistrictClick;
@@ -225,6 +230,36 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
         },
       });
 
+      // ── Severity-weighted heatmap (hidden by default) ─────────────────
+      map.addSource(HEAT_SOURCE_ID, {
+        type: 'geojson',
+        data: { type: 'FeatureCollection', features: [] },
+      });
+      map.addLayer({
+        id: HEAT_LAYER_ID,
+        type: 'heatmap',
+        source: HEAT_SOURCE_ID,
+        slot: 'middle',
+        layout: { visibility: 'none' },
+        paint: {
+          // Each point's severity (from SEVERITY_WEIGHTS) drives the density
+          'heatmap-weight': ['get', 'severity'],
+          // Intensity boosts with zoom so clusters read at street-level too
+          'heatmap-intensity': ['interpolate', ['linear'], ['zoom'], 11, 1, 16, 3],
+          // Transparent until density is meaningful; ramp yellow → red
+          'heatmap-color': [
+            'interpolate', ['linear'], ['heatmap-density'],
+            0.00, 'rgba(0,0,0,0)',
+            0.35, 'rgba(255,195,0,0.25)',
+            0.55, 'rgba(255,140,0,0.55)',
+            0.75, 'rgba(255,60,20,0.80)',
+            1.00, 'rgba(220,0,0,0.95)',
+          ],
+          'heatmap-radius': ['interpolate', ['linear'], ['zoom'], 11, 18, 14, 28, 16, 44],
+          'heatmap-opacity': 0.85,
+        },
+      });
+
 
       // ── Cursors ──────────────────────────────────────────────────────
       (['unclustered-point', 'wards-fill', 'districts-fill'] as const).forEach(id => {
@@ -397,7 +432,118 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
     if (map.getLayer('unclustered-point')) {
       map.setFilter('unclustered-point', buildTypeFilter(showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck) as mapboxgl.FilterSpecification);
     }
+
+    // ── Heatmap source uses only the currently-visible incident types ──
+    // This is what makes the heatmap a real tool: turn on Shots Fired only
+    // and the heatmap shows shooting concentrations, not traffic-stop density.
+    const visibleTypes = new Set<string>();
+    if (showShotsFired)       visibleTypes.add('Shots Fired');
+    if (showShootingHit)      visibleTypes.add('Shooting Hit');
+    if (showMVA)              visibleTypes.add('MVA');
+    if (showTheft)            visibleTypes.add('Theft');
+    if (showStolenVehicle)    visibleTypes.add('Stolen Vehicle');
+    if (showTrafficStop)      visibleTypes.add('Traffic Stop');
+    if (showPedestrianStruck) visibleTypes.add('Pedestrian Struck');
+
+    const heatIncidents = incidents.filter(i => visibleTypes.has(i.type));
+
+    const heatSrc = map.getSource(HEAT_SOURCE_ID) as mapboxgl.GeoJSONSource | undefined;
+    if (heatSrc) {
+      heatSrc.setData({
+        type: 'FeatureCollection',
+        features: heatIncidents.map(i => ({
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: [i.lng, i.lat] },
+          properties: { severity: SEVERITY_WEIGHTS[i.type] ?? 1 },
+        })),
+      });
+    }
   }, [incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, mapReady]);
+
+  // ── Toggle heatmap layer visibility ──────────────────────────────────
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapReady) return;
+    if (map.getLayer(HEAT_LAYER_ID)) {
+      map.setLayoutProperty(HEAT_LAYER_ID, 'visibility', showHeatmap ? 'visible' : 'none');
+    }
+  }, [showHeatmap, mapReady]);
+
+  // ── Render numbered hotspot markers when heatmap is on ──────────────
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapReady) return;
+
+    // Clear old markers
+    for (const m of hotspotMarkersRef.current) m.remove();
+    hotspotMarkersRef.current = [];
+
+    if (!showHeatmap) return;
+
+    const visibleTypes = new Set<string>();
+    if (showShotsFired)       visibleTypes.add('Shots Fired');
+    if (showShootingHit)      visibleTypes.add('Shooting Hit');
+    if (showMVA)              visibleTypes.add('MVA');
+    if (showTheft)            visibleTypes.add('Theft');
+    if (showStolenVehicle)    visibleTypes.add('Stolen Vehicle');
+    if (showTrafficStop)      visibleTypes.add('Traffic Stop');
+    if (showPedestrianStruck) visibleTypes.add('Pedestrian Struck');
+
+    const filtered = incidents.filter(i => visibleTypes.has(i.type));
+    const hotspots: Hotspot[] = detectHotspots(filtered);
+
+    const esc = (s: string) => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+    hotspots.forEach((h, idx) => {
+      const el = document.createElement('div');
+      el.className = 'jc-hotspot-marker';
+      el.style.cssText = [
+        'width:28px','height:28px','border-radius:50%','background:#DC2626',
+        'border:2.5px solid #fff','color:#fff','font-weight:800','font-size:13px',
+        'display:flex','align-items:center','justify-content:center','cursor:pointer',
+        'font-family:ui-sans-serif, system-ui',
+        'box-shadow:0 0 14px rgba(220,38,38,0.85), 0 2px 6px rgba(0,0,0,0.5)',
+      ].join(';');
+      el.textContent = String(idx + 1);
+      el.setAttribute('aria-label', `Hotspot ${idx + 1}: ${h.count} incidents`);
+
+      const rows = Object.entries(h.breakdown)
+        .sort((a, b) => (b[1] ?? 0) - (a[1] ?? 0))
+        .map(([t, n]) => {
+          const c = (TYPE_COLORS as Record<string, string>)[t] ?? '#9CA3AF';
+          return `<div style="display:flex;justify-content:space-between;gap:14px;font-size:12px"><span style="color:${c}">${esc(t)}</span><span style="color:#fff;font-weight:600">${n}</span></div>`;
+        })
+        .join('');
+
+      const popup = new mapboxgl.Popup({ offset: 20, closeButton: true, maxWidth: '260px' }).setHTML(`
+        <div style="line-height:1.5;padding:2px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+            <span style="width:22px;height:22px;border-radius:50%;background:#DC2626;color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center">${idx + 1}</span>
+            <span style="font-weight:700;font-size:14px;color:#fff">Hotspot #${idx + 1}</span>
+          </div>
+          <div style="font-size:12px;color:#E5E7EB;margin-bottom:8px">${esc(h.addr)}</div>
+          <div style="background:rgba(255,255,255,0.05);padding:6px 8px;border-radius:6px;margin-bottom:6px">
+            <div style="font-size:11px;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Breakdown</div>
+            ${rows}
+          </div>
+          <div style="font-size:11px;color:#9CA3AF">
+            <strong style="color:#fff">${h.count}</strong> incidents · severity <strong style="color:#c8a96b">${h.score.toFixed(1)}</strong>
+          </div>
+        </div>
+      `);
+
+      const marker = new mapboxgl.Marker({ element: el, anchor: 'center' })
+        .setLngLat([h.lng, h.lat])
+        .setPopup(popup)
+        .addTo(map);
+      hotspotMarkersRef.current.push(marker);
+    });
+
+    return () => {
+      for (const m of hotspotMarkersRef.current) m.remove();
+      hotspotMarkersRef.current = [];
+    };
+  }, [incidents, showHeatmap, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, mapReady]);
 
   // ── Toggle light/dark mode ───────────────────────────────────────────
   useEffect(() => {
@@ -500,11 +646,29 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
           color="#C9A84C"
           onClick={() => setShowWards(v => !v)}
         />
+        <LayerToggle
+          label="Heatmap"
+          active={showHeatmap}
+          color="#DC2626"
+          onClick={() => setShowHeatmap(v => !v)}
+        />
       </div>
 
-      {/* ── District/Ward legends — bottom-right, above attribution ─── */}
-      {(showDistricts || showWards) && (
+      {/* ── District/Ward/Heatmap legends — bottom-right, above attribution ─── */}
+      {(showDistricts || showWards || showHeatmap) && (
         <div className="absolute bottom-[52px] right-3 z-10 hidden md:flex flex-col items-end gap-1 pointer-events-none">
+          {showHeatmap && (
+            <div className="flex items-center gap-2 bg-[#0F172A]/90 px-2 py-1 rounded text-xs">
+              <span className="text-white/75 font-medium">Low</span>
+              <span
+                className="w-16 h-2 rounded"
+                style={{
+                  background: 'linear-gradient(90deg, rgba(255,195,0,0.5), rgba(255,140,0,0.75), rgba(255,60,20,0.9), rgba(220,0,0,1))',
+                }}
+              />
+              <span className="text-white/75 font-medium">High</span>
+            </div>
+          )}
           {showDistricts && (
             <div className="flex items-center gap-2 bg-[#0F172A]/90 px-2 py-1 rounded text-xs">
               {([
