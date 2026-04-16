@@ -26,6 +26,8 @@ const JC_CENTER: [number, number] = [-74.0706, 40.7178];
 const JC_ZOOM = 12.35;
 const MAP_STYLE = 'mapbox://styles/mapbox/standard';
 const SOURCE_ID = 'incidents';
+const HOTZONE_SOURCE_ID = 'hotspot-zones';
+const HOTZONE_LAYER_ID = 'hotspot-zones-glow';
 
 const DISTRICT_LAYERS = ['districts-fill', 'districts-border', 'district-labels', 'district-selected-outline'] as const;
 const WARD_LAYERS    = ['wards-fill', 'wards-border', 'ward-labels', 'ward-selected-outline'] as const;
@@ -198,6 +200,40 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
           'line-width': 3,
           'line-opacity': 0.95,
           'line-emissive-strength': 1,
+        },
+      });
+
+      // ── Hotspot glow zones (rendered BEHIND incident dots) ────────────
+      map.addSource(HOTZONE_SOURCE_ID, {
+        type: 'geojson',
+        data: { type: 'FeatureCollection', features: [] },
+      });
+      map.addLayer({
+        id: HOTZONE_LAYER_ID,
+        type: 'circle',
+        source: HOTZONE_SOURCE_ID,
+        slot: 'middle',
+        layout: { visibility: 'none' },
+        paint: {
+          // Radius is in pixels; interpolate with zoom so physical-ish area stays consistent.
+          // Then multiply by feature's severityFactor (1.0 = top hotspot, ~0.55 = #5).
+          'circle-radius': [
+            '*',
+            ['get', 'severityFactor'],
+            ['interpolate', ['linear'], ['zoom'], 11, 45, 13, 70, 15, 140, 17, 260],
+          ],
+          // Color ramps red→amber by rank (0 = worst, 4 = least-worst)
+          'circle-color': [
+            'match', ['get', 'rank'],
+            0, '#DC2626',  // red
+            1, '#EF4444',
+            2, '#F97316',  // orange
+            3, '#F59E0B',
+            '#F59E0B',     // amber fallback
+          ],
+          'circle-opacity': 0.28,
+          'circle-blur': 0.9,  // near-1 = very soft edge, creates the glow
+          'circle-stroke-width': 0,
         },
       });
 
@@ -402,7 +438,7 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
 
   }, [incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, mapReady]);
 
-  // ── Render numbered hotspot markers when toggle is on ───────────────
+  // ── Render numbered hotspot markers + glow zones when toggle is on ──
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !mapReady) return;
@@ -411,7 +447,19 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
     for (const m of hotspotMarkersRef.current) m.remove();
     hotspotMarkersRef.current = [];
 
-    if (!showHeatmap) return;
+    // Helper: update the glow source regardless of whether we render markers
+    const setZonesSource = (features: GeoJSON.Feature[]) => {
+      const src = map.getSource(HOTZONE_SOURCE_ID) as mapboxgl.GeoJSONSource | undefined;
+      if (src) src.setData({ type: 'FeatureCollection', features });
+      if (map.getLayer(HOTZONE_LAYER_ID)) {
+        map.setLayoutProperty(HOTZONE_LAYER_ID, 'visibility', showHeatmap ? 'visible' : 'none');
+      }
+    };
+
+    if (!showHeatmap) {
+      setZonesSource([]);
+      return;
+    }
 
     const visibleTypes = new Set<string>();
     if (showShotsFired)       visibleTypes.add('Shots Fired');
@@ -424,6 +472,19 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
 
     const filtered = incidents.filter(i => visibleTypes.has(i.type));
     const hotspots: Hotspot[] = detectHotspots(filtered);
+
+    // Write the glow zones to the GeoJSON source
+    // severityFactor 1.0 for #1 down to ~0.55 for #5 so worst hotspot glows biggest
+    const topScore = hotspots[0]?.score ?? 1;
+    const zoneFeatures: GeoJSON.Feature[] = hotspots.map((h, idx) => ({
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [h.lng, h.lat] },
+      properties: {
+        rank: idx,
+        severityFactor: Math.max(0.55, h.score / topScore),
+      },
+    }));
+    setZonesSource(zoneFeatures);
 
     const esc = (s: string) => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
