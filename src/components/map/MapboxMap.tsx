@@ -63,6 +63,7 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       center: JC_CENTER,
       zoom: JC_ZOOM,
       attributionControl: false,
+      doubleClickZoom: false,
     });
 
     map.on('error', (e) => {
