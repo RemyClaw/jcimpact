@@ -6045,6 +6045,13 @@
     "lng": -74.042864196954,
     "score": 100
   },
+  "hackensack avenue & 100 skyway": {
+    "addr_type": "StreetName",
+    "cached_at": "2026-04-17",
+    "lat": 40.738904183143,
+    "lng": -74.081530796402,
+    "score": 91.49
+  },
   "hague st & summit avenue": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
@@ -8606,12 +8613,26 @@
     "lng": -74.07495699547,
     "score": 100
   },
+  "saint pauls ave & 100 skyway": {
+    "addr_type": "StreetName",
+    "cached_at": "2026-04-17",
+    "lat": 40.739766743844,
+    "lng": -74.070533320341,
+    "score": 90.74
+  },
   "saint pauls ave & van wagenen ave": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
     "lat": 40.73841099196,
     "lng": -74.066693025672,
     "score": 100
+  },
+  "saint pauls avenue & 276 tonnele avenue": {
+    "addr_type": "StreetInt",
+    "cached_at": "2026-04-17",
+    "lat": 40.738064986997,
+    "lng": -74.065645036318,
+    "score": 97.8
   },
   "saint pauls avenue & concord st": {
     "addr_type": "StreetInt",
@@ -9222,6 +9243,13 @@
     "lng": -74.066451962137,
     "score": 98.48
   },
+  "tonnele circle & 100 skyway": {
+    "addr_type": "StreetName",
+    "cached_at": "2026-04-17",
+    "lat": 40.730399254584,
+    "lng": -74.067061787502,
+    "score": 83.13
+  },
   "tonnele circle & saint pauls avenue": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
@@ -9243,6 +9271,13 @@
     "cached_at": "2026-03-24",
     "lat": 40.753996,
     "lng": -74.05645
+  },
+  "tonnelle ramp & 100 skyway": {
+    "addr_type": "StreetName",
+    "cached_at": "2026-04-17",
+    "lat": 40.730399254584,
+    "lng": -74.067061787502,
+    "score": 81.14
   },
   "town square pl & river drive south": {
     "addr_type": "StreetInt",
@@ -9498,6 +9533,13 @@
     "lat": 40.731984000063,
     "lng": -74.070707035284,
     "score": 100
+  },
+  "van wagenen ave. & 100 skyway": {
+    "addr_type": "StreetName",
+    "cached_at": "2026-04-17",
+    "lat": 40.730972995856,
+    "lng": -74.071334504556,
+    "score": 90.74
   },
   "van winkle ave & liberty ave": {
     "addr_type": "StreetInt",
