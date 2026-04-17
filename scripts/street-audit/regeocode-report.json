@@ -1,0 +1,825 @@
+{
+  "snapped": [
+    {
+      "id": "mva-26-042059",
+      "address": "US 1&9 & COMMUNIPAW AVE",
+      "old_lat": 40.70868,
+      "old_lng": -74.059378,
+      "old_district": "East",
+      "new_lat": 40.7244409,
+      "new_lng": -74.090854,
+      "new_district": "West",
+      "intersections_found": 3,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-037439",
+      "address": "US 1&9 & ROUTE 440",
+      "old_lat": 40.69978,
+      "old_lng": -74.104161,
+      "old_district": "South",
+      "new_lat": 40.7245653,
+      "new_lng": -74.0895149,
+      "new_district": "West",
+      "intersections_found": 3,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-021588",
+      "address": "JERSEY CITY BLVD & WILSON STREET",
+      "old_lat": 40.72816,
+      "old_lng": -74.07764,
+      "old_district": "West",
+      "new_lat": 40.7078282,
+      "new_lng": -74.0584336,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-038709",
+      "address": "WESTSIDE AVE & FULTON AVE",
+      "old_lat": 40.72769,
+      "old_lng": -74.07593,
+      "old_district": "West",
+      "new_lat": 40.7098009,
+      "new_lng": -74.094698,
+      "new_district": "South",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-ms-0094",
+      "address": "2 UPPER 139 & MONMOUTH ST, JERSEY CITY, NJ",
+      "old_lat": 40.715934,
+      "old_lng": -74.052554,
+      "old_district": "East",
+      "new_lat": 40.73090550280878,
+      "new_lng": -74.04797907829092,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-046807",
+      "address": "US 1&9 & DUNCAN AVE",
+      "old_lat": 40.72523,
+      "old_lng": -74.073433,
+      "old_district": "West",
+      "new_lat": 40.7305367,
+      "new_lng": -74.0852304,
+      "new_district": "West",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-048490",
+      "address": "US 1&9 & DUNCAN AVE",
+      "old_lat": 40.72523,
+      "old_lng": -74.073433,
+      "old_district": "West",
+      "new_lat": 40.7305367,
+      "new_lng": -74.0852304,
+      "new_district": "West",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-019047",
+      "address": "2ND ST & PROVOST ST",
+      "old_lat": 40.723554110491,
+      "old_lng": -74.052538547689,
+      "old_district": "East",
+      "new_lat": 40.7220975,
+      "new_lng": -74.0392271,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-022372",
+      "address": "US 1&9 & ST HWY 440",
+      "old_lat": 40.735626,
+      "old_lng": -74.089305,
+      "old_district": "West",
+      "new_lat": 40.725464,
+      "new_lng": -74.0887576,
+      "new_district": "West",
+      "intersections_found": 3,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-024047",
+      "address": "ROUTE 1&9 & ROUTE 440",
+      "old_lat": 40.735626,
+      "old_lng": -74.089305,
+      "old_district": "West",
+      "new_lat": 40.725464,
+      "new_lng": -74.0887576,
+      "new_district": "West",
+      "intersections_found": 3,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-019773",
+      "address": "2 UPPER 139 & PALISADE AVENUE",
+      "old_lat": 40.738811395475,
+      "old_lng": -74.061626919574,
+      "old_district": "North",
+      "new_lat": 40.73185180214167,
+      "new_lng": -74.05271509715571,
+      "new_district": "North",
+      "intersections_found": 2,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-009537",
+      "address": "6TH ST & MARIN BLVD",
+      "old_lat": 40.726078006311,
+      "old_lng": -74.052209474171,
+      "old_district": "East",
+      "new_lat": 40.7250671,
+      "new_lng": -74.040436,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-012343",
+      "address": "6TH STREET & MARIN BLVD",
+      "old_lat": 40.726078006311,
+      "old_lng": -74.052209474171,
+      "old_district": "East",
+      "new_lat": 40.7250671,
+      "new_lng": -74.040436,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-016124",
+      "address": "6TH ST & MARIN BLVD",
+      "old_lat": 40.726078006311,
+      "old_lng": -74.052209474171,
+      "old_district": "East",
+      "new_lat": 40.7250671,
+      "new_lng": -74.040436,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-ms-0015",
+      "address": "100 SKYWAY & TONNELLE AVENUE, JERSEY CITY, NJ",
+      "old_lat": 40.730399,
+      "old_lng": -74.067062,
+      "old_district": "West",
+      "new_lat": 40.73922121475285,
+      "new_lng": -74.0657619598016,
+      "new_district": "North",
+      "intersections_found": 2,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-007853",
+      "address": "6TH STREET & MANILA AVE",
+      "old_lat": 40.726078006311,
+      "old_lng": -74.052209474171,
+      "old_district": "East",
+      "new_lat": 40.7252139,
+      "new_lng": -74.0420876,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-020494",
+      "address": "6TH ST & MANILA AVE.",
+      "old_lat": 40.726078006311,
+      "old_lng": -74.052209474171,
+      "old_district": "East",
+      "new_lat": 40.7252139,
+      "new_lng": -74.0420876,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-039820",
+      "address": "ST HWY 440 & DANFORTH AVENUE",
+      "old_lat": 40.71264409959,
+      "old_lng": -74.097677904227,
+      "old_district": "South",
+      "new_lat": 40.7063205,
+      "new_lng": -74.0997902,
+      "new_district": "South",
+      "intersections_found": 4,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-041228",
+      "address": "ST HWY 440 & DANFORTH AVE",
+      "old_lat": 40.71264409959,
+      "old_lng": -74.097677904227,
+      "old_district": "South",
+      "new_lat": 40.7063205,
+      "new_lng": -74.0997902,
+      "new_district": "South",
+      "intersections_found": 4,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-v2-0122",
+      "address": "DANFORTH AVE & NJ-440, JERSEY CITY, NJ",
+      "old_lat": 40.712644,
+      "old_lng": -74.097678,
+      "old_district": "South",
+      "new_lat": 40.7063205,
+      "new_lng": -74.0997902,
+      "new_district": "South",
+      "intersections_found": 4,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-v2-0127",
+      "address": "ST HWY 440 & DANFORTH AVE & DANFORTH AVENUE, JERSEY CITY, NJ",
+      "old_lat": 40.712644,
+      "old_lng": -74.097678,
+      "old_district": "South",
+      "new_lat": 40.7063205,
+      "new_lng": -74.0997902,
+      "new_district": "South",
+      "intersections_found": 4,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-021729",
+      "address": "& DANFORTH AVE & ST HWY 440",
+      "old_lat": 40.71264409959,
+      "old_lng": -74.097677904227,
+      "old_district": "South",
+      "new_lat": 40.7063205,
+      "new_lng": -74.0997902,
+      "new_district": "South",
+      "intersections_found": 4,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-006391",
+      "address": "10TH ST & MARIN BLVD",
+      "old_lat": 40.729400907051,
+      "old_lng": -74.048263483703,
+      "old_district": "East",
+      "new_lat": 40.728665,
+      "new_lng": -74.039861,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-003758",
+      "address": "PAVONIA AVE & SUMMIT AVE",
+      "old_lat": 40.72157,
+      "old_lng": -74.047455,
+      "old_district": "East",
+      "new_lat": 40.7325522,
+      "new_lng": -74.0595376,
+      "new_district": "North",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-022168",
+      "address": "12TH STREET & MARIN BOULEVARD",
+      "old_lat": 40.730550987986,
+      "old_lng": -74.046303501374,
+      "old_district": "East",
+      "new_lat": 40.7300299,
+      "new_lng": -74.0396677,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-036390",
+      "address": "12TH ST & MARIN BLVD",
+      "old_lat": 40.730550987986,
+      "old_lng": -74.046303501374,
+      "old_district": "East",
+      "new_lat": 40.7300299,
+      "new_lng": -74.0396677,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-038622",
+      "address": "PORT JERSEY BLVD & CHOSIN FEW WAY",
+      "old_lat": 40.684561790286,
+      "old_lng": -74.097722370223,
+      "old_district": "South",
+      "new_lat": 40.6793971,
+      "new_lng": -74.0948101,
+      "new_district": "South",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-018956",
+      "address": "14TH STREET & MARIN BLVD",
+      "old_lat": 40.732853496788,
+      "old_lng": -74.046712999254,
+      "old_district": "East",
+      "new_lat": 40.7316494,
+      "new_lng": -74.0394231,
+      "new_district": "East",
+      "intersections_found": 2,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-016235",
+      "address": "18TH ST & MARIN BLVD.",
+      "old_lat": 40.734909996733,
+      "old_lng": -74.045453995487,
+      "old_district": "East",
+      "new_lat": 40.7342564,
+      "new_lng": -74.0390217,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-035789",
+      "address": "18TH ST & MARIN BLVD",
+      "old_lat": 40.734909996733,
+      "old_lng": -74.045453995487,
+      "old_district": "East",
+      "new_lat": 40.7342564,
+      "new_lng": -74.0390217,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-011659",
+      "address": "NORTH GARAGE DRIVEWAY & WASHINGTON BLVD",
+      "old_lat": 40.723769399675,
+      "old_lng": -74.036156453209,
+      "old_district": "East",
+      "new_lat": 40.7282756,
+      "new_lng": -74.0347022,
+      "new_district": "East",
+      "intersections_found": 2,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-000300",
+      "address": "646 TONNELE AVE & NORTH ST",
+      "old_lat": 40.752468239866,
+      "old_lng": -74.057504531954,
+      "old_district": "North",
+      "new_lat": 40.7562784,
+      "new_lng": -74.0547289,
+      "new_district": "North",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-014590",
+      "address": "US 1&9 & BROADWAY",
+      "old_lat": 40.734208599075,
+      "old_lng": -74.081511727572,
+      "old_district": "West",
+      "new_lat": 40.7374493,
+      "new_lng": -74.078025,
+      "new_district": "West",
+      "intersections_found": 18,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-029230",
+      "address": "575 ST HWY 440 & ST HWY 440",
+      "old_lat": 40.716571314594,
+      "old_lng": -74.10141212591,
+      "old_district": "South",
+      "new_lat": 40.7145475,
+      "new_lng": -74.0967268,
+      "new_district": "South",
+      "intersections_found": 530,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-000463",
+      "address": "100 LOWER 139 & TONNELLE AVE",
+      "old_lat": 40.731616154029,
+      "old_lng": -74.039504328083,
+      "old_district": "East",
+      "new_lat": 40.739233636795994,
+      "new_lng": -74.06502639392991,
+      "new_district": "North",
+      "intersections_found": 2,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-008259",
+      "address": "100 LOWER 139 & TONNELLE AVE",
+      "old_lat": 40.731616154029,
+      "old_lng": -74.039504328083,
+      "old_district": "East",
+      "new_lat": 40.739233636795994,
+      "new_lng": -74.06502639392991,
+      "new_district": "North",
+      "intersections_found": 2,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-008298",
+      "address": "100 LOWER 139 & TONNELLE AVE",
+      "old_lat": 40.731616154029,
+      "old_lng": -74.039504328083,
+      "old_district": "East",
+      "new_lat": 40.739233636795994,
+      "new_lng": -74.06502639392991,
+      "new_district": "North",
+      "intersections_found": 2,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-001513",
+      "address": "100 LOWER 139 & JERSEY AVE",
+      "old_lat": 40.731616154029,
+      "old_lng": -74.039504328083,
+      "old_district": "East",
+      "new_lat": 40.7304767,
+      "new_lng": -74.0446217,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-017790",
+      "address": "100 LOWER 139 & JERSEY AVENUE",
+      "old_lat": 40.731616154029,
+      "old_lng": -74.039504328083,
+      "old_district": "East",
+      "new_lat": 40.7304767,
+      "new_lng": -74.0446217,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-021845",
+      "address": "100 LOWER 139 & JERSEY AVENUE",
+      "old_lat": 40.731616154029,
+      "old_lng": -74.039504328083,
+      "old_district": "East",
+      "new_lat": 40.7304767,
+      "new_lng": -74.0446217,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-003910",
+      "address": "14TH ST & MANILA AVE",
+      "old_lat": 40.732853496788,
+      "old_lng": -74.046712999254,
+      "old_district": "East",
+      "new_lat": 40.7316981,
+      "new_lng": -74.0410992,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-016837",
+      "address": "18TH ST & GROVE ST",
+      "old_lat": 40.734909996733,
+      "old_lng": -74.045453995487,
+      "old_district": "East",
+      "new_lat": 40.7344837,
+      "new_lng": -74.0406741,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-039950",
+      "address": "LOWER 139 & TONNELLE AVE",
+      "old_lat": 40.735625,
+      "old_lng": -74.066906,
+      "old_district": "North",
+      "new_lat": 40.73922121475285,
+      "new_lng": -74.0657619598016,
+      "new_district": "North",
+      "intersections_found": 2,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-040237",
+      "address": "LOWER 139 & TONNELLE AVE",
+      "old_lat": 40.735625,
+      "old_lng": -74.066906,
+      "old_district": "North",
+      "new_lat": 40.73922121475285,
+      "new_lng": -74.0657619598016,
+      "new_district": "North",
+      "intersections_found": 2,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-000929",
+      "address": "KENNEDY BLVD & MONTGOMERY ST",
+      "old_lat": 40.72157,
+      "old_lng": -74.047455,
+      "old_district": "East",
+      "new_lat": 40.726618,
+      "new_lng": -74.071325,
+      "new_district": "West",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-020963",
+      "address": "213 PACIFIC AVE & COMMUNIPAW AVE",
+      "old_lat": 40.709535209792,
+      "old_lng": -74.065756347992,
+      "old_district": "East",
+      "new_lat": 40.7114489,
+      "new_lng": -74.0626358,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    },
+    {
+      "id": "mva-26-042362",
+      "address": "US 1&9 & WALLIS AVE",
+      "old_lat": 40.734334,
+      "old_lng": -74.07605,
+      "old_district": "West",
+      "new_lat": 40.737011300000006,
+      "new_lng": -74.07484095000001,
+      "new_district": "West",
+      "intersections_found": 2,
+      "fallback_used": true
+    },
+    {
+      "id": "mva-26-013608",
+      "address": "14TH ST & ERIE ST",
+      "old_lat": 40.732853496788,
+      "old_lng": -74.046712999254,
+      "old_district": "East",
+      "new_lat": 40.731849,
+      "new_lng": -74.0427543,
+      "new_district": "East",
+      "intersections_found": 1,
+      "fallback_used": false
+    }
+  ],
+  "removed_no_intersection": [
+    {
+      "id": "mva-ms-0095",
+      "address": "TONNELE AVE & COUNTY AVE, JERSEY CITY, NJ",
+      "streets": [
+        "TONNELLE AVENUE",
+        "COUNTY AVENUE"
+      ]
+    },
+    {
+      "id": "mva-ms-0048",
+      "address": "700 GROVE ST & NEWARK STREET, JERSEY CITY, NJ",
+      "reason": "new_point_outside_all_districts"
+    },
+    {
+      "id": "mva-26-006557",
+      "address": "BAYVIEW AVE & BURMA RD",
+      "streets": [
+        "BAYVIEW AVENUE",
+        "BURMA ROAD"
+      ]
+    },
+    {
+      "id": "mva-26-020457",
+      "address": "WAYNE ST & 4TH ST",
+      "streets": [
+        "WAYNE STREET",
+        "4TH STREET"
+      ]
+    },
+    {
+      "id": "mva-26-015562",
+      "address": "100 SKYWAY & VAN WAGENEN AVE.",
+      "streets": [
+        "PULASKI SKYWAY",
+        "VAN WAGENEN AVENUE"
+      ]
+    },
+    {
+      "id": "mva-26-063096",
+      "address": "State Route 440 & Duncan Ave, Jersey City, New Jersey, 07304",
+      "streets": [
+        "NEW JERSEY 440",
+        "DUNCAN AVENUE"
+      ]
+    },
+    {
+      "id": "mva-ms-0017",
+      "address": "WASHINGTON ST. & TOWN SQUARE PL., JERSEY CITY, NJ",
+      "streets": [
+        "WASHINGTON STREET",
+        "TOWN SQUARE PLACE"
+      ]
+    },
+    {
+      "id": "mva-26-019744",
+      "address": "12TH STREET & PALISADE AVE",
+      "reason": "new_point_outside_all_districts"
+    },
+    {
+      "id": "mva-26-025648",
+      "address": "CORBIN AVE & WEST SIDE AVENUE",
+      "streets": [
+        "CORBIN AVENUE",
+        "WEST SIDE AVENUE"
+      ]
+    },
+    {
+      "id": "mva-26-039546",
+      "address": "SUMMIT AVE & SECAUCUS RD",
+      "streets": [
+        "SUMMIT AVENUE",
+        "SECAUCUS ROAD"
+      ]
+    },
+    {
+      "id": "mva-26-010628",
+      "address": "CAVEN POINT RD & LINDEN AVENUE",
+      "streets": [
+        "CAVEN POINT ROAD",
+        "LINDEN AVENUE"
+      ]
+    },
+    {
+      "id": "mva-v2-0102",
+      "address": "100 PULASKI ST & VAN WAGENEN AVE, JERSEY CITY, NJ",
+      "streets": [
+        "PULASKI STREET",
+        "VAN WAGENEN AVENUE"
+      ]
+    },
+    {
+      "id": "mva-ms-0068",
+      "address": "ROUTE 139 & VAN WAGENEN AVE, JERSEY CITY, NJ",
+      "streets": [
+        "NEW JERSEY 139",
+        "VAN WAGENEN AVENUE"
+      ]
+    },
+    {
+      "id": "mva-26-062212",
+      "address": "Saint Pauls Ave & Van Wagenen Ave, Jersey City, New Jersey, 07306",
+      "streets": [
+        "SAINT PAULS AVENUE",
+        "VAN WAGENEN AVENUE"
+      ]
+    },
+    {
+      "id": "mva-26-008705",
+      "address": "SAINT PAULS AVE & VAN WAGENEN AVE",
+      "streets": [
+        "SAINT PAULS AVENUE",
+        "VAN WAGENEN AVENUE"
+      ]
+    },
+    {
+      "id": "mva-26-015888",
+      "address": "ST PAULS AVE & VAN WAGENEN AVE",
+      "streets": [
+        "SAINT PAULS AVENUE",
+        "VAN WAGENEN AVENUE"
+      ]
+    }
+  ],
+  "removed_unknown_street": [
+    {
+      "id": "mva-26-003398",
+      "address": "1&9 TONNELE AVE & CARLTON AVENUE",
+      "missing_streets": [
+        "US ROUTE 1 9 TONNELE AVENUE"
+      ]
+    },
+    {
+      "id": "mva-v2-0054",
+      "address": "SKYWAY & KEARNY EXIT RAMP, JERSEY CITY, NJ",
+      "missing_streets": [
+        "KEARNY EXIT RAMP"
+      ]
+    },
+    {
+      "id": "mva-v2-0055",
+      "address": "100 SKYWAY & MILE MARK 53.6, JERSEY CITY, NJ",
+      "missing_streets": [
+        "MILE MARK 536"
+      ]
+    },
+    {
+      "id": "mva-26-019484",
+      "address": "100 SKYWAY & RAMP TO US-1 S/US-9 S",
+      "missing_streets": [
+        "RAMP TO US 1 S US 9 S"
+      ]
+    },
+    {
+      "id": "mva-26-021968",
+      "address": "100 SKYWAY & TONNELLE RAMP",
+      "missing_streets": [
+        "TONNELLE RAMP"
+      ]
+    },
+    {
+      "id": "mva-26-022248",
+      "address": "100 SKYWAY & TONNELLE RAMP",
+      "missing_streets": [
+        "TONNELLE RAMP"
+      ]
+    },
+    {
+      "id": "mva-26-030852",
+      "address": "100 SKYWAY & TONNELLE CIRCLE",
+      "missing_streets": [
+        "TONNELLE CIRCLE"
+      ]
+    },
+    {
+      "id": "mva-v2-0013",
+      "address": "TONNELE AVE & TONNELE AVENUE ENTRANCE RAMP, JERSEY CITY, NJ",
+      "missing_streets": [
+        "TONNELE AVENUE ENTRANCE RAMP"
+      ]
+    },
+    {
+      "id": "mva-26-037972",
+      "address": "1&9 SOUTH & BROADWAY",
+      "missing_streets": [
+        "US ROUTE 1 9 SOUTH"
+      ]
+    },
+    {
+      "id": "mva-26-039231",
+      "address": "DANFORTH AVE & STATE HWY RT 440",
+      "missing_streets": [
+        "STATE HIGHWAY ROUTE 440"
+      ]
+    },
+    {
+      "id": "mva-26-006980",
+      "address": "COUNTY RD. & POSTAL SVC. RD.",
+      "missing_streets": [
+        "POSTAL SVC ROAD"
+      ]
+    },
+    {
+      "id": "mva-26-039441",
+      "address": "ST HWY 440 & PARKING LOT",
+      "missing_streets": [
+        "PARKING LOT"
+      ]
+    },
+    {
+      "id": "mva-26-008972",
+      "address": "1&9 TONNELLE AVENUE & NEWARK AVE",
+      "missing_streets": [
+        "US ROUTE 1 9 TONNELLE AVENUE"
+      ]
+    },
+    {
+      "id": "mva-ms-0072",
+      "address": "100 SKYWAY & BROADWAY EXIT, JERSEY CITY, NJ",
+      "missing_streets": [
+        "BROADWAY EXIT"
+      ]
+    },
+    {
+      "id": "mva-v2-0026",
+      "address": "276 VAN WAGENEN AVE & RT. 139 EAST RAMP, JERSEY CITY, NJ",
+      "missing_streets": [
+        "ROUTE 139 EAST RAMP"
+      ]
+    },
+    {
+      "id": "mva-26-004185",
+      "address": "13 LINDEN AVE E & GARFIELD AVE",
+      "missing_streets": [
+        "LINDEN AVENUE E"
+      ]
+    },
+    {
+      "id": "mva-26-035844",
+      "address": "164 14TH ST (PARKING LOT) & MARIN BLVD",
+      "missing_streets": [
+        "164 14TH STREET (PARKING LOT)"
+      ]
+    }
+  ]
+}
