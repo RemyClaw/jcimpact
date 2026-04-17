@@ -177,7 +177,7 @@ export default function TimelineStrip({ incidents, activePeriod, onSelect, year 
         })}
 
         {/* Disclaimer */}
-        <span className="flex-shrink-0" style={{ fontSize: '11px', color: '#FFFFFF', whiteSpace: 'nowrap', alignSelf: 'center', marginLeft: '4px' }}>
+        <span className="flex-shrink-0" style={{ fontSize: '13px', fontWeight: 500, color: '#FFFFFF', whiteSpace: 'nowrap', alignSelf: 'center', marginLeft: '6px', letterSpacing: '0.01em' }}>
           All figures are preliminary and subject to further analysis and revision.
         </span>
       </div>

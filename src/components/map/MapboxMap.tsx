@@ -28,6 +28,9 @@ const MAP_STYLE = 'mapbox://styles/mapbox/standard';
 const SOURCE_ID = 'incidents';
 const HOTZONE_SOURCE_ID = 'hotspot-zones';
 const HOTZONE_LAYER_ID = 'hotspot-zones-glow';
+const STACK_SOURCE_ID = 'incident-stacks';
+const STACK_BG_LAYER_ID = 'stack-badge-bg';
+const STACK_LABEL_LAYER_ID = 'stack-badge-label';
 
 const DISTRICT_LAYERS = ['districts-fill', 'districts-border', 'district-labels', 'district-selected-outline'] as const;
 const WARD_LAYERS    = ['wards-fill', 'wards-border', 'ward-labels', 'ward-selected-outline'] as const;
@@ -264,6 +267,54 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
         },
       });
 
+      // ── Multi-incident count badge ───────────────────────────────────
+      // One feature per co-located stack (count >= 2). Renders a small
+      // "3"-style badge to the upper-right of the dot so first-time visitors
+      // can see there are multiple incidents at that location without clicking.
+      map.addSource(STACK_SOURCE_ID, {
+        type: 'geojson',
+        data: { type: 'FeatureCollection', features: [] },
+      });
+      map.addLayer({
+        id: STACK_BG_LAYER_ID,
+        type: 'circle',
+        source: STACK_SOURCE_ID,
+        slot: 'top',
+        paint: {
+          'circle-radius': ['get', 'radius'],
+          'circle-color': '#0F172A',
+          'circle-stroke-width': 1.25,
+          'circle-stroke-color': '#ffffff',
+          'circle-translate': [9, -9],
+          'circle-translate-anchor': 'viewport',
+          'circle-pitch-alignment': 'viewport',
+          'circle-emissive-strength': 1,
+        },
+      });
+      map.addLayer({
+        id: STACK_LABEL_LAYER_ID,
+        type: 'symbol',
+        source: STACK_SOURCE_ID,
+        slot: 'top',
+        layout: {
+          'text-field': ['get', 'label'],
+          'text-font': ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+          'text-size': ['get', 'textSize'],
+          'text-allow-overlap': true,
+          'text-ignore-placement': true,
+          'text-pitch-alignment': 'viewport',
+          'text-rotation-alignment': 'viewport',
+        },
+        paint: {
+          'text-color': '#ffffff',
+          'text-halo-color': '#0F172A',
+          'text-halo-width': 0.5,
+          'text-translate': [9, -9],
+          'text-translate-anchor': 'viewport',
+          'text-emissive-strength': 1,
+        },
+      });
+
       // ── Cursors ──────────────────────────────────────────────────────
       (['unclustered-point', 'wards-fill', 'districts-fill'] as const).forEach(id => {
         map.on('mouseenter', id, () => { map.getCanvas().style.cursor = 'pointer'; });
@@ -435,6 +486,56 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
     if (map.getLayer('unclustered-point')) {
       map.setFilter('unclustered-point', buildTypeFilter(showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck) as mapboxgl.FilterSpecification);
     }
+
+    // ── Recompute co-location counts from currently-visible incidents ──
+    // Round to 4 decimal places (~11m grid) so records at the same
+    // intersection bucket together even when geocoding gives them different
+    // float precisions (e.g. 40.745505015713 vs 40.745505016).
+    const visibleTypes = new Set<string>();
+    if (showShotsFired)       visibleTypes.add('Shots Fired');
+    if (showShootingHit)      visibleTypes.add('Shooting Hit');
+    if (showMVA)              visibleTypes.add('MVA');
+    if (showTheft)            visibleTypes.add('Theft');
+    if (showStolenVehicle)    visibleTypes.add('Stolen Vehicle');
+    if (showTrafficStop)      visibleTypes.add('Traffic Stop');
+    if (showPedestrianStruck) visibleTypes.add('Pedestrian Struck');
+
+    const stackBuckets = new Map<string, { lng: number; lat: number; count: number }>();
+    for (const inc of incidents) {
+      if (!visibleTypes.has(inc.type)) continue;
+      if (typeof inc.lat !== 'number' || typeof inc.lng !== 'number') continue;
+      const kLng = Math.round(inc.lng * 10000) / 10000;
+      const kLat = Math.round(inc.lat * 10000) / 10000;
+      const key = `${kLng}:${kLat}`;
+      const existing = stackBuckets.get(key);
+      // Use the first observed exact coords as the feature point so the badge
+      // sits on the same dot the popup anchors to.
+      if (existing) existing.count += 1;
+      else stackBuckets.set(key, { lng: inc.lng, lat: inc.lat, count: 1 });
+    }
+
+    const stackFeatures: GeoJSON.Feature[] = [];
+    for (const b of Array.from(stackBuckets.values())) {
+      if (b.count < 2) continue;
+      // Precompute badge radius + text size per-feature so the layers don't
+      // depend on Mapbox expressions evaluating data-driven step functions.
+      // Sized to feel like a superscript (2²) on top of the dot.
+      const digits = String(b.count).length;
+      const radius = digits >= 3 ? 10 : digits === 2 ? 8.5 : 7;
+      const textSize = digits >= 3 ? 9 : 10;
+      stackFeatures.push({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [b.lng, b.lat] },
+        properties: {
+          count: b.count,
+          label: String(b.count),
+          radius,
+          textSize,
+        },
+      });
+    }
+    const stackSource = map.getSource(STACK_SOURCE_ID) as mapboxgl.GeoJSONSource | undefined;
+    if (stackSource) stackSource.setData({ type: 'FeatureCollection', features: stackFeatures });
 
   }, [incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, mapReady]);
 
