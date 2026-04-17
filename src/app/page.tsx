@@ -7,6 +7,7 @@ import { useFilteredIncidents } from '@/hooks/useFilteredIncidents';
 import FilterPanel from '@/components/filters/FilterPanel';
 import StatCardsRow from '@/components/stats/StatCardsRow';
 import MapWrapper from '@/components/map/MapWrapper';
+import MapSearchBox, { type SearchTarget } from '@/components/map/MapSearchBox';
 import TimelineStrip, { filterByPeriod, type TimePeriod } from '@/components/filters/TimelineStrip';
 import type { Incident } from '@/types';
 
@@ -38,6 +39,7 @@ export default function DashboardPage() {
   const [openReport, setOpenReport]         = useState<{ name: string; file: string } | null>(null);
   const [reportLoading, setReportLoading]   = useState(false);
   const [reportsOpen, setReportsOpen]       = useState(false);
+  const [searchTarget, setSearchTarget]     = useState<SearchTarget | null>(null);
 
   // Reset loading state whenever a new report is opened
   useEffect(() => {
@@ -372,6 +374,7 @@ export default function DashboardPage() {
                     district: prev.district === district ? 'All' : (district ?? 'All') as FilterState['district'],
                   }));
                 }}
+                flyToTarget={searchTarget}
               />
               <button
                 onClick={() => setMapFullscreen(true)}
@@ -386,6 +389,11 @@ export default function DashboardPage() {
                   <line x1="3" y1="21" x2="10" y2="14" />
                 </svg>
               </button>
+              <MapSearchBox
+                onSelect={setSearchTarget}
+                onClear={() => setSearchTarget(null)}
+                style={{ position: 'absolute', top: 8, left: 48, zIndex: 10, width: 260 }}
+              />
             </div>
           </div>
         </div>
@@ -512,6 +520,7 @@ export default function DashboardPage() {
                     district: prev.district === district ? 'All' : (district ?? 'All') as FilterState['district'],
                   }));
                 }}
+                flyToTarget={searchTarget}
               />
               <button
                 onClick={() => setMapFullscreen(false)}
@@ -524,6 +533,11 @@ export default function DashboardPage() {
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </button>
+              <MapSearchBox
+                onSelect={setSearchTarget}
+                onClear={() => setSearchTarget(null)}
+                style={{ position: 'absolute', top: 12, left: 56, zIndex: 10, width: 300 }}
+              />
             </div>
           </div>
         </div>

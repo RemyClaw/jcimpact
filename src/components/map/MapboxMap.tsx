@@ -19,6 +19,8 @@ interface MapboxMapProps {
   showPedestrianStruck: boolean;
   selectedDistrict?: string | null;
   onDistrictClick?: (district: string | null) => void;
+  /** When set, the map flies to this location and drops a gold marker. */
+  flyToTarget?: { lng: number; lat: number; label: string } | null;
 }
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
@@ -35,12 +37,14 @@ const STACK_LABEL_LAYER_ID = 'stack-badge-label';
 const DISTRICT_LAYERS = ['districts-fill', 'districts-border', 'district-labels', 'district-selected-outline'] as const;
 const WARD_LAYERS    = ['wards-fill', 'wards-border', 'ward-labels', 'ward-selected-outline'] as const;
 
-export default function MapboxMap({ incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, selectedDistrict, onDistrictClick }: MapboxMapProps) {
-  const containerRef  = useRef<HTMLDivElement>(null);
-  const mapRef        = useRef<mapboxgl.Map | null>(null);
-  const popupRef      = useRef<mapboxgl.Popup | null>(null);
-  const initializedRef = useRef(false);
-  const mapLoadedRef  = useRef(false);
+export default function MapboxMap({ incidents, showMVA, showShotsFired, showShootingHit, showTheft, showStolenVehicle, showTrafficStop, showPedestrianStruck, selectedDistrict, onDistrictClick, flyToTarget }: MapboxMapProps) {
+  const containerRef    = useRef<HTMLDivElement>(null);
+  const mapRef          = useRef<mapboxgl.Map | null>(null);
+  const popupRef        = useRef<mapboxgl.Popup | null>(null);
+  const initializedRef  = useRef(false);
+  const mapLoadedRef    = useRef(false);
+  const searchMarkerRef = useRef<mapboxgl.Marker | null>(null);
+  const searchPopupRef  = useRef<mapboxgl.Popup | null>(null);
 
   const [showDistricts, setShowDistricts] = useState(true);
   const [showWards,     setShowWards]     = useState(false);
@@ -661,6 +665,57 @@ export default function MapboxMap({ incidents, showMVA, showShotsFired, showShoo
       map.setFilter('district-selected-outline', filter as mapboxgl.FilterSpecification);
     }
   }, [selectedDistrict, mapReady]);
+
+  // ── Search: fly to target + drop a gold pin ──────────────────────────
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapReady) return;
+
+    // Always clean up previous marker + popup first
+    if (searchMarkerRef.current) { searchMarkerRef.current.remove(); searchMarkerRef.current = null; }
+    if (searchPopupRef.current)  { searchPopupRef.current.remove();  searchPopupRef.current  = null; }
+
+    if (!flyToTarget) return;
+
+    // Gold pin element, same visual language as the hotspot badges
+    const el = document.createElement('div');
+    el.className = 'jc-search-marker';
+    el.style.cssText = [
+      'width:18px','height:18px','border-radius:50%','background:#c8a96b',
+      'border:3px solid #ffffff','cursor:pointer',
+      'box-shadow:0 0 14px rgba(200,169,107,0.9), 0 2px 6px rgba(0,0,0,0.55)',
+    ].join(';');
+    el.setAttribute('aria-label', `Searched location: ${flyToTarget.label}`);
+
+    const esc = (s: string) => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    const popup = new mapboxgl.Popup({ offset: 18, closeButton: true, maxWidth: '260px' }).setHTML(`
+      <div style="line-height:1.5;padding:2px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <span style="width:10px;height:10px;border-radius:50%;background:#c8a96b;box-shadow:0 0 6px #c8a96b;flex-shrink:0"></span>
+          <span style="font-weight:700;font-size:13px;color:#fff">Searched location</span>
+        </div>
+        <div style="font-size:12px;color:#E5E7EB">${esc(flyToTarget.label)}</div>
+      </div>
+    `);
+
+    searchMarkerRef.current = new mapboxgl.Marker({ element: el, anchor: 'center' })
+      .setLngLat([flyToTarget.lng, flyToTarget.lat])
+      .setPopup(popup)
+      .addTo(map);
+    searchPopupRef.current = popup;
+
+    map.flyTo({
+      center: [flyToTarget.lng, flyToTarget.lat],
+      zoom: Math.max(map.getZoom(), 15.5),
+      duration: 1200,
+      essential: true,
+    });
+
+    return () => {
+      if (searchMarkerRef.current) { searchMarkerRef.current.remove(); searchMarkerRef.current = null; }
+      if (searchPopupRef.current)  { searchPopupRef.current.remove();  searchPopupRef.current  = null; }
+    };
+  }, [flyToTarget, mapReady]);
 
   // ── Toggle district layer visibility ──────────────────────────────────
   useEffect(() => {

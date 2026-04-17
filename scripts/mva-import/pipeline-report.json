@@ -1,0 +1,10 @@
+{
+  "parsed_records": 1030,
+  "unique_addresses": 884,
+  "cache_hits": 48,
+  "api_calls": 836,
+  "geocode_failures": [],
+  "incidents_added": 1017,
+  "incidents_skipped": 0,
+  "unassigned_district": 13
+}

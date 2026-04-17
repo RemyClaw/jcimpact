@@ -26,6 +26,7 @@ interface MapWrapperProps {
   showPedestrianStruck: boolean;
   selectedDistrict?: string | null;
   onDistrictClick?: (district: string | null) => void;
+  flyToTarget?: { lng: number; lat: number; label: string } | null;
 }
 
 export default function MapWrapper(props: MapWrapperProps) {
