@@ -422,6 +422,11 @@
     "lng": -74.074183764902,
     "score": 100
   },
+  "124 mcadoo ave, jersey city, nj": {
+    "cached_at": "2026-04-21",
+    "lat": 40.703786271952,
+    "lng": -74.093850391961
+  },
   "125 BOORAEM AVE, JERSEY CITY, NJ 07307": {
     "lat": 40.740754,
     "lng": -74.051376
@@ -8651,6 +8656,11 @@
     "lat": 40.714804702771,
     "lng": -74.045074421002,
     "score": 99.59
+  },
+  "myrtle ave & clerk st, jersey city, nj 07305": {
+    "cached_at": "2026-04-21",
+    "lat": 40.70596799753,
+    "lng": -74.077223965003
   },
   "myrtle ave & garfield avenue": {
     "addr_type": "StreetInt",
