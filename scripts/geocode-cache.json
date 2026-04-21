@@ -430,6 +430,13 @@
     "lat": 40.734864,
     "lng": -74.070303
   },
+  "125 a 18 st, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.73283174575,
+    "lng": -74.037415624614,
+    "score": 99.5
+  },
   "126 corbin ave, jersey city, nj 07306": {
     "addr_type": "PointAddress",
     "cached_at": "2026-04-21",
@@ -532,6 +539,13 @@
     "cached_at": "2026-04-17",
     "lat": 40.718978094272,
     "lng": -74.071279938366,
+    "score": 100
+  },
+  "133 2nd st, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.721675264985,
+    "lng": -74.038737534563,
     "score": 100
   },
   "133 CONGRESS ST, JERSEY CITY, NJ 07307": {
@@ -1202,6 +1216,13 @@
     "lng": -74.08498242222,
     "score": 100
   },
+  "191 griffith st, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.746428324257,
+    "lng": -74.051116851182,
+    "score": 100
+  },
   "192 ACADEMY ST, APT 5B, JERSEY CITY, NJ 07306": {
     "lat": 40.727566,
     "lng": -74.063064
@@ -1330,6 +1351,13 @@
     "lng": -74.064569638141,
     "score": 100
   },
+  "20 french st, jersey city, nj": {
+    "addr_type": "Locality",
+    "cached_at": "2026-04-21",
+    "lat": 40.72816,
+    "lng": -74.07764,
+    "score": 81.82
+  },
   "20 theodore conrad dr": {
     "addr_type": "PointAddress",
     "cached_at": "2026-04-17",
@@ -1419,6 +1447,13 @@
   "207 ORIENT AVE, JERSEY CITY, NJ 07305": {
     "lat": 40.713041,
     "lng": -74.084941
+  },
+  "207 duncan ave, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.727232927795,
+    "lng": -74.078721475824,
+    "score": 100
   },
   "209 NEW YORK AVE, APT 3, JERSEY CITY, NJ 07307": {
     "lat": 40.743408,
@@ -1563,6 +1598,13 @@
   "223 GROVE STREET, JERSEY CITY, NJ 07302": {
     "lat": 40.716228,
     "lng": -74.04481
+  },
+  "223 danforth ave, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.699060638761,
+    "lng": -74.093888110525,
+    "score": 100
   },
   "224 GRAND ST, JERSEY CITY, NJ 07302": {
     "lat": 40.7162,
@@ -1798,6 +1840,13 @@
   "25 SENATE PL, JERSEY CITY, NJ 07306": {
     "lat": 40.73714,
     "lng": -74.067028
+  },
+  "25 columbus dr, jersey city, nj": {
+    "addr_type": "StreetAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.718079533484,
+    "lng": -74.03816968152,
+    "score": 100
   },
   "250 CLINTON AVE, 2ND FL, JERSEY CITY, NJ 07304": {
     "lat": 40.720091,
@@ -2115,6 +2164,13 @@
     "lng": -74.033600601383,
     "score": 100
   },
+  "2nd st & marin blvd, jersey city, nj": {
+    "addr_type": "StreetInt",
+    "cached_at": "2026-04-21",
+    "lat": 40.72222800959,
+    "lng": -74.040881038662,
+    "score": 100
+  },
   "30 HUDSON ST, JERSEY CITY, NJ 07302": {
     "lat": 40.713087,
     "lng": -74.034091
@@ -2180,9 +2236,23 @@
     "lng": -74.037888447772,
     "score": 100
   },
+  "30 montgomery, jersey city, nj": {
+    "addr_type": "POI",
+    "cached_at": "2026-04-21",
+    "lat": 40.716931,
+    "lng": -74.03529,
+    "score": 100
+  },
   "300 THOMAS MCGOVERN DR, JERSEY CITY, NJ 07305": {
     "lat": 40.702594,
     "lng": -74.061302
+  },
+  "300 coles st, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.734474850229,
+    "lng": -74.045387401267,
+    "score": 100
   },
   "301 broadway, jersey city, nj": {
     "addr_type": "PointAddress",
@@ -2388,6 +2458,13 @@
     "lat": 40.705962,
     "lng": -74.093422
   },
+  "324 stevens ave, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.707409726785,
+    "lng": -74.096149967097,
+    "score": 100
+  },
   "325 grove st, jersey city, nj 07302": {
     "addr_type": "PointAddress",
     "cached_at": "2026-04-21",
@@ -2409,6 +2486,13 @@
   "328 LIBERTY AVE, JERSEY CITY, NJ 07307": {
     "lat": 40.747882,
     "lng": -74.058065
+  },
+  "328 york st, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.718459966927,
+    "lng": -74.049084072024,
+    "score": 100
   },
   "329-331 central avenue": {
     "addr_type": "PointAddress",
@@ -3338,6 +3422,13 @@
     "lat": 40.708266,
     "lng": -74.079795
   },
+  "53 prospect st, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.737953801052,
+    "lng": -74.049890830205,
+    "score": 100
+  },
   "530 MONTGOMERY ST, JERSEY CITY, NJ 07302": {
     "lat": 40.722755,
     "lng": -74.060098
@@ -3496,6 +3587,13 @@
     "lat": 40.731882,
     "lng": -74.039928
   },
+  "597 marin blvd, jersey city, nj": {
+    "addr_type": "StreetAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.731882327439,
+    "lng": -74.039466892997,
+    "score": 100
+  },
   "599 ST HWY 440, JERSEY CITY, NJ 07304": {
     "lat": 40.714965,
     "lng": -74.096301
@@ -3557,6 +3655,13 @@
     "lat": 40.746317683135,
     "lng": -74.052723913478,
     "score": 100
+  },
+  "610 montgomery, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.723542375827,
+    "lng": -74.06265915095,
+    "score": 98.7
   },
   "615 PAVONIA AVE, APT 1703, JERSEY CITY, NJ 07306": {
     "lat": 40.73256,
@@ -3662,6 +3767,13 @@
     "cached_at": "2026-04-17",
     "lat": 40.723281866276,
     "lng": -74.071275831233,
+    "score": 100
+  },
+  "66 waverly st, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.738279186533,
+    "lng": -74.051290608035,
     "score": 100
   },
   "662 OCEAN AVE, APT 1, JERSEY CITY, NJ 07305": {
@@ -3809,6 +3921,13 @@
     "cached_at": "2026-04-17",
     "lat": 40.747723873122,
     "lng": -74.052234577971,
+    "score": 100
+  },
+  "71 oakland ave, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.734840343117,
+    "lng": -74.055560936246,
     "score": 100
   },
   "711 garfield avenue": {
@@ -4203,6 +4322,13 @@
     "lat": 40.70389,
     "lng": -74.094999
   },
+  "84 vroom st, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.727492515336,
+    "lng": -74.065106666677,
+    "score": 100
+  },
   "85 COUNTRY VILLAGE RD, JERSEY CITY, NJ 07305": {
     "lat": 40.698743,
     "lng": -74.104402
@@ -4226,6 +4352,13 @@
   "88 REGENT ST, JERSEY CITY, NJ 07302": {
     "lat": 40.715459,
     "lng": -74.049145
+  },
+  "88 regent st, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.71569129858,
+    "lng": -74.048779892758,
+    "score": 100
   },
   "88 town sq pl": {
     "addr_type": "PointAddress",
@@ -4278,6 +4411,13 @@
     "cached_at": "2026-04-17",
     "lat": 40.689180889488,
     "lng": -74.097561395773,
+    "score": 100
+  },
+  "9 path plaza, jersey city, nj": {
+    "addr_type": "PointAddress",
+    "cached_at": "2026-04-21",
+    "lat": 40.732254693626,
+    "lng": -74.06247474908,
     "score": 100
   },
   "90 sycamore rd, jersey city, nj 07305": {
@@ -8042,6 +8182,13 @@
     "lat": 40.725938007574,
     "lng": -74.041977978331,
     "score": 98.26
+  },
+  "maple st & van horne, jersey city, nj": {
+    "addr_type": "StreetInt",
+    "cached_at": "2026-04-21",
+    "lat": 40.71422999758,
+    "lng": -74.061516026995,
+    "score": 99.76
   },
   "marin blvd": {
     "cached_at": "2026-03-24",
