@@ -3213,6 +3213,11 @@
     "lng": -74.064798967012,
     "score": 100
   },
+  "46 journal sq, jersey city, nj 07306": {
+    "cached_at": "2026-04-21",
+    "lat": 40.731671019798,
+    "lng": -74.064798967012
+  },
   "460 CENTRAL AVE, JERSEY CITY, NJ 07307": {
     "lat": 40.75032,
     "lng": -74.04608
@@ -5664,6 +5669,11 @@
     "lng": -74.056856024105,
     "score": 100
   },
+  "chestnut ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-21",
+    "lat": 40.727344511881,
+    "lng": -74.059450013591
+  },
   "christopher columbus drive. & hudson st.": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
@@ -7502,6 +7512,11 @@
     "cached_at": "2026-03-24",
     "lat": 40.72157,
     "lng": -74.047455
+  },
+  "kennedy blvd & montgomery st, jersey city, nj 07306": {
+    "cached_at": "2026-04-21",
+    "lat": 40.72659099974,
+    "lng": -74.071329978328
   },
   "kennedy blvd & oxford ave, jersey city, nj": {
     "addr_type": "StreetInt",
@@ -11175,6 +11190,11 @@
     "lat": 40.723769399675,
     "lng": -74.036156453209,
     "score": 90.83
+  },
+  "washington st & 14th st, jersey city, nj 07302": {
+    "cached_at": "2026-04-21",
+    "lat": 40.721773794257,
+    "lng": -74.03645505851
   },
   "washington st & columbus dr": {
     "cached_at": "2026-03-24",
