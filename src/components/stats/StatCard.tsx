@@ -26,12 +26,12 @@ export default function StatCard({ label, value, color, critical, trend, index =
       transition={{ duration: 0.35, delay: index * 0.06, ease: 'easeOut' }}
     >
       {/* Label */}
-      <div className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.08em] mb-1" style={{ color: '#FFFFFF' }}>
+      <div className="text-[9px] font-semibold uppercase tracking-[0.1em] mb-1" style={{ color: '#FFFFFF' }}>
         {label}
       </div>
 
       {/* Value — always white */}
-      <div className="text-lg md:text-xl font-bold tabular-nums font-mono leading-none text-white">
+      <div className="text-base font-bold tabular-nums font-mono leading-none text-white">
         <NumberFlow value={value} />
       </div>
 
