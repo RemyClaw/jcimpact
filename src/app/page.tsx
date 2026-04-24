@@ -42,23 +42,25 @@ export default function DashboardPage() {
   const [reportLoading, setReportLoading]   = useState(false);
   const [reportsOpen, setReportsOpen]       = useState(false);
   const [searchTarget, setSearchTarget]     = useState<SearchTarget | null>(null);
+  const [aboutOpen, setAboutOpen]           = useState(false);
 
   // Reset loading state whenever a new report is opened
   useEffect(() => {
     if (openReport) setReportLoading(true);
   }, [openReport]);
 
-  // Escape closes whichever modal is open (report viewer > fullscreen map)
+  // Escape closes whichever modal is open (About > report viewer > fullscreen map)
   useEffect(() => {
-    if (!openReport && !mapFullscreen) return;
+    if (!openReport && !mapFullscreen && !aboutOpen) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'Escape') return;
-      if (openReport) setOpenReport(null);
+      if (aboutOpen)        setAboutOpen(false);
+      else if (openReport)  setOpenReport(null);
       else if (mapFullscreen) setMapFullscreen(false);
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [openReport, mapFullscreen]);
+  }, [openReport, mapFullscreen, aboutOpen]);
 
   const handlePeriodSelect = (period: TimePeriod) => {
     setActivePeriod(period);
@@ -182,6 +184,31 @@ export default function DashboardPage() {
               </div>
             </div>
           </div>
+
+          {/* About button — opens the info modal */}
+          <button
+            onClick={() => setAboutOpen(true)}
+            className="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 transition-colors"
+            style={{
+              border: '1.5px solid #c8a96b',
+              background: 'transparent',
+              color: '#c8a96b',
+              borderRadius: '50%',
+              fontFamily: 'Georgia, serif',
+              fontStyle: 'italic',
+              fontSize: '15px',
+              fontWeight: 700,
+              cursor: 'pointer',
+              flexShrink: 0,
+              lineHeight: 1,
+            }}
+            aria-label="About this dashboard"
+            title="About"
+            onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(200,169,107,0.12)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
+          >
+            i
+          </button>
         </div>
 
         <div className="px-3 pb-1 md:px-4">
@@ -571,6 +598,163 @@ export default function DashboardPage() {
           </div>
         </div>
       )}
+
+      {/* ── About modal ────────────────────────────────────────────── */}
+      {aboutOpen && (
+        <div
+          className="fixed inset-0 z-[150] flex items-center justify-center p-4"
+          style={{ backgroundColor: 'rgba(0,0,0,0.92)' }}
+          onClick={() => setAboutOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="about-title"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              background: '#0a1628',
+              border: '2px solid #c8a96b',
+              borderRadius: '12px',
+              maxWidth: '720px',
+              width: '100%',
+              maxHeight: '85vh',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.6)',
+            }}
+          >
+            {/* Header */}
+            <div
+              className="flex items-center justify-between px-5 py-4 flex-shrink-0"
+              style={{ borderBottom: '1px solid rgba(200,169,107,0.3)' }}
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  style={{
+                    width: 30, height: 30, borderRadius: '50%', overflow: 'hidden',
+                    border: '2px solid #c8a96b', flexShrink: 0,
+                  }}
+                >
+                  <img src="/jcimpact-logo.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <h2
+                  id="about-title"
+                  style={{
+                    fontFamily: 'var(--font-orbitron)',
+                    fontWeight: 900,
+                    fontSize: '15px',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    margin: 0,
+                  }}
+                >
+                  <span style={{ color: '#c8a96b' }}>About</span>{' '}
+                  <span style={{ color: '#FFFFFF' }}>JC IMPACT</span>
+                </h2>
+              </div>
+              <button
+                onClick={() => setAboutOpen(false)}
+                aria-label="Close about"
+                className="p-2 rounded-lg transition-colors hover:bg-white/10"
+                style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c8a96b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Body */}
+            <div
+              className="overflow-y-auto px-5 md:px-6 py-5"
+              style={{ color: '#E5E7EB', fontSize: '14px', lineHeight: 1.6 }}
+            >
+              <AboutSection title="What this dashboard is">
+                JC IMPACT (Integrated Metrics for Public Accountability &amp; Community Trust) publishes public-safety incident
+                data tracked by the Jersey City Police Department&apos;s IMPACT program. The dashboard is updated weekly and
+                reflects incidents reported Monday through Sunday of the prior week.
+              </AboutSection>
+
+              <AboutSection title="Incident categories displayed">
+                The map plots seven IMPACT-tracked categories:
+                <ul style={{ marginTop: '8px', marginLeft: '20px', listStyle: 'disc' }}>
+                  <li>Shots Fired</li>
+                  <li>Shooting Hit</li>
+                  <li>Motor Vehicle Accidents (MVAs)</li>
+                  <li>Pedestrian Struck</li>
+                  <li>Traffic Stops</li>
+                  <li>Theft</li>
+                  <li>Stolen Vehicle</li>
+                </ul>
+                <p style={{ marginTop: '10px' }}>
+                  Data is sourced from JCPD reports and New Jersey Crash Reports. Each incident is geocoded to its street
+                  intersection using the ArcGIS World Geocoder and validated against the OpenStreetMap street network to
+                  correct ambiguous cases.
+                </p>
+              </AboutSection>
+
+              <AboutSection title="What this dashboard is not">
+                This is a subset of public-safety data, not a complete crime report. Categories outside IMPACT&apos;s tracking
+                scope — including domestic violence, burglary, drug offenses, weapons offenses, fraud, and others — are not
+                displayed here. For comprehensive crime statistics, contact the Jersey City Police Department directly.
+              </AboutSection>
+
+              <AboutSection title="Address and privacy">
+                Individual addresses are displayed at <strong style={{ color: '#FFFFFF' }}>block level</strong> (e.g.,
+                &ldquo;700 block of Ocean Ave&rdquo;) to protect the privacy of residents and victims. Intersection-level
+                incidents retain their cross-street labels. No personal identifiers — officer names, victim or suspect names,
+                case numbers, license plates, or vehicle identification numbers — are included in any published record.
+              </AboutSection>
+
+              <AboutSection title="District assignment">
+                Each incident is mapped to one of the four JCPD patrol districts (North, East, South, West) based on where
+                the geocoded point falls within the official JCPD patrol boundaries.
+              </AboutSection>
+
+              <AboutSection title="Data caveats">
+                All figures are preliminary and subject to further analysis and revision. Records with incomplete, ambiguous,
+                or unresolvable addresses are excluded from the map. Numbers shown may shift slightly as incidents are
+                reviewed and reclassified.
+              </AboutSection>
+
+              <div
+                style={{
+                  marginTop: '18px',
+                  paddingTop: '14px',
+                  borderTop: '1px solid rgba(200,169,107,0.15)',
+                  color: '#9CA3AF',
+                  fontSize: '12px',
+                }}
+              >
+                Last updated: <span style={{ color: '#c8a96b', fontWeight: 600 }}>{META_UPDATED}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
+  );
+}
+
+// ── Small helper component for each About section ────────────────────────
+function AboutSection({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section style={{ marginBottom: '18px' }}>
+      <h3
+        style={{
+          color: '#c8a96b',
+          fontSize: '11px',
+          fontWeight: 700,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          marginBottom: '8px',
+        }}
+      >
+        {title}
+      </h3>
+      <div>{children}</div>
+    </section>
   );
 }
