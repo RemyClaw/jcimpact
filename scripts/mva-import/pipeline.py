@@ -412,67 +412,10 @@ def _pretty_address(r: dict) -> str:
     return road
 
 
-def regenerate_stats(data: dict):
-    """Recompute citywide.mvas, byDistrict.*.mvas, and monthlyTrends."""
-    incidents = data['incidents']
-
-    # citywide
-    data['citywide']['mvas'] = sum(1 for i in incidents if i['type'] == 'MVA')
-
-    # byDistrict
-    per_district = defaultdict(int)
-    for i in incidents:
-        if i['type'] == 'MVA':
-            per_district[i['district']] += 1
-    for d in data['byDistrict']:
-        d['mvas'] = per_district.get(d['district'], 0)
-
-    # monthlyTrends — each entry has month + stats
-    months_existing = {m['month'] for m in data['monthlyTrends']}
-    by_month_mvas = defaultdict(int)
-    for i in incidents:
-        if i['type'] == 'MVA':
-            by_month_mvas[i['date'][:7]] += 1
-
-    # Ensure Jan + Feb entries exist (they may not)
-    labels = {
-        '2026-01': "Jan '26",
-        '2026-02': "Feb '26",
-        '2026-03': "Mar '26",
-        '2026-04': "Apr '26",
-    }
-    # Zero-out any existing Jan/Feb/… entries then rebuild from data
-    by_month_all = defaultdict(lambda: {'totalCrimes': 0, 'shootings': 0, 'homicides': 0, 'mvas': 0, 'thefts': 0, 'stolenVehicles': 0})
-    for i in incidents:
-        mkey = i['date'][:7]
-        by_month_all[mkey]['totalCrimes'] += 1
-        t = i['type']
-        if t == 'MVA':              by_month_all[mkey]['mvas'] += 1
-        elif t == 'Theft':          by_month_all[mkey]['thefts'] += 1
-        elif t == 'Stolen Vehicle': by_month_all[mkey]['stolenVehicles'] += 1
-        elif t in ('Shots Fired', 'Shooting Hit'): by_month_all[mkey]['shootings'] += 1
-
-    new_trends = []
-    for mkey in sorted(by_month_all.keys()):
-        stats = by_month_all[mkey]
-        new_trends.append({
-            'month':          mkey,
-            'label':          labels.get(mkey, mkey),
-            'totalCrimes':    stats['totalCrimes'],
-            'shootings':      stats['shootings'],
-            'homicides':      stats['homicides'],
-            'mvas':           stats['mvas'],
-            'thefts':         stats['thefts'],
-            'stolenVehicles': stats['stolenVehicles'],
-        })
-    data['monthlyTrends'] = new_trends
-
-    print('\nRegenerated stats:')
-    print(f'  citywide.mvas = {data["citywide"]["mvas"]}')
-    for d in data['byDistrict']:
-        print(f'  byDistrict.{d["district"]:6s}.mvas = {d["mvas"]}')
-    print(f'  monthlyTrends entries: {len(new_trends)}')
-
+def regenerate_stats(data):
+    """Recompute all derived stats — shared helper lives in _stats.py."""
+    from _stats import regenerate_stats as _rs
+    _rs(data)
 
 def main():
     parser = argparse.ArgumentParser()

@@ -20,11 +20,3 @@ export const TYPE_COLORS: Record<IncidentType, string> = {
   'Traffic Stop':     '#A78BFA',  // purple
   'Pedestrian Struck':'#F472B6',  // pink
 };
-
-/** District colors */
-export const DISTRICT_COLORS: Record<string, string> = {
-  North: '#4CC9F0',
-  East:  '#7B61FF',
-  West:  '#FF9F1C',
-  South: '#F72585',
-};

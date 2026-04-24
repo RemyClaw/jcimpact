@@ -265,32 +265,9 @@ def district_for(lng, lat, districts):
 
 
 def regenerate_stats(data):
-    incidents = data['incidents']
-    data['citywide']['mvas'] = sum(1 for i in incidents if i['type'] == 'MVA')
-    per_district = defaultdict(int)
-    for i in incidents:
-        if i['type'] == 'MVA': per_district[i['district']] += 1
-    for d in data['byDistrict']:
-        d['mvas'] = per_district.get(d['district'], 0)
-    existing_labels = {m['month']: m['label'] for m in data.get('monthlyTrends', [])}
-    by_month = defaultdict(lambda: {'totalCrimes': 0, 'shootings': 0, 'homicides': 0, 'mvas': 0, 'thefts': 0, 'stolenVehicles': 0})
-    for i in incidents:
-        k = i['date'][:7]
-        by_month[k]['totalCrimes'] += 1
-        t = i['type']
-        if t == 'MVA':                        by_month[k]['mvas'] += 1
-        elif t == 'Theft':                    by_month[k]['thefts'] += 1
-        elif t == 'Stolen Vehicle':           by_month[k]['stolenVehicles'] += 1
-        elif t in ('Shots Fired', 'Shooting Hit'): by_month[k]['shootings'] += 1
-    new_trends = []
-    for k in sorted(by_month.keys()):
-        s = by_month[k]
-        new_trends.append({'month': k, 'label': existing_labels.get(k, k),
-                           'totalCrimes': s['totalCrimes'], 'shootings': s['shootings'],
-                           'homicides': s['homicides'], 'mvas': s['mvas'],
-                           'thefts': s['thefts'], 'stolenVehicles': s['stolenVehicles']})
-    data['monthlyTrends'] = new_trends
-
+    """Recompute all derived stats — shared helper lives in _stats.py."""
+    from _stats import regenerate_stats as _rs
+    _rs(data)
 
 def main():
     p = argparse.ArgumentParser()
