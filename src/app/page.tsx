@@ -31,6 +31,8 @@ const REPORTS = [
   { name: 'CompStat — February 2026', file: '/CompStat February 2026.pdf', month: 'February 2026' },
 ];
 
+const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
 export default function DashboardPage() {
   const [filterState, setFilterState]       = useState<FilterState>(DEFAULT_FILTER);
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
@@ -78,6 +80,27 @@ export default function DashboardPage() {
   const filteredIncidents = useMemo(() => filterByPeriod(typeFiltered, activePeriod, DATA_YEAR), [typeFiltered, activePeriod]);
 
   const periodFiltered = useMemo(() => filterByPeriod(allIncidents, activePeriod, DATA_YEAR), [activePeriod]);
+
+  // Pool for the Count-by-Type sidebar widget — respects period + district,
+  // but ignores type toggles (so you always see the full category breakdown).
+  const countPool = useMemo(() => {
+    return filterState.district === 'All'
+      ? periodFiltered
+      : periodFiltered.filter((i) => i.district === filterState.district);
+  }, [periodFiltered, filterState.district]);
+
+  const periodLabel = useMemo(() => {
+    if (activePeriod.month === null) return `YTD ${DATA_YEAR}`;
+    const month = MONTH_NAMES[activePeriod.month];
+    if (!activePeriod.weeks || activePeriod.weeks.length === 0) return `${month} ${DATA_YEAR}`;
+    const weeks = [...activePeriod.weeks].sort((a, b) => a - b);
+    const wkLabel = weeks.length === 1 ? `wk ${weeks[0]}` : `wk ${weeks[0]}-${weeks[weeks.length - 1]}`;
+    return `${month} ${DATA_YEAR} (${wkLabel})`;
+  }, [activePeriod]);
+
+  const districtLabel = filterState.district === 'All'
+    ? 'All Districts'
+    : `${filterState.district} District`;
 
   const derivedStats = useMemo(() => {
     const { district } = filterState;
@@ -221,6 +244,9 @@ export default function DashboardPage() {
                 filterState={filterState}
                 onChange={setFilterState}
                 incidentCount={filteredIncidents.length}
+                countIncidents={countPool}
+                periodLabel={periodLabel}
+                districtLabel={districtLabel}
               />
             </div>
 
@@ -501,6 +527,9 @@ export default function DashboardPage() {
                 filterState={filterState}
                 onChange={setFilterState}
                 incidentCount={filteredIncidents.length}
+                countIncidents={countPool}
+                periodLabel={periodLabel}
+                districtLabel={districtLabel}
               />
             </div>
             <div className="flex-1 min-h-0 relative">
