@@ -671,53 +671,37 @@ export default function DashboardPage() {
               className="overflow-y-auto px-5 md:px-6 py-5"
               style={{ color: '#E5E7EB', fontSize: '14px', lineHeight: 1.6 }}
             >
-              <AboutSection title="What this dashboard is">
-                JC IMPACT (Integrated Metrics for Public Accountability &amp; Community Trust) publishes public-safety incident
-                data tracked by the Jersey City Police Department&apos;s IMPACT program. The dashboard is updated weekly and
-                reflects incidents reported Monday through Sunday of the prior week.
+              <AboutSection title="What this is">
+                Week-by-week incident data for the categories the JCPD IMPACT unit tracks. Our week runs Sunday through
+                Saturday. Not the full picture of crime in Jersey City — just what IMPACT works on.
               </AboutSection>
 
-              <AboutSection title="Incident categories displayed">
-                The map plots seven IMPACT-tracked categories:
-                <ul style={{ marginTop: '8px', marginLeft: '20px', listStyle: 'disc' }}>
+              <AboutSection title="What's on the map">
+                <ul style={{ marginTop: '4px', marginLeft: '20px', listStyle: 'disc' }}>
                   <li>Shots Fired</li>
                   <li>Shooting Hit</li>
-                  <li>Motor Vehicle Accidents (MVAs)</li>
+                  <li>Motor Vehicle Accidents</li>
                   <li>Pedestrian Struck</li>
                   <li>Traffic Stops</li>
                   <li>Theft</li>
                   <li>Stolen Vehicle</li>
                 </ul>
-                <p style={{ marginTop: '10px' }}>
-                  Data is sourced from JCPD reports and New Jersey Crash Reports. Each incident is geocoded to its street
-                  intersection using the ArcGIS World Geocoder and validated against the OpenStreetMap street network to
-                  correct ambiguous cases.
-                </p>
               </AboutSection>
 
-              <AboutSection title="What this dashboard is not">
-                This is a subset of public-safety data, not a complete crime report. Categories outside IMPACT&apos;s tracking
-                scope — including domestic violence, burglary, drug offenses, weapons offenses, fraud, and others — are not
-                displayed here. For comprehensive crime statistics, contact the Jersey City Police Department directly.
+              <AboutSection title="A note on addresses">
+                Incidents show at <strong style={{ color: '#FFFFFF' }}>block level</strong> (e.g., &ldquo;700 block of
+                Ocean Ave&rdquo;), never at specific houses. Intersections use the real cross streets. No names, plates,
+                or case numbers appear here.
               </AboutSection>
 
-              <AboutSection title="Address and privacy">
-                Individual addresses are displayed at <strong style={{ color: '#FFFFFF' }}>block level</strong> (e.g.,
-                &ldquo;700 block of Ocean Ave&rdquo;) to protect the privacy of residents and victims. Intersection-level
-                incidents retain their cross-street labels. No personal identifiers — officer names, victim or suspect names,
-                case numbers, license plates, or vehicle identification numbers — are included in any published record.
+              <AboutSection title="Districts">
+                Each dot lands in one of the four JCPD patrol districts (North, East, South, West), based on where it
+                happened.
               </AboutSection>
 
-              <AboutSection title="District assignment">
-                Each incident is mapped to one of the four JCPD patrol districts (North, East, South, West) based on where
-                the geocoded point falls within the official JCPD patrol boundaries.
-              </AboutSection>
-
-              <AboutSection title="Data caveats">
-                All figures are preliminary and subject to further analysis and revision. Records with incomplete, ambiguous,
-                or unresolvable addresses are excluded from the map. Numbers shown may shift slightly as incidents are
-                reviewed and reclassified.
-              </AboutSection>
+              <div style={{ marginTop: '4px', color: '#9CA3AF', fontSize: '13px' }}>
+                Numbers are preliminary and can change as cases are reviewed.
+              </div>
 
               <div
                 style={{
