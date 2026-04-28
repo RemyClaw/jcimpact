@@ -10,12 +10,14 @@ interface StatCardProps {
   critical?: boolean;
   trend?: 'up' | 'down' | null;
   index?: number;
+  /** Small breakdown line shown under the big value (e.g. "12 fired · 9 hit"). */
+  subtitle?: string;
 }
 
-export default function StatCard({ label, value, color, critical, trend, index = 0 }: StatCardProps) {
+export default function StatCard({ label, value, color, critical, trend, index = 0, subtitle }: StatCardProps) {
   return (
     <motion.div
-      className="flex-1 flex flex-col justify-center py-1.5 px-3 min-w-0 relative"
+      className="flex-1 flex flex-col justify-center py-1.5 px-2 min-w-0 relative"
       style={{
         border: '2px solid #c8a96b',
         background: '#0a1628',
@@ -25,15 +27,31 @@ export default function StatCard({ label, value, color, critical, trend, index =
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, delay: index * 0.06, ease: 'easeOut' }}
     >
-      {/* Label */}
-      <div className="text-[9px] font-semibold uppercase tracking-[0.1em] mb-1" style={{ color: '#FFFFFF' }}>
+      {/* Label — tightened spacing + nowrap so longer names like
+          "Pedestrian Struck" don't wrap in narrow 8-card layouts */}
+      <div
+        className="text-[10px] font-semibold uppercase mb-1 truncate"
+        style={{ color: '#FFFFFF', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}
+        title={label}
+      >
         {label}
       </div>
 
       {/* Value — always white */}
-      <div className="text-base font-bold tabular-nums font-mono leading-none text-white">
+      <div className="text-[17px] font-bold tabular-nums font-mono leading-none text-white">
         <NumberFlow value={value} />
       </div>
+
+      {/* Optional breakdown subtitle (e.g. shootings split into fired vs hit) */}
+      {subtitle && (
+        <div
+          className="text-[9.5px] font-medium tabular-nums mt-1 truncate"
+          style={{ color: '#c8a96b', letterSpacing: '0.01em', whiteSpace: 'nowrap' }}
+          title={subtitle}
+        >
+          {subtitle}
+        </div>
+      )}
 
       {/* Trend badge — green for increase, red for decrease */}
       {trend && !(critical && value === 0) && (

@@ -30,6 +30,8 @@ export interface DistrictStats {
   mvas: number;
   thefts: number;
   stolenVehicles: number;
+  trafficStops: number;
+  pedestrianStruck: number;
 }
 
 export interface MonthlyStat {
@@ -41,6 +43,8 @@ export interface MonthlyStat {
   mvas: number;
   thefts: number;
   stolenVehicles: number;
+  trafficStops: number;
+  pedestrianStruck: number;
 }
 
 export interface SummaryStats {
@@ -51,6 +55,8 @@ export interface SummaryStats {
     mvas: number;
     thefts: number;
     stolenVehicles: number;
+    trafficStops: number;
+    pedestrianStruck: number;
   };
   byDistrict: DistrictStats[];
   monthlyTrends: MonthlyStat[];

@@ -1,21 +1,16 @@
 'use client';
 
-import type { FilterState, Incident } from '@/types';
+import type { FilterState } from '@/types';
 import IncidentTypeFilter from './IncidentTypeFilter';
 import DistrictFilter from './DistrictFilter';
-import CountByType from './CountByType';
 
 interface FilterPanelProps {
   filterState: FilterState;
   onChange: (next: FilterState) => void;
   incidentCount: number;
-  /** Incidents filtered by period + district (NOT by type toggles) — for the Count-by-Type summary. */
-  countIncidents: Incident[];
-  periodLabel: string;
-  districtLabel: string;
 }
 
-export default function FilterPanel({ filterState, onChange, incidentCount, countIncidents, periodLabel, districtLabel }: FilterPanelProps) {
+export default function FilterPanel({ filterState, onChange, incidentCount }: FilterPanelProps) {
   function reset() {
     onChange({
       incidentTypes: [],
@@ -75,20 +70,6 @@ export default function FilterPanel({ filterState, onChange, incidentCount, coun
             onChange={(district) => onChange({ ...filterState, district })}
           />
         </FilterGroup>
-
-        {/* Count by Type — shows totals for the current period + district,
-            independent of which type toggles are on */}
-        <div style={{
-          marginTop: '4px',
-          paddingTop: '14px',
-          borderTop: '1px solid rgba(200,169,107,0.25)',
-        }}>
-          <CountByType
-            incidents={countIncidents}
-            periodLabel={periodLabel}
-            districtLabel={districtLabel}
-          />
-        </div>
       </div>
 
       {/* ── Reset ───────────────────────────────────────────────────────── */}

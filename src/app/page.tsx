@@ -31,8 +31,6 @@ const REPORTS = [
   { name: 'CompStat — February 2026', file: '/CompStat February 2026.pdf', month: 'February 2026' },
 ];
 
-const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
 export default function DashboardPage() {
   const [filterState, setFilterState]       = useState<FilterState>(DEFAULT_FILTER);
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
@@ -83,65 +81,62 @@ export default function DashboardPage() {
 
   const periodFiltered = useMemo(() => filterByPeriod(allIncidents, activePeriod, DATA_YEAR), [activePeriod]);
 
-  // Pool for the Count-by-Type sidebar widget — respects period + district,
-  // but ignores type toggles (so you always see the full category breakdown).
-  const countPool = useMemo(() => {
-    return filterState.district === 'All'
-      ? periodFiltered
-      : periodFiltered.filter((i) => i.district === filterState.district);
-  }, [periodFiltered, filterState.district]);
-
-  const periodLabel = useMemo(() => {
-    if (activePeriod.month === null) return `YTD ${DATA_YEAR}`;
-    const month = MONTH_NAMES[activePeriod.month];
-    if (!activePeriod.weeks || activePeriod.weeks.length === 0) return `${month} ${DATA_YEAR}`;
-    const weeks = [...activePeriod.weeks].sort((a, b) => a - b);
-    const wkLabel = weeks.length === 1 ? `wk ${weeks[0]}` : `wk ${weeks[0]}-${weeks[weeks.length - 1]}`;
-    return `${month} ${DATA_YEAR} (${wkLabel})`;
-  }, [activePeriod]);
-
-  const districtLabel = filterState.district === 'All'
-    ? 'All Districts'
-    : `${filterState.district} District`;
 
   const derivedStats = useMemo(() => {
     const { district } = filterState;
     const isYTD = activePeriod.month === null;
 
+    // Live pool — used to compute the shootings split (fired vs hit) for the
+    // Shootings card subtitle. Cheap; the optimization below still uses the
+    // precomputed citywide/byDistrict totals where they exist.
+    const livePool = isYTD
+      ? (district === 'All' ? allIncidents : allIncidents.filter(i => i.district === district))
+      : (district === 'All' ? periodFiltered : periodFiltered.filter(i => i.district === district));
+    const shotsFired  = livePool.filter(i => i.type === 'Shots Fired').length;
+    const shootingHit = livePool.filter(i => i.type === 'Shooting Hit').length;
+
     if (isYTD && district === 'All') {
       return {
-        totalCrimes:    baseStats.totalCrimes,
-        shootings:      baseStats.shootings,
-        homicides:      baseStats.homicides,
-        mvas:           baseStats.mvas,
-        thefts:         baseStats.thefts,
-        stolenVehicles: baseStats.stolenVehicles,
+        totalCrimes:      baseStats.totalCrimes,
+        shootings:        baseStats.shootings,
+        shotsFired,
+        shootingHit,
+        homicides:        baseStats.homicides,
+        mvas:             baseStats.mvas,
+        thefts:           baseStats.thefts,
+        stolenVehicles:   baseStats.stolenVehicles,
+        trafficStops:     baseStats.trafficStops     ?? 0,
+        pedestrianStruck: baseStats.pedestrianStruck ?? 0,
       };
     }
 
     if (isYTD && district !== 'All') {
       const d = allDistricts.find((x) => x.district === district);
       return {
-        totalCrimes:    d?.totalCrimes    ?? 0,
-        shootings:      d?.shootings      ?? 0,
-        homicides:      d?.homicides      ?? 0,
-        mvas:           d?.mvas           ?? 0,
-        thefts:         d?.thefts         ?? 0,
-        stolenVehicles: d?.stolenVehicles ?? 0,
+        totalCrimes:      d?.totalCrimes      ?? 0,
+        shootings:        d?.shootings        ?? 0,
+        shotsFired,
+        shootingHit,
+        homicides:        d?.homicides        ?? 0,
+        mvas:             d?.mvas             ?? 0,
+        thefts:           d?.thefts           ?? 0,
+        stolenVehicles:   d?.stolenVehicles   ?? 0,
+        trafficStops:     d?.trafficStops     ?? 0,
+        pedestrianStruck: d?.pedestrianStruck ?? 0,
       };
     }
 
-    const pool = district !== 'All'
-      ? periodFiltered.filter(i => i.district === district)
-      : periodFiltered;
-
     return {
-      totalCrimes:    pool.length,
-      shootings:      pool.filter(i => i.type === 'Shots Fired' || i.type === 'Shooting Hit').length,
-      homicides:      0,
-      mvas:           pool.filter(i => i.type === 'MVA').length,
-      thefts:         pool.filter(i => i.type === 'Theft').length,
-      stolenVehicles: pool.filter(i => i.type === 'Stolen Vehicle').length,
+      totalCrimes:      livePool.length,
+      shootings:        shotsFired + shootingHit,
+      shotsFired,
+      shootingHit,
+      homicides:        0,
+      mvas:             livePool.filter(i => i.type === 'MVA').length,
+      thefts:           livePool.filter(i => i.type === 'Theft').length,
+      stolenVehicles:   livePool.filter(i => i.type === 'Stolen Vehicle').length,
+      trafficStops:     livePool.filter(i => i.type === 'Traffic Stop').length,
+      pedestrianStruck: livePool.filter(i => i.type === 'Pedestrian Struck').length,
     };
   }, [filterState.district, activePeriod, periodFiltered]);
 
@@ -271,9 +266,6 @@ export default function DashboardPage() {
                 filterState={filterState}
                 onChange={setFilterState}
                 incidentCount={filteredIncidents.length}
-                countIncidents={countPool}
-                periodLabel={periodLabel}
-                districtLabel={districtLabel}
               />
             </div>
 
@@ -554,9 +546,6 @@ export default function DashboardPage() {
                 filterState={filterState}
                 onChange={setFilterState}
                 incidentCount={filteredIncidents.length}
-                countIncidents={countPool}
-                periodLabel={periodLabel}
-                districtLabel={districtLabel}
               />
             </div>
             <div className="flex-1 min-h-0 relative">
