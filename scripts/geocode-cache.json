@@ -661,6 +661,11 @@
     "lng": -74.095045567534,
     "score": 100
   },
+  "136 woodlawn ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.702934251494,
+    "lng": -74.085535124915
+  },
   "137 BIDWELL AVE, JERSEY CITY, NJ 07305": {
     "lat": 40.70519,
     "lng": -74.082036
@@ -678,6 +683,11 @@
     "lat": 40.71613101322,
     "lng": -74.040363037046,
     "score": 100
+  },
+  "138 bidwell ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.705538885996,
+    "lng": -74.081758742259
   },
   "138 west side ave, jersey city, nj 07305": {
     "addr_type": "PointAddress",
@@ -738,6 +748,11 @@
   "143 EGE AVE, JERSEY CITY, NJ 07304": {
     "lat": 40.713604,
     "lng": -74.082273
+  },
+  "143 nelson ave, jersey city, nj 07307": {
+    "cached_at": "2026-04-28",
+    "lat": 40.756791374067,
+    "lng": -74.050324677513
   },
   "144 CLAREMONT AVE, JERSEY CITY, NJ 07305": {
     "lat": 40.709633,
@@ -923,6 +938,16 @@
     "lat": 40.70938,
     "lng": -74.07328
   },
+  "157 leonard st, jersey city, nj 07307": {
+    "cached_at": "2026-04-28",
+    "lat": 40.75753128657,
+    "lng": -74.050237421901
+  },
+  "157 woodlawn ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.703299367197,
+    "lng": -74.086734156165
+  },
   "158 chestnut ave": {
     "addr_type": "PointAddress",
     "cached_at": "2026-04-17",
@@ -1058,6 +1083,11 @@
     "lat": 40.705555,
     "lng": -74.08497
   },
+  "168 sip ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.731329499153,
+    "lng": -74.066898885214
+  },
   "169 MANHATTAN AVE, APT 44, JERSEY CITY, NJ 07307": {
     "lat": 40.744638,
     "lng": -74.056406
@@ -1172,6 +1202,11 @@
     "lat": 40.688478,
     "lng": -74.09397
   },
+  "18 fulton ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.700415992504,
+    "lng": -74.080753500611
+  },
   "180 12TH ST, JERSEY CITY, NJ 07310": {
     "lat": 40.730752,
     "lng": -74.040482
@@ -1190,6 +1225,11 @@
     "lat": 40.723603898996,
     "lng": -74.074220058543,
     "score": 100
+  },
+  "180 summit ave, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.721275071018,
+    "lng": -74.065585440987
   },
   "181 ERIE ST, JERSEY CITY, NJ 07302": {
     "lat": 40.72877,
@@ -1268,6 +1308,11 @@
     "lat": 40.734468018978,
     "lng": -74.040680040624,
     "score": 100
+  },
+  "18th st & jersey ave, jersey city, nj 07310": {
+    "cached_at": "2026-04-28",
+    "lat": 40.734734982594,
+    "lng": -74.04399600534
   },
   "19 ORCHARD ST, JERSEY CITY, NJ 07306": {
     "lat": 40.72323,
@@ -1402,6 +1447,11 @@
     "lat": 40.729038138282,
     "lng": -74.07023815162,
     "score": 100
+  },
+  "2 jackson sq, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.709581563872,
+    "lng": -74.078237573897
   },
   "2 journal sq": {
     "addr_type": "PointAddress",
@@ -1558,6 +1608,11 @@
     "lat": 40.714365,
     "lng": -74.038204
   },
+  "209 clinton ave, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.719189150594,
+    "lng": -74.079612555951
+  },
   "209 fairview ave": {
     "addr_type": "PointAddress",
     "cached_at": "2026-04-17",
@@ -1629,6 +1684,11 @@
   "217 CLINTON AVE, JERSEY CITY, NJ 07304": {
     "lat": 40.719287,
     "lng": -74.079884
+  },
+  "217 mlk dr, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.707091675469,
+    "lng": -74.083869892212
   },
   "218 JEWETT AVE, JERSEY CITY, NJ 07304": {
     "lat": 40.72414,
@@ -1781,9 +1841,19 @@
     "lat": 40.72165,
     "lng": -74.04902
   },
+  "234 stegman st, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.706112752997,
+    "lng": -74.085743247571
+  },
   "2348 KENNEDY BLVD, APT3D, JERSEY CITY, NJ 07304": {
     "lat": 40.718267,
     "lng": -74.078775
+  },
+  "2348 kennedy blvd, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.71828746736,
+    "lng": -74.078776042014
   },
   "235 bayview ave, jersey city, nj": {
     "addr_type": "PointAddress",
@@ -1968,6 +2038,16 @@
     "lat": 40.718079533484,
     "lng": -74.03816968152
   },
+  "25 cottage st, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.73424279724,
+    "lng": -74.060516065946
+  },
+  "25 liberty ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.736707453959,
+    "lng": -74.065024691664
+  },
   "250 CLINTON AVE, 2ND FL, JERSEY CITY, NJ 07304": {
     "lat": 40.720091,
     "lng": -74.080766
@@ -2013,6 +2093,11 @@
   "251 OLD BERGEN RD, JERSEY CITY, NJ 07305": {
     "lat": 40.69867,
     "lng": -74.09254
+  },
+  "251 virginia ave, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.716385399246,
+    "lng": -74.08526417871
   },
   "253 SEAVIEW AVE, FL 2, JERSEY CITY, NJ 07305": {
     "lat": 40.696338,
@@ -2132,6 +2217,11 @@
     "lat": 40.728535,
     "lng": -74.069653
   },
+  "271 sip ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.732482262297,
+    "lng": -74.073294444975
+  },
   "272 MONTICELLO AVE, JERSEY CITY, NJ 07304": {
     "lat": 40.723556,
     "lng": -74.067663
@@ -2205,6 +2295,11 @@
     "lat": 40.696533052478,
     "lng": -74.102830221553
   },
+  "28 wilkinson ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.704513695419,
+    "lng": -74.076563051937
+  },
   "280 danforth avenue": {
     "addr_type": "PointAddress",
     "cached_at": "2026-04-17",
@@ -2232,9 +2327,19 @@
     "lat": 40.73204,
     "lng": -74.06666
   },
+  "2829 kennedy blvd, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.732020000337,
+    "lng": -74.066436287978
+  },
   "283 STEGMAN PKWY, JERSEY CITY, NJ 07305": {
     "lat": 40.707924,
     "lng": -74.088694
+  },
+  "2844 kennedy blvd, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.731365457518,
+    "lng": -74.065577981093
   },
   "286 ST PAULS AVE, FLR 2, JERSEY CITY, NJ 07306": {
     "lat": 40.737981,
@@ -2300,12 +2405,22 @@
     "lng": -74.072778874111,
     "score": 100
   },
+  "2995 kennedy blvd, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.735814529814,
+    "lng": -74.063444535278
+  },
   "2nd st": {
     "addr_type": "StreetName",
     "cached_at": "2026-04-17",
     "lat": 40.723554110491,
     "lng": -74.052538547689,
     "score": 100
+  },
+  "2nd st & erie st, jersey city, nj 07302": {
+    "cached_at": "2026-04-28",
+    "lat": 40.722500002348,
+    "lng": -74.044186023085
   },
   "2nd st & hudson st., jersey city, nj": {
     "addr_type": "StreetInt",
@@ -2481,6 +2596,11 @@
     "lng": -74.062044170714,
     "score": 100
   },
+  "309 old bergen rd, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.700745401299,
+    "lng": -74.092703915244
+  },
   "31 EMORY ST, JERSEY CITY, NJ 07304": {
     "lat": 40.719443,
     "lng": -74.072847
@@ -2584,6 +2704,11 @@
   "32 RANDOLPH AVE, APT 3, JERSEY CITY, NJ 07305": {
     "lat": 40.70499,
     "lng": -74.075552
+  },
+  "32 crossgate rd, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.697432244521,
+    "lng": -74.103955698248
   },
   "320 DANFORTH AVE, JERSEY CITY, NJ 07305": {
     "lat": 40.702286,
@@ -2856,6 +2981,11 @@
     "lat": 40.750526488177,
     "lng": -74.041958532316,
     "score": 100
+  },
+  "356 woodlawn ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.708028143601,
+    "lng": -74.093087471134
   },
   "36 JOURNAL SQ PLZ, APT 5714, JERSEY CITY, NJ 07306": {
     "lat": 40.731322,
@@ -3215,6 +3345,11 @@
     "lng": -74.056663324152,
     "score": 100
   },
+  "410 monmouth st, jersey city, nj 07302": {
+    "cached_at": "2026-04-28",
+    "lat": 40.72401301969,
+    "lng": -74.048882990167
+  },
   "414 BERGEN AVE, JERSEY CITY, NJ 07304": {
     "lat": 40.715733,
     "lng": -74.078712
@@ -3351,6 +3486,11 @@
     "lat": 40.730452249167,
     "lng": -74.085237944538,
     "score": 97.2
+  },
+  "440 st hwy 440, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.710782059799,
+    "lng": -74.096678865187
   },
   "443 2nd st": {
     "addr_type": "PointAddress",
@@ -3523,6 +3663,11 @@
     "lat": 40.723245,
     "lng": -74.047282
   },
+  "48 fairview ave, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.722791063936,
+    "lng": -74.070391791905
+  },
   "484 BERGEN AVE, JERSEY CITY, NJ 07304": {
     "lat": 40.717583,
     "lng": -74.076363
@@ -3530,6 +3675,11 @@
   "485 JERSEY AVE, APT 2, JERSEY CITY, NJ 07302": {
     "lat": 40.719267,
     "lng": -74.047677
+  },
+  "488 central ave, jersey city, nj 07307": {
+    "cached_at": "2026-04-28",
+    "lat": 40.751337646857,
+    "lng": -74.04543735741
   },
   "49 MALL DR W, FL 2, JERSEY CITY, NJ 07310": {
     "lat": 40.726751,
@@ -3955,6 +4105,11 @@
     "lat": 40.701756,
     "lng": -74.077735
   },
+  "629 communipaw ave, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.717823361381,
+    "lng": -74.074519124848
+  },
   "63 BROADMAN PKWY, JERSEY CITY, NJ 07305": {
     "lat": 40.712514,
     "lng": -74.0883
@@ -4188,6 +4343,11 @@
     "lat": 40.715717,
     "lng": -74.066685
   },
+  "706 communipaw ave, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.719317184165,
+    "lng": -74.076983404382
+  },
   "71 BROADWAY, FL 1, JERSEY CITY, NJ 07306": {
     "lat": 40.73571,
     "lng": -74.07115
@@ -4357,6 +4517,11 @@
     "lat": 40.749061,
     "lng": -74.058931
   },
+  "75 bishop st, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.717604551798,
+    "lng": -74.065657190078
+  },
   "750 TONNELE AVE, ROOM 220, JERSEY CITY, NJ 07307": {
     "lat": 40.755805,
     "lng": -74.054714
@@ -4487,6 +4652,11 @@
     "lng": -74.054486376259,
     "score": 100
   },
+  "789 newark ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.735329594806,
+    "lng": -74.064654714458
+  },
   "793 COMMUNIPAW AVE, JERSEY CITY, NJ 07304": {
     "lat": 40.7205,
     "lng": -74.080973
@@ -4554,6 +4724,11 @@
     "lng": -74.063125352405,
     "score": 100
   },
+  "813 newark ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.735384412452,
+    "lng": -74.065508914211
+  },
   "814 GRAND ST, APT 1, JERSEY CITY, NJ 07304": {
     "lat": 40.714743,
     "lng": -74.072073
@@ -4561,6 +4736,16 @@
   "815 NEWARK AVE, JERSEY CITY, NJ 07306": {
     "lat": 40.735417,
     "lng": -74.065586
+  },
+  "815 newark ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.735421125188,
+    "lng": -74.065585943901
+  },
+  "816 newark ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.735902455978,
+    "lng": -74.065619974428
   },
   "82 VAN NOSTRAND AVE, JERSEY CITY, NJ 07305": {
     "lat": 40.7006,
@@ -4695,6 +4880,11 @@
   "9 WRIGHT AVE, JERSEY CITY, NJ 07306": {
     "lat": 40.734261,
     "lng": -74.075307
+  },
+  "9 boland st, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.72538949583,
+    "lng": -74.06984428599
   },
   "9 merritt st": {
     "addr_type": "PointAddress",
@@ -5083,6 +5273,11 @@
     "lng": -74.085181995335,
     "score": 100
   },
+  "armstrong ave & west side ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.708737001153,
+    "lng": -74.095823994882
+  },
   "ash street & pacific avenue": {
     "cached_at": "2026-03-24",
     "lat": 40.714904,
@@ -5173,6 +5368,11 @@
     "lat": 40.718816994093,
     "lng": -74.045824014603
   },
+  "bartholdi ave & kennedy blvd, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.697359992516,
+    "lng": -74.097252438821
+  },
   "bay st & manila ave, jersey city, nj 07302": {
     "addr_type": "StreetName",
     "cached_at": "2026-04-21",
@@ -5225,6 +5425,16 @@
     "lng": -74.075614974869,
     "score": 100
   },
+  "belmont ave & monticello ave, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.720062000081,
+    "lng": -74.070839972268
+  },
+  "belmont ave & west side ave, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.724743942602,
+    "lng": -74.078030387907
+  },
   "belmont avenue & kennedy boulevard": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
@@ -5238,6 +5448,11 @@
     "lat": 40.719749983735,
     "lng": -74.092479028782,
     "score": 100
+  },
+  "bennett st & state rt 440, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.722641216462,
+    "lng": -74.091013159645
   },
   "bergen & claremont ave.": {
     "addr_type": "StreetInt",
@@ -5266,6 +5481,11 @@
     "lat": 40.716859,
     "lng": -74.077787
   },
+  "bergen ave & claremont ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.711313011456,
+    "lng": -74.082965987773
+  },
   "bergen ave & clendenny": {
     "cached_at": "2026-03-24",
     "lat": 40.711475,
@@ -5280,6 +5500,11 @@
     "cached_at": "2026-03-24",
     "lat": 40.724589,
     "lng": -74.069456
+  },
+  "bergen ave & harrison ave, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.718923989087,
+    "lng": -74.074726996047
   },
   "bergen ave & john f kennedy blvd": {
     "cached_at": "2026-03-24",
@@ -5496,6 +5721,16 @@
     "lng": -74.088655036915,
     "score": 100
   },
+  "bidwell ave & bergen ave, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.707840011785,
+    "lng": -74.085701002779
+  },
+  "bidwell ave & ocean ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.704085002981,
+    "lng": -74.079988987222
+  },
   "bidwell avenue & garfield avenue": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
@@ -5604,6 +5839,11 @@
     "lat": 40.719425017349,
     "lng": -74.055270000387,
     "score": 100
+  },
+  "bright st & jersey ave, jersey city, nj 07302": {
+    "cached_at": "2026-04-28",
+    "lat": 40.717269988133,
+    "lng": -74.048505972162
   },
   "bright st & merseles st": {
     "addr_type": "StreetInt",
@@ -5824,12 +6064,22 @@
     "lng": -74.081661093087,
     "score": 100
   },
+  "caven point rd & linden ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.689182314411,
+    "lng": -74.085955309722
+  },
   "caven point rd & linden avenue": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
     "lat": 40.689182314411,
     "lng": -74.085955309722,
     "score": 100
+  },
+  "center st & colden st, jersey city, nj 07302": {
+    "cached_at": "2026-04-28",
+    "lat": 40.718015013597,
+    "lng": -74.055544004801
   },
   "center st & grand st": {
     "cached_at": "2026-03-24",
@@ -5865,6 +6115,11 @@
     "cached_at": "2026-03-24",
     "lat": 40.748549,
     "lng": -74.047615
+  },
+  "central ave & upper 139, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.73505999089,
+    "lng": -74.056612026904
   },
   "central avenue & fleet street": {
     "addr_type": "StreetInt",
@@ -6038,6 +6293,11 @@
     "lng": -74.07732899025,
     "score": 100
   },
+  "claremont ave & ocean ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.707920980969,
+    "lng": -74.07732899025
+  },
   "claremont ave & st hwy 440, jersey city, nj 07306": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-21",
@@ -6158,12 +6418,22 @@
     "lng": -74.047030002832,
     "score": 98.28
   },
+  "colgate st & montgomery st, jersey city, nj 07302": {
+    "cached_at": "2026-04-28",
+    "lat": 40.720573002808,
+    "lng": -74.053986982468
+  },
   "colgate st & york st": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
     "lat": 40.719892015085,
     "lng": -74.054259981054,
     "score": 100
+  },
+  "colgate st & york st, jersey city, nj 07302": {
+    "cached_at": "2026-04-28",
+    "lat": 40.719892015085,
+    "lng": -74.054259981054
   },
   "college street & audubon ave": {
     "addr_type": "StreetInt",
@@ -6184,10 +6454,20 @@
     "lng": -74.050551994727,
     "score": 99.59
   },
+  "columbus dr & grove st, jersey city, nj 07302": {
+    "cached_at": "2026-04-28",
+    "lat": 40.719531509429,
+    "lng": -74.043009036241
+  },
   "columbus dr & monmouth st": {
     "cached_at": "2026-03-24",
     "lat": 40.72157,
     "lng": -74.047455
+  },
+  "columbus dr, jersey city, nj 07302": {
+    "cached_at": "2026-04-28",
+    "lat": 40.722805899904,
+    "lng": -74.054809666264
   },
   "columbus drive & barrow": {
     "addr_type": "StreetInt",
@@ -6284,6 +6564,11 @@
     "lng": -74.077824025451,
     "score": 100
   },
+  "communipaw ave & madison ave, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.716846995389,
+    "lng": -74.071556960266
+  },
   "communipaw ave & mallory": {
     "cached_at": "2026-03-24",
     "lat": 40.71145,
@@ -6312,6 +6597,11 @@
     "cached_at": "2026-03-24",
     "lat": 40.723926,
     "lng": -74.08986
+  },
+  "communipaw ave & st hwy 440, jersey city, nj 07304": {
+    "cached_at": "2026-04-28",
+    "lat": 40.724518993275,
+    "lng": -74.089371019085
   },
   "communipaw ave & west side ave": {
     "cached_at": "2026-03-24",
@@ -6546,6 +6836,11 @@
     "lat": 40.713857,
     "lng": -74.075607
   },
+  "culver ave & st hwy 440, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.716146980746,
+    "lng": -74.095518977426
+  },
   "culver avenue & route 440": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
@@ -6693,6 +6988,11 @@
     "lng": -74.083272094877,
     "score": 99.42
   },
+  "dwight st & kennedy blvd, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.706703006619,
+    "lng": -74.088805994992
+  },
   "dwight st & martin luther king dr": {
     "cached_at": "2026-03-24",
     "lat": 40.72157,
@@ -6822,6 +7122,11 @@
     "lat": 40.724365981633,
     "lng": -74.049007964343,
     "score": 100
+  },
+  "fowler ave & cator ave, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.702025988466,
+    "lng": -74.094814981378
   },
   "fowler ave & cator ave., jersey city, nj": {
     "addr_type": "StreetInt",
@@ -7008,10 +7313,20 @@
     "lng": -74.095579997681,
     "score": 100
   },
+  "gates ave & princeton ave, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.688042794675,
+    "lng": -74.093904203779
+  },
   "gautier ave & west side ave": {
     "cached_at": "2026-03-24",
     "lat": 40.725301,
     "lng": -74.07759
+  },
+  "glenwood ave & kennedy blvd, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.727477008816,
+    "lng": -74.07073503084
   },
   "glenwood ave & kennedy boulevard": {
     "addr_type": "StreetInt",
@@ -7072,6 +7387,11 @@
     "lng": -74.055612401131,
     "score": 100
   },
+  "grand st & clinton ave, jersey city, nj 07304-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.71483600918,
+    "lng": -74.07078096367
+  },
   "grand st & harmon st, jersey city, nj 07304": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-21",
@@ -7111,6 +7431,11 @@
     "lat": 40.716938986777,
     "lng": -74.052265004279,
     "score": 100
+  },
+  "grand st & pacific ave, jersey city, nj 07302": {
+    "cached_at": "2026-04-28",
+    "lat": 40.717171416952,
+    "lng": -74.05453993662
   },
   "grand st & prior st": {
     "cached_at": "2026-03-24",
@@ -7329,6 +7654,11 @@
     "lng": -74.045306012987,
     "score": 100
   },
+  "hancock ave & south st, jersey city, nj 07307": {
+    "cached_at": "2026-04-28",
+    "lat": 40.748764989315,
+    "lng": -74.045517991318
+  },
   "harmon st & randolph ave": {
     "cached_at": "2026-03-24",
     "lat": 40.714836,
@@ -7482,6 +7812,11 @@
     "lat": 40.712995,
     "lng": -74.050832
   },
+  "jersey ave & bright st, jersey city, nj 07302-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.717269988133,
+    "lng": -74.048505972162
+  },
   "jersey ave & columbus dr": {
     "cached_at": "2026-03-24",
     "lat": 40.72069,
@@ -7583,12 +7918,22 @@
     "lng": -74.048940992937,
     "score": 100
   },
+  "jewett ave & bergen ave, jersey city, nj 07304-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.722145992667,
+    "lng": -74.071605994399
+  },
   "jewett ave & monticello ave": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
     "lat": 40.721376994961,
     "lng": -74.070057018693,
     "score": 100
+  },
+  "jfk & morton, nj": {
+    "cached_at": "2026-04-28",
+    "lat": 40.713152084832,
+    "lng": -74.083361613603
   },
   "jfk boulevard & pavonia ave, jersey city, nj": {
     "addr_type": "StreetInt",
@@ -7752,6 +8097,11 @@
     "lat": 40.709871,
     "lng": -74.099576
   },
+  "kellogg st & st hwy 440, jersey city, nj 07305": {
+    "cached_at": "2026-04-28",
+    "lat": 40.70985401548,
+    "lng": -74.099580009514
+  },
   "kennedy blvd": {
     "cached_at": "2026-03-24",
     "lat": 40.717598,
@@ -7861,6 +8211,11 @@
     "cached_at": "2026-03-24",
     "lat": 40.72157,
     "lng": -74.047455
+  },
+  "kennedy blvd & sip ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.731375012887,
+    "lng": -74.067854003081
   },
   "kennedy blvd & south st": {
     "cached_at": "2026-03-24",
@@ -8253,6 +8608,11 @@
     "lat": 40.747641981928,
     "lng": -74.058538020616,
     "score": 100
+  },
+  "liberty ave & leonard st, jersey city, nj 07307-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.758205987866,
+    "lng": -74.051360010193
   },
   "liberty ave & newark avenue.": {
     "addr_type": "StreetInt",
@@ -8780,6 +9140,11 @@
     "lng": -74.072508976829,
     "score": 100
   },
+  "mlk dr & grant ave, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.709212003606,
+    "lng": -74.08097000517
+  },
   "mlk dr & myrtle ave, jersey city, nj 07305": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-21",
@@ -8848,6 +9213,11 @@
     "cached_at": "2026-03-24",
     "lat": 40.716485,
     "lng": -74.034125
+  },
+  "montgomery st & jordan ave, jersey city, nj 07306-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.724459020758,
+    "lng": -74.066221040704
   },
   "montgomery st & kennedy blvd, jersey city, nj": {
     "addr_type": "StreetInt",
@@ -8919,6 +9289,11 @@
     "cached_at": "2026-03-24",
     "lat": 40.719087,
     "lng": -74.071445
+  },
+  "monticello ave & fairmount ave, jersey city, nj 07306-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.723109995352,
+    "lng": -74.069013974661
   },
   "monticello ave & gardner ave": {
     "addr_type": "StreetInt",
@@ -9008,6 +9383,11 @@
     "lng": -74.049721012846,
     "score": 100
   },
+  "neptune ave & kennedy blvd, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.696329982344,
+    "lng": -74.09841601462
+  },
   "nevin st & storms ave, jersey city, nj 07306": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-21",
@@ -9019,6 +9399,16 @@
     "cached_at": "2026-03-24",
     "lat": 40.745827,
     "lng": -74.044173
+  },
+  "new york ave & bowers st, jersey city, nj 07307-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.745814014573,
+    "lng": -74.044152998386
+  },
+  "new york ave & ravine ave, jersey city, nj 07307": {
+    "cached_at": "2026-04-28",
+    "lat": 40.73978830629,
+    "lng": -74.048057791799
   },
   "new york ave & ravine avenue": {
     "addr_type": "StreetInt",
@@ -9261,6 +9651,11 @@
     "lat": 40.72157,
     "lng": -74.047455
   },
+  "north st & liberty ave, jersey city, nj 07307-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.755609986724,
+    "lng": -74.05308299421
+  },
   "north street & central avenue": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
@@ -9364,6 +9759,16 @@
     "cached_at": "2026-03-24",
     "lat": 40.695062,
     "lng": -74.091378
+  },
+  "ocean ave & merritt st, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.689292997443,
+    "lng": -74.098309983545
+  },
+  "ocean ave & myrtle ave, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.706556993866,
+    "lng": -74.078066010996
   },
   "ocean ave & neptune ave": {
     "cached_at": "2026-03-24",
@@ -10471,6 +10876,11 @@
     "lng": -74.067208009803,
     "score": 99.49
   },
+  "sip ave & tonnele ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.73125100263,
+    "lng": -74.067208009803
+  },
   "sip ave & us nj route 1 9": {
     "cached_at": "2026-03-24",
     "lat": 40.730364,
@@ -10587,12 +10997,32 @@
     "lng": -74.095518977426,
     "score": 100
   },
+  "st hwy 440 & culver ave, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.716146980746,
+    "lng": -74.095518977426
+  },
   "st hwy 440 & culver avenue, jersey city, nj": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-21",
     "lat": 40.716146980746,
     "lng": -74.095518977426,
     "score": 100
+  },
+  "st hwy 440 & danforth ave, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.71264409959,
+    "lng": -74.097677904227
+  },
+  "st hwy 440 & kellogg st, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.70985401548,
+    "lng": -74.099580009514
+  },
+  "st hwy 440 & mina dr, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.699572982592,
+    "lng": -74.104044965517
   },
   "st hwy 440 & rt 185, jersey city, nj": {
     "addr_type": "StreetInt",
@@ -10617,6 +11047,11 @@
     "cached_at": "2026-03-24",
     "lat": 40.735382,
     "lng": -74.054732
+  },
+  "st pauls ave & tonnele ave, jersey city, nj 07306": {
+    "cached_at": "2026-04-28",
+    "lat": 40.738064986997,
+    "lng": -74.065645036318
   },
   "st. pauls ave & tonnelle ave, jersey city, nj": {
     "addr_type": "StreetInt",
@@ -10923,6 +11358,11 @@
     "lat": 40.73743,
     "lng": -74.065933
   },
+  "tonnele ave & kennedy blvd, jersey city, nj 07306-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.731777008964,
+    "lng": -74.06720398649
+  },
   "tonnele ave & lower 139, jersey city, nj": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-21",
@@ -10961,6 +11401,11 @@
     "cached_at": "2026-03-24",
     "lat": 40.760205,
     "lng": -74.051159
+  },
+  "tonnele ave & st pauls ave, jersey city, nj 07306-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.738064986997,
+    "lng": -74.065645036318
   },
   "tonnele ave & utica st": {
     "cached_at": "2026-03-24",
@@ -11143,6 +11588,11 @@
     "lng": -74.079020039215,
     "score": 100
   },
+  "union st & garfield ave, jersey city, nj 07304-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.710892994288,
+    "lng": -74.069870018433
+  },
   "union st & ocean avenue": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
@@ -11168,6 +11618,11 @@
     "lat": 40.713112983253,
     "lng": -74.074034986121,
     "score": 100
+  },
+  "upper 139 & kennedy blvd, jersey city, nj 07306-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.739668989898,
+    "lng": -74.061976025841
   },
   "upper us route 1 9 & palisade avenue": {
     "addr_type": "StreetAddress",
@@ -11445,6 +11900,11 @@
     "lng": -74.06462596453,
     "score": 100
   },
+  "w 63rd st & kennedy blvd, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.693230983193,
+    "lng": -74.101630977402
+  },
   "w route 139 & tonnelle avenue": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
@@ -11477,6 +11937,11 @@
     "lat": 40.701196012414,
     "lng": -74.090280958493,
     "score": 99.59
+  },
+  "warner ave & mlk dr, jersey city, nj 07305-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.701196012414,
+    "lng": -74.090280958493
   },
   "warren st & morgan st, jersey city, nj 07302-0000": {
     "cached_at": "2026-04-21",
@@ -11589,6 +12054,11 @@
     "cached_at": "2026-03-24",
     "lat": 40.743154,
     "lng": -74.046862
+  },
+  "webster ave & south st, jersey city, nj 07307-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.748108015744,
+    "lng": -74.043753013966
   },
   "wegman pkwy & martin luther king drive": {
     "addr_type": "StreetInt",
@@ -11895,12 +12365,22 @@
     "lng": -74.054259981054,
     "score": 100
   },
+  "york st & greene st, jersey city, nj 07302-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.71583500631,
+    "lng": -74.035878970304
+  },
   "york st & warren st": {
     "addr_type": "StreetInt",
     "cached_at": "2026-04-17",
     "lat": 40.716219987122,
     "lng": -74.039257966932,
     "score": 100
+  },
+  "zabriskie st & columbia ave, jersey city, nj 07307-0000": {
+    "cached_at": "2026-04-28",
+    "lat": 40.748091000481,
+    "lng": -74.057157018249
   },
   "zabriskie st & summit ave": {
     "cached_at": "2026-03-24",
